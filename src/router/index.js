@@ -7,7 +7,7 @@ import UIView from '../views/UIView.vue';
 import NotFoundView from '../views/NotFoundView.vue';
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(import.meta.env.VITE_SITE_BASE),
   linkActiveClass: 'nav_active',
   routes: [
     {
