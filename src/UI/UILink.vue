@@ -48,7 +48,7 @@
   const basePath = import.meta.env.VITE_SITE_BASE;
   let site = import.meta.env.VITE_SITE_NAME;
 
-  if (basePath !== '/') site = `${site}/basePath`;
+  if (basePath !== '/') site = `${site}/${basePath}`;
 
   const url = computed(() => {
     if (props.type === 'repository') return myRepository;
