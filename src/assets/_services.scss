@@ -1,0 +1,35 @@
+$mobileWidth: 700px;
+$mobileWidthSmall: 550px;
+$tabletSmall: 700px;
+
+$formBg: #f9f6f6;
+$formBorder: 2px solid;
+
+$formActiveBg: #efefef;
+$formActiveBorder: 2px solid;
+
+$secondColor: #117095;
+$blackBlueColor: #020f9d;
+
+$greyColor: #e7e7e7;
+$scrollColor: $secondColor;
+
+@mixin styleScroll($scrollColor: $scrollColor, $scrollBg: $greyColor) {
+  scrollbar-width: thin;
+  scrollbar-color: $scrollColor $scrollBg;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $scrollBg;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $scrollColor;
+    border-radius: 20px;
+    border: 1px solid $scrollBg;
+  }
+}

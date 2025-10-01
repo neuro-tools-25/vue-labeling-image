@@ -1,0 +1,68 @@
+{
+  "name": "vue-labeling-image",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "lib/index.es.js",
+  "description": "Vue component for labeling data in images",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lib": "vite build -c vite.lib.js"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "mingcute_icon": "^2.9.6",
+    "sass-embedded": "^1.89.2",
+    "vite": "^7.0.0",
+    "vite-plugin-vue-devtools": "^7.7.7",
+    "vue": "^3.5.17",
+    "vue-router": "^4.5.1"
+  },
+  "keywords": [
+    "vue labeling image",
+    "vue labeling images",
+    "vue component for neural networks",
+    "vue component for markup document",
+    "vue component for markup image",
+    "vue component for markup images",
+    "vue component for labeling document",
+    "vue component for labeling image",
+    "vue component for labeling images",
+    "vue labeling document",
+    "vue mark up document",
+    "vue mark up image",
+    "vue mark up images",
+    "component for neural networks",
+    "vue markup document",
+    "vue labeling",
+    "markup image",
+    "markup images",
+    "markup document",
+    "mark up document",
+    "markup for document",
+    "markup for images",
+    "markup for image",
+    "labeling document",
+    "labeling image",
+    "labeling images",
+    "labeling for document",
+    "labeling for images",
+    "labeling for image",
+    "labeling data in images",
+    "vue component for labeling data in images",
+    "markup",
+    "labeling"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neuro-tools-25/vue-labeling-image"
+  },
+  "author": "neuro-tools-25",
+  "license": "MIT",
+  "volta": {
+    "node": "22.20.0",
+    "npm": "11.6.1"
+  }
+}

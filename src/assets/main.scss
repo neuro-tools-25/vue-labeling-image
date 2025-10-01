@@ -1,0 +1,38 @@
+@use './_base';
+@use './_services' as services;
+
+#app {
+  height: 100%;
+  display: grid;
+  gap: 0;
+  grid-template: 50px 1fr 40px/1fr;
+
+  &::selection {
+    color: #fff;
+    background: services.$scrollColor;
+  }
+
+  @media screen and (min-width: services.$tabletSmall) {
+    grid-template-rows: 100px 1fr 40px;
+  }
+}
+
+.content {
+  overflow: hidden;
+
+  main {
+    @include services.styleScroll;
+
+    height: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+  }
+}
+
+[class^='mgc_']::before,
+[class*=' mgc_']::before {
+  color: inherit !important;
+}

@@ -1,0 +1,86 @@
+@use './_services' as services;
+
+:root {
+  --font-family: Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+
+  --color-text: #000;
+
+  // Для плавной анимации
+  --easeOutSine: cubic-bezier(0.39, 0.575, 0.565, 1);
+  --easeInOutQuad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --easeInOutQuint: cubic-bezier(0.86, 0, 0.07, 1);
+  --easeInOutCirc: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  --easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+}
+
+body {
+  color: var(--color-text);
+  line-height: 1.2;
+  font-family: var(--font-family);
+  font-size: 12px;
+  transition: font-size .4s ease-in-out 0s;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media screen and (min-width: services.$tabletSmall) {
+    font-size: 15px;
+  }
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+p {
+  margin: 15px 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 1em 0;
+  font: bold 24px/120% var(--font-family);
+}
+
+h1 {
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+ul {
+  margin: 1em 0;
+  padding: 0 0 0 1.5em;
+}
