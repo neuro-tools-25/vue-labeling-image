@@ -14,13 +14,13 @@ So, open the [examples page](https://neuro-tools-25.github.io/vue-labeling-image
 
 As expected, it is probably worth saying that to install this component you need Node.js and NPM, but you probably already know that. You can install this component in the following way:
 
-```js
+```
 npm install vue-labeling-image;
 ```
 
 If you have no problems with the Internet, then you will install the component. Then you will need to connect it, this can be done in the following way:
 
-```js
+```vue
 <template>
   <labeling-image
     :image-src="file"
