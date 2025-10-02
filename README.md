@@ -29,6 +29,8 @@ If you have no problems with the Internet, then you will install the component. 
 </template>
 
 <script setup>
+  import { ref } from 'vue'; 
+
   import LabelingImage from 'vue-labeling-image';
   import 'vue-labeling-image/styles.css';
 
@@ -112,6 +114,8 @@ You probably won't need this section, but it's worth mentioning. Below I'll prov
 </template>
 
 <script setup>
+  import { ref } from 'vue'; 
+
   import LabelingImage from 'vue-labeling-image';
   import 'vue-labeling-image/styles.css';
 

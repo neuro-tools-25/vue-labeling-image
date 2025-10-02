@@ -29,6 +29,8 @@ npm install vue-labeling-image;
 </template>
 
 <script setup>
+  import { ref } from 'vue'; 
+
   import LabelingImage from 'vue-labeling-image';
   import 'vue-labeling-image/styles.css';
 
@@ -112,6 +114,8 @@ Eсли вы планируете использовать мой компоне
 </template>
 
 <script setup>
+  import { ref } from 'vue'; 
+
   import LabelingImage from 'vue-labeling-image';
   import 'vue-labeling-image/styles.css';
 
