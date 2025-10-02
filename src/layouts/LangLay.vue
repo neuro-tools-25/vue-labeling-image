@@ -11,7 +11,7 @@
       :class="isRusClass"
       @click="changeLang('rus')"
     >
-      Ру
+      Ru
     </span>
   </div>
 </template>
