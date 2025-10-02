@@ -247,3 +247,81 @@ This section probably won't be useful to you. It is needed to turn on and adjust
 **GridSize** is the size of the grid. Values from 5 to 50 are possible. The values must be multiples of 5, i.e. you can enter 5, 10, 15, 20, 25 and so on up to 50, but not 11, 12, 13, 14. I don't see any point in making the grid size larger than 50. The default value is 10. if you enter an invalid value, for example 12, then the grid will be 5. The grid sizes can be represented as a row or as a number. This parameter can be useful if you need to label the image more accurately. To view this parameter, you need to enable **enableGrid**.
 
 You can also turn on the grid when there is no picture. If there is an image, the grid layer will be above the image, but below the labeled areas.
+
+## Stylization
+
+As I wrote above, I was able to identify 5 topics for documents in total. All these topics were made for Russian documents, and they may not be suitable for you. Perhaps you will have a very specific design, and you will need to style my component for it. That's exactly what this section is about.
+
+I recommend that you come up with a theme name and add it to the "**theme**" parameter. For example, if you name your theme "castomTheme", you will need to redefine the styles for the "mark-up\_theme\_castomTheme" class. It is possible to wrap my component in some kind of block, set some kind of class for this block, and redefine styles for this class. For example, we have different styles on different pages, and in order not to specify the "**theme**" parameter for each component instance, it makes sense to do this for the entire block. You can do that too. Choose whichever is more convenient for you, but I would recommend the first option, with the "**theme**" option.
+
+To make it more convenient for you, I advise you to open [the settings page](https://neuro-tools-25.github.io/vue-labeling-image/settings "Settings page"), select an image, and try to change the settings for the "Styles for the image labeling block" block. I've moved the most frequently changed properties to CSS variables. There is a "Show styles for a bulleted area" button under my component. By clicking on it, you can view the CSS variables for styling my component, and copy them if everything suits you.
+
+If you look below, you can see that the styles for the "image labeling block" come first. This is the block itself, which will contain the image for labeling, and the labeled areas. When we start labeling the image, styles will be applied to the created labeled area, for the "area at the time of labeling the data". As a rule, these styles are slightly darker than the active labeled area. You can set any styles here, I did it this way. After you have finished labeling (by releasing the left mouse button), the area will become active, and styles for the hotspot will be applied. The area can be made active by simply clicking on it. This is the default behavior, it can be overridden, see the description of the parameters. If you make 4-5 bulleted areas, then one area will be active, and "common styles for bulleted areas" will be applied to the rest of the areas. I wrote the documentation based on this.
+
+### Stylization of the image labeling block
+
+In this section we are talking about the styling of the block in which the image will be located for labeling. How to style the labeling areas will be described below.
+
+**\--mu-bg** - is the background for the image labeling block.
+
+**\--mu-border** - border for the image labeling block.
+
+**\--mu-box-shadow** - box-shadow for the image labeling block.
+
+### Styles for the area at the time of labeling the data in the image
+
+Styles for the labeled area at the time of its creation (labeling). This is what the labeled area will look like. At the moment when we start labeling the document, as a rule, it will be slightly darker than the active labeled area. In order to see these styles, you first need to select an image, then click the left mouse button and swipe over the image without releasing the left mouse button. The **isMarkup** parameter must be set to true, and **isReadOnly** must be set to false, otherwise you will not be able to label the image.
+
+**\--mu-marking-rect-dragging-fill** - the fill color at the moment of labeling the image.
+
+**\--mu-marking-rect-dragging-stroke** - the color of the line at the time of labeling the image, we can say the color of the border at the time of labeling.
+
+**\--mu-marking-rect-dragging-fill-opacity** - transparency of the fill at the moment of labeling the image. As you might guess, if you set the value to 0, there will be no fill, only the outline of the marked area (border) will be visible.
+
+**\--mu-marking-rect-dragging-stroke-opacity** - transparency of the line at the moment of labeling the image. You can set the value to 0, then only the fill will be displayed for the marked area.
+
+### Styles for the active bulleted area
+
+You can view these styles after the labeling process is completed. The last created area will become active. Also, these styles will be applied to the area when we click on it. The **isReadOnly** parameter must be set to false, otherwise you will not see the styles for the hotspot, and you will not be able to mark up the areas. Also, the **isMarkup** parameter must be set to true, otherwise you will not be able to label the image.
+
+**\--mu-marking-rect-active-fill** - filling the active marked area.
+
+**\--mu-marking-rect-active-stroke** is the color of the line of the active marked area, in another case border.
+
+**\--mu-marking-rect-active-fill-opacity** - transparency of the fill of the active marked area.
+
+**\--mu-marking-rect-active-stroke-opacity** - transparency of the line of the active marked area.
+
+### Common styles for labeled areas
+
+This block will contain common styles for the labeled areas. If the marked area is not active and you have already created it, then you can view the styles for it here too. From everything I've done, I can tell that the labeled areas differ only in the fill color, the color of the lines (border), and the transparency of the lines and fill. Things like the curves, the thickness of the lines, were the same everywhere.
+
+**\--mu-marking-rect-fill** - filling of the marked areas, this parameter is redefined for the hotspot and the area at the time of labeling.
+
+**\--mu-marking-rect-stroke** - the color of the lines of the marked areas, this parameter is redefined for the hotspot and the area at the time of marking.
+
+**\--mu-marking-rect-stroke-width** is the line thickness of the marked areas. This parameter applies to both the active area and the area at the time of marking. It will be kind of strange if the active area has a line thickness greater than that of normal areas.
+
+**\--mu-marking-rect-stroke-opacity** - transparency of the lines of the marked areas, this parameter is redefined for the hotspot and the area at the time of marking.
+
+**\--mu-marking-rect-rx** - X-axis border-radius or X-axis rounding, this parameter applies to both the hotspot and the area at the time of marking.
+
+**\--mu-marking-rect-ry** - border-radius on the Y axis or rounding on the Y axis, this parameter applies to both the hotspot and the area at the time of marking.
+
+In most cases, **\--mu-marking-rect-rx** and **\--mu-marking-rect-ry** will be the same, if you don't need rounding, then set the values to 0.
+
+### Styles for the shadow of the marked areas
+
+In this block, I only set the line color for the shadow, its thickness and transparency. When styling, keep in mind that the color for the shadow should match the color of the line of the marked area. In most cases, the shadow should be turned on only when you don't know exactly which documents the user will upload. For example, if you upload a document with a predominance of red, for example, a passport in Russia, then the active marked area will not be very noticeable. The shadow is needed in order to highlight the marked area on the document, so that it does not merge with it.
+
+**\--mu-marking-rect-shadow-stroke** - the color of the line for the shadow, in most cases it will be black, but you can set any value that suits you.
+
+**\--mu-marking-rect-shadow-stroke-width** is the line thickness for the shadow. You can write any value here, but it must be greater than "--mu-marking-rect-stroke-width", otherwise you won't see shadows.
+
+**\--mu-marking-rect-shadow-stroke-opacity** - transparency of the line for the shadow.
+
+### Grid Styles
+
+You can set the grid color here. To see these styles, the "**enableMarking**" parameter must be set to true.
+
+**\--mu-grid-color** is the color of the grid line.
