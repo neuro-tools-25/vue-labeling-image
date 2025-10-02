@@ -56,3 +56,36 @@ const areas = [
   }
 ];
 ```
+
+Here it is necessary to stipulate that there is no single API for neurons. When I first wrote a UI for a neuron, I needed to specify the coordinates of the start and end points (**X1, Y1, X2, Y2**). After, for one Research Institute it was necessary to create a UI that would accept and return the start and end points in the following form: **\[\[X1, Y1\], \[X2, Y2\]\]**. This is an array that contains the coordinates of the starting and ending points, the first array is the starting point, the second array is the ending point. On outsourcing, I wrote a UI that would accept and return coordinates in the following form:
+
+```javascript
+{
+  name_area: [
+    {
+      x: "10",
+      y: "10"
+    },
+    {
+      x: "10",
+      y: "40"
+    },
+    {
+      x: "40",
+      y: "40"
+    },
+    {
+      x: "40",
+      y: "10"
+    }
+  ]
+}
+```
+
+So that you don't have to rack your brains, this is an array with 4 objects, these are points. They go from the top left, to the bottom left point, then to the bottom right point, and the last point is the top right. As you can guess, it turns out to be a rectangle, I needed to build it. I needed to return the marked areas in these formats, depending on API. The last thing I did was for the neural network to need a starting point (X, Y coordinates) and the width and height of the marked area.
+
+To sum it up briefly, we can highlight that for all neurons, the coordinates of the points must be presented in relative values (percentages). Look, the pictures can be different, it is possible to upload a picture in 2000px and in 300px. If the area where you need to insert a picture is 600px, then on a picture of 2000px with exact values (px), the neural network will not be able to understand where to look for the text, it will shrink to 600px. You will also need to send the dimensions of the area where the picture is inserted. These are unnecessary calculations. It is much easier to send data in relative values, and the neural network will mark this data as needed.
+
+In my case **id** is the id of the marked area, by default, during marking, it is the current date in milliseconds, but if back returns something else, then it's okay. The main thing is that the ids of the marked areas are unique. **X** and **y** are the coordinates of the starting point, **width** and **height** are the width and height of the marked area.
+
+As you might guess, I took the last thing I did as a basis. In my opinion, this API is more understandable to a person. In the future, I plan to make my component adapt to any API, but for now, my component will build marked areas like this.
