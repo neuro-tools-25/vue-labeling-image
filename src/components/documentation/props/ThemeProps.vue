@@ -43,7 +43,7 @@
       </h3>
 
       <p>
-        <strong>Theme</strong> - тема для маркированных областей. Если мы посмотрим на другие UI для <ocr-def lang="eng" />, то можно обратить внимание, что маркированные области как правило имеют синий цвет, а активная маркированная область имеет как правило зелёный цвет. Это не для всех документов подходит. Как правило, в мире большая часть документов имеет зеленый, или красный цвет. Меньше докуметов имеют синий цвет, но они есть, к примеру <blue-card-def lang="eng" />. Вполне естественно, что для разных документов и тема должна быть разная. К примеру, у нас в России <snils-def lang="eng" /> зеленый, если активная область на нем будет зеленой, то она просто будет не очень заметна на данном документе. Логично, что на красном документе, маркированные области красными быть не могут, иначе они будут сливаться. На основании своего опыта, я выделил 5 разных тем:
+        <strong>Theme</strong> is a theme for labeled areas. If we look at other UIs for <ocr-def lang="eng" />, we can see that the labeled areas are usually blue, and the active labeled area is usually green. This is not suitable for all documents. As a rule, most of the documents in the world are green or red. Fewer documents have a blue color, but they do exist, for example <blue-card-def lang="eng" />. It is quite natural that the topic should be different for different documents. For example, in Russia <snils-def lang="eng" /> is green, if the hotspot on it is green, then it simply will not be very noticeable on this document. It is logical that on a red document, the labeled areas cannot be red, otherwise they will merge. Based on my experience, I have identified 5 different topics:
       </p>
 
       <ul>

@@ -20,7 +20,7 @@
 
     <template v-if="props.isEng">
       <h3>
-        Enable/disable shadow for marked areas
+        Setting up suggestions for bulleted areas
       </h3>
 
       <p>
