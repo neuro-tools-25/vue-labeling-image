@@ -36,3 +36,23 @@ If you have no problems with the Internet, then you will install the component. 
   const areas = ref([]);
 </script>
 ```
+
+If you plan to use my component on more than one page, it makes sense to include CSS globally, in main.js, or App.vue, here choose as you find more convenient. 
+
+As you can see, 2 lines are important, **image-src="file"** and **v-model="areas"**.
+
+**Image-src** - input parameter to which you need to pass the image to be marked. In the vast majority of cases, this will be a binary file, but it is possible to pass both the path to the image and the image itself in the base64 format. It is quite natural that without this parameter you will not be able to mark anything. You will most likely send the image itself to the server via **FormData**. I would recommend you to look at [example code](https://github.com/neuro-tools-25/vue-labeling-image/blob/main/src/components/examples/MainExample.vue "Example"). If you are a beginner frontend developer, I would recommend you to look at the code of how [styled file input](https://github.com/neuro-tools-25/vue-labeling-image/blob/main/src/UI/UIFile.vue "Example") works.
+
+**Areas** is an array of objects. It contains the parameters of the marked areas and must contain the following fields:
+
+```javascript
+const areas = [
+  {
+    id: 1759337013345,
+    x: 15,
+    y: 15,
+    width: 30,
+    height: 30,
+  }
+];
+```
