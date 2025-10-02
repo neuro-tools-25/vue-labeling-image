@@ -32,7 +32,7 @@ If you have no problems with the Internet, then you will install the component. 
   import { ref } from 'vue'; 
 
   import LabelingImage from 'vue-labeling-image';
-  import 'vue-labeling-image/styles.css';
+  import 'vue-labeling-image/lib/styles.css';
 
   const file = ref(null);
   const areas = ref([]);
@@ -117,7 +117,7 @@ You probably won't need this section, but it's worth mentioning. Below I'll prov
   import { ref } from 'vue'; 
 
   import LabelingImage from 'vue-labeling-image';
-  import 'vue-labeling-image/styles.css';
+  import 'vue-labeling-image/lib/styles.css';
 
   const file = ref(null);
   const areas = ref([]);

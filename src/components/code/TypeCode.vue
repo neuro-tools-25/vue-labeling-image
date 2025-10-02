@@ -44,7 +44,7 @@
     </ui-code-row>
     <ui-code-row pl2>
       <ui-code-import>import</ui-code-import> 
-      '<ui-code-text>vue-labeling-image/styles.css</ui-code-text>';
+      '<ui-code-text>vue-labeling-image/lib/styles.css</ui-code-text>';
     </ui-code-row>
 
     <ui-code-row />
@@ -83,7 +83,7 @@ ${'<script setup>'}
   import { ref } from 'vue';
  
   import LabelingImage from 'vue-labeling-image';
-  import 'vue-labeling-image/styles.css';
+  import 'vue-labeling-image/lib/styles.css';
 
   const file = ref(null);
   const areas = ref([]);

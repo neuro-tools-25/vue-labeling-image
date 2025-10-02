@@ -32,7 +32,7 @@ npm install vue-labeling-image;
   import { ref } from 'vue'; 
 
   import LabelingImage from 'vue-labeling-image';
-  import 'vue-labeling-image/styles.css';
+  import 'vue-labeling-image/lib/styles.css';
 
   const file = ref(null);
   const areas = ref([]);
@@ -117,7 +117,7 @@ Eсли вы планируете использовать мой компоне
   import { ref } from 'vue'; 
 
   import LabelingImage from 'vue-labeling-image';
-  import 'vue-labeling-image/styles.css';
+  import 'vue-labeling-image/lib/styles.css';
 
   const file = ref(null);
   const areas = ref([]);
