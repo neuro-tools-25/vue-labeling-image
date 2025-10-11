@@ -19,6 +19,8 @@
       >
 
       <svg class="mark-up__svg">
+        <slot name="first"></slot>
+
         <template
           v-for = "item in areas"
           :key="item.id"
@@ -82,6 +84,8 @@
           @move-top="cRect($event, activeArea, 'resize-top')"
           @move-bottom="cRect($event, activeArea, 'resize-bottom')"
         />
+
+        <slot name="last"></slot>
       </svg>
     </div>
   </div>

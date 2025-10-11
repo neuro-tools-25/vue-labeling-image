@@ -49,6 +49,22 @@
         :is-eng="isEng"
       />
     </div>
+
+    <div class="examples-page__group">
+      <open-header
+        type-element="h2"
+        :is-active="isSlots"
+        :is-inline="true"
+        @click="isSlots = !isSlots"
+      >
+        {{ slotsText }}
+      </open-header>
+
+      <slots-example
+        v-if="isSlots"
+        :is-eng="isEng"
+      />
+    </div>
   </div>
 </template>
 
@@ -61,10 +77,12 @@
   import StaticAreas from '@/components/examples/StaticAreas.vue';
   import MainExample from '@/components/examples/MainExample.vue';
   import MethodsExample from '@/components/examples/MethodsExample.vue';
+  import SlotsExample from '@/components/examples/SlotsExample.vue';
 
   const isTypeExample = ref(true);
   const isStaticArea = ref(false);
   const isMethods = ref(false);
+  const isSlots = ref(false);
 
   const { isEng } = inject('lang');
 
@@ -72,7 +90,8 @@
     headExamples,
     typeExample,
     staticAreasText,
-    methodsText
+    methodsText,
+    slotsText
   } = useExamples(isEng);
 </script>
 

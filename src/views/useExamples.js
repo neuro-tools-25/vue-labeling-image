@@ -29,11 +29,19 @@ const useExamples = (isEng) => {
     return text;
   });
 
+  const slotsText = computed(() => {
+    let text='Слоты';
+    if (isEng.value) text='Slots';
+
+    return text;
+  });
+
   return {
     headExamples,
     typeExample,
     staticAreasText,
-    methodsText
+    methodsText,
+    slotsText,
   }
 }
 
