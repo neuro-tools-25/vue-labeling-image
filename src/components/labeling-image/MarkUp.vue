@@ -467,7 +467,7 @@
 
   const changeActiveArea = (id) => activeArea.value = areas.value.find((el) => el.id === id);
 
-  watch(activeId, changeActiveArea);
+  watch(activeId, changeActiveArea, { immediate: true });
 </script>
 
 <style lang="scss">

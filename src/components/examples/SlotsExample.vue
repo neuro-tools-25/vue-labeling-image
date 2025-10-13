@@ -2,27 +2,41 @@
   <card-item
     url="src/components/examples/StaticAreas.vue"
     :is-eng="props.isEng"
+    class="theme-slots"
   >
     <template #markup>
       <labeling-image
         :image-src="imageSrc"
         v-model="areas"
+        v-model:active-id="activeId"
+        :is-markup="false"
         :is-resize-area="false"
         :is-dragging-area="false"
         theme="red"
       >
-        <template #last>
-          <g
-            
+        <template #first>
+          <text
+            v-for="{ x, y, id, title } in hints"
+            :key="id"
+            :x="`${x}%`"
+            :y="`${y}%`"
+            :class="[ activeId === id ? classTextActive : '' ]"
+            @mousedown.stop="changeActiveId(id)"
+            @touchstart.stop="changeActiveId(id)"
           >
+            {{ title }}
+          </text>
+        </template>
+
+        <template #last>
           <image
+            :href="logoStud"
             width="80"
             height="40"
-            x="0"
-            y="0"
-            :href="logoStud"
+            x="100%"
+            y="10"
+            style="transform: translateX(-85px)"
           />
-          </g>
         </template>
       </labeling-image>
 
@@ -44,6 +58,8 @@
         :height="item.height"
         :name="item.name"
         :is-eng="props.isEng"
+        :id="item.id"
+        :active-id="activeId"
         read-only
       />
     </template>
@@ -139,8 +155,75 @@
 
     return text;
   });
+
+  const activeId = ref(1759337197573);
+  const changeActiveId = (id) => activeId.value = id;
+
+  const classTextActive = 'theme-slots_text-active';
+
+  const hints = [
+    {
+      x: 23,
+      y: 38,
+      title: 'Photo',
+      id: 1759337197573,
+    },
+    {
+      x: 54,
+      y: 9,
+      title: 'Last name',
+      id: 1759337222917,
+    },
+    {
+      x: 51,
+      y: 26,
+      title: 'First name',
+      id: 1759337204073,
+    },
+    {
+      x: 42,
+      y: 44,
+      title: 'Surname',
+      id: 1759337232429,
+    },
+    {
+      x: 71,
+      y: 47,
+      title: 'Date of birth',
+      id: 1759337254262,
+    },
+    {
+      x: 50,
+      y: 71,
+      title: 'Birthplace',
+      id: 1759337248220,
+    },
+    {
+      x: 38.5,
+      y: 62,
+      title: 'Gender',
+      id: 1759337240377,
+    },
+    {
+      x: 89,
+      y: 88,
+      title: 'Series',
+      id: 1759337260502,
+    }
+  ]
 </script>
 
-<style lang="scss">
-  
+<style lang="scss" scoped>
+  .theme-slots {
+    text {
+      cursor: pointer;
+      fill: #006fff;
+      font-weight: bold;
+      user-select: none;
+    }
+
+    & &_text-active {
+      fill: var(--mu-marking-rect-active-fill);
+    }
+  }
 </style>

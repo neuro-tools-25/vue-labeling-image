@@ -79,10 +79,10 @@
   import MethodsExample from '@/components/examples/MethodsExample.vue';
   import SlotsExample from '@/components/examples/SlotsExample.vue';
 
-  const isTypeExample = ref(true);
+  const isTypeExample = ref(false);
   const isStaticArea = ref(false);
   const isMethods = ref(false);
-  const isSlots = ref(false);
+  const isSlots = ref(true);
 
   const { isEng } = inject('lang');
 
