@@ -3,6 +3,16 @@
     url="src/components/examples/MethodsExample.vue"
     :is-eng="isEng"
   >
+    <template #desc>
+      <p v-if="!props.isEng">
+        Данный пример показывает методы, которые есть у моего компонента. Это "@is-load-image", он показывает загрузилась ли картинка, или произошла какая-нибудь ошибка. Данный метода возвращает true/false. И "@get-sizes", он возвращает объект содержащий реальные размеры картинки, и размеры маркированной области. После того, как вами будет выбрана картинка, её реальные размеры и размеры маркированной области будут отображены под блоком маркирования картинок.
+      </p>
+
+      <p v-if="props.isEng">
+        This example shows the methods that my component has. This is "@is-load-image", it shows whether the image has loaded, or if some error has occurred. This method returns true/false. And "@get-sizes", it returns an object containing the actual dimensions of the image and the dimensions of the labeled area. After you select an image, its actual dimensions and the dimensions of the labeled area will be displayed under the image labeling block.
+      </p>
+    </template>
+
     <template #markup>
       <labeling-image
         :image-src="file"
@@ -133,9 +143,9 @@
   const widthImgText = computed(() => {
     const isNotNull = widthImg.value !== null;
 
-    let text = `Ширина картинки для маркирования - ${isNotNull ? widthImg.value + 'px' : 'не определена'}.`;
+    let text = `Ширина области для маркирования - ${isNotNull ? widthImg.value + 'px' : 'не определена'}.`;
 
-    if (isEng.value) text = `The width of images for marking is ${isNotNull ? widthImg.value + 'px' : 'not defined'}.`;
+    if (isEng.value) text = `Width of the marking area is ${isNotNull ? widthImg.value + 'px' : 'not defined'}.`;
 
     return text;
   });
@@ -143,9 +153,9 @@
   const heightImgText = computed(() => {
     const isNotNull = heightImg.value !== null;
 
-    let text = `Высота картинки для маркирования - ${isNotNull ? heightImg.value + 'px' : 'не определена'}.`;
+    let text = `Высота области для маркирования - ${isNotNull ? heightImg.value + 'px' : 'не определена'}.`;
 
-    if (isEng.value) text = `The height of images for marking is ${isNotNull ? heightImg.value + 'px' : 'not defined'}.`;
+    if (isEng.value) text = `Height of the marking area is ${isNotNull ? heightImg.value + 'px' : 'not defined'}.`;
 
     return text;
   });

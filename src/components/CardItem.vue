@@ -4,6 +4,13 @@
     class="card"
   >
     <div
+      v-if="slots.desc"
+      class="card__desc"
+    >
+      <slot name="desc"></slot>
+    </div>
+
+    <div
       v-if="props.url"
       class="card__link"
     >
@@ -27,7 +34,9 @@
 </template>
 
 <script setup>
-  import { computed } from 'vue';
+  import { computed, useSlots } from 'vue';
+
+  const slots = useSlots();
 
   const props = defineProps(['url', 'isEng']);
 
@@ -44,6 +53,16 @@
   @use '@/assets/_services' as services;
 
   .card {
+    &__desc {
+      p {
+        line-height: 1.5;
+
+        &:first-of-type {
+          margin-top: 0;
+        }
+      }
+    }
+
     &__markup,
     &__form {
       width: 100%;

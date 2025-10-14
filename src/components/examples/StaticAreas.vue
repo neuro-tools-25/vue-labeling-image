@@ -3,6 +3,16 @@
     url="src/components/examples/StaticAreas.vue"
     :is-eng="props.isEng"
   >
+    <template #desc>
+      <p v-if="!props.isEng">
+        Данный пример нужен для того, чтобы показать маркированные области. В данном примере нельзя создавать новые маркированные области, нельзя растягивать маркированные области, и перемещать их по картинке. Когда это может быть необходимо? Вы маркировали картинку, отправили данные на сервер. Через какое-то время, зашли на страницу, и получили эти данные через AJAX запрос. Вам нужно просто узнать что вы маркировали в прошлый раз. Достигается это просто параметром "is-readonly".
+      </p>
+
+      <p v-if="props.isEng">
+        This example is needed to show the labeled areas. In this example, you cannot create new labeled areas, you cannot stretch the labeled areas, and you cannot move them around the image. When might this be necessary? You marked the image and sent the data to the server. After some time, we went to the page and received this data through an AJAX request. You just need to find out what you labeled last time. This is achieved simply by using the "is-readonly" parameter.
+      </p>
+    </template>
+
     <template #markup>
       <labeling-image
         :image-src="imageSrc"
