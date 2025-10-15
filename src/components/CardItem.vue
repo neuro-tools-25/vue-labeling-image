@@ -54,6 +54,14 @@
 
   .card {
     &__desc {
+      a {
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
       p {
         line-height: 1.5;
 
