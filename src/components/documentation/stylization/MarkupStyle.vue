@@ -1,5 +1,5 @@
 <template>
-  <div class="style-markup">
+  <div class="style-markup-block">
     <template v-if="!props.isEng">
       <h3>
         Стилизация блока маркирования картинок

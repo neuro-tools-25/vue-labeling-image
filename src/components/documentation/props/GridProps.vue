@@ -1,5 +1,5 @@
 <template>
-  <div class="props-theme">
+  <div class="props-grid">
     <template v-if="!props.isEng">
       <h3>
         Сетка для блока маркирования картинок

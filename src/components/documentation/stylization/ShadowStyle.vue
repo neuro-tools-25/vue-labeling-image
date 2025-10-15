@@ -1,5 +1,5 @@
 <template>
-  <div class="style-markup">
+  <div class="style-shadow">
     <template v-if="!props.isEng">
       <h3>
         Стили для тени маркированных областей

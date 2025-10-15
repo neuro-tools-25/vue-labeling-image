@@ -1,5 +1,5 @@
 <template>
-  <div class="style-markup">
+  <div class="style-labeling">
     <template v-if="!props.isEng">
       <h3>
         Стили для области в момент маркировки данных на картинке

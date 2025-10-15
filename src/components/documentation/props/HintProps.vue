@@ -1,5 +1,5 @@
 <template>
-  <div class="props-theme">
+  <div class="props-hint">
     <template v-if="!props.isEng">
       <h3>
         Настройка подсказок для маркированный областей

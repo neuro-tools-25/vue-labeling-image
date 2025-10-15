@@ -74,6 +74,8 @@
           :is-eng="false"
           :query="query"
         />
+
+        <!-- Слоты -->
       </template>
 
       <template v-if="isEng">
@@ -149,6 +151,8 @@
           :is-eng="true"
           :query="query"
         />
+
+        <!-- Слоты -->
       </template>
     </animation-lay>
   </div>

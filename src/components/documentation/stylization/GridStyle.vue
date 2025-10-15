@@ -1,5 +1,5 @@
 <template>
-  <div class="style-markup">
+  <div class="style-grid">
     <template v-if="!props.isEng">
       <h3>
         Стили сетки

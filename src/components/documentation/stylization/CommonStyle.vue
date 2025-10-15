@@ -1,5 +1,5 @@
 <template>
-  <div class="style-markup">
+  <div class="style-common">
     <template v-if="!props.isEng">
       <h3>
         Общие стили для маркированных областей
