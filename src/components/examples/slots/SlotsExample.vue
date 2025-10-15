@@ -1,15 +1,50 @@
 <template>
   <card-item
-    url="src/components/examples/StaticAreas.vue"
+    url="src/components/examples/slots/SlotsExample.vue"
     :is-eng="props.isEng"
     class="theme-slots"
   >
+    <template #desc>
+      <template v-if="!props.isEng">
+        <p>
+          Другой пример со слотами. В данном примере я делаю подсказки для маркированных областей, и вставляю логотип компании. Пример весьма условный, поэтому в качестве логотипа я взял логотип бэтмена. Маркированные области в отличие от прошлого примера можно создавать, но их нельзя растягивать и переносить по картинке. Пример условный, и всё это при желании можно включить. В моём компоненте есть 2 слота, "first" и "last". В слоте "first" я вывожу подсказки. В слот "last" я вставил логотип бэтмена. Смотрите как это всё устроено, слот "first", он самый первый, за ним идут маркированные области (области которые мы будем создавать, или те области которые нам нужно отобразить), за ним идёт активная область и область в момент маркирования картинки, а дальше будет находиться слот "last". Он будет последним и будет перекрывать все другие слои. Для маркирования документа я под капотом использую svg-ку, поэтому вставлять в данные слоты нужно те элементы, которые допустимы в svg. Я использкю "<ui-link 
+            href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/text"
+            title="Text SVG element">
+            {{'<'}}text{{'>'}}
+          </ui-link>" и "<ui-link 
+            href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/image"
+            title="Image SVG element">
+            {{'<'}}image{{'>'}}</ui-link>". Естественно, что и стилизуются эти элементы с небольшими отличиями, для задания цвета для элемента "<ui-link 
+              href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/text"
+              title="Text SVG element">
+              {{'<'}}text{{'>'}}
+            </ui-link>" нужно использовать "fill", а не "color". Попробуйте по кликать по подсказкам. Посмотрите как маркированные области будут становиться активными, так будет понятнее какая подсказка к какой маркированной области относится. Попробуйте маркировать область в районе логотипа, логотип будет её перекрывать.
+        </p>
+      </template>
+
+      <template v-if="props.isEng">
+        <p>
+          Another example is with slots. In this example, I make hints for the labeled areas, and insert the company logo. The example is very conditional, so I took the Batman logo as the logo. The labeled areas, unlike the previous example, can be created, but they cannot be stretched or moved around the image. The example is conditional, and all this can be included if desired. There are 2 slots in my component, "first" and "last". I display hints in the "first" slot. I inserted the Batman logo into the "last" slot. See how it all works, the "first" slot is the very first, followed by the labeled areas (the areas that we will create, or those areas that we need to display), followed by the active area and the area at the time of labeling the image, and then there will be the "last" slot. It will be the last one and will overlap all other layers. I use svg tags under the hood to mark the document, so I need to insert the elements that are allowed in svg into these slots. I use "<ui-link 
+            href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/text"
+            title="Text SVG element">
+            {{'<'}}text{{'>'}}
+          </ui-link>" and "<ui-link 
+            href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/image"
+            title="Image SVG element">
+            {{'<'}}image{{'>'}}</ui-link>". Naturally, these elements are styled with minor differences to set the color for the element "<ui-link 
+              href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/text"
+              title="Text SVG element">
+              {{'<'}}text{{'>'}}
+            </ui-link>" you need to use "fill", not "color". Try clicking on the prompts. See how the labeled areas will become active, so it will be clearer which hint belongs to which labeled area. Try marking the area in the area of the logo, the logo will overlap it.
+        </p>
+      </template>
+    </template>
+
     <template #markup>
       <labeling-image
         :image-src="imageSrc"
         v-model="areas"
         v-model:active-id="activeId"
-        :is-markup="false"
         :is-resize-area="false"
         :is-dragging-area="false"
         theme="red"
@@ -21,8 +56,8 @@
             :x="`${x}%`"
             :y="`${y}%`"
             :class="[ activeId === id ? classTextActive : '' ]"
-            @mousedown.stop="changeActiveId(id)"
-            @touchstart.stop="changeActiveId(id)"
+            @mousedown="changeActiveId(id)"
+            @touchstart="changeActiveId(id)"
           >
             {{ title }}
           </text>
@@ -35,7 +70,7 @@
             height="40"
             x="100%"
             y="10"
-            style="transform: translateX(-85px)"
+            style="transform: translateX(-85px); cursor: default"
           />
         </template>
       </labeling-image>
@@ -59,7 +94,6 @@
         :name="item.name"
         :is-eng="props.isEng"
         :id="item.id"
-        :active-id="activeId"
         read-only
       />
     </template>

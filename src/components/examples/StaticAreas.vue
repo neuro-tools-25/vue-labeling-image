@@ -9,7 +9,7 @@
       </p>
 
       <p v-if="props.isEng">
-        This example is needed to show the labeled areas. In this example, you cannot create new labeled areas, you cannot stretch the labeled areas, and you cannot move them around the image. When might this be necessary? You marked the image and sent the data to the server. After some time, we went to the page and received this data through an AJAX request. You just need to find out what you labeled last time. This is achieved simply by using the "is-readonly" parameter.
+        This example is needed only to show the labeled areas. In this example, you cannot create new labeled areas, you cannot stretch the labeled areas, and you cannot move them around the image. When might this be necessary? You marked the image and sent the data to the server. After some time, we went to the page and received this data through an AJAX request. You just need to find out what you labeled last time. This is achieved simply by using the "is-readonly" parameter.
       </p>
     </template>
 

@@ -36,12 +36,20 @@ const useExamples = (isEng) => {
     return text;
   });
 
+  const slotsExampleText = computed(() => {
+    let text='Слоты (другой пример с подсказками)';
+    if (isEng.value) text='Slots (another example with hints)';
+
+    return text;
+  });
+
   return {
     headExamples,
     typeExample,
     staticAreasText,
     methodsText,
     slotsHintText,
+    slotsExampleText
   }
 }
 

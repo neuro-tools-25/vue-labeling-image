@@ -19,7 +19,17 @@
       >
 
       <svg class="mark-up__svg">
-        <slot name="first"></slot>
+        <g
+          v-if="slots.first"
+          @mousedown.stop
+          @mousemove.stop
+          @mouseup.stop
+          @touchstart.stop
+          @touchmove.stop
+          @touchend.stop
+        >
+          <slot name="first"></slot>
+        </g>
 
         <template
           v-for = "item in areas"
@@ -85,7 +95,17 @@
           @move-bottom="cRect($event, activeArea, 'resize-bottom')"
         />
 
-        <slot name="last"></slot>
+        <g
+          v-if="slots.last"
+          @mousedown.stop
+          @mousemove.stop
+          @mouseup.stop
+          @touchstart.stop
+          @touchmove.stop
+          @touchend.stop
+        >
+          <slot name="last"></slot>
+        </g>
       </svg>
     </div>
   </div>
@@ -96,6 +116,7 @@
     ref,
     watch,
     computed,
+    useSlots
   } from 'vue';
 
   import {
@@ -122,6 +143,8 @@
 
   const changeIsLoadImage = (e) => emits('is-load-image', e);
   const getSizes = (sizeObj) => emits('get-sizes', sizeObj);
+
+  const slots = useSlots();
 
   const props = defineProps({
     imageSrc: {

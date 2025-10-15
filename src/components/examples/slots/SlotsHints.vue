@@ -1,20 +1,20 @@
 <template>
   <card-item
-    url="src/components/examples/StaticAreas.vue"
+    url="src/components/examples/slots/SlotsHints.vue"
     :is-eng="props.isEng"
     class="theme-slots"
   >
     <template #desc>
       <template v-if="!props.isEng">
         <p>
-          Пример со слотами. В данном примере я делаю подсказки для маркированных областей, и вставляю логотип компании. Пример весьма условный, поэтому в качестве логотипа я взял логотип бэтмена. Маркированные области нельзя создавать. Те маркированные области, которые есть, нельзя растягивать и переносить в пределах картинки. В моём компоненте есть 2 слота, "first" и "last". В слоте "first" я вывожу подсказки. В слот "last" я вставил логотип бэтмена. Смотрите как это всё устроено, слот "first", он самый первый, за ним идут маркированные области (области которые мы будем создавать, или те области которые нам нужно отобразить), за ним идёт активная область и область в момент маркирования картинки, а дальше будет находиться слот "last". Он будет последним и будет перекрывать все другие слои. Для маркирования документа я под копотом использую svg-ку, поэтому вставлять в данные слоты нужно те элементы, которые допустимы в svg. Я использкю "<ui-link 
+          Пример со слотами. В данном примере я делаю подсказки для маркированных областей, и вставляю логотип компании. Пример весьма условный, поэтому в качестве логотипа я взял логотип бэтмена. Маркированные области нельзя создавать. Те маркированные области, которые есть, нельзя растягивать и переносить в пределах картинки. В моём компоненте есть 2 слота, "first" и "last". В слоте "first" я вывожу подсказки. В слот "last" я вставил логотип бэтмена. Смотрите как это всё устроено, слот "first", он самый первый, за ним идут маркированные области (области которые мы будем создавать, или те области которые нам нужно отобразить), за ним идёт активная область и область в момент маркирования картинки, а дальше будет находиться слот "last". Он будет последним и будет перекрывать все другие слои. Для маркирования документа я под капотом использую svg-ку, поэтому вставлять в данные слоты нужно те элементы, которые допустимы в svg. Я использкю "<ui-link 
             href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/text"
             title="Text SVG element">
             {{'<'}}text{{'>'}}
           </ui-link>" и "<ui-link 
             href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/image"
             title="Image SVG element">
-            {{'<'}}image{{'>'}}</ui-link>. Естественно, что и стилизуются эти элементы с небольшими отличиями, для задания цвета для элемента "<ui-link 
+            {{'<'}}image{{'>'}}</ui-link>". Естественно, что и стилизуются эти элементы с небольшими отличиями, для задания цвета для элемента "<ui-link 
               href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/text"
               title="Text SVG element">
               {{'<'}}text{{'>'}}
@@ -24,14 +24,14 @@
 
       <template v-if="props.isEng">
         <p>
-          An example with slots. In this example, I make hints for the labeled areas, and insert the company logo. The example is very conditional, so I took the Batman logo as the logo. Labeled areas cannot be created. Those labeled areas that exist cannot be stretched or moved within the image. There are 2 slots in my component, "first" and "last". I display hints in the "first" slot. I inserted the Batman logo into the "last" slot. See how it all works, the "first" slot is the very first, followed by the labeled areas (the areas that we will create, or those areas that we need to display), followed by the active area and the area at the time of labeling the image, and then there will be the "last" slot. It will be the last one and will overlap all other layers. I use svg tags under the soot, so I need to insert those elements that are allowed in svg into these slots. I use "<ui-link 
+          An example with slots. In this example, I make hints for the labeled areas, and insert the company logo. The example is very conditional, so I took the Batman logo as the logo. Labeled areas cannot be created. Those labeled areas that exist cannot be stretched or moved within the image. There are 2 slots in my component, "first" and "last". I display hints in the "first" slot. I inserted the Batman logo into the "last" slot. See how it all works, the "first" slot is the very first, followed by the labeled areas (the areas that we will create, or those areas that we need to display), followed by the active area and the area at the time of labeling the image, and then there will be the "last" slot. It will be the last one and will overlap all other layers. I use svg tags under the hood to mark the document, so I need to insert the elements that are allowed in svg into these slots. I use "<ui-link 
             href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/text"
             title="Text SVG element">
             {{'<'}}text{{'>'}}
           </ui-link>" and "<ui-link 
             href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/image"
             title="Image SVG element">
-            {{'<'}}image{{'>'}}</ui-link>. Naturally, these elements are styled with minor differences to set the color for the element "<ui-link 
+            {{'<'}}image{{'>'}}</ui-link>". Naturally, these elements are styled with minor differences to set the color for the element "<ui-link 
               href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/text"
               title="Text SVG element">
               {{'<'}}text{{'>'}}
