@@ -70,7 +70,6 @@
             height="40"
             x="100%"
             y="10"
-            style="transform: translateX(-85px); cursor: default"
           />
         </template>
       </labeling-image>
@@ -86,6 +85,7 @@
 
       <form-area
         v-for="item in areas"
+        v-once
         :key="item.id"
         :x="item.x"
         :y="item.y"
@@ -249,6 +249,11 @@
 
 <style lang="scss" scoped>
   .theme-slots {
+    image {
+      cursor: default;
+      transform: translateX(-85px); 
+    }
+
     text {
       cursor: pointer;
       fill: #006fff;

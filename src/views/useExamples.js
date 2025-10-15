@@ -30,15 +30,22 @@ const useExamples = (isEng) => {
   });
 
   const slotsHintText = computed(() => {
-    let text='Слоты (пример с подсказками)';
-    if (isEng.value) text='Slots (example with hints)';
+    let text='Слоты (пример с подсказками, маркирование отменено)';
+    if (isEng.value) text='Slots (example with hints, labeling is canceled)';
 
     return text;
   });
 
-  const slotsExampleText = computed(() => {
-    let text='Слоты (другой пример с подсказками)';
-    if (isEng.value) text='Slots (another example with hints)';
+  const slotsHintMarkedText = computed(() => {
+    let text='Слоты (пример с подсказками, маркирование разрешено)';
+    if (isEng.value) text='Slots (example with hints, labeling is allowed)';
+
+    return text;
+  });
+
+  const slotsHintExText = computed(() => {
+    let text='Слоты';
+    if (isEng.value) text='Slots';
 
     return text;
   });
@@ -49,7 +56,8 @@ const useExamples = (isEng) => {
     staticAreasText,
     methodsText,
     slotsHintText,
-    slotsExampleText
+    slotsHintMarkedText,
+    slotsHintExText
   }
 }
 

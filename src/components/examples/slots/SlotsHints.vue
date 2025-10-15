@@ -65,7 +65,6 @@
             height="40"
             x="100%"
             y="10"
-            style="transform: translateX(-85px)"
           />
         </template>
       </labeling-image>
@@ -239,6 +238,11 @@
 
 <style lang="scss" scoped>
   .theme-slots {
+    image {
+      cursor: default;
+      transform: translateX(-85px);
+    }
+
     text {
       fill: #006fff;
       font-weight: bold;
