@@ -7,13 +7,35 @@
     <template #desc>
       <template v-if="!props.isEng">
         <p>
-          
+          Ещё один пример со слотами. Маркированные области можно создавать, но нельзя переносить по картинке и растягивать. В этом примере я снова делаю подсказки для маркированных областей, но на этот раз они будут появляться по клику по маркированной области, так вы их не увидите. В моём компоненте есть 2 слота, "first" и "last". На этот раз я вывожу подсказки в слоте "last", они будут перекрывать все остальные элементы, а картинку я вывожу в слоте "first", она будет находиться под всеми элементами. Пример условный, поэтому в качестве логотипа я взял логотип Бэтмена. Если вы сейчас попробуете маркировать картинку, но маркированная область должна будет перекрыть картинку. Для маркирования документа я под капотом использую svg-ку, поэтому вставлять в данные слоты нужно те элементы, которые допустимы в svg. Я использкю "<ui-link 
+            href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/text"
+            title="Text SVG element">
+            {{'<'}}text{{'>'}}
+          </ui-link>" и "<ui-link 
+            href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/image"
+            title="Image SVG element">
+            {{'<'}}image{{'>'}}</ui-link>". Естественно, что и стилизуются эти элементы с небольшими отличиями, для задания цвета для элемента "<ui-link 
+              href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/text"
+              title="Text SVG element">
+              {{'<'}}text{{'>'}}
+            </ui-link>" нужно использовать "fill", а не "color".
         </p>
       </template>
 
       <template v-if="props.isEng">
         <p>
-          
+          Another example is with slots. You can create labeled areas, but you can't move them around the image or stretch them. In this example, I'm making suggestions for the marked areas again, but this time they will appear when you click on the marked area, so you won't see them. There are 2 slots in my component, "first" and "last". This time I display the hints in the "last" slot, they will overlap all other elements, and I display the picture in the "first" slot, it will be located under all the elements. The example is conditional, so I took the Batman logo as the logo. If you try to label the image now, but the labeled area should cover the image. I use svg tags under the hood to mark the document, so I need to insert the elements that are allowed in svg into these slots. I use "<ui-link 
+            href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/text"
+            title="Text SVG element">
+            {{'<'}}text{{'>'}}
+          </ui-link>" and "<ui-link 
+            href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/image"
+            title="Image SVG element">
+            {{'<'}}image{{'>'}}</ui-link>". Naturally, these elements are styled with minor differences to set the color for the element "<ui-link 
+              href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/text"
+              title="Text SVG element">
+              {{'<'}}text{{'>'}}
+            </ui-link>" you need to use "fill", not "color".
         </p>
       </template>
     </template>

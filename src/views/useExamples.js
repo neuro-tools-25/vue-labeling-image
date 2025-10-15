@@ -44,8 +44,8 @@ const useExamples = (isEng) => {
   });
 
   const slotsHintExText = computed(() => {
-    let text='Слоты';
-    if (isEng.value) text='Slots';
+    let text='Слоты (ещё один пример с подсказками)';
+    if (isEng.value) text='Slots (another example with hints)';
 
     return text;
   });

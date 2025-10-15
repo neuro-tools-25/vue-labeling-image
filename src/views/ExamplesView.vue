@@ -113,12 +113,12 @@
   import SlotsHintMarked from '@/components/examples/slots/SlotsHintMarked.vue';
   import SlotsHintEx from '@/components/examples/slots/SlotsHintEx.vue';
 
-  const isTypeExample = ref(false);
+  const isTypeExample = ref(true);
   const isStaticArea = ref(false);
   const isMethods = ref(false);
   const isSlotsHint = ref(false);
   const isSlotsMarked = ref(false);
-  const isSlotsHintEx = ref(true);
+  const isSlotsHintEx = ref(false);
 
   const { isEng } = inject('lang');
 
