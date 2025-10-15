@@ -1,6 +1,6 @@
 <template>
   <card-item
-    url="src/components/examples/slots/SlotsExample.vue"
+    url="src/components/examples/slots/SlotsHintMarked.vue"
     :is-eng="props.isEng"
     class="theme-slots"
   >

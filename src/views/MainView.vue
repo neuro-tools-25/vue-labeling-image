@@ -76,6 +76,10 @@
         />
 
         <!-- Слоты -->
+        <slots-doc
+          :is-eng="false"
+          :query="query"
+        />
       </template>
 
       <template v-if="isEng">
@@ -153,6 +157,10 @@
         />
 
         <!-- Слоты -->
+        <slots-doc
+          :is-eng="true"
+          :query="query"
+        />
       </template>
     </animation-lay>
   </div>
@@ -184,6 +192,9 @@
   import CommonStyle from '@/components/documentation/stylization/CommonStyle.vue';
   import ShadowStyle from '@/components/documentation/stylization/ShadowStyle.vue';
   import GridStyle from '@/components/documentation/stylization/GridStyle.vue';
+ 
+  // Слоты
+  import SlotsDoc from '@/components/documentation/slots/SlotsDoc.vue';
 
   const {
     isRus,
