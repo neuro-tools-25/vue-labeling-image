@@ -15,13 +15,15 @@
     'pl3',
     'pl4',
     'pl5',
+    'pl6',
   ]);
 
   const classComp = computed(() => ({
     'code__row_pl2': props.pl2 !== undefined,
     'code__row_pl3': props.pl3 !== undefined,
     'code__row_pl4': props.pl4 !== undefined,
-    'code__row_pl5': props.pl4 !== undefined,
+    'code__row_pl5': props.pl5 !== undefined,
+    'code__row_pl6': props.pl6 !== undefined,
   }));
 </script>
 
@@ -31,6 +33,17 @@
   .code__row {
     counter-increment: count;
     white-space: nowrap;
+
+    .code__row_big & {
+      &::before {
+        width: 30px;
+
+        @media screen and (min-width: services.$mobileWidthSmall) {
+          width: 42px;
+        }
+      }
+      
+    }
 
     &::before {
       width: 24px;
@@ -70,7 +83,13 @@
 
     &_pl5 {
       &::before {
-        margin-right: 55px;
+        margin-right: 65px;
+      }
+    }
+
+    &_pl6 {
+      &::before {
+        margin-right: 85px;
       }
     }
   }

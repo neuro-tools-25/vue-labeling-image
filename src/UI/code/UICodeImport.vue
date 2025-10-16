@@ -1,7 +1,5 @@
 <template>
-  <span class="code__import">
-    <slot></slot>
-  </span>
+  <span class="code__import"><slot></slot></span>
 </template>
 
 <script setup>

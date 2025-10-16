@@ -19,7 +19,31 @@
       </p>
 
       <p>
-        Я реализовал 2 слота, "first" и "last". Слот "first" будет самым первым слоем, всё, что вы туда добавите будет находиться под всеми остальными элементами. Он будет находиться под маркированными областями, под активной маркированной областью, и под областью в момент маркирования картинки. Слот "last" будет находиться над всеми остальными элементами, он будет их перекрывать. Скорее всего вы будете пользоваться слотом "last", туда можно будет добавить логотип компании, элементы управления маркированием, если это потребуется.
+        Я реализовал 2 слота, "first" и "last". Слот "first" будет самым первым слоем, всё, что вы туда добавите будет находиться под всеми остальными элементами. Он будет находиться под маркированными областями, под активной маркированной областью, и под областью в момент маркирования картинки. Слот "last" будет находиться над всеми остальными элементами, он будет их перекрывать. Скорее всего вы будете пользоваться слотом "last", туда можно будет добавить логотип компании, элементы управления маркированием картинки, если это потребуется.
+      </p>
+
+      <p>
+        Пример ниже весьма условный, если вы хотите более детально разобраться в том, как работать со слотами откройте <ui-link
+          type="site"
+          href="examples"
+          title="Примеры"
+          :query="props.query"
+        >страницу примеров</ui-link>, и посмотрите все примеры со слотами, там есть ссылка на код примеров. Делается это следующим способом:
+      </p>
+
+      <slots-code />
+
+      <p>
+        Выше получился очень длинный пример. В общем если вы посмотрите страницу примеров, то я взял паспорт с Бендером, вставил туда маркированные области (areas). В слот "last" я добавил логотип Бэтмена. Так же я добавил массив с подсказками ("hints"), их я вывожу в слоте "first". Я думаю так будет наглядно.
+      </p>
+      
+      <p>
+        Элементы SVG стилизуются не много не так, как HTML элементы. К примеру, для того, чтобы изменить цвет текста, используется свойство "fill", а не "color". Различия не сильные, посмотрите другие примеры со <ui-link
+          type="site"
+          href="examples"
+          title="Примеры"
+          :query="props.query"
+        >слотами</ui-link>, я думаю всё станет понятнее.
       </p>
     </template>
 
@@ -43,13 +67,39 @@
       </p>
 
       <p>
-        I have implemented 2 slots, "first" and "last". The "first" slot will be the very first layer, everything you add there will be under all the other elements. It will be located under the labeled areas, under the active labeled area, and under the area at the time of labeling the image. The "last" slot will be above all other elements, it will overlap them. Most likely, you will use the "last" slot, where you can add the company's logo and labeling controls, if necessary.
+        I have implemented 2 slots, "first" and "last". The "first" slot will be the very first layer, everything you add there will be under all the other elements. It will be located under the labeled areas, under the active labeled area, and under the area at the time of labeling the image. The "last" slot will be above all other elements, it will overlap them. Most likely, you will use the "last" slot, where you can add the company's logo and image labeling controls, if necessary.
+      </p>
+
+      <p>
+        The example below is very conditional, if you want to understand in more detail how to work with slots, open <ui-link
+          type="site"
+          href="examples"
+          title="Examples"
+          :query="props.query"
+        >the examples page</ui-link>, and check out all the examples with slots, there is a link to the sample code. This is done in the following way:
+      </p>
+
+      <slots-code is-eng />
+
+      <p>
+        The above is a very long example. In general, if you look at the examples page, then I took a passport with a Bender, inserted the marked areas there. I added the Batman logo to the "last" slot. I also added an array with hints ("hints"), which I output in the "first" slot. I think it will be clear.
+      </p>
+      
+      <p>
+        SVG elements are styled not much differently than HTML elements. For example, in order to change the color of the text, the "fill" property is used, not "color". The differences are not strong, check out other examples with <ui-link
+          type="site"
+          href="examples"
+          title="Examples"
+          :query="props.query"
+        >slots</ui-link>, I think everything will become clearer.
       </p>
     </template>
   </div>
 </template>
 
 <script setup>
+  import SlotsCode from '@/components/code/SlotsCode.vue';
+
   const props = defineProps(['isEng', 'query']);
 </script>
 

@@ -1,7 +1,5 @@
 <template>
-  <span class="code__var">
-    <slot></slot>
-  </span>
+  <span class="code__var"><slot></slot></span>
 </template>
 
 <script setup>
