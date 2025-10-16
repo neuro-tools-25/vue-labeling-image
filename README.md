@@ -329,3 +329,189 @@ In this block, I only set the line color for the shadow, its thickness and trans
 You can set the grid color here. To see these styles, the "**enableMarking**" parameter must be set to true.
 
 **\--mu-grid-color** is the color of the grid line.
+
+## Slots
+
+The slots can be useful for inserting the company's logo into my component, hints to the marked areas during debugging, some pictures, labeling controls in the form of icons, or something similar. To get started, open [the examples page](https://neuro-tools-25.github.io/vue-labeling-image/examples "Examples"), and see the examples with slots. Everything should be quite simple here.
+
+My component under the hood uses SVG. If you look at yandex or google images, then the components for highlighting the area in the picture are made with ordinary divs. With this layout, you can select rectangular areas, but you will not be able to select arbitrary areas. I have plans to implement this, otherwise it won't be possible to do it through SVG.
+
+I have implemented 2 slots, "first" and "last". The "first" slot will be the very first layer, everything you add there will be under all the other elements. It will be located under the labeled areas, under the active labeled area, and under the area at the time of labeling the image. The "last" slot will be above all other elements, it will overlap them. Most likely, you will use the "last" slot, where you can add the company's logo and image labeling controls, if necessary.
+
+The example below is very conditional, if you want to understand in more detail how to work with slots, open [the examples page](https://neuro-tools-25.github.io/vue-labeling-image/examples "Examples"), and check out all the examples with slots, there is a link to the sample code. This is done in the following way:
+
+```vue
+<template>
+  <div class="theme-slots">
+    <labeling-image
+      :image-src="file"
+      v-model="areas"
+    >
+      <template #first >
+        <text
+          v-for="{ x, y, id, title } in hints"
+          :key="id"
+          :x="`${x}%`"
+          :y="`${y}%`"
+        >
+          {{ title }}
+        </text>
+      </template>
+
+      <template #last >
+        <image
+          :href="the path to the image or the picture in base64"
+          width="80"
+          height="40"
+          x="100%"
+          y="10"
+        />
+      </template>
+    </labeling-image>
+  </div>
+</template>
+
+<script setup>
+  import { ref } from 'vue';
+  import LabelingImage from '';
+  import 'vue-labeling-image/lib/styles.css';
+  
+  const file = ref(the path to the image or the picture in base64);
+  
+  const areas = ref([
+    {
+      id: 1759337197573,
+      name: "Photo",
+      width: 15.934959349593496,
+      height: 40.46242774566473,
+      x: 5.853658536585367,
+      y: 23.410404624277454,
+    },
+    {
+      id: 1759337204073,
+      name: "First name",
+      width: 25.853658536585368,
+      height: 8.38150289017341,
+      x: 50.40650406504065,
+      y: 28.901734104046245,
+    },
+    {
+      id: 1759337222917,
+      name: "Last name",
+      width: 20.48780487804878,
+      height: 7.225433526011561,
+      x: 53.98373983739837,
+      y: 10.982658959537572,
+    },
+    {
+      id: 1759337232429,
+      name: "Surname",
+      width: 13.658536585365855,
+      height: 6.9364161849710975,
+      x: 55.447154471544714,
+      y: 39.017341040462426,
+    },
+    {
+      id: 1759337240377,
+      name: "Gender",
+      width: 5.040650406504065,
+      height: 6.358381502890173,
+      x: 39.67479674796748,
+      y: 50,
+    },
+    {
+      id: 1759337248220,
+      name: "Birthplace",
+      width: 30.081300813008134,
+      height: 6.9364161849710975,
+      x: 49.43089430894309,
+      y: 58.67052023121387,
+    },
+    {
+      id: 1759337254262,
+      name: "Date of birth",
+      width: 30.24390243902439,
+      height: 7.225433526011561,
+      x: 57.56097560975609,
+      y: 48.554913294797686,
+    },
+    {
+      id: 1759337260502,
+      name: "Series",
+      width: 3.577235772357723,
+      height: 59.53757225433526,
+      x: 92.84552845528455,
+    y: 21.965317919075144,
+    },
+  ]);
+
+  const hints = [
+  {
+    id: 1759337197573,
+    x: 23,
+    y: 38,
+    title: 'Photo',
+  },
+  {
+    id: 1759337222917,
+    x: 54,
+    y: 9,
+    title: 'Last name',
+  },
+  {
+    id: 1759337204073,
+    x: 51,
+    y: 26,
+    title: 'First name',
+  },
+  {
+    id: 1759337232429,
+    x: 42,
+    y: 44,
+    title: 'Surname',
+  },
+  {
+    id: 1759337254262,
+    x: 71,
+    y: 47,
+    title: 'Date of birth',
+  },
+  {
+    id: 1759337248220,
+    x: 50,
+    y: 71,
+    title: 'Birthplace',
+  },
+  {
+    id: 1759337240377,
+    x: 38.5,
+    y: 62,
+    title: 'Gender',
+  },
+  {
+    id: 1759337260502,
+    x: 89,
+    y: 88,
+    title: 'Series',
+  },
+  ]
+</script>
+
+<style lang="scss" scoped>
+  .theme-slots {
+    image {
+      cursor: default;
+      transform: translateX(-85px);
+    }
+
+    text {
+      fill: #006fff;
+      font-weight: bold;
+    }
+ }
+</style
+```
+
+The above is a very long example. In general, if you look at the examples page, then I took a passport with a Bender, inserted the marked areas there. I added the Batman logo to the "last" slot. I also added an array with hints ("hints"), which I output in the "first" slot. I think it will be clear.
+
+SVG elements are styled not much differently than HTML elements. For example, in order to change the color of the text, the "fill" property is used, not "color". The differences are not strong, check out other examples with [slots](https://neuro-tools-25.github.io/vue-labeling-image/examples "Examples"), I think everything will become clearer.
