@@ -159,7 +159,7 @@
     <ui-code-row pl2 />
 
     <ui-code-row pl2>
-      <ui-code-import>import</ui-code-import> LabelingImage <ui-code-import>from</ui-code-import> '<ui-code-text></ui-code-text>';
+      <ui-code-import>import</ui-code-import> LabelingImage <ui-code-import>from</ui-code-import> '<ui-code-text>vue-labeling-image</ui-code-text>';
     </ui-code-row>
     <ui-code-row pl2>
       <ui-code-import>import</ui-code-import> 
@@ -427,7 +427,7 @@
 
 <script setup>
   import { ref } from 'vue';
-  import LabelingImage from '';
+  import LabelingImage from 'vue-labeling-image';
   import 'vue-labeling-image/lib/styles.css';
 
   const file = ref(the path to the image or the picture in base64);

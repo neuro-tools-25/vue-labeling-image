@@ -28,13 +28,13 @@
           href="examples"
           title="Примеры"
           :query="props.query"
-        >страницу примеров</ui-link>, и посмотрите все примеры со слотами, там есть ссылка на код примеров. Делается это следующим способом:
+        >страницу примеров</ui-link>, и посмотрите все примеры со слотами, там есть ссылка на код примеров. Делается это следующим образом:
       </p>
 
       <slots-code />
 
       <p>
-        Выше получился очень длинный пример. В общем если вы посмотрите страницу примеров, то я взял паспорт с Бендером, вставил туда маркированные области (areas). В слот "last" я добавил логотип Бэтмена. Так же я добавил массив с подсказками ("hints"), их я вывожу в слоте "first". Я думаю так будет наглядно.
+        Выше получился достаточно длинный пример. Я вставил кусок кода из одного примера со слотами. Кода много, но в данном примере важны секции "template". В слоте "first", я вывожу текст с подсказками, для этого я ниже добавил массив "hints", он занимает много места. В слоте "last" я вовожу картинку, в реальных примерах это логотип Бэтмена, здесь я не знаю какую картинку указать. Всё остальное не принципиально. В реальных примерах я взял паспорт с Бендером, вставил туда маркированные области (areas), в примере выше они тоже занимают много места. Я думаю, что всё должно быть наглядно и понятно.
       </p>
       
       <p>
@@ -71,18 +71,18 @@
       </p>
 
       <p>
-        The example below is very conditional, if you want to understand in more detail how to work with slots, open <ui-link
+        The example below is very conditional, if you want to understand in more detail how to work with slots, open <ui-link>.
           type="site"
           href="examples"
           title="Examples"
           :query="props.query"
-        >the examples page</ui-link>, and check out all the examples with slots, there is a link to the sample code. This is done in the following way:
+        >the examples page</ui-link>, and check out all the examples with slots, there is a link to the sample code. This is done as follows:
       </p>
 
       <slots-code is-eng />
 
       <p>
-        The above is a very long example. In general, if you look at the examples page, then I took a passport with a Bender, inserted the marked areas there. I added the Batman logo to the "last" slot. I also added an array with hints ("hints"), which I output in the "first" slot. I think it will be clear.
+        The above example is quite long. I have inserted a piece of code from one example with slots. There is a lot of code, but the "template" sections are important in this example. In the "first" slot, I output text with hints, for this I added an array of "hints" below, it takes up a lot of space. In the "last" slot, I include a picture, in real examples this is the Batman logo, here I do not know which picture to specify. Everything else is not important. In the real examples, I took a passport with a Bender, inserted the labeled areas there, in the example above they also take up a lot of space. I think everything should be clear and understandable.
       </p>
       
       <p>

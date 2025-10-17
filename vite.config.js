@@ -34,6 +34,14 @@ export default defineConfig({
 
           return output;
         },
+        manualChunks: {
+          common: [
+            'vue',
+            'vue-router',
+            'lib/index.es.js'
+          ]
+        },
+        chunkFileNames: `${projectPath}/js/[name].js`,
         plugins: [terser()]
       },
     },

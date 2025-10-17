@@ -1,7 +1,7 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 
 import MainView from '../views/MainView.vue';
-import ExamplesView from '../views/ExamplesView.vue';
+// import ExamplesView from '../views/ExamplesView.vue';
 import SettingsView from '../views/SettingsView.vue';
 import UIView from '../views/UIView.vue';
 import NotFoundView from '../views/NotFoundView.vue';
@@ -24,7 +24,8 @@ const router = createRouter({
     {
       path: '/examples',
       name: 'ExamplesView',
-      component: ExamplesView,
+      //component: ExamplesView,
+      component: () => import('../views/ExamplesView.vue'),
       meta: {
         title: {
           rus: 'Примеры',

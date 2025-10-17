@@ -77,11 +77,15 @@ const useSizesMarkUp = (props, {
   };
 
   const getImageDimensions = (file) => {
-    const img = new Image();
-    img.src = file;
+    if (file) {
+      const img = new Image();
+      img.src = file;
 
-    img.onload = caclSizeMarkUp;
-    img.onerror = resetParams;
+      img.onload = caclSizeMarkUp;
+      img.onerror = resetParams;
+    }
+
+    if (!file) resetParams();
   }
 
   const convToPercent = (param, mainSize) => ((param / mainSize) * 100);
