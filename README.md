@@ -338,7 +338,7 @@ My component under the hood uses SVG. If you look at yandex or google images, th
 
 I have implemented 2 slots, "first" and "last". The "first" slot will be the very first layer, everything you add there will be under all the other elements. It will be located under the labeled areas, under the active labeled area, and under the area at the time of labeling the image. The "last" slot will be above all other elements, it will overlap them. Most likely, you will use the "last" slot, where you can add the company's logo and image labeling controls, if necessary.
 
-The example below is very conditional, if you want to understand in more detail how to work with slots, open . type="site" href="examples" title="Examples" :query="props.query" >the examples page, and check out all the examples with slots, there is a link to the sample code. This is done as follows:
+The example below is very conditional, if you want to understand in more detail how to work with slots, open [the examples page](https://neuro-tools-25.github.io/vue-labeling-image/examples "Examples"), and check out all the examples with slots, there is a link to the sample code. This is done as follows:
 
 ```vue
 <template>
