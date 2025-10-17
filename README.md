@@ -338,7 +338,7 @@ My component under the hood uses SVG. If you look at yandex or google images, th
 
 I have implemented 2 slots, "first" and "last". The "first" slot will be the very first layer, everything you add there will be under all the other elements. It will be located under the labeled areas, under the active labeled area, and under the area at the time of labeling the image. The "last" slot will be above all other elements, it will overlap them. Most likely, you will use the "last" slot, where you can add the company's logo and image labeling controls, if necessary.
 
-The example below is very conditional, if you want to understand in more detail how to work with slots, open [the examples page](https://neuro-tools-25.github.io/vue-labeling-image/examples "Examples"), and check out all the examples with slots, there is a link to the sample code. This is done in the following way:
+The example below is very conditional, if you want to understand in more detail how to work with slots, open . type="site" href="examples" title="Examples" :query="props.query" >the examples page, and check out all the examples with slots, there is a link to the sample code. This is done as follows:
 
 ```vue
 <template>
@@ -512,6 +512,6 @@ The example below is very conditional, if you want to understand in more detail 
 </style
 ```
 
-The above is a very long example. In general, if you look at the examples page, then I took a passport with a Bender, inserted the marked areas there. I added the Batman logo to the "last" slot. I also added an array with hints ("hints"), which I output in the "first" slot. I think it will be clear.
+The above example is quite long. I have inserted a piece of code from one example with slots. There is a lot of code, but the "template" sections are important in this example. In the "first" slot, I output text with hints, for this I added an array of "hints" below, it takes up a lot of space. In the "last" slot, I include a picture, in real examples this is the Batman logo, here I do not know which picture to specify. Everything else is not important. In the real examples, I took a passport with a Bender, inserted the labeled areas there, in the example above they also take up a lot of space. I think everything should be clear and understandable.
 
 SVG elements are styled not much differently than HTML elements. For example, in order to change the color of the text, the "fill" property is used, not "color". The differences are not strong, check out other examples with [slots](https://neuro-tools-25.github.io/vue-labeling-image/examples "Examples"), I think everything will become clearer.

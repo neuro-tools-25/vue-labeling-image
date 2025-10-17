@@ -71,7 +71,7 @@
       </p>
 
       <p>
-        The example below is very conditional, if you want to understand in more detail how to work with slots, open <ui-link>.
+        The example below is very conditional, if you want to understand in more detail how to work with slots, open <ui-link
           type="site"
           href="examples"
           title="Examples"
