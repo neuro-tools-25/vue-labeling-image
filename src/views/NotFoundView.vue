@@ -1,30 +1,29 @@
 <template>
   <div class="not-found-page">
-    <template v-if="isRus">
-      <h1>Страница не найдена</h1>
-      <p>Искомая страница не найдена, попробуйте перейти по ссылкам ниже:</p>
-    </template>
+    <animation-lay is-page-nav>
+      <div v-if="isRus">
+        <h1>Страница не найдена</h1>
 
-    <template v-if="isEng">
-      <h1>Page not found</h1>
-      <p>The page you are looking for was not found, please try the links below:</p>
-    </template>
+        <p>Искомая страница не найдена, попробуйте перейти по ссылкам ниже:</p>
 
-    <div class="link">
-      <span
-        v-for="({ link, text }, count) in navItem"
-        :key="count"
-      >
-        <router-link :to="link">
-          {{ text }}
-        </router-link>
-      </span>
-    </div>
+        <link-page :navItem="navItem" />
+      </div>
+
+      <div v-if="isEng">
+        <h1>Page not found</h1>
+
+        <p>The page you are looking for was not found, please try the links below:</p>
+
+        <link-page :navItem="navItem" />
+      </div>
+    </animation-lay>
   </div>
 </template>
 
 <script setup>
   import useNav from '@/layouts/useNav';
+  import AnimationLay from '@/layouts/AnimationLay.vue';
+  import LinkPage from './components/LinkPage.vue';
 
   const {
     isRus,
@@ -34,11 +33,5 @@
 </script>
 
 <style lang="scss" scoped>
-  .not-found-page {
-    .link {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px 10px;
-    }
-  }
+
 </style>

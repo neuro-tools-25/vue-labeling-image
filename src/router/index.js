@@ -52,7 +52,7 @@ const router = createRouter({
       meta: {
         title: {
           rus: 'Журнал изменений',
-          eng: 'changelog',
+          eng: 'Changelog',
         }
       }
     },
