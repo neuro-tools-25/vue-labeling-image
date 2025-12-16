@@ -30,14 +30,14 @@
   .nav {
     top: 0;
     left: 0;
-    width: 140px;
+    width: 160px;
     height: 100%;
     position: fixed;
     z-index: 10001;
     padding: 5px 20px 20px 20px;
     background: services.$scrollColor;
     box-sizing: border-box;
-    transform: translateX(-140px);
+    transform: translateX(-160px);
     transition: transform .4s var(--easeInOutQuad) 0s;
 
     .header__b_open & {

@@ -5,6 +5,7 @@ import MainView from '../views/MainView.vue';
 import SettingsView from '../views/SettingsView.vue';
 import UIView from '../views/UIView.vue';
 import NotFoundView from '../views/NotFoundView.vue';
+import ChangeLogView from '../views/ChangeLogView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.VITE_SITE_BASE),
@@ -41,6 +42,17 @@ const router = createRouter({
         title: {
           rus: 'Настройки',
           eng: 'Settings',
+        }
+      }
+    },
+    {
+      path: '/changelog',
+      name: 'changelog',
+      component: ChangeLogView,
+      meta: {
+        title: {
+          rus: 'Журнал изменений',
+          eng: 'changelog',
         }
       }
     },
