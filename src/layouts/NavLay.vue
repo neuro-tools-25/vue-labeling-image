@@ -34,7 +34,7 @@
     height: 100%;
     position: fixed;
     z-index: 10001;
-    padding: 20px 20px 20px 20px;
+    padding: 5px 20px 20px 20px;
     background: services.$scrollColor;
     box-sizing: border-box;
     transform: translateX(-140px);
@@ -77,7 +77,7 @@
       transform: translateX(0);
       background: none;
       padding: 0;
-      margin: 20px 0 0;
+      margin: 5px 0 0;
 
       ul {
         display: flex;

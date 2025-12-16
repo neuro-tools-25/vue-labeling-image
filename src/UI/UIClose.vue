@@ -16,7 +16,7 @@
     position: absolute;
     color: #3bc7ff;
 
-    @media screen and (min-width: services.$mobileWidthSmall) {
+    @media screen and (min-width: services.$tabletSmall) {
       display: none;
     }
   }

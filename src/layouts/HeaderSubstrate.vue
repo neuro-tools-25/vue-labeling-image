@@ -22,7 +22,7 @@
       background: rgba(0, 0, 0, .5);
       transition: opacity .4s ease-in-out 0s;
 
-      @media screen and (min-width: services.$mobileWidthSmall) {
+      @media screen and (min-width: services.$tabletSmall) {
         display: none;
       }
     }

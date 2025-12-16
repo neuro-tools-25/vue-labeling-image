@@ -48,7 +48,7 @@
     }
 
     @media screen and (min-width: services.$tabletSmall) {
-      margin-top: 25px;
+      margin-top: 10px;
     }
   }
 </style>
