@@ -286,7 +286,7 @@
     .h1 {
       margin-bottom: 20px;
 
-      @media screen and (min-width: services.$mobileWidth) {
+      @media screen and (min-width: services.$tabletSmall) {
         margin-bottom: 40px;
       }
     }
@@ -298,7 +298,7 @@
         display: block;
       }
 
-      @media screen and (min-width: services.$mobileWidth) {
+      @media screen and (min-width: services.$tabletSmall) {
         display: block;
       }
     }
@@ -320,7 +320,7 @@
         }
       }
 
-      @media screen and (min-width: services.$mobileWidth) {
+      @media screen and (min-width: services.$tabletSmall) {
         padding-right: 0;
 
         .ui-arrow {

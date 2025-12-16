@@ -374,7 +374,7 @@
       margin-top: 0;
       margin-bottom: 20px;
 
-      @media screen and (min-width: services.$mobileWidth) {
+      @media screen and (min-width: services.$tabletSmall) {
         margin-bottom: 30px;
       }
     }

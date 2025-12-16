@@ -38,7 +38,7 @@
       &::before {
         width: 30px;
 
-        @media screen and (min-width: services.$mobileWidthSmall) {
+        @media screen and (min-width: services.Small) {
           width: 42px;
         }
       }

@@ -76,7 +76,7 @@
       width: 100%;
       box-sizing: border-box;
 
-      @media screen and (min-width: services.$mobileWidth) {
+      @media screen and (min-width: services.$tabletSmall) {
         width: calc(50% - 10px);
       }
     }
