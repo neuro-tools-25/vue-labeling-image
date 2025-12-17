@@ -85,6 +85,22 @@
     <div class="examples-page__group">
       <open-header
         type-element="h2"
+        :is-active="isSlotsHintHovered"
+        :is-inline="true"
+        @click="isSlotsHintHovered = !isSlotsHintHovered"
+      >
+        {{ slotsHintHoveredText }}
+      </open-header>
+
+      <slots-hint-hovered
+        v-if="isSlotsHintHovered"
+        :is-eng="isEng"
+      />
+    </div>
+
+    <div class="examples-page__group">
+      <open-header
+        type-element="h2"
         :is-active="isSlotsHintEx"
         :is-inline="true"
         @click="isSlotsHintEx = !isSlotsHintEx"
@@ -112,6 +128,7 @@
   import SlotsHints from '@/components/examples/slots/SlotsHints.vue';
   import SlotsHintMarked from '@/components/examples/slots/SlotsHintMarked.vue';
   import SlotsHintEx from '@/components/examples/slots/SlotsHintEx.vue';
+  import SlotsHintHovered from '@/components/examples/slots/SlotsHintHovered.vue';
 
   const isTypeExample = ref(true);
   const isStaticArea = ref(false);
@@ -119,6 +136,7 @@
   const isSlotsHint = ref(false);
   const isSlotsMarked = ref(false);
   const isSlotsHintEx = ref(false);
+  const isSlotsHintHovered = ref(false);
 
   const { isEng } = inject('lang');
 
@@ -129,7 +147,8 @@
     methodsText,
     slotsHintText,
     slotsHintMarkedText,
-    slotsHintExText
+    slotsHintExText,
+    slotsHintHoveredText
   } = useExamples(isEng);
 </script>
 

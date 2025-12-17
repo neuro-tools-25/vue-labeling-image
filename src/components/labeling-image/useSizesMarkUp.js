@@ -7,7 +7,7 @@ import {
 } from 'vue';
 
 const useSizesMarkUp = (props, {
-  changeIsLoadImage,
+  cIsLoadImage,
   getSizes
 }) => {
   const imgRef = useTemplateRef('img');
@@ -107,7 +107,7 @@ const useSizesMarkUp = (props, {
   };
 
   watch(imgSrc, getImageDimensions, { immediate: true });
-  watch(isLoadImg, changeIsLoadImage);
+  watch(isLoadImg, cIsLoadImage);
   watch(imgRef, watchSizeImage);
 
   watch([

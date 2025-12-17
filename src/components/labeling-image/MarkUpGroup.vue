@@ -2,6 +2,8 @@
   <g
     :id="props.id" 
     :class="classGComp"
+    @mouseover="emits('hovered-id')"
+    @mouseout="emits('reset-hovered-id')"
   >
     <mark-up-rect
       v-if="props.isShadow"
@@ -80,7 +82,9 @@
     'move-left',
     'move-right',
     'move-top',
-    'move-bottom'
+    'move-bottom',
+    'hovered-id',
+    'reset-hovered-id'
   ]);
 
   const props = defineProps([

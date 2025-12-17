@@ -50,6 +50,13 @@ const useExamples = (isEng) => {
     return text;
   });
 
+  const slotsHintHoveredText = computed(() => {
+    let text='Слоты (пример с подсказками при наведении)';
+    if (isEng.value) text='Slots (example with hover hints)';
+
+    return text;
+  });
+
   return {
     headExamples,
     typeExample,
@@ -57,7 +64,8 @@ const useExamples = (isEng) => {
     methodsText,
     slotsHintText,
     slotsHintMarkedText,
-    slotsHintExText
+    slotsHintExText,
+    slotsHintHoveredText
   }
 }
 

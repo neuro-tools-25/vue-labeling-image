@@ -48,12 +48,14 @@
             :is-readonly="isReadonly"
             :title="item[props.keyTitle]"
             :isTitle="props.isTitle"
-            @touchstart.stop="cRect($event, item, 'move-rect')"
-            @mousedown.stop="cRect($event, item, 'move-rect');"
-            @move-left="cRect($event, item, 'resize-left')"
-            @move-right="cRect($event, item, 'resize-right')"
-            @move-top="cRect($event, item, 'resize-top')"
-            @move-bottom="cRect($event, item, 'resize-bottom')"
+            @touchstart.stop="(event) => cRect(event, item, 'move-rect')"
+            @mousedown.stop="(event) => cRect(event, item, 'move-rect')"
+            @move-left="(event) => cRect(event, item, 'resize-left')"
+            @move-right="(event) => cRect(event, item, 'resize-right')"
+            @move-top="(event) => cRect(event, item, 'resize-top')"
+            @move-bottom="(event) => cRect(event, item, 'resize-bottom')"
+            @hovered-id="cHoveredId(item.id)"
+            @reset-hovered-id="resetHoveredId"
           />
         </template>
 
@@ -87,12 +89,14 @@
           :is-readonly="isReadonly"
           :title="activeArea[props.keyTitle]"
           :isTitle="props.isTitle"
-          @touchstart.stop="cRect($event, activeArea, 'move-rect')"
-          @mousedown.stop="cRect($event, activeArea, 'move-rect')"
-          @move-left="cRect($event, activeArea, 'resize-left')"
-          @move-right="cRect($event, activeArea, 'resize-right')"
-          @move-top="cRect($event, activeArea, 'resize-top')"
-          @move-bottom="cRect($event, activeArea, 'resize-bottom')"
+          @touchstart.stop="(event) => cRect(event, activeArea, 'move-rect')"
+          @mousedown.stop="(event) => cRect(event, activeArea, 'move-rect')"
+          @move-left="(event) => cRect(event, activeArea, 'resize-left')"
+          @move-right="(event) => cRect(event, activeArea, 'resize-right')"
+          @move-top="(event) => cRect(event, activeArea, 'resize-top')"
+          @move-bottom="(event) => cRect(event, activeArea, 'resize-bottom')"
+          @hovered-id="cHoveredId(activeArea?.id)"
+          @reset-hovered-id="resetHoveredId"
         />
 
         <g
@@ -137,12 +141,16 @@
 
   const areas = defineModel({ default: [] });
   const activeId = defineModel('activeId', { default: null });
+  const hoveredId = defineModel('hoveredId', { default: null });
   const activeArea = ref({});
 
   const emits = defineEmits(['is-load-image', 'get-sizes']);
 
-  const changeIsLoadImage = (e) => emits('is-load-image', e);
+  const cIsLoadImage = (e) => emits('is-load-image', e);
   const getSizes = (sizeObj) => emits('get-sizes', sizeObj);
+
+  const cHoveredId = (id) => hoveredId.value = id;
+  const resetHoveredId = () => hoveredId.value = null;
 
   const slots = useSlots();
 
@@ -266,7 +274,7 @@
     imgSrc,
     isLoadImg
   } = useSizesMarkUp(props, {
-    changeIsLoadImage,
+    cIsLoadImage,
     getSizes
   });
 
