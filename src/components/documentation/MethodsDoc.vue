@@ -57,6 +57,21 @@
           :query="props.query"
         >страницу примеров</ui-link>, и разметите какую-нибудь картинку, то у вас появятся блоки с маркированными областями. Если вы будете по ним кликать, то активная маркированная область будет меняться, это можно заметить по тому, что маркированные области будут менять цвет. Активная область у меня имеет красный цвет. Как пример, вам пришла с сервера какая-нибудь картинка с маркированными областями. Вы их вывели, и вам нужно узнать где какая область находится на картинке. Кликая по блокам можно будет это определить. Или другой пример, вам пришла картинка с маркированными областями, и кликая по ним, вам нужно будет подгружать данные в зависимости от выбранного id-ка.
       </p>
+
+      <p>
+        <strong>v-model:hovered-id</strong> - возвращает id маркированной области при наведении на неё. Когда же мы уберём мышь с маркированной области, то вернётся значение "null". Эта директива может пригодиться, если вам нужно посмотреть id-ки маркированных областей. Возможно отображать какие-либо блоки в зависимости от наведения на разные маркированные области. Я бы рекомендовал вам посмотреть <ui-link
+          type="site"
+          href="examples"
+          title="Примеры"
+          :query="props.query"
+        >следующий пример</ui-link> (откройте блок "cлоты (пример с подсказками при наведении)"), если вам интересно как это сделано, то посмотрите
+        <ui-link
+          type="git"
+          href="src/components/examples/slots/SlotsHintHovered.vue"
+          title="Примеры"
+          :query="props.query"
+        >код примера</ui-link>.
+      </p>
     </template>
 
     <template v-if="props.isEng">
@@ -115,6 +130,21 @@
           title="Examples"
           :query="props.query"
         >the examples page</ui-link>, and mark up some image, then you will have blocks with labeled areas. If you click on them, the active marked area will change, this can be seen by the fact that the marked areas will change color. My hotspot is red. As an example, you received a picture with labeled areas from the server. You've brought them out, and you need to find out where which area is in the picture. By clicking on the blocks, you can determine this. Or another example, you have received a picture with labeled areas, and by clicking on them, you will need to upload data depending on the selected id.
+      </p>
+
+      <p>
+        <strong>v-model:hovered-id</strong> - returns the id of the marked area when hovering over it. When we remove the mouse from the marked area, the value "null" will return. This directive may be useful if you need to look at the IDs of the labeled areas. It is possible to display any blocks depending on hovering over different marked areas. I would recommend you to look at <ui-link
+          type="site"
+          href="examples"
+          title="Examples"
+          :query="props.query"
+        >the following example</ui-link> (open the "slots (example with hover hints)" block), if you are interested in how this is done, then take a look
+        <ui-link
+          type="git"
+          href="src/components/examples/slots/SlotsHintHovered.vue"
+          title="Examples"
+          :query="props.query"
+        >example code</ui-link>.
       </p>
     </template>
   </div>

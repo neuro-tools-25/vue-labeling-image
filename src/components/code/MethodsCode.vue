@@ -21,6 +21,9 @@
       v-model:active-id="<ui-code-text>activeId</ui-code-text>"
     </ui-code-row>
     <ui-code-row pl3>
+      v-model:hovered-id="<ui-code-text>hoveredId</ui-code-text>"
+    </ui-code-row>
+    <ui-code-row pl3>
       @is-load-image="<ui-code-text>changeIsLoadImage</ui-code-text>"
     </ui-code-row>
     <ui-code-row pl3>
@@ -70,6 +73,11 @@
     <ui-code-row pl2>
       <ui-code-import>const</ui-code-import> <ui-code-var>activeId</ui-code-var> = <ui-code-block>ref</ui-code-block>(<ui-code-import>null</ui-code-import>);
     </ui-code-row>
+
+    <ui-code-row pl2>
+      <ui-code-import>const</ui-code-import> <ui-code-var>hoveredId</ui-code-var> = <ui-code-block>ref</ui-code-block>(<ui-code-import>null</ui-code-import>);
+    </ui-code-row>
+
     <ui-code-row pl2>
       <ui-code-import>const</ui-code-import> <ui-code-var>isLoadImg</ui-code-var> = <ui-code-block>ref</ui-code-block>(<ui-code-import>false</ui-code-import>);
     </ui-code-row>
@@ -154,6 +162,7 @@
     :image-src="file"
     v-model="areas"
     v-model:active-id="activeId"
+    v-model:hovered-id="hoveredId"
     @is-load-image="changeIsLoadImage"
     @get-sizes="changeSizes"
   />
@@ -169,6 +178,7 @@ ${'<script setup>'}
   const areas = ref([]);
 
   const activeId = ref(null);
+  const hoveredId = ref(null);
   const isLoadImg = ref(false);
 
   const widthMarkupArea = ref(null);
