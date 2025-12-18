@@ -8,7 +8,11 @@ import terser from '@rollup/plugin-terser';
 const projectPath = 'front';
 
 // https://vite.dev/config/
+const condition = process.env.NODE_ENV !== 'development';
+const domen = '/vue-labeling-image/';
+
 export default defineConfig({
+  base: condition ? domen : "/",
   server: {
     port: 3000
   },
