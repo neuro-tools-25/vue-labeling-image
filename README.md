@@ -1,4 +1,4 @@
-# Vue markup document
+# Vue labeling image
 
 English | [Русский](./README.rus.md)
 
