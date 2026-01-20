@@ -65,5 +65,9 @@
   "volta": {
     "node": "22.20.0",
     "npm": "11.6.1"
+  },
+  "dependencies": {
+    "vue-code-markup": "^0.4.0",
+    "work-with-net": "^0.4.0"
   }
 }

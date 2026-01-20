@@ -1,15 +1,20 @@
 <template>
-  <ui-code
+  <code-markup
+    :is-header="false"
     :code="installText"
-    :is-eng="props.isEng"
+    v-bind="codeParam"
   >
-    <ui-code-row >
-      <ui-code-import>npm</ui-code-import> install <ui-code-text>vue-labeling-image</ui-code-text>;
-    </ui-code-row>
-  </ui-code>
+    <code-line>
+      <mu-key-words code="npm" />
+      <mu-tag code=" install " />
+      <mu-text code="vue-labeling-image" />
+    </code-line>
+  </code-markup>
 </template>
 
 <script setup>
+  import useLang from '@/components/code/uselang.js';
+
   const props = defineProps({
     isEng: {
       type: Boolean,
@@ -17,5 +22,7 @@
     }
   });
 
-  const installText = "npm install vue-labeling-image;";
+  const installText = "npm install vue-labeling-image";
+
+  const codeParam = useLang(props);
 </script>

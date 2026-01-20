@@ -1,70 +1,90 @@
 <template>
-  <ui-code
-    :code="installText"
-    :is-eng="props.isEng"
+  <code-markup
+    :is-header="false"
+    :code="paramToCopy"
+    v-bind="codeParam"
   >
-    <ui-code-row>
-      <ui-code-block>
-        {{ '<template>' }}
-      </ui-code-block>
-    </ui-code-row>
-    <ui-code-row pl2>
-      {{'<'}}<ui-code-import>labeling-image</ui-code-import>
-    </ui-code-row>
-    <ui-code-row pl3>
-      :image-src="<ui-code-text>file</ui-code-text>"
-    </ui-code-row>
-    <ui-code-row pl3>
-      v-model="<ui-code-text>areas</ui-code-text>"
-    </ui-code-row>
-    <ui-code-row pl2>
-    {{'/>'}}
-    </ui-code-row>
-    <ui-code-row>
-      <ui-code-block>
-        {{ '</template>' }}
-      </ui-code-block>
-    </ui-code-row>
+    <code-line>
+      <mu-tag code="<template>" />
+    </code-line>
+    <code-line level-2>
+      <mu-tag code="<labeling-image" />
+    </code-line>
+    <code-line level-3>
+      <mu-attr code=":image-src=" />
+      <mu-text code='"file"' />
+    </code-line>
+    <code-line level-3>
+      <mu-attr code="v-model=" />
+      <mu-text code='"areas"' />
+    </code-line>
+    <code-line level-2>
+      <mu-tag code="/>" />
+    </code-line>
+    <code-line>
+      <mu-tag code="</template>" />
+    </code-line>
 
-    <ui-code-row />
+    <code-line />
 
-    <ui-code-row>
-      <ui-code-block>
-        {{'<script setup>'}}
-      </ui-code-block>
-    </ui-code-row>
-    <ui-code-row pl2>
-      <ui-code-import>import</ui-code-import> { ref } <ui-code-import>from</ui-code-import> '<ui-code-text>vue</ui-code-text>';
-    </ui-code-row>
+    <code-line>
+      <mu-tag code="<script " />
+      <mu-attr code="setup" />
+      <mu-tag code=">" />
+    </code-line>
+    <code-line level-2>
+      <mu-key-words code="import " />
+      <mu-type code="{ ref } " />
+      <mu-key-words code="from " />
+      <mu-text code="'vue'" />
+      <mu-type code=";" />
+    </code-line>
 
-    <ui-code-row pl2 />
+    <code-line level-2 />
 
-    <ui-code-row pl2>
-      <ui-code-import>import</ui-code-import> LabelingImage <ui-code-import>from</ui-code-import> '<ui-code-text>vue-labeling-image</ui-code-text>';
-    </ui-code-row>
-    <ui-code-row pl2>
-      <ui-code-import>import</ui-code-import> 
-      '<ui-code-text>vue-labeling-image/lib/styles.css</ui-code-text>';
-    </ui-code-row>
+    <code-line level-2>
+      <mu-key-words code="import " />
+      <mu-type code="LabelingImage " />
+      <mu-key-words code="from " />
+      <mu-text code="'vue-labeling-image'" />
+      <mu-type code=";" />
+    </code-line>
+    <code-line level-2>
+      <mu-key-words code="import " />
+      <mu-text code="'vue-labeling-image/lib/styles.css'" />
+      <mu-type code=";" />
+    </code-line>
 
-    <ui-code-row />
+    <code-line />
 
-    <ui-code-row pl2>
-      <ui-code-import>const</ui-code-import> <ui-code-var>file</ui-code-var> = <ui-code-block>ref</ui-code-block>(<ui-code-import>null</ui-code-import>);
-    </ui-code-row>
-    <ui-code-row pl2>
-      <ui-code-import>const</ui-code-import> <ui-code-var>areas</ui-code-var> = <ui-code-block>ref</ui-code-block>(<ui-code-import>[]</ui-code-import>);
-    </ui-code-row>
+    <code-line level-2>
+      <mu-key-words code="const " />
+      <mu-variable code="file " />
+      <mu-type code=" = " />
+      <mu-key-words code="ref" />
+      <mu-type code="(" />
+      <mu-key-words code="null" />
+      <mu-type code=")" />
+      <mu-type code=";" />
+    </code-line>
+    <code-line level-2>
+      <mu-key-words code="const " />
+      <mu-variable code="areas " />
+      <mu-type code=" = " />
+      <mu-key-words code="ref" />
+      <mu-type code="([])" />
+      <mu-type code=";" />
+    </code-line>
 
-    <ui-code-row>
-      <ui-code-block>
-        {{ '</script>' }}
-      </ui-code-block>
-    </ui-code-row>
-  </ui-code>
+    <code-line>
+      <mu-tag code="</script>" />
+    </code-line>
+  </code-markup>
 </template>
 
 <script setup>
+  import useLang from '@/components/code/uselang.js';
+
   const props = defineProps({
     isEng: {
       type: Boolean,
@@ -72,7 +92,7 @@
     }
   });
 
-  const installText = `<template>
+  const paramToCopy = `<template>
   <labeling-image
     :image-src="file"
     v-model="areas"
@@ -88,4 +108,6 @@ ${'<script setup>'}
   const file = ref(null);
   const areas = ref([]);
 ${'</'}script>`;
+
+  const codeParam = useLang(props);
 </script>
