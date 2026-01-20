@@ -1,59 +1,35 @@
 <template>
-  <ui-code
+  <code-markup
+    :is-header="false"
     :code="someCoord"
-    :is-eng="props.isEng"
+    v-bind="codeParam"
   >
-    <ui-code-row>{</ui-code-row>
-    <ui-code-row pl2>
-      <ui-code-import>name_area</ui-code-import>:
-      [
-    </ui-code-row>
-    <ui-code-row pl3>{</ui-code-row>
-    <ui-code-row pl4>
-      <ui-code-var>x</ui-code-var>:
-       "10",
-    </ui-code-row>
-    <ui-code-row pl4>
-      <ui-code-var>y</ui-code-var>:
-       "10"
-    </ui-code-row>
-    <ui-code-row pl3>},</ui-code-row>
-    <ui-code-row pl3>{</ui-code-row>
-    <ui-code-row pl4>
-      <ui-code-var>x</ui-code-var>:
-       "10",
-    </ui-code-row>
-    <ui-code-row pl4>
-      <ui-code-var>y</ui-code-var>:
-       "40"
-    </ui-code-row>
-    <ui-code-row pl3>},</ui-code-row>
-    <ui-code-row pl3>{</ui-code-row>
-    <ui-code-row pl4>
-      <ui-code-var>x</ui-code-var>:
-       "40",
-    </ui-code-row>
-    <ui-code-row pl4>
-      <ui-code-var>y</ui-code-var>:
-       "40"
-    </ui-code-row>
-    <ui-code-row pl3>},</ui-code-row>
-    <ui-code-row pl3>{</ui-code-row>
-    <ui-code-row pl4>
-      <ui-code-var>x</ui-code-var>:
-      "40",
-    </ui-code-row>
-    <ui-code-row pl4>
-      <ui-code-var>y</ui-code-var>:
-      "10"
-    </ui-code-row>
-    <ui-code-row pl3>}</ui-code-row>
-    <ui-code-row pl2>]</ui-code-row>
-    <ui-code-row>}</ui-code-row>
-  </ui-code>
+    <code-line>
+      <mu-type code="{" />
+    </code-line>
+    <code-line level-2>
+      <mu-key code="name_area" />
+      <mu-type code=": [" />
+    </code-line>
+
+    <some-ui-row x="10" y="10" />
+    <some-ui-row x="10" y="40" />
+    <some-ui-row x="40" y="40" />
+    <some-ui-row x="40" y="10" />
+
+    <code-line level-2>
+      <mu-type code="]" />
+    </code-line>
+    <code-line>
+      <mu-type code="}" />
+    </code-line>
+  </code-markup>
 </template>
 
 <script setup>
+  import useLang from '@/components/code/uselang.js';
+  import SomeUiRow from './SomeUIRow.vue';
+
   const props = defineProps({
     isEng: {
       type: Boolean,
@@ -78,7 +54,9 @@
       {
         x: "40",
         y: "10"
-      }
+      },
     ]
   };
+
+  const codeParam = useLang(props);
 </script>
