@@ -19,7 +19,7 @@
     >
       <copy-text-icon
         :is-eng="props.isEng"
-        @click="copyCode"
+        @click="copyTextToClipboard"
       />
 
 <pre>{{ props.code }}</pre>
@@ -31,14 +31,14 @@
   import { ref, computed } from 'vue';
 
   import CopyTextIcon from '@/UI/CopyTextIcon.vue';
-  import { copyTextToClipboard } from '@/helpers/helpers.js';
+  import { copyCode } from 'work-with-net';
 
   const props = defineProps(['code', 'isEng']);
   const isCode = ref(false);
 
   const watchCode = () => isCode.value = !isCode.value;
 
-  const copyCode = () => copyTextToClipboard(props.code);
+  const copyTextToClipboard = () => copyCode(props.code);
 
   // Интернационализация
   const showMarkedAreas = computed(() => {
