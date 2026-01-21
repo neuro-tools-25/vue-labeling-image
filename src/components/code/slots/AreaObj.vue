@@ -1,40 +1,46 @@
 <template>
-  <ui-code-row pl3>
-    {
-  </ui-code-row>
-  <ui-code-row pl4>
-    <ui-code-var>
-      id:
-    </ui-code-var>{{props.id}},
-  </ui-code-row>
-  <ui-code-row pl4>
-    <ui-code-var>
-      name:
-    </ui-code-var>{{props.name}},
-  </ui-code-row>
-  <ui-code-row pl4>
-    <ui-code-var>
-      width:
-    </ui-code-var>{{props.width}},
-  </ui-code-row>
-  <ui-code-row pl4>
-    <ui-code-var>
-      height:
-    </ui-code-var>{{props.height}},
-  </ui-code-row>
-  <ui-code-row pl4>
-    <ui-code-var>
-      x:
-    </ui-code-var>{{props.x}},
-  </ui-code-row>
-  <ui-code-row pl4>
-    <ui-code-var>
-      y:
-    </ui-code-var>{{props.y}},
-  </ui-code-row>
-  <ui-code-row pl3>
-    },
-  </ui-code-row>
+  <code-line level-3>
+    <mu-type code="{" />
+  </code-line>
+  <code-line level-4>
+    <mu-key code="id" />
+    <mu-type code=": " />
+    <mu-number :code="props.id" />
+    <mu-type code="," />
+  </code-line>
+  <code-line level-4>
+    <mu-key code="name" />
+    <mu-type code=": " />
+    <mu-text :code='`${props.name}`' />
+    <mu-type code="," />
+  </code-line>
+  <code-line level-4>
+    <mu-key code="width" />
+    <mu-type code=": " />
+    <mu-number :code="props.width" />
+    <mu-type code="," />
+  </code-line>
+  <code-line level-4>
+    <mu-key code="height" />
+    <mu-type code=": " />
+    <mu-number :code="props.height" />
+    <mu-type code="," />
+  </code-line>
+  <code-line level-4>
+    <mu-key code="x" />
+    <mu-type code=": " />
+    <mu-number :code="props.x" />
+    <mu-type code="," />
+  </code-line>
+  <code-line level-4>
+    <mu-key code="y" />
+    <mu-type code=": " />
+    <mu-number :code="props.y" />
+    <mu-type code="," />
+  </code-line>
+  <code-line level-3>
+    <mu-type code="}," />
+  </code-line>
 </template>
 
 <script setup>

@@ -1,179 +1,192 @@
 <template>
-  <ui-code
-    :code="installText"
-    :is-eng="props.isEng"
-    class="code__row_big"
+  <code-markup
+    :is-header="false"
+    :code="codeText"
+    v-bind="codeParam"
+    :line-count="15"
   >
-    <ui-code-row>
-      <ui-code-block>
-        {{ '<template>' }}
-      </ui-code-block>
-    </ui-code-row>
-    <ui-code-row pl2>
-      <ui-code-block>
-        {{ '<div class="theme-slots">' }}
-      </ui-code-block>
-    </ui-code-row>
-    <ui-code-row pl3>
-      {{'<'}}<ui-code-import>labeling-image</ui-code-import>
-    </ui-code-row>
-    <ui-code-row pl4>
-      :image-src="<ui-code-text>file</ui-code-text>"
-    </ui-code-row>
-    <ui-code-row pl4>
-      v-model="<ui-code-text>areas</ui-code-text>"
-    </ui-code-row>
-    <ui-code-row pl3>
-    {{'>'}}
-    </ui-code-row>
+    <code-line>
+      <mu-tag code="<template>" />
+    </code-line>
+    <code-line level-2>
+      <mu-tag code="<div " />
+      <mu-attr code="class" />
+      <mu-type code="=" />
+      <mu-text code='"theme-slots"' />
+      <mu-tag code=">" />
+    </code-line>
+    <code-line level-3>
+      <mu-tag code="<labeling-image" />
+    </code-line>
+    <code-line level-4>
+      <mu-attr code=":image-src" />
+      <mu-type code="=" />
+      <mu-text code='"file"' />
+    </code-line>
+    <code-line level-4>
+      <mu-attr code="v-model" />
+      <mu-type code="=" />
+      <mu-text code='"areas"' />
+    </code-line>
+    <code-line level-3>
+      <mu-tag code=">" />
+    </code-line>
 
-    <ui-code-row pl4>
-      <ui-code-block>
-        {{ '<template' }}
-      </ui-code-block>
-      #first
-      <ui-code-block>
-        {{ '>' }}
-      </ui-code-block>
-    </ui-code-row>
-    <ui-code-row pl5>
-      <ui-code-block>
-        {{ '<text' }}
-      </ui-code-block>
-    </ui-code-row>
+    <code-line level-4>
+      <mu-tag code="<template " />
+      <mu-attr code="#first" />
+      <mu-tag code=">" />
+    </code-line>
+    <code-line level-5>
+      <mu-tag code="<text" />
+    </code-line>
 
-    <ui-code-row pl6>
-      <ui-code-import>
-        v-for</ui-code-import>="{ x, y, id, title }
-      <ui-code-import>
-        in
-      </ui-code-import>
-      hints"
-    </ui-code-row>
-    <ui-code-row pl6>
-      <ui-code-import>
-        :key</ui-code-import>="id"
-    </ui-code-row>
-    <ui-code-row pl6>
-      <ui-code-import>
-        :x</ui-code-import>="`${x}%`"
-    </ui-code-row>
-    <ui-code-row pl6>
-      <ui-code-import>
-        :y</ui-code-import>="`${y}%`"
-    </ui-code-row>
+    <code-line level-6>
+      <mu-key-words code="v-for" />
+      <mu-type code="=" />
+      <mu-text code='"' />
+      <mu-type code='{ x, y, id, title } ' />
+      <mu-key-words code="in " />
+      <mu-type code='hints' />
+      <mu-text code='"' />
+    </code-line>
+    <code-line level-6>
+      <mu-attr code=":key" />
+      <mu-type code="=" />
+      <mu-text code='"id"' />
+    </code-line>
+    <code-line level-6>
+      <mu-attr code=":x" />
+      <mu-type code="=" />
+      <mu-text code='"`${x}%`"' />
+    </code-line>
+    <code-line level-6>
+      <mu-attr code=":y" />
+      <mu-type code="=" />
+      <mu-text code='"`${y}%`"' />
+    </code-line>
 
-    <ui-code-row pl5>
-      <ui-code-block>
-        {{ '>' }}
-      </ui-code-block>
-    </ui-code-row>
-    <ui-code-row pl6>
-      {{ '{' }}{{ '{' }}
-        title
-      {{ '}' }}{{ '}' }}
-    </ui-code-row>
-    <ui-code-row pl5>
-      <ui-code-block>
-        {{ '</text>' }}
-      </ui-code-block>
-    </ui-code-row>
-    <ui-code-row pl4>
-      <ui-code-block>
-        {{ '</template>' }}
-      </ui-code-block>
-    </ui-code-row>
+    <code-line level-5>
+      <mu-tag code=">" />
+    </code-line>
+    <code-line level-6>
+      <mu-type code="{{ title }}" />
+    </code-line>
+    <code-line level-5>
+      <mu-tag code="</text>" />
+    </code-line>
+    <code-line level-4>
+      <mu-tag code="</template>" />
+    </code-line>
 
-    <ui-code-row />
+    <code-line />
 
-    <ui-code-row pl4>
-      <ui-code-block>
-        {{ '<template' }}
-      </ui-code-block>
-      #last
-      <ui-code-block>
-        {{ '>' }}
-      </ui-code-block>
-    </ui-code-row>
-    <ui-code-row pl5>
-      <ui-code-block>
-        {{ '<image' }}
-      </ui-code-block>
-    </ui-code-row>
-    <ui-code-row pl6>
-      <ui-code-import>
-        :href</ui-code-import>="the path to the image or the picture in base64"
-    </ui-code-row>
-    <ui-code-row pl6>
-      <ui-code-import>
-        width</ui-code-import>="80"
-    </ui-code-row>
-    <ui-code-row pl6>
-      <ui-code-import>
-        height</ui-code-import>="40"
-    </ui-code-row>
-    <ui-code-row pl6>
-      <ui-code-import>
-        x</ui-code-import>="100%"
-    </ui-code-row>
-    <ui-code-row pl6>
-      <ui-code-import>
-        y</ui-code-import>="10"
-    </ui-code-row>
-    <ui-code-row pl5>
-      <ui-code-block>
-        {{ '/>' }}
-      </ui-code-block>
-    </ui-code-row>
-    <ui-code-row pl4>
-      <ui-code-block>
-        {{ '</template>' }}
-      </ui-code-block>
-    </ui-code-row>
+    <code-line level-4>
+      <mu-tag code="<template " />
+      <mu-attr code="#last" />
+      <mu-tag code=">" />
+    </code-line>
+    <code-line level-5>
+      <mu-tag code="<image" />
+    </code-line>
+    <code-line level-6>
+      <mu-attr code=":href" />
+      <mu-type code="=" />
+      <mu-text code='"the path to the image or the picture in base64"' />
+    </code-line>
+    <code-line level-6>
+      <mu-attr code="width" />
+      <mu-type code="=" />
+      <mu-text code='"' />
+      <mu-number code='80' />
+      <mu-text code='"' />
+    </code-line>
+    <code-line level-6>
+      <mu-attr code="height" />
+      <mu-type code="=" />
+      <mu-text code='"' />
+      <mu-number code='40' />
+      <mu-text code='"' />
+    </code-line>
+    <code-line level-6>
+      <mu-attr code="x" />
+      <mu-type code="=" />
+      <mu-text code='"' />
+      <mu-number code='100%' />
+      <mu-text code='"' />
+    </code-line>
+    <code-line level-6>
+      <mu-attr code="y" />
+      <mu-type code="=" />
+      <mu-text code='"' />
+      <mu-number code='10' />
+      <mu-text code='"' />
+    </code-line>
+    <code-line level-5>
+      <mu-tag code="/>" />
+    </code-line>
+    <code-line level-4>
+      <mu-tag code="</template>" />
+    </code-line>
 
-    <ui-code-row pl3>
-      {{'</'}}<ui-code-import>labeling-image</ui-code-import>{{'>'}}
-    </ui-code-row>
-    <ui-code-row pl2>
-      <ui-code-block>
-        {{ '</div>' }}
-      </ui-code-block>
-    </ui-code-row>
-    <ui-code-row>
-      <ui-code-block>
-        {{ '</template>' }}
-      </ui-code-block>
-    </ui-code-row>
+    <code-line level-3>
+      <mu-tag code="</labeling-image>" />
+    </code-line>
+    <code-line level-2>
+      <mu-tag code="</div>" />
+    </code-line>
+    <code-line>
+      <mu-tag code="</template>'" />
+    </code-line>
 
-    <ui-code-row />
+    <code-line />
 
-    <ui-code-row>
-      <ui-code-block>
-        {{'<script setup>'}}
-      </ui-code-block>
-    </ui-code-row>
-    <ui-code-row pl2>
-      <ui-code-import>import</ui-code-import> { ref } <ui-code-import>from</ui-code-import> '<ui-code-text>vue</ui-code-text>';
-    </ui-code-row>
+    <code-line>
+      <mu-tag code="<script " />
+      <mu-attr code="setup" />
+      <mu-tag code=">" />
+    </code-line>
+    <code-line level-2>
+      <mu-key-words code="import " />
+      <mu-type code="{ ref } " />
+      <mu-key-words code="from " />
+      <mu-text code='"vue"' />
+      <mu-type code=";" />
+    </code-line>
 
-    <ui-code-row pl2 />
+    <code-line />
 
-    <ui-code-row pl2>
-      <ui-code-import>import</ui-code-import> LabelingImage <ui-code-import>from</ui-code-import> '<ui-code-text>vue-labeling-image</ui-code-text>';
-    </ui-code-row>
-    <ui-code-row pl2>
-      <ui-code-import>import</ui-code-import> 
-      '<ui-code-text>vue-labeling-image/lib/styles.css</ui-code-text>';
-    </ui-code-row>
+    <code-line level-2>
+      <mu-key-words code="import " />
+      <mu-type code="LabelingImage " />
+      <mu-key-words code="from " />
+      <mu-text code='"vue-labeling-image"' />
+      <mu-type code=";" />
+    </code-line>
+    <code-line level-2>
+      <mu-key-words code="import " />
+      <mu-text code='"vue-labeling-image/lib/styles.css"' />
+      <mu-type code=";" />
+    </code-line>
 
-    <ui-code-row />
+    <code-line />
 
-    <ui-code-row pl2>
-      <ui-code-import>const</ui-code-import> <ui-code-var>file</ui-code-var> = <ui-code-block>ref</ui-code-block>(<ui-code-import>the path to the image or the picture in base64</ui-code-import>);
-    </ui-code-row>
-    <ui-code-row pl2>
-      <ui-code-import>const</ui-code-import> <ui-code-var>areas</ui-code-var> = <ui-code-block>ref</ui-code-block>(<ui-code-import>[</ui-code-import>
-    </ui-code-row>
+    <code-line level-2>
+      <mu-key-words code="const " />
+      <mu-variable code="file " />
+      <mu-type code="= " />
+      <mu-key-words code="ref" />
+      <mu-type code="(" />
+      <mu-text code='"the path to the image or the picture in base64"' />
+      <mu-type code=");" />
+    </code-line>
+    <code-line level-2>
+      <mu-key-words code="const " />
+      <mu-variable code="areas " />
+      <mu-type code="= " />
+      <mu-key-words code="ref" />
+      <mu-type code="([" />
+    </code-line>
 
     <area-obj
       id='1759337197573'
@@ -240,151 +253,139 @@
       y='21.965317919075144'
     />
 
-    <ui-code-row pl2>
-      <ui-code-import>]</ui-code-import>);
-    </ui-code-row>
+    <code-line level-2>
+      <mu-type code="]);" />
+    </code-line>
 
-    <ui-code-row />
+    <code-line />
 
-    <ui-code-row pl2>
-      <ui-code-import>const</ui-code-import> <ui-code-var>hints</ui-code-var> = <ui-code-import>[</ui-code-import>
-    </ui-code-row>
-      <hint-obj
-        x="23"
-        y="38"
-        title="'Photo'"
-        id="1759337197573"
-      />
-      <hint-obj
-        x="54"
-        y="9"
-        title="'Last name'"
-        id="1759337222917"
-      />
-      <hint-obj
-        x="51"
-        y="26"
-        title="'First name'"
-        id="1759337204073"
-      />
-      <hint-obj
-        x="42"
-        y="44"
-        title="'Surname'"
-        id="1759337232429"
-      />
-      <hint-obj
-        x="71"
-        y="47"
-        title="'Date of birth'"
-        id="1759337254262"
-      />
-      <hint-obj
-        x="50"
-        y="71"
-        title="'Birthplace'"
-        id="1759337248220"
-      />
-      <hint-obj
-        x="38.5"
-        y="62"
-        title="'Gender'"
-        id="1759337240377"
-      />
-      <hint-obj
-        x="89"
-        y="88"
-        title="'Series'"
-        id="1759337260502"
-      />
-    <ui-code-row pl2>
-      <ui-code-import>]</ui-code-import>
-    </ui-code-row>
+    <code-line level-2>
+      <mu-key-words code="const " />
+      <mu-variable code="hints " />
+      <mu-type code="= [" />
+    </code-line>
 
-    <ui-code-row>
-      <ui-code-block>
-        {{ '</script>' }}
-      </ui-code-block>
-    </ui-code-row>
+    <hint-obj
+      x="23"
+      y="38"
+      title="'Photo'"
+      id="1759337197573"
+    />
+    <hint-obj
+      x="54"
+      y="9"
+      title="'Last name'"
+      id="1759337222917"
+    />
+    <hint-obj
+      x="51"
+      y="26"
+      title="'First name'"
+      id="1759337204073"
+    />
+    <hint-obj
+      x="42"
+      y="44"
+      title="'Surname'"
+      id="1759337232429"
+    />
+    <hint-obj
+      x="71"
+      y="47"
+      title="'Date of birth'"
+      id="1759337254262"
+    />
+    <hint-obj
+      x="50"
+      y="71"
+      title="'Birthplace'"
+      id="1759337248220"
+    />
+    <hint-obj
+      x="38.5"
+      y="62"
+      title="'Gender'"
+      id="1759337240377"
+    />
+    <hint-obj
+      x="89"
+      y="88"
+      title="'Series'"
+      id="1759337260502"
+    />
 
-    <ui-code-row />
+    <code-line level-2>
+      <mu-type code="]" />
+    </code-line>
 
-    <ui-code-row>
-      <ui-code-block>
-        {{ '<style' }}
-      </ui-code-block>
-      <ui-code-block>
-        {{ ' lang="' }}
-      </ui-code-block>
-      <ui-code-text>
-      scss
-      </ui-code-text>
-      <ui-code-block>
-        {{ '" ' }}
-      </ui-code-block>
-      <ui-code-block>
-        {{ 'scoped' }}
-      </ui-code-block>
-      <ui-code-block>
-        {{ '>' }}
-      </ui-code-block>
-    </ui-code-row>
+    <code-line>
+      <mu-tag code="</script>" />
+    </code-line>
 
-    <ui-code-row pl2>
-      <ui-code-block>
-        .theme-slots
-      </ui-code-block>
-      {
-    </ui-code-row>
-    <ui-code-row pl3>
-      <ui-code-block>
-        image
-      </ui-code-block>
-      {
-    </ui-code-row>
-    <ui-code-row pl4>
-      <ui-code-var>
-        cursor</ui-code-var>: default;
-    </ui-code-row>
-    <ui-code-row pl4>
-      <ui-code-var>
-        transform</ui-code-var>: translateX(-85px);
-    </ui-code-row>
-    <ui-code-row pl3>
-      }
-    </ui-code-row>
+    <code-line />
 
-    <ui-code-row />
+    <code-line>
+      <mu-tag code="<style " />
+      <mu-attr code="lang" />
+      <mu-type code="=" />
+      <mu-text code='"scss" ' />
+      <mu-attr code="scoped" />
+      <mu-tag code=">" />
+    </code-line>
 
-    <ui-code-row pl3>
-      <ui-code-block>
-        text
-      </ui-code-block>
-      {
-    </ui-code-row>
-    <ui-code-row pl4>
-      <ui-code-var>
-        fill</ui-code-var>: #006fff;
-    </ui-code-row>
-    <ui-code-row pl4>
-      <ui-code-var>
-        font-weight</ui-code-var>: bold;
-    </ui-code-row>
-    <ui-code-row pl3>
-      }
-    </ui-code-row>
-    <ui-code-row pl2>
-      }
-    </ui-code-row>
-    <ui-code-row>
-      <ui-code-block>
-        {{ '</style' }}
-      </ui-code-block>
-    </ui-code-row>
-  </ui-code>
+    <code-line level-2>
+      <mu-style-class code=".theme-slots " />
+      <mu-type code="{" />
+    </code-line>
+    <code-line level-3>
+      <mu-style-tag code="image " />
+      <mu-type code="{" />
+    </code-line>
+    <code-line level-4>
+      <mu-style-param code="cursor" />
+      <mu-type code=": default;" />
+    </code-line>
+    <code-line level-4>
+      <mu-style-param code="transform" />
+      <mu-type code=": translateX(" />
+      <mu-number code="-85" />
+      <mu-type code="px);" />
+    </code-line>
+    <code-line level-3>
+      <mu-type code="}" />
+    </code-line>
+
+    <code-line />
+
+    <code-line level-3>
+      <mu-style-tag code="text " />
+      <mu-type code="{" />
+    </code-line>
+    <code-line level-4>
+      <mu-style-param code="fill" />
+      <mu-type code=": #006fff;" />
+    </code-line>
+    <code-line level-4>
+      <mu-style-param code="font-weight" />
+      <mu-key-words code=": " />
+      <mu-key-words code="bold" />
+      <mu-type code=";" />
+    </code-line>
+    <code-line level-3>
+      <mu-type code="}" />
+    </code-line>
+    <code-line level-2>
+      <mu-type code="}" />
+    </code-line>
+    <code-line>
+      <mu-tag code="</style>" />
+    </code-line>
+  </code-markup>
 </template>
 
 <script setup>
+  import useLang from '@/components/code/uselang.js';
+
   import AreaObj from './slots/AreaObj.vue';
   import HintObj from './slots/HintObj.vue';
 
@@ -395,7 +396,7 @@
     }
   });
 
-  const installText = `<template>
+  const codeText = `<template>
   <div class="theme-slots">
     <labeling-image
       :image-src="file"
@@ -563,4 +564,6 @@ ${'</'}script>
     }
   }
 </style>`;
+
+  const codeParam = useLang(props);
 </script>
