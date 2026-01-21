@@ -89,7 +89,10 @@
     <code-line level-5>
       <mu-tag code="<image" />
     </code-line>
-    <code-line level-6>
+    <code-line
+      level-6
+      visible-copy
+    >
       <mu-attr code=":href" />
       <mu-type code="=" />
       <mu-text code='"the path to the image or the picture in base64"' />
@@ -136,7 +139,7 @@
       <mu-tag code="</div>" />
     </code-line>
     <code-line>
-      <mu-tag code="</template>'" />
+      <mu-tag code="</template>" />
     </code-line>
 
     <code-line />
@@ -343,7 +346,9 @@
     </code-line>
     <code-line level-4>
       <mu-style-param code="cursor" />
-      <mu-type code=": default;" />
+      <mu-type code=": " />
+      <mu-key-words code="default" />
+      <mu-type code=";" />
     </code-line>
     <code-line level-4>
       <mu-style-param code="transform" />

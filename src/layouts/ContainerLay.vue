@@ -35,5 +35,9 @@
     margin: 0 auto;
     max-width: 1280px;
     box-sizing: border-box;
+
+    .content & {
+      background: #fff;
+    }
   }
 </style>

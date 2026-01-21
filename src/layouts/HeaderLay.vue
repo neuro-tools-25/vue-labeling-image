@@ -58,6 +58,7 @@
   .header {
     @include mixins.layoutShadow;
 
+    position: relative;
     background: linear-gradient(to bottom, #fefefe, #dfdfdf);
 
     &__b {

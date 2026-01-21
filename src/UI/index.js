@@ -11,14 +11,6 @@ import UIClose from './UIClose.vue';
 import UIAbbr from './UIAbbr.vue';
 import UILink from './UILink.vue';
 
-// Для блока кода
-import UICode from './code/UICode.vue';
-import UICodeRow from './code/UICodeRow.vue';
-import UICodeImport from './code/UICodeImport.vue';
-import UICodeText from './code/UICodeText.vue';
-import UICodeBlock from './code/UICodeBlock.vue';
-import UICodeVar from './code/UICodeVar.vue';
-
 // Для определений
 import OCRDef from '../definition/OCRDef.vue';
 import SnilsDef from '../definition/SnilsDef.vue';
@@ -55,30 +47,6 @@ export default [
   {
     name: 'ui-abbr',
     ...UIAbbr
-  },
-  {
-    name: 'ui-code',
-    ...UICode
-  },
-  {
-    name: 'ui-code-block',
-    ...UICodeBlock
-  },
-  {
-    name: 'ui-code-var',
-    ...UICodeVar
-  },
-  {
-    name: 'ui-code-row',
-    ...UICodeRow
-  },
-  {
-    name: 'ui-code-import',
-    ...UICodeImport
-  },
-  {
-    name: 'ui-code-text',
-    ...UICodeText
   },
   {
     name: 'ui-link',

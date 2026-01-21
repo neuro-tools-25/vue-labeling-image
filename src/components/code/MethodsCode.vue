@@ -1,155 +1,241 @@
 <template>
-  <ui-code
-    :code="installText"
-    :is-eng="props.isEng"
+  <code-markup
+    :is-header="false"
+    :code="codeText"
+    v-bind="codeParam"
+    :line-count="15"
   >
-    <ui-code-row>
-      <ui-code-block>
-        {{ '<template>' }}
-      </ui-code-block>
-    </ui-code-row>
-    <ui-code-row pl2>
-      {{'<'}}<ui-code-import>labeling-image</ui-code-import>
-    </ui-code-row>
-    <ui-code-row pl3>
-      :image-src="<ui-code-text>file</ui-code-text>"
-    </ui-code-row>
-    <ui-code-row pl3>
-      v-model="<ui-code-text>areas</ui-code-text>"
-    </ui-code-row>
-    <ui-code-row pl3>
-      v-model:active-id="<ui-code-text>activeId</ui-code-text>"
-    </ui-code-row>
-    <ui-code-row pl3>
-      v-model:hovered-id="<ui-code-text>hoveredId</ui-code-text>"
-    </ui-code-row>
-    <ui-code-row pl3>
-      @is-load-image="<ui-code-text>changeIsLoadImage</ui-code-text>"
-    </ui-code-row>
-    <ui-code-row pl3>
-      @get-sizes="<ui-code-text>changeSizes</ui-code-text>"
-    </ui-code-row>
-    <ui-code-row pl2>
-    {{'/>'}}
-    </ui-code-row>
-    <ui-code-row>
-      <ui-code-block>
-        {{ '</template>' }}
-      </ui-code-block>
-    </ui-code-row>
+    <code-line>
+      <mu-tag code="<template>" />
+    </code-line>
+    <code-line level-2>
+      <mu-tag code="<labeling-image" />
+    </code-line>
+    <code-line level-3>
+      <mu-attr code=":image-src" />
+      <mu-type code="=" />
+      <mu-text code='"file"' />
+    </code-line>
+    <code-line level-3>
+      <mu-attr code="v-model" />
+      <mu-type code="=" />
+      <mu-text code='"areas"' />
+    </code-line>
+    <code-line level-3>
+      <mu-attr code="v-model:active-id" />
+      <mu-type code="=" />
+      <mu-text code='"activeId"' />
+    </code-line>
+    <code-line level-3>
+      <mu-attr code="v-model:hovered-id" />
+      <mu-type code="=" />
+      <mu-text code='"hoveredId"' />
+    </code-line>
+    <code-line level-3>
+      <mu-attr code="@is-load-image" />
+      <mu-type code="=" />
+      <mu-text code='"changeIsLoadImage"' />
+    </code-line>
+    <code-line level-3>
+      <mu-attr code="@get-sizes" />
+      <mu-type code="=" />
+      <mu-text code='"changeSizes"' />
+    </code-line>
+    <code-line level-2>
+      <mu-tag code="/>" />
+    </code-line>
 
-    <ui-code-row />
+    <code-line>
+      <mu-tag code="</template>" />
+    </code-line>
 
-    <ui-code-row>
-      <ui-code-block>
-        {{'<script setup>'}}
-      </ui-code-block>
-    </ui-code-row>
-    <ui-code-row pl2>
-      <ui-code-import>import</ui-code-import> { ref } <ui-code-import>from</ui-code-import> '<ui-code-text>vue</ui-code-text>';
-    </ui-code-row>
+    <code-line />
 
-    <ui-code-row pl2 />
+    <code-line>
+      <mu-tag code="<script " />
+      <mu-attr code="setup" />
+      <mu-tag code=">" />
+    </code-line>
+    <code-line level-2>
+      <mu-key-words code="import " />
+      <mu-type code="{ ref } " />
+      <mu-key-words code="from " />
+      <mu-text code='"vue"' />
+      <mu-type code=";" />
+    </code-line>
 
-    <ui-code-row pl2>
-      <ui-code-import>import</ui-code-import> LabelingImage <ui-code-import>from</ui-code-import> '<ui-code-text>vue-labeling-image</ui-code-text>';
-    </ui-code-row>
-    <ui-code-row pl2>
-      <ui-code-import>import</ui-code-import> 
-      '<ui-code-text>vue-labeling-image/lib/styles.css</ui-code-text>';
-    </ui-code-row>
+    <code-line />
 
-    <ui-code-row />
+    <code-line level-2>
+      <mu-key-words code="import " />
+      <mu-type code="LabelingImage " />
+      <mu-key-words code="from " />
+      <mu-text code='"vue-labeling-image"' />
+      <mu-type code=";" />
+    </code-line>
+    <code-line level-2>
+      <mu-key-words code="import " />
+      <mu-text code='"vue-labeling-image/lib/styles.css"' />
+      <mu-type code=";" />
+    </code-line>
 
-    <ui-code-row pl2>
-      <ui-code-import>const</ui-code-import> <ui-code-var>file</ui-code-var> = <ui-code-block>ref</ui-code-block>(<ui-code-import>null</ui-code-import>);
-    </ui-code-row>
-    <ui-code-row pl2>
-      <ui-code-import>const</ui-code-import> <ui-code-var>areas</ui-code-var> = <ui-code-block>ref</ui-code-block>(<ui-code-import>[]</ui-code-import>);
-    </ui-code-row>
+    <code-line />
 
-    <ui-code-row />
+    <code-line level-2>
+      <mu-key-words code="const " />
+      <mu-variable code="file " />
+      <mu-type code="= " />
+      <mu-key-words code="ref" />
+      <mu-type code="(" />
+      <mu-key-words code="null" />
+      <mu-type code=");" />
+    </code-line>
+    <code-line level-2>
+      <mu-key-words code="const " />
+      <mu-variable code="areas " />
+      <mu-type code="= " />
+      <mu-key-words code="ref" />
+      <mu-type code="([]);" />
+    </code-line>
 
-    <ui-code-row pl2>
-      <ui-code-import>const</ui-code-import> <ui-code-var>activeId</ui-code-var> = <ui-code-block>ref</ui-code-block>(<ui-code-import>null</ui-code-import>);
-    </ui-code-row>
+    <code-line />
 
-    <ui-code-row pl2>
-      <ui-code-import>const</ui-code-import> <ui-code-var>hoveredId</ui-code-var> = <ui-code-block>ref</ui-code-block>(<ui-code-import>null</ui-code-import>);
-    </ui-code-row>
+    <code-line level-2>
+      <mu-key-words code="const " />
+      <mu-variable code="activeId " />
+      <mu-type code="= " />
+      <mu-key-words code="ref" />
+      <mu-type code="(" />
+      <mu-key-words code="null" />
+      <mu-type code=");" />
+    </code-line>
 
-    <ui-code-row pl2>
-      <ui-code-import>const</ui-code-import> <ui-code-var>isLoadImg</ui-code-var> = <ui-code-block>ref</ui-code-block>(<ui-code-import>false</ui-code-import>);
-    </ui-code-row>
+    <code-line level-2>
+      <mu-key-words code="const " />
+      <mu-variable code="hoveredId " />
+      <mu-type code="= " />
+      <mu-key-words code="ref" />
+      <mu-type code="(" />
+      <mu-key-words code="null" />
+      <mu-type code=");" />
+    </code-line>
 
-    <ui-code-row />
+    <code-line level-2>
+      <mu-key-words code="const " />
+      <mu-variable code="isLoadImg " />
+      <mu-type code="= " />
+      <mu-key-words code="ref" />
+      <mu-type code="(" />
+      <mu-key-words code="false" />
+      <mu-type code=");" />
+    </code-line>
 
-    <ui-code-row pl2>
-      <ui-code-import>const</ui-code-import> <ui-code-var>widthImg</ui-code-var> = <ui-code-block>ref</ui-code-block>(<ui-code-import>null</ui-code-import>);
-    </ui-code-row>
-    <ui-code-row pl2>
-      <ui-code-import>const</ui-code-import> <ui-code-var>heightImg</ui-code-var> = <ui-code-block>ref</ui-code-block>(<ui-code-import>null</ui-code-import>);
-    </ui-code-row>
-    <ui-code-row pl2>
-      <ui-code-import>const</ui-code-import> <ui-code-var>realWidthImg</ui-code-var> = <ui-code-block>ref</ui-code-block>(<ui-code-import>null</ui-code-import>);
-    </ui-code-row>
-    <ui-code-row pl2>
-      <ui-code-import>const</ui-code-import> <ui-code-var>realHeightImg</ui-code-var> = <ui-code-block>ref</ui-code-block>(<ui-code-import>null</ui-code-import>);
-    </ui-code-row>
+    <code-line />
 
-    <ui-code-row />
+    <code-line level-2>
+      <mu-key-words code="const " />
+      <mu-variable code="widthImg " />
+      <mu-type code="= " />
+      <mu-key-words code="ref" />
+      <mu-type code="(" />
+      <mu-key-words code="null" />
+      <mu-type code=");" />
+    </code-line>
+    <code-line level-2>
+      <mu-key-words code="const " />
+      <mu-variable code="heightImg " />
+      <mu-type code="= " />
+      <mu-key-words code="ref" />
+      <mu-type code="(" />
+      <mu-key-words code="null" />
+      <mu-type code=");" />
+    </code-line>
+    <code-line level-2>
+      <mu-key-words code="const " />
+      <mu-variable code="realWidthImg " />
+      <mu-type code="= " />
+      <mu-key-words code="ref" />
+      <mu-type code="(" />
+      <mu-key-words code="null" />
+      <mu-type code=");" />
+    </code-line>
+    <code-line level-2>
+      <mu-key-words code="const " />
+      <mu-variable code="realHeightImg " />
+      <mu-type code="= " />
+      <mu-key-words code="ref" />
+      <mu-type code="(" />
+      <mu-key-words code="null" />
+      <mu-type code=");" />
+    </code-line>
 
-    <ui-code-row pl2>
-      <ui-code-import>const</ui-code-import> <ui-code-var>changeIsLoadImage</ui-code-var> = (isLoad) <ui-code-block>=></ui-code-block> isLoadImg.<ui-code-var>value</ui-code-var> = isLoad;
-    </ui-code-row>
+    <code-line />
 
-    <ui-code-row />
+    <code-line
+      level-2
+      visible-copy
+    >
+      <mu-key-words code="const " />
+      <mu-variable code="changeIsLoadImage " />
+      <mu-type code="= (isLoad) => " />
+      <mu-key code="isLoadImg." />
+      <mu-type code="value " />
+      <mu-type code="= isLoad;" />
+    </code-line>
 
-    <ui-code-row pl2>
-      <ui-code-import>const</ui-code-import> <ui-code-var>changeSizes</ui-code-var> = ({
-    </ui-code-row>
+    <code-line />
 
-    <ui-code-row pl3>
-      widthImage,
-    </ui-code-row>
-    <ui-code-row pl3>
-      heightImage,
-    </ui-code-row>
-    <ui-code-row pl3>
-      realWidthImage,
-    </ui-code-row>
-    <ui-code-row pl3>
-      realHeightImage,
-    </ui-code-row>
-    <ui-code-row pl2>
-    }) <ui-code-block>=></ui-code-block> {
-    </ui-code-row>
+    <code-line level-2>
+      <mu-key-words code="const " />
+      <mu-variable code="changeSizes " />
+      <mu-type code="= ({" />
+    </code-line>
 
-    <ui-code-row pl3>
-      widthImg.<ui-code-var>value</ui-code-var> = widthImage;
-    </ui-code-row>
-    <ui-code-row pl3>
-      heightImg.<ui-code-var>value</ui-code-var> = heightImage;
-    </ui-code-row>
-    <ui-code-row pl3>
-      realWidthImg.<ui-code-var>value</ui-code-var> = realWidthImage;
-    </ui-code-row>
-    <ui-code-row pl3>
-      realHeightImg.<ui-code-var>value</ui-code-var> = realHeightImage;
-    </ui-code-row>
+    <code-line level-3>
+      <mu-type code="widthImage," />
+    </code-line>
+    <code-line level-3>
+      <mu-type code="heightImage," />
+    </code-line>
+    <code-line level-3>
+      <mu-type code="realWidthImage," />
+    </code-line>
+    <code-line level-3>
+      <mu-type code="realHeightImage," />
+    </code-line>
+    <code-line level-2>
+      <mu-type code="}) => {" />
+    </code-line>
 
-    <ui-code-row pl2>
-    }
-    </ui-code-row>
-    <ui-code-row>
-      <ui-code-block>
-        {{ '</script>' }}
-      </ui-code-block>
-    </ui-code-row>
-  </ui-code>
+    <code-line level-3>
+      <mu-key code="widthImg." />
+      <mu-type code=".value = widthImage;" />
+    </code-line>
+    <code-line level-3>
+      <mu-key code="heightImg." />
+      <mu-type code=".value = heightImage;" />
+    </code-line>
+    <code-line level-3>
+      <mu-key code="realWidthImg." />
+      <mu-type code=".value = realWidthImage;" />
+    </code-line>
+    <code-line level-3>
+      <mu-key code="realHeightImg." />
+      <mu-type code=".value = realHeightImage;" />
+    </code-line>
+
+    <code-line level-2>
+      <mu-type code="}" />
+    </code-line>
+    <code-line>
+      <mu-tag code="</script>" />
+    </code-line>
+  </code-markup>
 </template>
 
 <script setup>
+  import useLang from '@/components/code/uselang.js';
+
   const props = defineProps({
     isEng: {
       type: Boolean,
@@ -157,7 +243,7 @@
     }
   });
 
-  const installText = `<template>
+  const codeText = `<template>
   <labeling-image
     :image-src="file"
     v-model="areas"
@@ -200,4 +286,6 @@ ${'<script setup>'}
     realHeightImg.value = realHeightImage;
   }
 ${'</'}script>`;
+
+  const codeParam = useLang(props);
 </script>
