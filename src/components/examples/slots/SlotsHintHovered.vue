@@ -7,29 +7,13 @@
     <template #desc>
       <template v-if="!props.isEng">
         <p>
-          Ещё один пример со слотами. В этом примере я отменю возможность создания новых маркированных областей. Возможность растягивать и переносить маркированные области я тоже отменю. В этом примере я снова делаю подсказки для маркированных областей, но на этот раз они будут появляться при наведении на маркированные области. Для вывода подсказок я буду использовать слот "last", они будут перекрывать все остальные элементы. Для маркирования документа я под капотом использую svg-ку, поэтому вставлять в данные слоты нужно те элементы, которые допустимы в svg. Я использую "<ui-link 
-            href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/text"
-            title="Text SVG element">
-            {{'<'}}text{{'>'}}
-          </ui-link>". Естественно, что и стилизовать данный элемент нужно не так, как другие CSS элементы. Для задания цвета для элемента "<ui-link 
-              href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/text"
-              title="Text SVG element">
-              {{'<'}}text{{'>'}}
-            </ui-link>" нужно использовать "fill", а не "color".
+          Ещё один пример со слотами. В этом примере я отменяю возможность создания новых маркированных областей. Возможность растягивать и переносить маркированные области я тоже отменяю. В этом примере я снова делаю подсказки для маркированных областей, но на этот раз они будут появляться при наведении на маркированные области. Для вывода подсказок я буду использовать слот "html", они будут перекрывать все остальные элементы. Данный слот предназначен для вывода HTML-элементов.
         </p>
       </template>
 
       <template v-if="props.isEng">
         <p>
-          Another example is with slots. In this example, I will disable the ability to create new labeled areas. I will also cancel the ability to stretch and move the marked areas. In this example, I'm making tooltips for the labeled areas again, but this time they will appear when hovering over the labeled areas. I will use the "last" slot to display the hints, they will overlap all other elements. I use svg tags under the hood to mark the document, so I need to insert the elements that are allowed in svg into these slots. I use "<ui-link 
-            href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/text"
-            title="Text SVG element">
-            {{'<'}}text{{'>'}}
-          </ui-link>". Naturally, this element should be styled differently from other CSS elements. To set the color for the element "<ui-link 
-              href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/text"
-              title="Text SVG element">
-              {{'<'}}text{{'>'}}
-            </ui-link>" you need to use "fill", not "color".
+          Another example is with slots. In this example, I am canceling the ability to create new labeled areas. I'm also canceling the ability to stretch and move the labeled areas. In this example, I'm making tooltips for the labeled areas again, but this time they will appear when hovering over the labeled areas. I will use the "html" slot to display the hints, they will overlap all other elements. This slot is used for displaying HTML elements.
         </p>
       </template>
     </template>
@@ -42,16 +26,19 @@
         is-readonly
         theme="red"
       >
-        <template #last>
-          <text
+        <template #html>
+          <div
             v-for="{ x, y, id, name: title } in areas"
             :key="id"
             :x="`${x}%`"
             :y="`${y}%`"
-            :class="[ hoveredId === id ? classTextActive : '' ]"
+            :style="{ left: `${x}%`, top: `${y}%` }"
+            :class="[ hintClass, {
+              [hintActiveClass]: hoveredId === id
+            }]"
           >
             {{ title }}
-          </text>
+          </div>
         </template>
       </labeling-image>
 
@@ -170,7 +157,8 @@
     return text;
   });
 
-  const classTextActive = 'theme-slots_text-active';
+  const hintActiveClass = 'theme-slots__hint_active';
+  const hintClass = 'theme-slots__hint';
 
   const hoveredId = ref(null);
 </script>
@@ -182,23 +170,19 @@
       cursor: default;
     }
 
-    text {
-      cursor: pointer;
-      fill: #000;
-      font-weight: bold;
-      user-select: none;
+    &__hint {
+      z-index: -1;
       opacity: 0;
-      transform: translateY(-40085px);
-      cursor: default;
+      position: absolute;
+      font-weight: bold;
+      text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff;
+      transform: translateY(-20px) translatex(-2px);
+      transition: opacity var(--mu-transition-property);
 
-      &::selection {
-        opacity: 0;
+      &_active {
+        z-index: 1;
+        opacity: 1;
       }
-    }
-
-    & &_text-active {
-      opacity: 1;
-      transform: translateY(-7px);
     }
   }
 </style>

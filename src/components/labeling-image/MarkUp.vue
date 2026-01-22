@@ -111,6 +111,8 @@
           <slot name="last"></slot>
         </g>
       </svg>
+
+      <slot name="html"></slot>
     </div>
   </div>
 </template>
