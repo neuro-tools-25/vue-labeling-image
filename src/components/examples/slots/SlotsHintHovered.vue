@@ -7,13 +7,13 @@
     <template #desc>
       <template v-if="!props.isEng">
         <p>
-          Ещё один пример со слотами. В этом примере я отменяю возможность создания новых маркированных областей. Возможность растягивать и переносить маркированные области я тоже отменяю. В этом примере я снова делаю подсказки для маркированных областей, но на этот раз они будут появляться при наведении на маркированные области. Для вывода подсказок я буду использовать слот "html", они будут перекрывать все остальные элементы. Данный слот предназначен для вывода HTML-элементов.
+          Ещё один пример со слотами. В этом примере я отменяю возможность создания новых маркированных областей. Возможность растягивать и переносить маркированные области я тоже отменяю. В этом примере я снова делаю подсказки для маркированных областей, но на этот раз они будут появляться при наведении на маркированные области, клик по маркированной области я делать не буду. Для вывода подсказок я буду использовать слот "html", соответственно подсказки будут перекрывать все остальные элементы. Данный слот предназначен для вывода HTML-элементов. Здесь я просто выведу текст подсказок. Имейте ввиду, что содержимое этого слоты может выходить за картинку, так что в реальном проекте тестируйте его на разных разрешениях. Остальные слоты для данного примера мне будут не нужны.
         </p>
       </template>
 
       <template v-if="props.isEng">
         <p>
-          Another example is with slots. In this example, I am canceling the ability to create new labeled areas. I'm also canceling the ability to stretch and move the labeled areas. In this example, I'm making tooltips for the labeled areas again, but this time they will appear when hovering over the labeled areas. I will use the "html" slot to display the hints, they will overlap all other elements. This slot is used for displaying HTML elements.
+          Another example is with slots. In this example, I am canceling the ability to create new labeled areas. I'm also canceling the ability to stretch and move the labeled areas. In this example, I'm making suggestions for the marked areas again, but this time they will appear when hovering over the marked areas, I won't click on the marked area. To display the hints, I will use the "html" slot, so the hints will overlap all other elements. This slot is used for displaying HTML elements. Here I'll just display the text of the prompts. Keep in mind that the contents of this slot may go beyond the picture, so in a real project, test it at different resolutions. I won't need the other slots for this example.
         </p>
       </template>
     </template>

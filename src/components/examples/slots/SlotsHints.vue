@@ -7,7 +7,7 @@
     <template #desc>
       <template v-if="!props.isEng">
         <p>
-          Пример со слотами. В данном примере я делаю подсказки для маркированных областей, и вставляю логотип компании. Пример весьма условный, поэтому в качестве логотипа я взял логотип Бэтмена. Маркированные области нельзя создавать. Те маркированные области, которые есть, нельзя растягивать и переносить в пределах картинки. В моём компоненте есть 2 слота, "first" и "last". В слоте "first" я вывожу подсказки. В слот "last" я вставил логотип Бэтмена. Смотрите как это всё устроено, слот "first", он самый первый, за ним идут маркированные области (области которые мы будем создавать, или те области которые нам нужно отобразить), за ним идёт активная область и область в момент маркирования картинки, а дальше будет находиться слот "last". Он будет последним и будет перекрывать все другие слои. Для маркирования документа я под капотом использую svg-ку, поэтому вставлять в данные слоты нужно те элементы, которые допустимы в svg. Я использкю "<ui-link 
+          Пример со слотами. В данном примере я делаю подсказки для маркированных областей, и вставляю 2 логотипа, для того, чтобы показать как работать со всеми слотами. Пример весьма условный, поэтому в качестве логотипа я взял логотип Супермена и Бэтмена. Маркированные области нельзя создавать. Те маркированные области, которые уже есть, нельзя растягивать и переносить в пределах картинки. В моём компоненте есть 3 слота, "first", "last" и "html". В слоте "first" я вывожу подсказки. В слот "last" я вставил логотип Бэтмена. В слот "html" я вставляю логотип супермена, это ссылка которая будет вести на страницу википедии. Смотрите как это всё устроено, слот "first", он самый первый, за ним идут маркированные области (области которые мы будем создавать, или те области которые нам нужно отобразить), за ним идёт активная область и область в момент маркирования картинки, а дальше будет находиться слот "last". Он будет перекрывать слой "first". Для маркирования документа я под капотом использую svg-ку, поэтому вставлять в данные слоты нужно те элементы, которые допустимы в svg. Я использкю "<ui-link 
             href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/text"
             title="Text SVG element">
             {{'<'}}text{{'>'}}
@@ -18,13 +18,13 @@
               href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/text"
               title="Text SVG element">
               {{'<'}}text{{'>'}}
-            </ui-link>" нужно использовать "fill", а не "color".
+            </ui-link>" нужно использовать "fill", а не "color". Слот "html" предназначен для вставки html содержимого. Первоначально его не было, но начиная с версии <b>0.3.0</b> я решил его добавить. Этот слот будет перекрывать все другие слои.
         </p>
       </template>
 
       <template v-if="props.isEng">
         <p>
-          An example with slots. In this example, I make hints for the labeled areas, and insert the company logo. The example is very conditional, so I took the Batman logo as the logo. Labeled areas cannot be created. Those labeled areas that exist cannot be stretched or moved within the image. There are 2 slots in my component, "first" and "last". I display hints in the "first" slot. I inserted the Batman logo into the "last" slot. See how it all works, the "first" slot is the very first, followed by the labeled areas (the areas that we will create, or those areas that we need to display), followed by the active area and the area at the time of labeling the image, and then there will be the "last" slot. It will be the last one and will overlap all other layers. I use svg tags under the hood to mark the document, so I need to insert the elements that are allowed in svg into these slots. I use "<ui-link 
+          An example with slots. In this example, I make hints for the labeled areas, and insert 2 logos to show how to work with all the slots. The example is very conditional, so I took the logo of Superman and Batman as a logo. Labeled areas cannot be created. Those labeled areas that already exist cannot be stretched or moved within the image. My component has 3 slots, "first", "last" and "html". I display hints in the "first" slot. I inserted the Batman logo into the "last" slot. In the "html" slot I'm inserting the superman logo, this is the link that will lead to the wikipedia page. See how it all works, the "first" slot is the very first, followed by the labeled areas (the areas that we will create, or those areas that we need to display), followed by the active area and the area at the time of labeling the image, and then there will be the "last" slot. It will overlap the "first" layer. I use svg tags under the hood to mark the document, so I need to insert those elements that are allowed in svg into these slots. I use "<ui-link 
             href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/text"
             title="Text SVG element">
             {{'<'}}text{{'>'}}
@@ -35,7 +35,7 @@
               href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/text"
               title="Text SVG element">
               {{'<'}}text{{'>'}}
-            </ui-link>" you need to use "fill", not "color".
+            </ui-link>" you need to use "fill", not "color". The "html" slot is used for inserting html content. Initially, it wasn't there, but starting with version <b>0.3.0</b>, I decided to add it. This slot will overlap all other layers.
         </p>
       </template>
     </template>
@@ -47,6 +47,10 @@
         is-readonly 
         theme="red"
       >
+        <template #html>
+          <superman-logo />
+        </template>
+
         <template #first>
           <text
             v-for="{ x, y, id, title } in hints"
@@ -59,13 +63,7 @@
         </template>
 
         <template #last>
-          <image
-            :href="logoStud"
-            width="80"
-            height="40"
-            x="100%"
-            y="10"
-          />
+          <batman-logo />
         </template>
       </labeling-image>
 
@@ -98,12 +96,13 @@
   import { ref, computed } from 'vue';
 
   import CardItem from '@/components/CardItem.vue';
+  import SupermanLogo from '@/components/examples/slots/logos/SupermanLogo.vue';
+  import BatmanLogo from '@/components/examples/slots/logos/BatmanLogo.vue';
   import LabelingImage from 'lib/index.es.js';
   import ViewCode from '@/components/ViewCode.vue';
   import FormArea from '@/components/FormArea.vue';
 
   import { imageStud } from '@/assets/image-stud.js';
-  import { logoStud } from '@/assets/logo-example/logo-stud.js';
 
   const imageSrc = ref(imageStud);
 
@@ -238,11 +237,6 @@
 
 <style lang="scss" scoped>
   .theme-slots {
-    image {
-      cursor: default;
-      transform: translateX(-85px);
-    }
-
     text {
       fill: #006fff;
       font-weight: bold;
