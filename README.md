@@ -347,6 +347,20 @@ The example below is very conditional, if you want to understand in more detail 
       :image-src="file"
       v-model="areas"
     >
+      <template #html>
+        <a
+          href="https://en.wikipedia.org/wiki/Superman"
+          target="_blank"
+          class="superman__logo"
+          title="Superman"
+        >
+          <img
+            src="the path to the image or the picture in base64"
+            alt="Superman"
+          />
+        </a>
+      </template>
+
       <template #first >
         <text
           v-for="{ x, y, id, title } in hints"
@@ -373,12 +387,11 @@ The example below is very conditional, if you want to understand in more detail 
 
 <script setup>
   import { ref } from 'vue';
-  import LabelingImage from '';
+  import LabelingImage from 'vue-labeling-image';
   import 'vue-labeling-image/lib/styles.css';
-  
+
   const file = ref(the path to the image or the picture in base64);
-  
-  const areas = ref([
+    const areas = ref([
     {
       id: 1759337197573,
       name: "Photo",
@@ -441,59 +454,59 @@ The example below is very conditional, if you want to understand in more detail 
       width: 3.577235772357723,
       height: 59.53757225433526,
       x: 92.84552845528455,
-    y: 21.965317919075144,
+      y: 21.965317919075144,
     },
-  ]);
+    ]);
 
-  const hints = [
-  {
-    id: 1759337197573,
-    x: 23,
-    y: 38,
-    title: 'Photo',
-  },
-  {
-    id: 1759337222917,
-    x: 54,
-    y: 9,
-    title: 'Last name',
-  },
-  {
-    id: 1759337204073,
-    x: 51,
-    y: 26,
-    title: 'First name',
-  },
-  {
-    id: 1759337232429,
-    x: 42,
-    y: 44,
-    title: 'Surname',
-  },
-  {
-    id: 1759337254262,
-    x: 71,
-    y: 47,
-    title: 'Date of birth',
-  },
-  {
-    id: 1759337248220,
-    x: 50,
-    y: 71,
-    title: 'Birthplace',
-  },
-  {
-    id: 1759337240377,
-    x: 38.5,
-    y: 62,
-    title: 'Gender',
-  },
-  {
-    id: 1759337260502,
-    x: 89,
-    y: 88,
-    title: 'Series',
-  },
+    const hints = [
+    {
+      id: 1759337197573,
+      x: 23,
+      y: 38,
+      title: 'Photo',
+    },
+    {
+      id: 1759337222917,
+      x: 54,
+      y: 9,
+      title: 'Last name',
+    },
+    {
+      id: 1759337204073,
+      x: 51,
+      y: 26,
+      title: 'First name',
+    },
+    {
+      id: 1759337232429,
+      x: 42,
+      y: 44,
+      title: 'Surname',
+    },
+    {
+      id: 1759337254262,
+      x: 71,
+      y: 47,
+      title: 'Date of birth',
+    },
+    {
+      id: 1759337248220,
+      x: 50,
+      y: 71,
+      title: 'Birthplace',
+    },
+    {
+      id: 1759337240377,
+      x: 38.5,
+      y: 62,
+      title: 'Gender',
+    },
+    {
+      id: 1759337260502,
+      x: 89,
+      y: 88,
+      title: 'Series',
+    },
   ]
 </script>
 
@@ -508,8 +521,20 @@ The example below is very conditional, if you want to understand in more detail 
       fill: #006fff;
       font-weight: bold;
     }
- }
-</style
+  }
+
+  .superman__logo {
+    top: 5px;
+    left: 5px;
+    position: absolute;
+    text-decoration:: none;
+
+    img {
+      width: 46px;
+      height: auto;
+    }
+  }
+</style>
 ```
 
 The above example is quite long. I have inserted a piece of code from one example with slots. There is a lot of code, but the "template" sections are important in this example. In the "first" slot, I output text with hints, for this I added an array of "hints" below, it takes up a lot of space. In the "last" slot, I include a picture, in real examples this is the Batman logo, here I do not know which picture to specify. Everything else is not important. In the real examples, I took a passport with a Bender, inserted the labeled areas there, in the example above they also take up a lot of space. I think everything should be clear and understandable.

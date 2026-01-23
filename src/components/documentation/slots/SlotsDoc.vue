@@ -19,7 +19,7 @@
       </p>
 
       <p>
-        Я реализовал 2 слота, "first" и "last". Слот "first" будет самым первым слоем, всё, что вы туда добавите будет находиться под всеми остальными элементами. Он будет находиться под маркированными областями, под активной маркированной областью, и под областью в момент маркирования картинки. Слот "last" будет находиться над всеми остальными элементами, он будет их перекрывать. Скорее всего вы будете пользоваться слотом "last", туда можно будет добавить логотип компании, элементы управления маркированием картинки, если это потребуется.
+        Я реализовал 3 слота, "first", "last" и "html". Слот "first" будет самым первым слоем, всё, что вы туда добавите будет находиться под всеми остальными элементами. Он будет находиться под маркированными областями, под активной маркированной областью, и под областью в момент маркирования картинки. Слот "last" будет находиться над всеми остальными элементами, он будет их перекрывать. Скорее всего вы будете пользоваться слотом "last", туда можно будет добавить логотип компании, элементы управления маркированием картинки, если это потребуется. Слот "html" нужен для вставки в мой компонент html содержимого. Всё. что будет находиться в этом слоте будет перекрывать все остальные слоты.
       </p>
 
       <p>
@@ -34,11 +34,11 @@
       <slots-code />
 
       <p>
-        Выше получился достаточно длинный пример. Я вставил кусок кода из одного примера со слотами. Кода много, но в данном примере важны секции "template". В слоте "first", я вывожу текст с подсказками, для этого я ниже добавил массив "hints", он занимает много места. В слоте "last" я вовожу картинку, в реальных примерах это логотип Бэтмена, здесь я не знаю какую картинку указать. Всё остальное не принципиально. В реальных примерах я взял паспорт с Бендером, вставил туда маркированные области (areas), в примере выше они тоже занимают много места. Я думаю, что всё должно быть наглядно и понятно.
+        Выше получился достаточно длинный пример. Я вставил кусок кода из одного примера со слотами. Кода много, но в данном примере важны секции "template". В слоте "first", я вывожу текст с подсказками, для этого я ниже добавил массив "hints", он занимает много места. В слоте "last" я вывожу картинку, в реальных примерах это логотип Бэтмена, здесь я не знаю какую картинку указать. В слоте "html" я вывожу ссылку в которой лежит какая-то картинка. В примерах это логотип супермена, здесь я не знаю, что вставить. Всё остальное не принципиально. В реальных примерах я взял паспорт с Бендером, вставил туда маркированные области (areas), в примере выше они тоже занимают много места. Я думаю, что всё должно быть наглядно и понятно.
       </p>
-      
+
       <p>
-        Элементы SVG стилизуются не много не так, как HTML элементы. К примеру, для того, чтобы изменить цвет текста, используется свойство "fill", а не "color". Различия не сильные, посмотрите другие примеры со <ui-link
+        Имейте ввиду, что в слоты "first" и "last" вы можете вставить только те элементы, которые можно вставить в SVG. Элементы SVG стилизуются не много не так, как HTML элементы. К примеру, для того, чтобы изменить цвет текста, используется свойство "fill", а не "color". Различия не сильные, посмотрите другие примеры со <ui-link
           type="site"
           href="examples"
           title="Примеры"
@@ -67,7 +67,7 @@
       </p>
 
       <p>
-        I have implemented 2 slots, "first" and "last". The "first" slot will be the very first layer, everything you add there will be under all the other elements. It will be located under the labeled areas, under the active labeled area, and under the area at the time of labeling the image. The "last" slot will be above all other elements, it will overlap them. Most likely, you will use the "last" slot, where you can add the company's logo and image labeling controls, if necessary.
+        I have implemented 3 slots, "first", "last" and "html". The "first" slot will be the very first layer, everything you add there will be under all the other elements. It will be located under the labeled areas, under the active labeled area, and under the area at the time of labeling the image. The "last" slot will be above all other elements, it will overlap them. Most likely, you will use the "last" slot, where you can add the company's logo and image labeling controls, if necessary. The "html" slot is needed to insert html content into my component. That's it. what will be in this slot will overlap all other slots.
       </p>
 
       <p>
@@ -82,11 +82,11 @@
       <slots-code is-eng />
 
       <p>
-        The above example is quite long. I have inserted a piece of code from one example with slots. There is a lot of code, but the "template" sections are important in this example. In the "first" slot, I output text with hints, for this I added an array of "hints" below, it takes up a lot of space. In the "last" slot, I include a picture, in real examples this is the Batman logo, here I do not know which picture to specify. Everything else is not important. In the real examples, I took a passport with a Bender, inserted the labeled areas there, in the example above they also take up a lot of space. I think everything should be clear and understandable.
+        The above example is quite long. I have inserted a piece of code from one example with slots. There is a lot of code, but the "template" sections are important in this example. In the "first" slot, I output text with hints, for this I added an array of "hints" below, it takes up a lot of space. In the "last" slot, I display a picture, in real examples this is the Batman logo, here I do not know which picture to specify. In the "html" slot I'm displaying a link that contains some kind of picture. In the examples, this is the superman logo, here I do not know what to insert. Everything else is not important. In the real examples, I took a passport with a Bender, inserted the labeled areas there, in the example above they also take up a lot of space. I think everything should be clear and understandable.
       </p>
       
       <p>
-        SVG elements are styled not much differently than HTML elements. For example, in order to change the color of the text, the "fill" property is used, not "color". The differences are not strong, check out other examples with <ui-link
+        Keep in mind that in the "first" and "last" slots you can insert only those elements that can be inserted into SVG. SVG elements are styled not much differently than HTML elements. For example, in order to change the color of the text, the "fill" property is used, not "color". The differences are not strong, check out other examples with <ui-link
           type="site"
           href="examples"
           title="Examples"

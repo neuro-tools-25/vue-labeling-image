@@ -34,6 +34,67 @@
 
     <code-line level-4>
       <mu-tag code="<template " />
+      <mu-attr code="#html" />
+      <mu-tag code=">" />
+    </code-line>
+
+    <code-line level-5>
+      <mu-tag code="<a " />
+    </code-line>
+
+    <code-line level-6>
+      <mu-attr code="href=" />
+      <mu-text code='"https://en.wikipedia.org/wiki/Superman"' />
+    </code-line>
+    <code-line level-6>
+      <mu-attr code="target=" />
+      <mu-text code='"_blank"' />
+    </code-line>
+    <code-line level-6>
+      <mu-attr code="class=" />
+      <mu-text code='"superman__logo"' />
+    </code-line>
+    <code-line level-6>
+      <mu-attr code="title=" />
+      <mu-text code='"Superman"' />
+    </code-line>
+
+    <code-line level-5>
+      <mu-tag code=">" />
+    </code-line>
+
+    <code-line level-6>
+      <mu-tag code="<img" />
+    </code-line>
+
+    <code-line
+      level-7
+      visible-copy
+    >
+      <mu-attr code="src=" />
+      <mu-text code='"the path to the image or the picture in base64"' />
+    </code-line>
+    <code-line level-7>
+      <mu-attr code="alt=" />
+      <mu-text code='"Superman"' />
+    </code-line>
+
+    <code-line level-6>
+      <mu-tag code="/>" />
+    </code-line>
+
+    <code-line level-5>
+      <mu-tag code="</a>" />
+    </code-line>
+
+    <code-line level-4>
+      <mu-tag code="</template>" />
+    </code-line>
+
+    <code-line />
+
+    <code-line level-4>
+      <mu-tag code="<template " />
       <mu-attr code="#first" />
       <mu-tag code=">" />
     </code-line>
@@ -382,6 +443,66 @@
     <code-line level-2>
       <mu-type code="}" />
     </code-line>
+
+    <code-line />
+
+    <code-line level-2>
+      <mu-style-class code=".superman__logo " />
+      <mu-type code="{" />
+    </code-line>
+    <code-line level-3>
+      <mu-style-param code="top" />
+      <mu-type code=": " />
+      <mu-number code="5" />
+      <mu-style-unit-meas code="px" />
+      <mu-type code=";" />
+    </code-line>
+    <code-line level-3>
+      <mu-style-param code="left" />
+      <mu-type code=": " />
+      <mu-number code="5" />
+      <mu-style-unit-meas code="px" />
+      <mu-type code=";" />
+    </code-line>
+    <code-line level-3>
+      <mu-style-param code="position" />
+      <mu-type code=": " />
+      <mu-key-words code="absolute" />
+      <mu-type code=";" />
+    </code-line>
+    <code-line level-3>
+      <mu-style-param code="text-decoration:" />
+      <mu-type code=": " />
+      <mu-key-words code="none" />
+      <mu-type code=";" />
+    </code-line>
+
+    <code-line />
+
+    <code-line level-3>
+      <mu-tag code="img " />
+      <mu-type code="{" />
+    </code-line>
+    <code-line level-4>
+      <mu-style-param code="width" />
+      <mu-type code=": " />
+      <mu-number code="46" />
+      <mu-style-unit-meas code="px" />
+      <mu-type code=";" />
+    </code-line>
+    <code-line level-4>
+      <mu-style-param code="height" />
+      <mu-type code=": " />
+      <mu-key-words code="auto" />
+      <mu-type code=";" />
+    </code-line>
+    <code-line level-3>
+      <mu-type code="}" />
+    </code-line>
+
+    <code-line level-2>
+      <mu-type code="}" />
+    </code-line>
     <code-line>
       <mu-tag code="</style>" />
     </code-line>
@@ -407,6 +528,20 @@
       :image-src="file"
       v-model="areas"
     >
+      <template #html>
+        <a
+          href="https://en.wikipedia.org/wiki/Superman"
+          target="_blank"
+          class="superman__logo"
+          title="Superman"
+        >
+          <img
+            src="the path to the image or the picture in base64"
+            alt="Superman"
+          />
+        </a>
+      </template>
+
       <template #first >
         <text
           v-for="{ x, y, id, title } in hints"
@@ -566,6 +701,18 @@ ${'</'}script>
     text {
       fill: #006fff;
       font-weight: bold;
+    }
+  }
+
+  .superman__logo {
+    top: 5px;
+    left: 5px;
+    position: absolute;
+    text-decoration:: none;
+
+    img {
+      width: 46px;
+      height: auto;
     }
   }
 </style>`;

@@ -349,6 +349,20 @@ Eсли **isMarkup**, **isResizeArea** и **isDraggingArea** будут равн
       :image-src="file"
       v-model="areas"
     >
+      <template #html>
+        <a
+          href="https://en.wikipedia.org/wiki/Superman"
+          target="_blank"
+          class="superman__logo"
+          title="Superman"
+        >
+          <img
+            src="the path to the image or the picture in base64"
+            alt="Superman"
+          />
+        </a>
+      </template>
+
       <template #first >
         <text
           v-for="{ x, y, id, title } in hints"
@@ -375,12 +389,11 @@ Eсли **isMarkup**, **isResizeArea** и **isDraggingArea** будут равн
 
 <script setup>
   import { ref } from 'vue';
-  import LabelingImage from '';
+  import LabelingImage from 'vue-labeling-image';
   import 'vue-labeling-image/lib/styles.css';
-  
+
   const file = ref(the path to the image or the picture in base64);
-  
-  const areas = ref([
+    const areas = ref([
     {
       id: 1759337197573,
       name: "Photo",
@@ -443,59 +456,59 @@ Eсли **isMarkup**, **isResizeArea** и **isDraggingArea** будут равн
       width: 3.577235772357723,
       height: 59.53757225433526,
       x: 92.84552845528455,
-    y: 21.965317919075144,
+      y: 21.965317919075144,
     },
-  ]);
+    ]);
 
-  const hints = [
-  {
-    id: 1759337197573,
-    x: 23,
-    y: 38,
-    title: 'Photo',
-  },
-  {
-    id: 1759337222917,
-    x: 54,
-    y: 9,
-    title: 'Last name',
-  },
-  {
-    id: 1759337204073,
-    x: 51,
-    y: 26,
-    title: 'First name',
-  },
-  {
-    id: 1759337232429,
-    x: 42,
-    y: 44,
-    title: 'Surname',
-  },
-  {
-    id: 1759337254262,
-    x: 71,
-    y: 47,
-    title: 'Date of birth',
-  },
-  {
-    id: 1759337248220,
-    x: 50,
-    y: 71,
-    title: 'Birthplace',
-  },
-  {
-    id: 1759337240377,
-    x: 38.5,
-    y: 62,
-    title: 'Gender',
-  },
-  {
-    id: 1759337260502,
-    x: 89,
-    y: 88,
-    title: 'Series',
-  },
+    const hints = [
+    {
+      id: 1759337197573,
+      x: 23,
+      y: 38,
+      title: 'Photo',
+    },
+    {
+      id: 1759337222917,
+      x: 54,
+      y: 9,
+      title: 'Last name',
+    },
+    {
+      id: 1759337204073,
+      x: 51,
+      y: 26,
+      title: 'First name',
+    },
+    {
+      id: 1759337232429,
+      x: 42,
+      y: 44,
+      title: 'Surname',
+    },
+    {
+      id: 1759337254262,
+      x: 71,
+      y: 47,
+      title: 'Date of birth',
+    },
+    {
+      id: 1759337248220,
+      x: 50,
+      y: 71,
+      title: 'Birthplace',
+    },
+    {
+      id: 1759337240377,
+      x: 38.5,
+      y: 62,
+      title: 'Gender',
+    },
+    {
+      id: 1759337260502,
+      x: 89,
+      y: 88,
+      title: 'Series',
+    },
   ]
 </script>
 
@@ -510,8 +523,20 @@ Eсли **isMarkup**, **isResizeArea** и **isDraggingArea** будут равн
       fill: #006fff;
       font-weight: bold;
     }
- }
-</style
+  }
+
+  .superman__logo {
+    top: 5px;
+    left: 5px;
+    position: absolute;
+    text-decoration:: none;
+
+    img {
+      width: 46px;
+      height: auto;
+    }
+  }
+</style>
 ```
 
 Выше получился достаточно длинный пример. Я вставил кусок кода из одного примера со слотами. Кода много, но в данном примере важны секции "template". В слоте "first", я вывожу текст с подсказками, для этого я ниже добавил массив "hints", он занимает много места. В слоте "last" я вовожу картинку, в реальных примерах это логотип Бэтмена, здесь я не знаю какую картинку указать. Всё остальное не принципиально. В реальных примерах я взял паспорт с Бендером, вставил туда маркированные области (areas), в примере выше они тоже занимают много места. Я думаю, что всё должно быть наглядно и понятно.

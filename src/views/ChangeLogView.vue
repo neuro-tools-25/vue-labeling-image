@@ -9,6 +9,10 @@
         </p>
 
         <p>
+          В версии "0.3.0" я добавил слот "html". Он предназначен для вставки в мой компонент html содержимого. Это нужно к примеру для вывода логотипа компании, каких-либо внешних ссылок.
+        </p>
+
+        <p>
           В версии "0.2.0" я добавил директиву "v-model:hovered-id". При наведении на маркированную область, через данную директиву я могу вывести её id.
         </p>
       </div>
@@ -18,6 +22,10 @@
 
         <p>
 I         In this log, I will record changes starting from version "0.2.0" and higher.
+        </p>
+
+        <p>
+          In version "0.3.0" I added the "html" slot. It is designed to insert html content into my component. This is necessary, for example, to display the company's logo or any external links.
         </p>
 
         <p>
