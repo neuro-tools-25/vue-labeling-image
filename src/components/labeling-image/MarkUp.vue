@@ -48,6 +48,7 @@
             :is-readonly="isReadonly"
             :title="item[props.keyTitle]"
             :isTitle="props.isTitle"
+            :strokeDasharray="props.strokeDasharray"
             @touchstart.stop="(event) => cRect(event, item, 'move-rect')"
             @mousedown.stop="(event) => cRect(event, item, 'move-rect')"
             @move-left="(event) => cRect(event, item, 'resize-left')"
@@ -72,6 +73,7 @@
           :is-proc="false"
           :is-shadow="props.isShadow"
           :is-readonly="isReadonly"
+          :strokeDasharray="props.draggingStrokeDasharray"
         />
 
         <!-- Для активной области -->
@@ -89,6 +91,7 @@
           :is-readonly="isReadonly"
           :title="activeArea[props.keyTitle]"
           :isTitle="props.isTitle"
+          :strokeDasharray="props.activeStrokeDasharray"
           @touchstart.stop="(event) => cRect(event, activeArea, 'move-rect')"
           @mousedown.stop="(event) => cRect(event, activeArea, 'move-rect')"
           @move-left="(event) => cRect(event, activeArea, 'resize-left')"
@@ -263,6 +266,15 @@
       type: String,
       default: 'title'
     },
+    draggingStrokeDasharray: {
+      type: String,
+    },
+    activeStrokeDasharray: {
+      type: String,
+    },
+    strokeDasharray: {
+      type: String,
+    }
   });
 
   const {

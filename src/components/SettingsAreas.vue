@@ -269,6 +269,67 @@
       </template>
 
       <open-header
+        :is-active="isStrokeDasharray"
+        @click="isStrokeDasharray = !isStrokeDasharray"
+      >
+        {{ dashArrayText }}
+      </open-header>
+
+      <template v-if="isStrokeDasharray">
+        <p>
+          <template v-if="props.isRus">
+            Входные параметры в данном блоке не очень важны, без них вполне можно обойтись, но возможно кому-то они пригодятся. Основное их предназначение это как-то выделить/отделить маркированные области от активной маркированной области, или области в момент маркирования документа. Иначе говоря привлечь внимание к нужной области. В SVG есть такой параметр как "stroke-dasharray", он отвечает за вид пунктирной обводки документов. В него можно передать числа разделённые пробелами, или запятыми. Если задать одно число, то это будет длина штриха и длина пробела между ними. Два числа будут означать, первое число длина штриха, а второе длина пробела между штрихами. Возможно задавать произвольное число цифр, к примеру 4 1 2 3, в этом случае длина штриха будет 4px, затем будет пробел в 1px, затем будет идти штрих в 2px и пробел после него в 3px, и так эти значения будут повторяться. В общем, я советую вам поиграться с параметрами ниже.
+          </template>
+
+          <template v-if="props.isEng">
+            The input parameters in this block are not very important, you can do without them, but they may be useful to someone. Their main purpose is to somehow highlight/separate the labeled areas from the active labeled area, or the area at the time of labeling the document. In other words, to draw attention to the desired area. In SVG, there is such a parameter as "stroke-dasharray", it is responsible for the appearance of the dotted outline of documents. You can send numbers separated by spaces or commas to it. If you set a single number, it will be the length of the stroke and the length of the space between them. Two numbers will mean the first number is the stroke length, and the second number is the length of the space between the strokes. It is possible to set an arbitrary number of digits, for example 4 1 2 3, in this case the stroke length will be 4px, then there will be a 1px space, then there will be a 2px stroke and a 3px space after it, and so these values will be repeated. In general, I advise you to play around with the parameters below.
+          </template>
+        </p>
+
+        <ui-row>
+          <ui-label>
+            <template v-if="props.isRus">
+              <b>draggingStrokeDasharray</b> - вид пунктирной обводки маркированной области в момент маркирования документа. Задавать нужно числа разделённые пробелами, или запятыми. Вы можете увидеть, на что влияет данный входной параметр только в момент маркирования документа.
+            </template>
+
+            <template v-if="props.isEng">
+              <b>draggingStrokeDasharray</b> is the type of dotted outline of the labeled area at the moment of marking the document. You need to specify numbers separated by spaces or commas. You can see what is affected by this input parameter only at the moment of labeling the document.
+            </template>
+          </ui-label>
+
+          <ui-input v-model="draggingStrokeDasharray" />
+        </ui-row>
+
+        <ui-row>
+          <ui-label>
+            <template v-if="props.isRus">
+              <b>activeStrokeDasharray</b> - вид пунктирной обводки активной маркированной области. Она появится после того как вы создадите хотя бы одну маркированную область. Задавать нужно числа разделённые пробелами, или запятыми.
+            </template>
+
+            <template v-if="props.isEng">
+              <b>activeStrokeDasharray</b> is a kind of dotted outline of the active labeled area. It will appear after you create at least one labeled area. You need to specify numbers separated by spaces or commas.
+            </template>
+          </ui-label>
+
+          <ui-input v-model="activeStrokeDasharray" />
+        </ui-row>
+
+        <ui-row>
+          <ui-label>
+            <template v-if="props.isRus">
+              <b>strokeDasharray</b> - вид пунктирной обводки для общих маркированных областей. Чтобы увидеть, на что влияет данный входной параметр, необходимо создать хотя бы 2 маркированные области. Первая область будет активной, а ко второй и последующим будет применяться данный входной параметр.Задавать нужно числа разделённые пробелами, или запятыми.
+            </template>
+
+            <template v-if="props.isEng">
+              <b>StrokeDashArray</b> is a kind of dotted outline for general labeled areas. To see what this input parameter affects, you need to create at least 2 labeled areas. The first area will be active, and this input parameter will be applied to the second and subsequent ones. You need to specify numbers separated by spaces or commas.
+            </template>
+          </ui-label>
+
+          <ui-input v-model="strokeDasharray" />
+        </ui-row>
+      </template>
+
+      <open-header
         :is-active="isTitleBlock"
         @click="isTitleBlock = !isTitleBlock"
       >
@@ -329,6 +390,7 @@
   const isShadowBlock = ref(false);
   const isTheme = ref(false);
   const isTitleBlock = ref(false);
+  const isStrokeDasharray = ref(false);
 
   const file = defineModel('file');
   const isMarkup = defineModel('is-markup');
@@ -345,6 +407,9 @@
   const vertical = defineModel('vertical');
   const isTitle = defineModel('is-title');
   const keyTitle = defineModel('key-title');
+  const draggingStrokeDasharray = defineModel('dragging-stroke-dasharray');
+  const activeStrokeDasharray = defineModel('active-stroke-dasharray');
+  const strokeDasharray = defineModel('stroke-dasharray');
 
   const {
     gridSizeOptions,
@@ -362,7 +427,8 @@
     settingsShadow,
     settingsResolutions,
     themeText,
-    titleText
+    titleText,
+    dashArrayText
   } = useSettingsInt(isEng);
 </script>
 

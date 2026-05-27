@@ -73,6 +73,9 @@ const useSettingsPage = () => {
   const themeOptions = ref([...bOptions(themes)]);
   const isTitle = ref(true);
   const keyTitle = ref('title');
+  const draggingStrokeDasharray = ref();
+  const activeStrokeDasharray = ref();
+  const strokeDasharray = ref();
 
   return {
     isMarkup,
@@ -91,7 +94,10 @@ const useSettingsPage = () => {
     resolutionOptions,
     vertical,
     isTitle,
-    keyTitle
+    keyTitle,
+    draggingStrokeDasharray,
+    activeStrokeDasharray,
+    strokeDasharray
   }
 }
 

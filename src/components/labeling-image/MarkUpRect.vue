@@ -5,6 +5,7 @@
     :width="width"
     :height="height"
     class="mark-up__rect"
+    :stroke-dasharray="props.strokeDasharray" 
     :class="classComp"
   >
     <title v-if="isTitleBlock">
@@ -28,7 +29,8 @@
     'isProc',
     'isShadow',
     'title',
-    'isTitle'
+    'isTitle',
+    'strokeDasharray'
   ]);
 
   const isExactValue = (val) => !String(val).includes('px');

@@ -50,6 +50,13 @@ const useSettingsInt = (isEng) => {
     return text;
   });
 
+  const dashArrayText = computed(() => {
+    let text='Настройки прерывистости линий для маркированных областей';
+    if (isEng.value) text='Line discontinuity settings for labeled areas';
+
+    return text;
+  });
+
   const titleText = computed(() => {
     let text='Настройки подсказок для маркированных областей';
     if (isEng.value) text='Hint settings for labeled areas';
@@ -65,7 +72,8 @@ const useSettingsInt = (isEng) => {
     settingsShadow,
     settingsResolutions,
     themeText,
-    titleText
+    titleText,
+    dashArrayText
   }
 }
 

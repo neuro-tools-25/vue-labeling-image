@@ -26,6 +26,9 @@
             :theme="theme"
             :isTitle="isTitle"
             :keyTitle="keyTitle"
+            :draggingStrokeDasharray="draggingStrokeDasharray"
+            :activeStrokeDasharray="activeStrokeDasharray"
+            :strokeDasharray="strokeDasharray"
             @is-load-image="changeIsLoadImage"
           />
         </div>
@@ -140,6 +143,9 @@
           v-model:vertical="vertical"
           v-model:is-title="isTitle"
           v-model:key-title="keyTitle"
+          v-model:dragging-stroke-dasharray="draggingStrokeDasharray"
+          v-model:active-stroke-dasharray="activeStrokeDasharray"
+          v-model:stroke-dasharray="strokeDasharray"
           :is-rus="isRus"
           :is-eng="isEng"
         />
@@ -232,7 +238,10 @@
     theme,
     vertical,
     isTitle,
-    keyTitle
+    keyTitle,
+    draggingStrokeDasharray,
+    activeStrokeDasharray,
+    strokeDasharray,
   } = useSettingsPage();
 
   const {

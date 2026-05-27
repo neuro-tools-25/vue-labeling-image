@@ -13,6 +13,7 @@
       :height="height"
       :is-shadow="true"
       :is-proc="props.isProc"
+      :stroke-dasharray="strokeDasharray"
     />
 
     <mark-up-rect
@@ -25,6 +26,7 @@
       :is-active="props.isActive"
       :is-dragging="props.isDragging"
       :is-proc="props.isProc"
+      :stroke-dasharray="strokeDasharray"
     />
 
     <g v-if="isResize">
@@ -101,7 +103,8 @@
     'isShadow',
     'isReadonly',
     'title',
-    'isTitle'
+    'isTitle',
+    'strokeDasharray'
   ]);
 
   const sizeResizeArea = '5px';
