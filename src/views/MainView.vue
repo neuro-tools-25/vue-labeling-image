@@ -20,7 +20,7 @@
           :is-eng="false"
           :query="query"
         />
-        <ResolutionProps
+        <resolution-props
           :is-eng="false"
           :query="query"
         />
@@ -33,6 +33,10 @@
           :query="query"
         />
         <min-sizes-props 
+          :is-eng="false"
+          :query="query"
+        />
+        <dasharray-props 
           :is-eng="false"
           :query="query"
         />
@@ -101,7 +105,7 @@
           :is-eng="true"
           :query="query"
         />
-        <ResolutionProps
+        <resolution-props
           :is-eng="true"
           :query="query"
         />
@@ -114,6 +118,10 @@
           :query="query"
         />
         <min-sizes-props 
+          :is-eng="true"
+          :query="query"
+        />
+        <dasharray-props 
           :is-eng="true"
           :query="query"
         />
@@ -183,6 +191,7 @@
   import ShadowProps from '@/components/documentation/props/ShadowProps.vue';
   import HintProps from '@/components/documentation/props/HintProps.vue';
   import GridProps from '@/components/documentation/props/GridProps.vue';
+  import DasharrayProps from '@/components/documentation/props/DasharrayProps.vue';
 
   // Стилизация компонента
   import IntroStyle from '@/components/documentation/stylization/IntroStyle.vue';

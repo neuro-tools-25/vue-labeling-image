@@ -2,7 +2,7 @@
   <div class="props-hint">
     <template v-if="!props.isEng">
       <h3>
-        Настройка подсказок для маркированный областей
+        Настройка подсказок для маркированныx областей
       </h3>
 
       <p>
@@ -20,7 +20,7 @@
 
     <template v-if="props.isEng">
       <h3>
-        Setting up suggestions for bulleted areas
+        Setting up suggestions for labeled areas
       </h3>
 
       <p>

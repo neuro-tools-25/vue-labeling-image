@@ -234,6 +234,16 @@ These parameters are needed to set the minimum width and height of the labeled a
 
 **MinHeight** is the minimum height of the marked area. The default value is 10. Measured in px. My component is needed for marking up text or faces on documents. It is somehow doubtful that an area that is less than 10px can be somehow recognized. If there is any need for this, then you need to set 0.
 
+### Line discontinuity settings for labeled areas
+
+The main purpose of these input parameters is to somehow highlight/separate the labeled areas from the active labeled area, or the area at the time of labeling the document. In other words, to draw attention to the desired area. In SVG, there is such a parameter as "stroke-dasharray", it is responsible for the appearance of the dotted outline of documents. You can send numbers separated by spaces or commas to it. If you set a single number, it will be the length of the stroke and the length of the space between them. Two numbers will mean the first number is the stroke length, and the second number is the length of the space between the strokes. It is possible to set an arbitrary number of digits, for example 4 1 2 3, in this case the stroke length will be 4px, then there will be a 1px space, then there will be a 2px stroke and a 3px space after it, and so these values will be repeated. For example, it is not possible to understand on every topic which labeled area is active and which is not. In this case, the usual labeled areas can be dotted, but for the active labeled area, the dotted line can be omitted, this should draw attention to the active labeled area.
+
+**draggingStrokeDasharray** - the type of dotted outline of the marked area at the moment of marking the document. You need to specify numbers separated by spaces or commas. You can see what is affected by this input parameter only at the moment of labeling the document.
+
+**activeStrokeDasharray** is a kind of dotted outline of the active marked area. It will appear after you create at least one labeled area. You need to specify numbers separated by spaces or commas.
+
+**strokeDashArray** is a kind of dotted outline for general marked areas. To see what this input parameter affects, you need to create at least 2 labeled areas. The first area will be active, and this input parameter will be applied to the second and subsequent ones.You need to specify numbers separated by spaces or commas.
+
 ### Setting up suggestions for bulleted areas
 
 Here you need to make a reservation that the prompts will only appear on a desktop computer when you hover the mouse over the marked areas. You won't see them on your mobile device or tablet.

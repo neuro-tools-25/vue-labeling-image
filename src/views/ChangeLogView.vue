@@ -9,6 +9,10 @@
         </p>
 
         <p>
+          В версии "0.4.0" я добавил возможность делать прерывистые линии для маркированных областей, для активной области, и для области в момент маркирования документа.
+        </p>
+
+        <p>
           В версии "0.3.0" я добавил слот "html". Он предназначен для вставки в мой компонент html содержимого. Это нужно к примеру для вывода логотипа компании, каких-либо внешних ссылок.
         </p>
 
@@ -22,6 +26,10 @@
 
         <p>
 I         In this log, I will record changes starting from version "0.2.0" and higher.
+        </p>
+
+        <p>
+          In version "0.4.0", I added the ability to make broken lines for labeled areas, for the hotspot, and for the area at the time of labeling the document.
         </p>
 
         <p>
