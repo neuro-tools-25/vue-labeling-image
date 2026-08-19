@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import MainView from '../views/MainView.vue';
 // import ExamplesView from '../views/ExamplesView.vue';
 import SettingsView from '../views/SettingsView.vue';
+import StilizationView from '../views/StilizationView.vue';
 import UIView from '../views/UIView.vue';
 import NotFoundView from '../views/NotFoundView.vue';
 import ChangeLogView from '../views/ChangeLogView.vue';
@@ -42,6 +43,17 @@ const router = createRouter({
         title: {
           rus: 'Настройки',
           eng: 'Settings',
+        }
+      }
+    },
+    {
+      path: '/stylization',
+      name: 'stylization',
+      component: StilizationView,
+      meta: {
+        title: {
+          rus: 'Стилизация',
+          eng: 'Stylization',
         }
       }
     },

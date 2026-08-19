@@ -8,9 +8,21 @@ const useNav = () => {
   } = inject('lang');
 
   const navItem = computed(() => {
-    let text = ['Документация', 'Примеры', 'Настройки', 'Журнал изменений'];
+    let text = [
+      'Документация',
+      'Примеры',
+      'Настройки',
+      'Стилизация',
+      'Журнал изменений'
+    ];
 
-    if (isEng.value) text = ['Documentation', 'Examples', 'Settings', 'Changelog'];
+    if (isEng.value) text = [
+      'Documentation',
+      'Examples',
+      'Settings',
+      'Stylization',
+      'Changelog'
+    ];
 
     return [{
       link: { name: 'main', ...query.value },
@@ -22,8 +34,11 @@ const useNav = () => {
       link: { name: 'settings', ...query.value },
       text: text[2]
     }, {
-      link: { name: 'changelog', ...query.value },
+      link: { name: 'stylization', ...query.value },
       text: text[3]
+    },{
+      link: { name: 'changelog', ...query.value },
+      text: text[4]
     }]
   });
 
