@@ -12,23 +12,7 @@
             :image-src="file"
             v-model="areas"
             v-model:active-id="activeId"
-            :is-markup="isMarkup"
-            :enable-grid="enableGrid"
-            :grid-size="gridSize"
-            :min-width="minWidth"
-            :min-height="minHeight"
-            :is-resize-area="isResizeArea"
-            :is-dragging-area="isDraggingArea"
-            :is-readonly="isReadonly"
-            :is-shadow="isShadow"
-            :resolution="resolution"
-            :vertical="vertical"
             :theme="theme"
-            :isTitle="isTitle"
-            :keyTitle="keyTitle"
-            :draggingStrokeDasharray="draggingStrokeDasharray"
-            :activeStrokeDasharray="activeStrokeDasharray"
-            :strokeDasharray="strokeDasharray"
             @is-load-image="changeIsLoadImage"
           />
         </div>
@@ -127,7 +111,7 @@
       </template>
       
       <template #form>
-        <SettingsAreas
+        <!-- <SettingsAreas
           v-model:file="file"
           v-model:is-markup="isMarkup"
           v-model:enable-grid="enableGrid"
@@ -148,7 +132,7 @@
           v-model:stroke-dasharray="strokeDasharray"
           :is-rus="isRus"
           :is-eng="isEng"
-        />
+        /> -->
 
         <styles-areas
           v-model:bg="muBg"
@@ -273,8 +257,8 @@
 
   // Интернационализация
   const settingsText = computed(() => {
-    let text='Настройки';
-    if (isEng.value) text='Settings';
+    let text='Стилизация';
+    if (isEng.value) text='Stylization';
 
     return text;
   });

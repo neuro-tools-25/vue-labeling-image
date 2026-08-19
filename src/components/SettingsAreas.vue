@@ -1,9 +1,13 @@
 <template>
-  <ui-row class="settings-areas">
+  <ui-row
+    class="settings-areas"
+    :class="{'settings-areas__active' : isMain }"
+  >
     <open-header
       :is-active="isMain"
       type-element="h2"
       @click="isMain = !isMain"
+      :class="{ 'settings-areas_header__not-mb' : !isMain}"
     >
       {{ headerText }}
     </open-header>
@@ -438,11 +442,18 @@
   .settings-areas {
     &.row {
       margin-top: 0;
+    }
+
+    &__active.row {
       margin-bottom: 20px;
 
       @media screen and (min-width: services.$tabletSmall) {
         margin-bottom: 30px;
       }
+    }
+
+    &_header__not-mb {
+      margin-bottom: 0;
     }
 
     .row {
