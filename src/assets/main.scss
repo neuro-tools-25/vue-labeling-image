@@ -36,3 +36,20 @@
 [class*=' mgc_']::before {
   color: inherit !important;
 }
+
+.full-page,
+.main-page {
+  line-height: 150%;
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  @media screen and (min-width: 1030px) {
+    font-size: 18px;
+  }
+}

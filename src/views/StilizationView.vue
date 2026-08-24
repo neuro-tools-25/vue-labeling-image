@@ -2,9 +2,19 @@
   <SettingsPage>
     <h1>{{ settingsText }} vue labeling image</h1>
 
-    <p>
-      Описание страниц для стилизации.
-    </p>
+    <animation-lay>
+      <div class="full-page" v-if="isRus">
+        <p>
+          Описание страниц для стилизации.
+        </p>
+      </div>
+
+      <div class="full-page" v-if="isEng">
+        <p>
+          Описание страниц для стилизации123.
+        </p>
+      </div>
+    </animation-lay>
 
     <card-item :is-eng="isEng">
       <template #markup>
@@ -180,6 +190,8 @@
   import SettingsPage from '@/layouts/SettingsPage.vue';
   import LabelingImage from 'lib/index.es.js';
   //import LabelingImage from '@/components/labeling-image/index.js';
+
+  import AnimationLay from '@/layouts/AnimationLay.vue';
 
   import CardItem from '@/components/CardItem.vue';
   import FormGroup from '@/components/FormGroup.vue';

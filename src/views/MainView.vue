@@ -214,16 +214,6 @@
 
 <style lang="scss">
   .main-page {
-    line-height: 150%;
-
-    a {
-      text-decoration: underline;
-
-      &:hover {
-        text-decoration: none;
-      }
-    }
-
     h3 {
       font-weight: bold;
       margin-top: 1.5em;
@@ -231,10 +221,6 @@
 
     .small-mar {
       margin: .1em 0;
-    }
-
-    @media screen and (min-width: 1030px) {
-      font-size: 18px;
     }
   }
 </style>
