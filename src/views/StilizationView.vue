@@ -1,5 +1,5 @@
 <template>
-  <SettingsPage>
+  <SettingsPage class="stilization-page">
     <animation-lay is-page-nav>
       <div
         v-if="isRus"
@@ -9,7 +9,7 @@
 
         <div class="full-page">
           <p>
-            Описание страниц для стилизации. Описание страниц для стилизации. Описание страниц для стилизации. Описание страниц для стилизации. Описание страниц для стилизации.
+            На данной странице будут описаны входные параметры (props) для стилизации моего компонента. 
           </p>
         </div>
       </div>
@@ -32,11 +32,10 @@
       <template #markup>
         <div>
           <labeling-image
-            :image-src="file"
+            :image-src="imageStud"
             v-model="areas"
             v-model:active-id="activeId"
             :theme="theme"
-            @is-load-image="changeIsLoadImage"
           />
         </div>
 
@@ -45,12 +44,6 @@
           space-between
           class="card-mark-up-btn"
         >
-          <ui-file
-            v-model="file"
-            :is-active="isLoadImg"
-            :is-eng="isEng"
-          />
-
           <ui-button
             type-btn="warning"
             :disabled="file === null"
@@ -60,103 +53,64 @@
           </ui-button>
         </ui-row>
 
-        <view-code
-          v-if="areas.length > 0"
-          :code="areas"
-          :is-eng="isEng"
-        />
+        <h2 v-if="areas.length === 0">
+          {{ notAreas }}
+        </h2>
 
-        <view-code :code="slyleMarkupToCSS">
-          {{ watchStyleMarkedArea }}
-        </view-code>
+        <template v-if="areas.length > 0">
+          <h2
+            class="settings-page__head"
+            :class="{ 'settings-page__head_active': isOpenArea }"
+            @click="changeOpenArea"
+          >
+            <ui-arrow />
 
-        <template v-if="isLoadImg">
-          <h2 v-if="file === null">
-            {{ notImagesForAreas }}
+            {{ notListAreas }}
           </h2>
 
-          <h2 v-if="areas.length === 0 && file !== null">
-            {{ notAreas }}
-          </h2>
-
-          <template v-if="areas.length > 0">
-            <h2
-              class="settings-page__head"
-              :class="{ 'settings-page__head_active': isOpenArea }"
-              @click="changeOpenArea"
+          <div
+            class="settings-page__areas"
+            :class="{ 'settings-page__areas_active': isOpenArea }"
+          >
+            <template
+              v-for="item in areas"
+              :key="item.id"
             >
-              <ui-arrow />
+              <form-group
+                v-if="item.isEdit"
+                v-model:x="item.x"
+                v-model:y="item.y"
+                v-model:width="item.width"
+                v-model:height="item.height"
+                v-model:name="item.name"
+                v-model:is-edit="item.isEdit"
+                :id="item.id"
+                :active-id="activeId"
+                :is-eng="isEng"
+                @click="changeActiveId(item.id)"
+                @delete-area="deleteArea(item.id)"
+              />
 
-              {{ notListAreas }}
-            </h2>
-
-            <div
-              class="settings-page__areas"
-              :class="{ 'settings-page__areas_active': isOpenArea }"
-            >
-              <template
-                v-for="item in areas"
-                :key="item.id"
-              >
-                <form-group
-                  v-if="item.isEdit"
-                  v-model:x="item.x"
-                  v-model:y="item.y"
-                  v-model:width="item.width"
-                  v-model:height="item.height"
-                  v-model:name="item.name"
-                  v-model:is-edit="item.isEdit"
-                  :id="item.id"
-                  :active-id="activeId"
-                  :is-eng="isEng"
-                  @click="changeActiveId(item.id)"
-                  @delete-area="deleteArea(item.id)"
-                />
-
-                <form-area
-                  v-else
-                  v-model:is-edit="item.isEdit"
-                  :id="item.id"
-                  :active-id="activeId"
-                  :x="item.x"
-                  :y="item.y"
-                  :width="item.width"
-                  :height="item.height"
-                  :name="item.name"
-                  :is-eng="isEng"
-                  @click="changeActiveId(item.id)"
-                  @delete-area="deleteArea(item.id)"
-                />
-              </template>
-            </div>
-          </template>
+              <form-area
+                v-else
+                v-model:is-edit="item.isEdit"
+                :id="item.id"
+                :active-id="activeId"
+                :x="item.x"
+                :y="item.y"
+                :width="item.width"
+                :height="item.height"
+                :name="item.name"
+                :is-eng="isEng"
+                @click="changeActiveId(item.id)"
+                @delete-area="deleteArea(item.id)"
+              />
+            </template>
+          </div>
         </template>
       </template>
-      
-      <template #form>
-        <!-- <SettingsAreas
-          v-model:file="file"
-          v-model:is-markup="isMarkup"
-          v-model:enable-grid="enableGrid"
-          v-model:grid-size ="gridSize"
-          v-model:min-width="minWidth"
-          v-model:min-height="minHeight"
-          v-model:is-resize-area="isResizeArea"
-          v-model:is-dragging-area="isDraggingArea"
-          v-model:is-readonly="isReadonly"
-          v-model:is-shadow="isShadow"
-          v-model:resolution="resolution"
-          v-model:theme="theme"
-          v-model:vertical="vertical"
-          v-model:is-title="isTitle"
-          v-model:key-title="keyTitle"
-          v-model:dragging-stroke-dasharray="draggingStrokeDasharray"
-          v-model:active-stroke-dasharray="activeStrokeDasharray"
-          v-model:stroke-dasharray="strokeDasharray"
-          :is-rus="isRus"
-          :is-eng="isEng"
-        /> -->
 
+      <template #form>
         <styles-areas
           v-model:bg="muBg"
           v-model:border="muBorder"
@@ -207,12 +161,9 @@
   import CardItem from '@/components/CardItem.vue';
   import FormGroup from '@/components/FormGroup.vue';
   import FormArea from '@/components/FormArea.vue';
-  import ViewCode from '@/components/ViewCode.vue';
-  import SettingsAreas from '@/components/SettingsAreas.vue';
   import StylesAreas from '@/components/StylesAreas.vue';
 
-  const isLoadImg = ref(false);
-  const changeIsLoadImage = (e) => isLoadImg.value = e;
+  import { imageStud } from '@/assets/image-stud.js';
 
   const isOpenArea = ref(false);
   const changeOpenArea = () => isOpenArea.value = !isOpenArea.value;
@@ -220,7 +171,6 @@
   const { isRus, isEng } = inject('lang');
 
   const {
-    file,
     resetFile,
     areas,
     activeId,
@@ -295,4 +245,12 @@
   });
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+  .stilization-page {
+    .card-mark-up-btn {
+      .btn {
+        margin-left: auto;
+      }
+    }
+  }
+</style>

@@ -122,7 +122,7 @@
           </template>
         </template>
       </template>
-      
+
       <template #form>
         <SettingsAreas
           v-model:file="file"
