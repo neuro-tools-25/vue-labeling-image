@@ -1,18 +1,30 @@
 <template>
   <SettingsPage>
-    <h1>{{ settingsText }} vue labeling image</h1>
+    <animation-lay is-page-nav>
+      <div
+        v-if="isRus"
+        class="stilization-page-top"
+      >
+        <h1>{{ headerText }}</h1>
 
-    <animation-lay>
-      <div class="full-page" v-if="isRus">
-        <p>
-          Описание страниц для стилизации.
-        </p>
+        <div class="full-page">
+          <p>
+            Описание страниц для стилизации. Описание страниц для стилизации. Описание страниц для стилизации. Описание страниц для стилизации. Описание страниц для стилизации.
+          </p>
+        </div>
       </div>
 
-      <div class="full-page" v-if="isEng">
-        <p>
-          Описание страниц для стилизации123.
-        </p>
+      <div
+        v-if="isEng"
+        class="stilization-page-top"
+      >
+        <h1>{{ headerText }}</h1>
+
+        <div class="full-page">
+          <p>
+            Какое-то описание.
+          </p>
+        </div>
       </div>
     </animation-lay>
 
@@ -187,11 +199,10 @@
   import useSettingsPage from './useSettingsPage.js';
   import useStyles from './useStyles.js';
 
+  import AnimationLay from '@/layouts/AnimationLay.vue';
   import SettingsPage from '@/layouts/SettingsPage.vue';
   import LabelingImage from 'lib/index.es.js';
   //import LabelingImage from '@/components/labeling-image/index.js';
-
-  import AnimationLay from '@/layouts/AnimationLay.vue';
 
   import CardItem from '@/components/CardItem.vue';
   import FormGroup from '@/components/FormGroup.vue';
@@ -270,11 +281,10 @@
   } = useStyles(theme);
 
   // Интернационализация
-  const settingsText = computed(() => {
-    let text='Стилизация';
-    if (isEng.value) text='Stylization';
+  const headerText = computed(() => {
+    const prefix = 'vue labeling image';
 
-    return text;
+    return isEng.value ? `Stylization ${prefix}` : `Стилизация ${prefix}`;
   });
 
   const watchStyleMarkedArea = computed(() => {
