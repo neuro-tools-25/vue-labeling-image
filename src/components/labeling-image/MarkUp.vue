@@ -303,12 +303,12 @@
     resetActiveAreas();
   });
 
-  watch(areas, (areas, oldAreas) => {
-    const isNullAreas = areas.length === 0;
-    const isDeleteArea = oldAreas.length > areas.length;
-    const findActiveArea = ({ id }) => id === activeId.value;
+  watch(areas, (curAreas, oldAreas) => {
+    const isNullAreas = curAreas.length === 0;
+    const isDeleteArea = oldAreas.length > curAreas.length;
+    const isActiveArea = ({ id }) => id === activeId.value;
 
-    if (isNullAreas || (isDeleteArea && !areas.find(findActiveArea))) resetActiveAreas();
+    if (isNullAreas || (activeId.value && isDeleteArea && !curAreas.find(isActiveArea))) resetActiveAreas();
   });
 
   let typeMove = null;
