@@ -35,7 +35,6 @@
             :image-src="imageStud"
             v-model="areas"
             v-model:active-id="activeId"
-            :theme="theme"
           />
         </div>
 
@@ -46,8 +45,7 @@
         >
           <ui-button
             type-btn="warning"
-            :disabled="file === null"
-            @click="resetFile"
+            @click="resetAreas"
           >
             {{ resetText }}
           </ui-button>
@@ -150,13 +148,12 @@
   } from 'vue';
 
   import useMainExample from '@/components/examples/useMainExample.js';
-  import useSettingsPage from './useSettingsPage.js';
   import useStyles from './useStyles.js';
 
   import AnimationLay from '@/layouts/AnimationLay.vue';
   import SettingsPage from '@/layouts/SettingsPage.vue';
-  import LabelingImage from 'lib/index.es.js';
-  //import LabelingImage from '@/components/labeling-image/index.js';
+  //import LabelingImage from 'lib/index.es.js';
+  import LabelingImage from '@/components/labeling-image/index.js';
 
   import CardItem from '@/components/CardItem.vue';
   import FormGroup from '@/components/FormGroup.vue';
@@ -171,37 +168,23 @@
   const { isRus, isEng } = inject('lang');
 
   const {
-    resetFile,
-    areas,
-    activeId,
-    changeActiveId,
-    deleteArea,
     // Интернационализация
     resetText,
-    notImagesForAreas,
     notAreas,
     notListAreas
   } = useMainExample(isEng);
 
-  const {
-    isMarkup,
-    enableGrid,
-    gridSize,
-    minWidth,
-    minHeight,
-    isResizeArea,
-    isDraggingArea,
-    isReadonly,
-    isShadow,
-    resolution,
-    theme,
-    vertical,
-    isTitle,
-    keyTitle,
-    draggingStrokeDasharray,
-    activeStrokeDasharray,
-    strokeDasharray,
-  } = useSettingsPage();
+  const areas = ref([]);
+  const activeId = ref([]);
+
+  const changeActiveId = (id) => activeId.value = id;
+  const resetAreas = () => areas.value = [];
+
+  const deleteArea = (id) => {
+    areas.value = areas.value.filter((el) => el.id !== id);
+
+    //if (activeId.value === id) changeActiveId(areas.value[0]?.id);
+  }
 
   const {
     muBg,
@@ -228,20 +211,13 @@
     muMarkingRectShadowStrokeWidth,
     slyleMarkup,
     slyleMarkupToCSS,
-  } = useStyles(theme);
+  } = useStyles();
 
   // Интернационализация
   const headerText = computed(() => {
     const prefix = 'vue labeling image';
 
     return isEng.value ? `Stylization ${prefix}` : `Стилизация ${prefix}`;
-  });
-
-  const watchStyleMarkedArea = computed(() => {
-    let text='Показать стили для маркированной области';
-    if (isEng.value) text='Show styles for labeling areas';
-
-    return text;
   });
 </script>
 
