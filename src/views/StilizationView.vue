@@ -45,6 +45,7 @@
         >
           <ui-button
             type-btn="warning"
+            :disabled="areas.length === 0"
             @click="resetAreas"
           >
             {{ resetText }}
@@ -183,7 +184,7 @@
   const deleteArea = (id) => {
     areas.value = areas.value.filter((el) => el.id !== id);
 
-    //if (activeId.value === id) changeActiveId(areas.value[0]?.id);
+    if (activeId.value === id) changeActiveId(areas.value[0]?.id);
   }
 
   const {
