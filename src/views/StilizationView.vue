@@ -5,9 +5,9 @@
         v-if="isRus"
         class="stilization-page-top"
       >
-        <h1>{{ headerText }}</h1>
+        <h1>{{ headerText[1] }}</h1>
 
-        <div class="full-page">
+        <ui-full-page>
           <p>
             На данной странице будут описаны входные параметры (props) для стилизации моего компонента. Для описания входных параметров для стилизации я решил сделать отдельную страницу, для того, чтобы они не мешались на <ui-link
               type="site"
@@ -20,20 +20,20 @@
           <p>
             Картинку я задам по умолчанию, пусть это будет "паспорт Бендера". Ещё я задам пару маркированных областей, пусть это будут "photo", "series" и "last name". Я разрешу маркировать картинку, и менять маркированные области (растягивать, переносить). Наверное для удобства имеет смысл разрешить редактировать маркированные области. По клику на кнопку "Сбросить", я буду очищать маркированные области, а саму картинку удалять я не буду.
           </p>
-        </div>
+        </ui-full-page>
       </div>
 
       <div
         v-if="isEng"
         class="stilization-page-top"
       >
-        <h1>{{ headerText }}</h1>
+        <h1>{{ headerText[0] }}</h1>
 
-        <div class="full-page">
+        <ui-full-page>
           <p>
             Какое-то описание.
           </p>
-        </div>
+        </ui-full-page>
       </div>
     </animation-lay>
 
@@ -249,11 +249,11 @@
   } = useStyles();
 
   // Интернационализация
-  const headerText = computed(() => {
-    const prefix = 'vue labeling image';
-
-    return isEng.value ? `Stylization ${prefix}` : `Стилизация ${prefix}`;
-  });
+  const prefix = 'vue labeling image';
+  const headerText =[
+    `Stylization ${prefix}`,
+    `Стилизация ${prefix}`
+  ];
 </script>
 
 <style lang="scss">

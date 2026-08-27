@@ -10,6 +10,7 @@ import UISelect from './UISelect.vue';
 import UIClose from './UIClose.vue';
 import UIAbbr from './UIAbbr.vue';
 import UILink from './UILink.vue';
+import UIFullPage from './UIFullPage.vue';
 
 // Для определений
 import OCRDef from '../definition/OCRDef.vue';
@@ -91,5 +92,9 @@ export default [
   {
     name: 'ui-label',
     ...UILabel
+  },
+  {
+    name: 'ui-full-page',
+    ...UIFullPage
   }
 ];
