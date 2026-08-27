@@ -42,10 +42,11 @@
   line-height: 150%;
 
   a {
-    text-decoration: underline;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-text);
 
     &:hover {
-      text-decoration: none;
+      border-bottom-color: transparent;
     }
   }
 
