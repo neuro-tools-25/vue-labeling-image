@@ -30,37 +30,6 @@ const usePropsStyles = () => {
   const shadowRectStrokeOpacity = ref('');
   const shadowRectStrokeWidth = ref('');
 
-  // const slyleMarkup = computed(() => ({
-  //   '--mu-bg': muBg.value,
-  //   '--mu-border': muBorder.value,
-  //   '--mu-box-shadow': muBoxShadow.value,
-  //   // Стили для сетки
-  //   '--mu-grid-size': muGridSize.value,
-  //   '--mu-grid-color': muGridColor.value,
-  //   // Стили для обычной области разметки
-  //   '--mu-marking-rect-stroke-width': muMarkingRectStrokeWidth.value,
-  //   '--mu-marking-rect-fill-opacity': muMarkingRectFillOpacity.value,
-  //   '--mu-marking-rect-stroke-opacity': muMarkingRectStrokeOpacity.value,
-  //   '--mu-marking-rect-rx': muMarkingRectRx.value,
-  //   '--mu-marking-rect-ry': muMarkingRectRy.value,
-  //   '--mu-marking-rect-fill': muMarkingRectFill.value,
-  //   '--mu-marking-rect-stroke': muMarkingRectStroke.value,
-  //   // Стили для автивной области
-  //   '--mu-marking-rect-active-fill': muMarkingRectActiveFill.value,
-  //   '--mu-marking-rect-active-stroke': muMarkingRectActiveStroke.value,
-  //   '--mu-marking-rect-active-fill-opacity': muMarkingRectActiveFillOpacity.value,
-  //   '--mu-marking-rect-active-stroke-opacity': muMarkingRectActiveStrokeOpacity.value,
-  //   // Стили для области во время разметки
-  //   '--mu-marking-rect-dragging-fill': muMarkingRectDraggingFill.value,
-  //   '--mu-marking-rect-dragging-stroke': muMarkingRectDraggingStroke.value,
-  //   '--mu-marking-rect-dragging-fill-opacity': muMarkingRectDraggingFillOpacity.value,
-  //   '--mu-marking-rect-dragging-stroke-opacity': muMarkingRectDraggingStrokeOpacity.value,
-  //   // Стили для тени
-  //   '--mu-marking-rect-shadow-stroke': muMarkingRectShadowStroke.value,
-  //   '--mu-marking-rect-shadow-stroke-opacity': muMarkingRectShadowStrokeOpacity.value,
-  //   '--mu-marking-rect-shadow-stroke-width': muMarkingRectShadowStrokeWidth.value,
-  // }));
-
   return {
     bg,
     border,

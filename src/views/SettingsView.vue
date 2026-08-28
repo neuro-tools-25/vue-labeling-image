@@ -4,31 +4,29 @@
 
     <card-item :is-eng="isEng">
       <template #markup>
-        <div>
-          <labeling-image
-            :image-src="file"
-            v-model="areas"
-            v-model:active-id="activeId"
-            :is-markup="isMarkup"
-            :enable-grid="enableGrid"
-            :grid-size="gridSize"
-            :min-width="minWidth"
-            :min-height="minHeight"
-            :is-resize-area="isResizeArea"
-            :is-dragging-area="isDraggingArea"
-            :is-readonly="isReadonly"
-            :is-shadow="isShadow"
-            :resolution="resolution"
-            :vertical="vertical"
-            :theme="theme"
-            :isTitle="isTitle"
-            :keyTitle="keyTitle"
-            :draggingStrokeDasharray="draggingStrokeDasharray"
-            :activeStrokeDasharray="activeStrokeDasharray"
-            :strokeDasharray="strokeDasharray"
-            @is-load-image="changeIsLoadImage"
-          />
-        </div>
+        <labeling-image
+          :image-src="file"
+          v-model="areas"
+          v-model:active-id="activeId"
+          :is-markup="isMarkup"
+          :enable-grid="enableGrid"
+          :grid-size="gridSize"
+          :min-width="minWidth"
+          :min-height="minHeight"
+          :is-resize-area="isResizeArea"
+          :is-dragging-area="isDraggingArea"
+          :is-readonly="isReadonly"
+          :is-shadow="isShadow"
+          :resolution="resolution"
+          :vertical="vertical"
+          :theme="theme"
+          :isTitle="isTitle"
+          :keyTitle="keyTitle"
+          :draggingStrokeDasharray="draggingStrokeDasharray"
+          :activeStrokeDasharray="activeStrokeDasharray"
+          :strokeDasharray="strokeDasharray"
+          @is-load-image="changeIsLoadImage"
+        />
 
         <ui-row
           type="items"

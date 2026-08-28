@@ -2,6 +2,7 @@
   <div
     class="mark-up"
     :class="classComp"
+    :style="slyleMarkup"
     @mousedown="mDown"
     @mousemove="mMove"
     @mouseup="mUp"
@@ -143,6 +144,7 @@
   import useMarking from './useMarking.js';
   import useRect from './useRect.js';
   import useClass from './useClass.js';
+  import useStyles from './useStyles.js';
 
   const areas = defineModel({ default: [] });
   const activeId = defineModel('activeId', { default: null });
@@ -274,8 +276,80 @@
     },
     strokeDasharray: {
       type: String,
-    }
+    },
+    bg: {
+      type: String
+    },
+    border: {
+      type: String
+    },
+    boxShadow: {
+      type: String
+    },
+    gridSize: {
+      type: String
+    },
+    gridColor: {
+      type: String
+    },
+    rectStrokeWidth: {
+      type: String
+    },
+    rectFillOpacity: {
+      type: [String, Number]
+    },
+    rectStrokeOpacity: {
+      type: [String, Number]
+    },
+    rectRx: {
+      type: String
+    },
+    rectRy: {
+      type: String
+    },
+    rectFill: {
+      type: String
+    },
+    rectStroke: {
+      type: String
+    },
+    activeRectFill: {
+      type: String
+    },
+    activeRectStroke: {
+      type: String
+    },
+    activeRectFillOpacity: {
+      type: [String, Number]
+    },
+    activeRectStrokeOpacity: {
+      type: [String, Number]
+    },
+    labelingRectFill: {
+      type: String
+    },
+    labelingRectStroke: {
+      type: String
+    },
+    labelingRectFillOpacity: {
+      type: [String, Number]
+    },
+    labelingRectStrokeOpacity: {
+      type: [String, Number]
+    },
+    shadowRectStroke: {
+      type: String
+    },
+    shadowRectStrokeOpacity: {
+      type: [String, Number]
+    },
+    shadowRectStrokeWidth: {
+      type: String
+    },
   });
+
+  // Для стилизации
+  const slyleMarkup = useStyles(props);
 
   const {
     widthMarkUp,
