@@ -63,6 +63,29 @@
             :image-src="imageStud"
             v-model="areas"
             v-model:active-id="activeId"
+            :bg="bg"
+            :border="border"
+            :boxShadow="boxShadow"
+            :gridSize="gridSize"
+            :gridColor="gridColor"
+            :rectStrokeWidth="rectStrokeWidth"
+            :rectFillOpacity="rectFillOpacity"
+            :rectStrokeOpacity="rectStrokeOpacity"
+            :rectRx="rectRx"
+            :rectRy="rectRy"
+            :rectFill="rectFill"
+            :rectStroke="rectStroke"
+            :activeRectFill="activeRectFill"
+            :activeRectStroke="activeRectStroke"
+            :activeRectFillOpacity="activeRectFillOpacity"
+            :activeRectStrokeOpacity="activeRectStrokeOpacity"
+            :labelingRectFill="labelingRectFill"
+            :labelingRectStroke="labelingRectStroke"
+            :labelingRectFillOpacity="labelingRectFillOpacity"
+            :labelingRectStrokeOpacity="labelingRectStrokeOpacity"
+            :shadowRectStroke="shadowRectStroke"
+            :shadowRectStrokeOpacity="shadowRectStrokeOpacity"
+            :shadowRectStrokeWidth="shadowRectStrokeWidth"
           />
         </div>
 
@@ -138,29 +161,30 @@
       </template>
 
       <template #form>
-        <styles-areas
-          v-model:bg="muBg"
-          v-model:border="muBorder"
-          v-model:box-shadow="muBoxShadow"
-          v-model:grid-color="muGridColor"
-          v-model:marking-rect-stroke-width="muMarkingRectStrokeWidth"
-          v-model:marking-rect-fill-opacity="muMarkingRectFillOpacity"
-          v-model:marking-rect-stroke-opacity="muMarkingRectStrokeOpacity"
-          v-model:marking-rect-rx="muMarkingRectRx"
-          v-model:marking-rect-ry="muMarkingRectRy"
-          v-model:marking-rect-fill="muMarkingRectFill"
-          v-model:marking-rect-stroke="muMarkingRectStroke"
-          v-model:marking-rectA-ative-fill="muMarkingRectActiveFill"
-          v-model:marking-rect-active-stroke="muMarkingRectActiveStroke"
-          v-model:marking-rect-active-fill-opacity="muMarkingRectActiveFillOpacity"
-          v-model:marking-rect-active-stroke-opacity="muMarkingRectActiveStrokeOpacity"
-          v-model:marking-rect-dragging-fill="muMarkingRectDraggingFill"
-          v-model:marking-rect-dragging-stroke="muMarkingRectDraggingStroke"
-          v-model:marking-rect-dragging-fill-opacity="muMarkingRectDraggingFillOpacity"
-          v-model:marking-rect-dragging-stroke-opacity="muMarkingRectDraggingStrokeOpacity"
-          v-model:marking-rect-shadow-stroke="muMarkingRectShadowStroke"
-          v-model:marking-rect-shadow-stroke-opacity="muMarkingRectShadowStrokeOpacity"
-          v-model:marking-rect-shadow-stroke-width="muMarkingRectShadowStrokeWidth"
+        <styles-props
+          v-model:bg="bg"
+          v-model:border="border"
+          v-model:box-shadow="boxShadow"
+          v-model:grid-size="gridSize"
+          v-model:grid-color="gridColor"
+          v-model:rect-stroke-width="rectStrokeWidth"
+          v-model:rect-fill-opacity="rectFillOpacity"
+          v-model:rect-stroke-opacity="rectStrokeOpacity"
+          v-model:rect-rx="rectRx"
+          v-model:rect-ry="rectRy"
+          v-model:rect-fill="rectFill"
+          v-model:rect-stroke="rectStroke"
+          v-model:active-rect-fill="activeRectFill"
+          v-model:active-rect-stroke="activeRectStroke"
+          v-model:active-rect-fill-opacity="activeRectFillOpacity"
+          v-model:active-rect-stroke-opacity="activeRectStrokeOpacity"
+          v-model:labeling-rect-fill="labelingRectFill"
+          v-model:labeling-rect-stroke="labelingRectStroke"
+          v-model:labeling-rect-fill-opacity="labelingRectFillOpacity"
+          v-model:labeling-rect-stroke-opacity="labelingRectStrokeOpacity"
+          v-model:shadow-rect-stroke="shadowRectStroke"
+          v-model:shadow-rect-stroke-opacity="shadowRectStrokeOpacity"
+          v-model:shadow-rect-stroke-width="shadowRectStrokeWidth"
           :is-rus="isRus"
           :is-eng="isEng"
         />
@@ -172,12 +196,11 @@
 <script setup>
   import {
     inject,
-    computed,
     ref
   } from 'vue';
 
   import useMainExample from '@/components/examples/useMainExample.js';
-  import useStyles from './useStyles.js';
+  import usePropsStyles from './usePropsStyles.js';
 
   import AnimationLay from '@/layouts/AnimationLay.vue';
   import SettingsPage from '@/layouts/SettingsPage.vue';
@@ -187,7 +210,7 @@
   import CardItem from '@/components/CardItem.vue';
   import FormGroup from '@/components/FormGroup.vue';
   import FormArea from '@/components/FormArea.vue';
-  import StylesAreas from '@/components/StylesAreas.vue';
+  import StylesProps from '@/components//StylesProps.vue';
 
   import { imageStud } from '@/assets/image-stud.js';
 
@@ -240,39 +263,38 @@
     if (activeId.value === id) changeActiveId(areas.value[0]?.id);
   }
 
-  const {
-    muBg,
-    muBorder,
-    muBoxShadow,
-    muGridColor,
-    muMarkingRectStrokeWidth,
-    muMarkingRectFillOpacity,
-    muMarkingRectStrokeOpacity,
-    muMarkingRectRx,
-    muMarkingRectRy,
-    muMarkingRectFill,
-    muMarkingRectStroke,
-    muMarkingRectActiveFill,
-    muMarkingRectActiveStroke,
-    muMarkingRectActiveFillOpacity,
-    muMarkingRectActiveStrokeOpacity,
-    muMarkingRectDraggingFill,
-    muMarkingRectDraggingStroke,
-    muMarkingRectDraggingFillOpacity,
-    muMarkingRectDraggingStrokeOpacity,
-    muMarkingRectShadowStroke,
-    muMarkingRectShadowStrokeOpacity,
-    muMarkingRectShadowStrokeWidth,
-    slyleMarkup,
-    slyleMarkupToCSS,
-  } = useStyles();
-
   // Интернационализация
   const prefix = 'vue labeling image';
   const headerText =[
     `Stylization ${prefix}`,
     `Стилизация ${prefix}`
   ];
+
+  const {
+    bg,
+    border,
+    boxShadow,
+    gridSize,
+    gridColor,
+    rectStrokeWidth,
+    rectFillOpacity,
+    rectStrokeOpacity,
+    rectRx,
+    rectRy,
+    rectFill,
+    rectStroke,
+    activeRectFill,
+    activeRectStroke,
+    activeRectFillOpacity,
+    activeRectStrokeOpacity,
+    labelingRectFill,
+    labelingRectStroke,
+    labelingRectFillOpacity,
+    labelingRectStrokeOpacity,
+    shadowRectStroke,
+    shadowRectStrokeOpacity,
+    shadowRectStrokeWidth
+  } = usePropsStyles();
 </script>
 
 <style lang="scss">
