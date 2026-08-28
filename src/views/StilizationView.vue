@@ -14,11 +14,16 @@
               href="settings"
               title="Страница настроек"
               :query="query"
-            >странице настроек</ui-link>.
+            >странице настроек</ui-link>, на данной странице при смене входного параметра "theme" будут меняться и стили для маркированных областей. Я бы рекомендовал вам задать для входного параметра "theme" какое-нибудь значение, к примеру "castomTheme" (theme="castomTheme"), в таком случае вам будет нужно прописать CSS-переменные для класса "mark-up_theme_castomTheme". На <ui-link
+              type="site"
+              href="settings"
+              title="Страница настроек"
+              :query="query"
+            >странице настроек</ui-link> это сделать проще всего. На мой взгляд стилизовать компоненты стоит через CSS-переменные, а не через входные параметры. Но очень многие frontend-разработчики к сожалению со CSS-стилями работать не умеют, поэтому я предусмотрел стилизацию через входные параметры.
           </p>
 
           <p>
-            Картинку я задам по умолчанию, пусть это будет "паспорт Бендера". Ещё я задам пару маркированных областей, пусть это будут "photo", "series" и "last name". Я разрешу маркировать картинку, и менять маркированные области (растягивать, переносить). Наверное для удобства имеет смысл разрешить редактировать маркированные области. По клику на кнопку "Сбросить", я буду очищать маркированные области, а саму картинку удалять я не буду.
+            Для наглядности я задам картинку по умолчанию, пусть это будет "паспорт Бендера". Ещё я задам пару маркированных областей, пусть это будут "photo", "series" и "last name". Я разрешу маркировать картинку, и менять маркированные области (растягивать, переносить). Наверное для удобства имеет смысл разрешить редактировать маркированные области. По клику на кнопку "Сбросить", я буду очищать маркированные области, а саму картинку удалять не буду.
           </p>
         </ui-full-page>
       </div>
@@ -31,7 +36,21 @@
 
         <ui-full-page>
           <p>
-            Какое-то описание.
+            This page will describe the input parameters (props) for styling my component. To describe the input parameters for styling, I decided to create a separate page so that they don’t get in the way on the <ui-link
+              type="site"
+              href="settings"
+              title="Settings page"
+              :query="query"
+            >settings page</ui-link>, on this page, when the input parameter “theme” is changed, the styles for the marked areas will also change. I would recommend that you set some value for the “theme” input parameter, for example, “customTheme” (theme="customTheme"). In this case, you will need to define CSS variables for the “mark-up_theme_customTheme” class. This is easiest to do on the <ui-link
+              type="site"
+              href="settings"
+              title="Settings page"
+              :query="query"
+            >settings page</ui-link>. In my opinion, it’s better to style components using CSS variables rather than input parameters. But unfortunately, many frontend developers don’t know how to work with CSS styles, so I’ve provided for styling via input parameters.
+          </p>
+
+          <p>
+            For clarity, I’ll set a default image — let it be “Bender’s passport”. I’ll also define a couple of marked areas — let them be “photo”, “series” and “last name”. I will allow you to mark the image and change the marked areas (stretch, move). Probably, for convenience, it makes sense to allow editing of the marked areas. By clicking the “Reset” button, I will clear the marked areas, but I will not delete the image itself.
           </p>
         </ui-full-page>
       </div>
