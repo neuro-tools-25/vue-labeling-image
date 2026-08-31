@@ -5,7 +5,6 @@ const usePropsStyles = () => {
   const border = ref('');
   const boxShadow = ref('');
   // Сетка
-  const gridSize = ref('');
   const gridColor = ref('');
   // Обычная область
   const rectStrokeWidth = ref('');
@@ -34,7 +33,6 @@ const usePropsStyles = () => {
     bg,
     border,
     boxShadow,
-    gridSize,
     gridColor,
     rectStrokeWidth,
     rectFillOpacity,

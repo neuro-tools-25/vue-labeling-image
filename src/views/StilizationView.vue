@@ -65,7 +65,6 @@
           :bg="bg"
           :border="border"
           :boxShadow="boxShadow"
-          :gridSize="gridSize"
           :gridColor="gridColor"
           :rectStrokeWidth="rectStrokeWidth"
           :rectFillOpacity="rectFillOpacity"
@@ -163,7 +162,6 @@
           v-model:bg="bg"
           v-model:border="border"
           v-model:box-shadow="boxShadow"
-          v-model:grid-size="gridSize"
           v-model:grid-color="gridColor"
           v-model:rect-stroke-width="rectStrokeWidth"
           v-model:rect-fill-opacity="rectFillOpacity"
@@ -208,7 +206,7 @@
   import CardItem from '@/components/CardItem.vue';
   import FormGroup from '@/components/FormGroup.vue';
   import FormArea from '@/components/FormArea.vue';
-  import StylesProps from '@/components//StylesProps.vue';
+  import StylesProps from '@/components/StylesProps.vue';
 
   import { imageStud } from '@/assets/image-stud.js';
 
@@ -272,7 +270,6 @@
     bg,
     border,
     boxShadow,
-    gridSize,
     gridColor,
     rectStrokeWidth,
     rectFillOpacity,

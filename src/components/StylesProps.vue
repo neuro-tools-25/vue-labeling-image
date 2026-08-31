@@ -1,5 +1,5 @@
 <template>
-  <ui-row class="styles-areas">
+  <ui-row class="styles-props-areas">
     <open-header
       :is-active="isMain"
       type-element="h2"
@@ -9,17 +9,7 @@
     </open-header>
 
     <template v-if="isMain">
-      <p>
-        <template v-if="props.isRus">
-          Данные стили зависят от параметра <b>theme</b> блока настроек. Если он будет меняться, то и некоторые цвета в данном блоке тоже изменятся. Будет обидно, если вы всё настроете, а потом, при смене параметра <b>theme</b> всё потеряется. Я бы порекомендовал вам, сперва маркировать картинку, а потом поменять данный параметр, и уже потом экспериментировать со стилями в этом блоке.
-        </template>
-
-        <template v-if="props.isEng">
-          These styles depend on the <b>theme</b> parameter of the settings block. If it changes, some colors in this block will also change. It would be a shame if you set everything up, and then, when you change the <b>theme</b> parameter, everything gets lost. I would recommend that you first mark the image, and then change this parameter, and only then experiment with the styles in this block.
-        </template>
-      </p>
-
-      <div class="styles-areas__group">
+      <div class="styles-props-areas__group">
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
@@ -31,7 +21,7 @@
             </template>
           </ui-label>
 
-          <ui-input v-model="muBg" />
+          <ui-input v-model="bg" />
         </ui-row>
 
         <ui-row>
@@ -45,7 +35,7 @@
             </template>
           </ui-label>
 
-          <ui-input v-model="muBorder" />
+          <ui-input v-model="border" />
         </ui-row>
 
         <ui-row>
@@ -59,7 +49,7 @@
             </template>
           </ui-label>
 
-          <ui-input v-model="muBoxShadow" />
+          <ui-input v-model="boxShadow" />
         </ui-row>
       </div>
 
@@ -72,7 +62,7 @@
 
       <div
         v-if="isDraggingArea"
-        class="styles-areas__group"
+        class="styles-props-areas__group"
       >
         <p>
           <template v-if="props.isRus">
@@ -95,7 +85,7 @@
             </template>
           </ui-label>
 
-          <ui-input v-model="muMarkingRectDraggingFill" />
+          <ui-input v-model="labelingRectFill" />
         </ui-row>
 
         <ui-row>
@@ -109,7 +99,7 @@
             </template>
           </ui-label>
 
-          <ui-input v-model="muMarkingRectDraggingStroke" />
+          <ui-input v-model="labelingRectStroke" />
         </ui-row>
 
         <ui-row>
@@ -123,7 +113,7 @@
             </template>
           </ui-label>
 
-          <ui-input v-model="muMarkingRectDraggingFillOpacity" />
+          <ui-input v-model="labelingRectFillOpacity" />
         </ui-row>
 
         <ui-row>
@@ -137,7 +127,7 @@
             </template>
           </ui-label>
 
-          <ui-input v-model="muMarkingRectDraggingStrokeOpacity" />
+          <ui-input v-model="labelingRectStrokeOpacity" />
         </ui-row>
       </div>
 
@@ -150,7 +140,7 @@
 
       <div 
         v-if="isActiveArea"
-        class="styles-areas__group"
+        class="styles-props-areas__group"
       >
         <p>
           <template v-if="props.isRus">
@@ -173,7 +163,7 @@
             </template>
           </ui-label>
 
-          <ui-input v-model="muMarkingRectActiveFill" />
+          <ui-input v-model="activeRectFill" />
         </ui-row>
 
         <ui-row>
@@ -187,7 +177,7 @@
             </template>
           </ui-label>
 
-          <ui-input v-model="muMarkingRectActiveStroke" />
+          <ui-input v-model="activeRectStroke" />
         </ui-row>
 
         <ui-row>
@@ -201,7 +191,7 @@
             </template>
           </ui-label>
 
-          <ui-input v-model="muMarkingRectActiveFillOpacity" />
+          <ui-input v-model="activeRectFillOpacity" />
         </ui-row>
 
         <ui-row>
@@ -215,7 +205,7 @@
             </template>
           </ui-label>
 
-          <ui-input v-model="muMarkingRectActiveStrokeOpacity" />
+          <ui-input v-model="activeRectStrokeOpacity" />
         </ui-row>
       </div>
 
@@ -228,7 +218,7 @@
 
       <div
         v-if="isMarkupArea"
-        class="styles-areas__group"
+        class="styles-props-areas__group"
       >
         <p>
           <template v-if="props.isRus">
@@ -251,7 +241,7 @@
             </template>
           </ui-label>
 
-          <ui-input v-model="muMarkingRectFill" />
+          <ui-input v-model="rectFill" />
         </ui-row>
 
         <ui-row>
@@ -265,7 +255,7 @@
             </template>
           </ui-label>
 
-          <ui-input v-model="muMarkingRectStroke" />
+          <ui-input v-model="rectStroke" />
         </ui-row>
 
         <ui-row>
@@ -279,7 +269,7 @@
             </template>
           </ui-label>
 
-          <ui-input v-model="muMarkingRectStrokeWidth" />
+          <ui-input v-model="rectStrokeWidth" />
         </ui-row>
 
         <ui-row>
@@ -293,7 +283,7 @@
             </template>
           </ui-label>
 
-          <ui-input v-model="muMarkingRectStrokeOpacity" />
+          <ui-input v-model="rectStrokeOpacity" />
         </ui-row>
 
         <ui-row>
@@ -307,7 +297,7 @@
             </template>
           </ui-label>
 
-          <ui-input v-model="muMarkingRectFillOpacity" />
+          <ui-input v-model="rectFillOpacity" />
         </ui-row>
 
         <ui-row>
@@ -321,7 +311,7 @@
             </template>
           </ui-label>
 
-          <ui-input v-model="muMarkingRectRx" />
+          <ui-input v-model="rectRx" />
         </ui-row>
 
         <ui-row>
@@ -335,7 +325,7 @@
             </template>
           </ui-label>
 
-          <ui-input v-model="muMarkingRectRy" />
+          <ui-input v-model="rectRy" />
         </ui-row>
       </div>
 
@@ -348,7 +338,7 @@
 
       <div
         v-if="isShadow"
-        class="styles-areas__group"
+        class="styles-props-areas__group"
       >
         <p>
           <template v-if="props.isRus">
@@ -371,7 +361,7 @@
             </template>
           </ui-label>
 
-          <ui-input v-model="muMarkingRectShadowStroke" />
+          <ui-input v-model="shadowRectStroke" />
         </ui-row>
 
         <ui-row>
@@ -385,7 +375,7 @@
             </template>
           </ui-label>
 
-          <ui-input v-model="muMarkingRectShadowStrokeWidth" />
+          <ui-input v-model="shadowRectStrokeWidth" />
         </ui-row>
 
         <ui-row>
@@ -399,7 +389,7 @@
             </template>
           </ui-label>
 
-          <ui-input v-model="muMarkingRectShadowStrokeOpacity" />
+          <ui-input v-model="shadowRectStrokeOpacity" />
         </ui-row>
       </div>
 
@@ -432,7 +422,7 @@
             </template>
           </ui-label>
 
-          <ui-input v-model="muGridColor" />
+          <ui-input v-model="gridColor" />
         </ui-row>
       </template>
     </template>
@@ -442,7 +432,7 @@
 <script setup>
   import { ref, computed } from 'vue';
 
-  import useStylesInt from './useStylesInt.js';
+  import useStylesPropsInt from './useStylesPropsInt.js';
   import OpenHeader from '@/UI/OpenHeader.vue';
 
   const props = defineProps(['isRus', 'isEng']);
@@ -455,28 +445,28 @@
   const isMarking = ref(false);
   const isShadow = ref(false);
 
-  const muBg = defineModel('bg');
-  const muBorder = defineModel('border');
-  const muBoxShadow = defineModel('box-shadow');
-  const muGridColor = defineModel('grid-color');
-  const muMarkingRectStrokeWidth = defineModel('marking-rect-stroke-width');
-  const muMarkingRectFillOpacity = defineModel('marking-rect-fill-opacity');
-  const muMarkingRectStrokeOpacity = defineModel('marking-rect-stroke-opacity');
-  const muMarkingRectRx = defineModel('marking-rect-rx');
-  const muMarkingRectRy = defineModel('marking-rect-ry');
-  const muMarkingRectFill = defineModel('marking-rect-fill');
-  const muMarkingRectStroke = defineModel('marking-rect-stroke');
-  const muMarkingRectActiveFill = defineModel('marking-rectA-ative-fill');
-  const muMarkingRectActiveStroke = defineModel('marking-rect-active-stroke');
-  const muMarkingRectActiveFillOpacity = defineModel('marking-rect-active-fill-opacity');
-  const muMarkingRectActiveStrokeOpacity = defineModel('marking-rect-active-stroke-opacity');
-  const muMarkingRectDraggingFill = defineModel('marking-rect-dragging-fill');
-  const muMarkingRectDraggingStroke = defineModel('marking-rect-dragging-stroke');
-  const muMarkingRectDraggingFillOpacity = defineModel('marking-rect-dragging-fill-opacity');
-  const muMarkingRectDraggingStrokeOpacity = defineModel('marking-rect-dragging-stroke-opacity');
-  const muMarkingRectShadowStroke = defineModel('marking-rect-shadow-stroke');
-  const muMarkingRectShadowStrokeOpacity = defineModel('marking-rect-shadow-stroke-opacity');
-  const muMarkingRectShadowStrokeWidth = defineModel('marking-rect-shadow-stroke-width');
+  const bg = defineModel('bg');
+  const border = defineModel('border');
+  const boxShadow = defineModel('box-shadow');
+  const gridColor = defineModel('grid-color');
+  const rectStrokeWidth = defineModel('rect-stroke-width');
+  const rectFillOpacity = defineModel('rect-fill-opacity');
+  const rectStrokeOpacity = defineModel('rect-stroke-opacity');
+  const rectRx = defineModel('rect-rx');
+  const rectRy = defineModel('rect-ry');
+  const rectFill = defineModel('rect-fill');
+  const rectStroke = defineModel('rect-stroke');
+  const activeRectFill = defineModel('active-rect-fill');
+  const activeRectStroke = defineModel('active-rect-stroke');
+  const activeRectFillOpacity = defineModel('active-rect-fill-opacity');
+  const activeRectStrokeOpacity = defineModel('active-rect-stroke-opacity');
+  const labelingRectFill = defineModel('labeling-rect-fill');
+  const labelingRectStroke = defineModel('labeling-rect-stroke');
+  const labelingRectFillOpacity = defineModel('labeling-rect-fill-opacity');
+  const labelingRectStrokeOpacity = defineModel('labeling-rect-stroke-opacity');
+  const shadowRectStroke = defineModel('shadow-rect-stroke');
+  const shadowRectStrokeOpacity = defineModel('shadow-rect-stroke-opacity');
+  const shadowRectStrokeWidth = defineModel('shadow-rect-stroke-width');
 
   const isEng = computed(() => props.isEng);
 
@@ -487,11 +477,15 @@
     commonStyles,
     shadowStyles,
     stylesForGrid
-  } = useStylesInt(isEng);
+  } = useStylesPropsInt(isEng);
 </script>
 
 <style lang="scss">
-  .styles-areas {
+  .styles-props-areas {
+    &.row {
+      margin-top: 0;
+    }
+
     &__group {
       margin-bottom: 25px;
     }
