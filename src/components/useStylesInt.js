@@ -3,7 +3,7 @@ import { computed } from 'vue';
 const useStylesInt = (isEng) => {
   const headerText = computed(() => {
     let text='Стили для блока маркировки изображения';
-    if (isEng.value) text='Styles for the image label block';
+    if (isEng.value) text='Styles for the image labeling block';
 
     return text;
   });

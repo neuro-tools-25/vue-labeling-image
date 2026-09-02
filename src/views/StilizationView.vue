@@ -9,17 +9,17 @@
 
         <ui-full-page>
           <p>
-            На данной странице будут описаны входные параметры (props) для стилизации моего компонента. Для описания входных параметров для стилизации я решил сделать отдельную страницу, для того, чтобы они не мешались на <ui-link
+            На данной странице описаны входные параметры (props) для стилизации моего компонента. Для описания входных параметров для стилизации я решил сделать отдельную страницу, для того, чтобы они не мешались на <ui-link
               type="site"
               href="settings"
               title="Страница настроек"
               :query="query"
-            >странице настроек</ui-link>, на данной странице при смене входного параметра "theme" будут меняться и стили для маркированных областей. Я бы рекомендовал вам задать для входного параметра "theme" какое-нибудь значение, к примеру "castomTheme" (theme="castomTheme"), в таком случае вам будет нужно прописать CSS-переменные для класса "mark-up_theme_castomTheme". На <ui-link
+            >странице настроек</ui-link>. Я бы рекомендовал вам задать для входного параметра "theme" какое-нибудь значение, к примеру "castomTheme" (theme="castomTheme"), в таком случае вам  нужно будет прописать CSS-переменные для класса "mark-up_theme_castomTheme". На <ui-link
               type="site"
               href="settings"
               title="Страница настроек"
               :query="query"
-            >странице настроек</ui-link> это сделать проще всего. На мой взгляд стилизовать компоненты стоит через CSS-переменные, а не через входные параметры. Но очень многие frontend-разработчики к сожалению со CSS-стилями работать не умеют, поэтому я предусмотрел стилизацию через входные параметры.
+            >странице настроек</ui-link> это сделать проще всего, достаточно просто задать нужные значения в блоке "Стили для блока маркировки изображения". На мой взгляд стилизовать компоненты стоит через CSS-переменные, а не через входные параметры. Но очень многие frontend-разработчики к сожалению со CSS-стилями работают плохо, поэтому я и предусмотрел стилизацию через входные параметры.
           </p>
 
           <p>
@@ -36,17 +36,17 @@
 
         <ui-full-page>
           <p>
-            This page will describe the input parameters (props) for styling my component. To describe the input parameters for styling, I decided to create a separate page so that they don’t get in the way on the <ui-link
+            This page describes the input parameters (props) for styling my component. To describe the input parameters for styling, I decided to make a separate page so that they would not interfere with the <ui-link
               type="site"
               href="settings"
               title="Settings page"
               :query="query"
-            >settings page</ui-link>, on this page, when the input parameter “theme” is changed, the styles for the marked areas will also change. I would recommend that you set some value for the “theme” input parameter, for example, “customTheme” (theme="customTheme"). In this case, you will need to define CSS variables for the “mark-up_theme_customTheme” class. This is easiest to do on the <ui-link
+            >settings page</ui-link>. I would recommend that you set some value for the input parameter "theme", for example "castomTheme" (theme="castomTheme"), in this case you will need to register CSS variables for the class "mark-up_theme_castomTheme". On the <ui-link
               type="site"
               href="settings"
               title="Settings page"
               :query="query"
-            >settings page</ui-link>. In my opinion, it’s better to style components using CSS variables rather than input parameters. But unfortunately, many frontend developers don’t know how to work with CSS styles, so I’ve provided for styling via input parameters.
+            >settings page</ui-link>, this is the easiest thing to do, just set the necessary values in the "Styles for the image labeling block". In my opinion, components should be styled through CSS variables, not through input parameters. But unfortunately, many frontend developers do not work well with CSS styles, so I provided styling through input parameters.
           </p>
 
           <p>
