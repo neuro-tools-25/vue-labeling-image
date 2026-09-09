@@ -9,25 +9,17 @@
 
         <ui-full-page>
           <p>
-            На данной странице описаны входные параметры (props) для стилизации моего компонента. На <ui-link
+            На <ui-link
               type="site"
               href="settings"
               title="Страница настроек"
               :query="query"
-            >"странице настроек"</ui-link> я описывал как на мой взгляд стоит стилизовать мой компонент. Если вкратце, то это делается через входной параметр "theme". В данный входной параметре указывается какое-нибудь значение. К примеру если мы зададим "castomTheme" (theme="castomTheme"), и дальше 
-          </p>
-          <p>
-            На данной странице описаны входные параметры (props) для стилизации моего компонента. Для описания входных параметров для стилизации я решил сделать отдельную страницу, для того, чтобы они не мешались на <ui-link
+            >"странице настроек"</ui-link> я описывал как на мой взгляд стоит правильно стилизовать мой компонент. Если вкратце, то это делается через входной параметр "theme". В данном входном параметре указывается какое-нибудь значение. К примеру, если мы зададим значение "castomTheme" (theme="castomTheme"), то нам нужно будет поменять CSS-переменные для класса "mark-up_theme_castomTheme". На <ui-link
               type="site"
               href="settings"
               title="Страница настроек"
               :query="query"
-            >странице настроек</ui-link>. Я бы рекомендовал вам задать для входного параметра "theme" какое-нибудь значение, к примеру "castomTheme" (theme="castomTheme"), в таком случае вам  нужно будет прописать CSS-переменные для класса "mark-up_theme_castomTheme". На <ui-link
-              type="site"
-              href="settings"
-              title="Страница настроек"
-              :query="query"
-            >странице настроек</ui-link> это сделать проще всего, достаточно просто задать нужные значения в блоке "Стили для блока маркировки изображения". На мой взгляд стилизовать компоненты стоит через CSS-переменные, а не через входные параметры. Но очень многие frontend-разработчики к сожалению со CSS-стилями работают плохо, поэтому я и предусмотрел стилизацию через входные параметры.
+            >"странице настроек"</ui-link> есть блок, где можно задавать входные параметры, и блок, в котором можно менять CSS-переменные. Таким образом стилизовать мой компонент будет проще всего. К сожалению я вынужден признать, что есть достаточно много frontend-разработчиков, которые в вёрстке не очень разбираются. Я знаю IT-компании, которые отдают вёрстку на аутсорс, а после интегрируют полученные макеты с vue.js. Я встречал frontend-разработчиков, которые умеют верстать только на "flex". Именно для таких frontend-разработчиков я и добавил возможность стилизации, через входные параметры.
           </p>
 
           <p>
@@ -44,17 +36,17 @@
 
         <ui-full-page>
           <p>
-            This page describes the input parameters (props) for styling my component. To describe the input parameters for styling, I decided to make a separate page so that they would not interfere with the <ui-link
+            On <ui-link
               type="site"
               href="settings"
               title="Settings page"
               :query="query"
-            >settings page</ui-link>. I would recommend that you set some value for the input parameter "theme", for example "castomTheme" (theme="castomTheme"), in this case you will need to register CSS variables for the class "mark-up_theme_castomTheme". On the <ui-link
+            >the settings page</ui-link>, I described how, in my opinion, it is worthwhile to style my component correctly. In short, this is done through the input parameter "theme". Some value is specified in this input parameter. For example, if we set the value to "castomTheme" (theme="castomTheme"), then we will need to change the CSS variables for the "mark-up_theme_castomTheme" class. On the <ui-link
               type="site"
               href="settings"
               title="Settings page"
               :query="query"
-            >settings page</ui-link>, this is the easiest thing to do, just set the necessary values in the "Styles for the image labeling block". In my opinion, components should be styled through CSS variables, not through input parameters. But unfortunately, many frontend developers do not work well with CSS styles, so I provided styling through input parameters.
+            >"settings page"</ui-link> has a block where you can set input parameters, and a block where you can change CSS variables. This will be the easiest way to style my component. Unfortunately, I have to admit that there are quite a lot of frontend developers who don't know much about layout. I know IT companies that outsource the layout and then integrate the resulting layouts with vue.js. I've met frontend developers who only know how to create in flex. It is for such frontend developers that I have added the possibility of styling through input parameters.     
           </p>
 
           <p>
