@@ -2,43 +2,43 @@ import { computed } from 'vue';
 
 const useStylesPropsInt = (isEng) => {
   const headerText = computed(() => {
-    let text='Стили для блока маркировки изображения';
-    if (isEng.value) text='Styles for the image label block';
+    let text='Входные параметры (props) для стилизации';
+    if (isEng.value) text='Input parameters (props) for styling';
 
     return text;
   });
 
   const stylesMarkUp = computed(() => {
-    let text='Стили для области в момент маркировки данных на картинке';
-    if (isEng.value) text='Styles for the area at the time of labeling the data in the image';
+    let text='Входные параметры для стилизации области в момент маркировки данных на картинке';
+    if (isEng.value) text='Input parameters for stylizing the area at the time of labeling the data in the image';
 
     return text;
   });
 
   const stylesActiveArea = computed(() => {
-    let text='Стили для активной маркированной области';
-    if (isEng.value) text='Styles for the active bulleted area';
+    let text='Входные параметры для стилизации активной маркированной области';
+    if (isEng.value) text='Input parameters for styling the active labeled area';
 
     return text;
   });
 
   const commonStyles = computed(() => {
-    let text='Общие стили для маркированных областей';
-    if (isEng.value) text='General styles for labeled areas';
+    let text='Общие входные параметры для стилизации маркированных областей';
+    if (isEng.value) text='Common input parameters for styling labeled areas';
 
     return text;
   });
 
   const shadowStyles = computed(() => {
-    let text='Стили для тени';
-    if (isEng.value) text='Styles for shadow';
+    let text='Входные параметры для стилизации тени';
+    if (isEng.value) text='Input parameters for shadow styling';
 
     return text;
   });
 
   const stylesForGrid = computed(() => {
-    let text='Стили для сетки';
-    if (isEng.value) text='Styles for the grid';
+    let text='Входные параметры для стилизации сетки';
+    if (isEng.value) text='Input parameters for grid styling';
 
     return text;
   });
