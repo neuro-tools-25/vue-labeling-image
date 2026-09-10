@@ -155,11 +155,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>activeRectFilll</b> - заливка активной маркированной области.
+              <b>activeRectFilll</b> - входной параметр отвечающий за заливку активной маркированной области.
             </template>
 
             <template v-if="props.isEng">
-              <b>activeRectFill</b> - filling the active marked area.
+              <b>activeRectFill</b> - the input parameter responsible for filling the active labeled area.
             </template>
           </ui-label>
 
