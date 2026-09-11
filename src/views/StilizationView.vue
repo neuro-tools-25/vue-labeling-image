@@ -19,11 +19,11 @@
               href="settings"
               title="Страница настроек"
               :query="query"
-            >"странице настроек"</ui-link> есть блок, где можно задавать входные параметры, и блок, в котором можно менять CSS-переменные. Таким образом стилизовать мой компонент будет проще всего. К сожалению я вынужден признать, что есть достаточно много frontend-разработчиков, которые в вёрстке не очень разбираются. Я знаю IT-компании, которые отдают вёрстку на аутсорс, а после интегрируют полученные макеты с vue.js. Я встречал frontend-разработчиков, которые умеют верстать только на "flex". Именно для таких frontend-разработчиков я и добавил возможность стилизации, через входные параметры.
+            >"странице настроек"</ui-link> есть блок, в котоом можно задавать входные параметры, блок, в котором можно менять CSS-переменные, и блок в котором можно увидеть результат. Таким образом стилизовать мой компонент будет проще всего. К сожалению я вынужден признать, что есть достаточно много frontend-разработчиков, которые в вёрстке не очень разбираются. Я знаю IT-компании, которые отдают вёрстку на аутсорс, а после интегрируют полученные макеты с vue.js. Я встречал frontend-разработчиков, которые умеют верстать только на "flex". Именно для таких frontend-разработчиков я и добавил возможность стилизации, через входные параметры.
           </p>
 
           <p>
-            Для наглядности я задам картинку по умолчанию, пусть это будет "паспорт Бендера". Ещё я задам пару маркированных областей, пусть это будут "photo", "series" и "last name". Я разрешу маркировать картинку, и менять маркированные области (растягивать, переносить). Наверное для удобства имеет смысл разрешить редактировать маркированные области. По клику на кнопку "Сбросить", я буду очищать маркированные области, а саму картинку удалять не буду.
+            Для наглядности я задам картинку по умолчанию, пусть это будет "паспорт Бендера". Ещё я задам пару маркированных областей, пусть это будут "photo", "series" и "last name". Я разрешу маркировать картинку, и менять маркированные области (растягивать, переносить). Наверное для удобства имеет смысл разрешить редактировать маркированные области. По клику на кнопку "Сбросить", я буду очищать маркированные области, а саму картинку удалять я не буду.
           </p>
         </ui-full-page>
       </div>
@@ -36,21 +36,21 @@
 
         <ui-full-page>
           <p>
-            On <ui-link
+            On the <ui-link
               type="site"
               href="settings"
               title="Settings page"
               :query="query"
-            >the settings page</ui-link>, I described how, in my opinion, it is worthwhile to style my component correctly. In short, this is done through the input parameter "theme". Some value is specified in this input parameter. For example, if we set the value to "castomTheme" (theme="castomTheme"), then we will need to change the CSS variables for the "mark-up_theme_castomTheme" class. On the <ui-link
+            >"settings page"</ui-link> I described how, in my opinion, my component should be styled correctly. In short, this is done via the input parameter "theme". This input parameter specifies some value. For example, if we set the value to “castomTheme” (theme="castomTheme"), we will need to change the CSS variables for the class “mark-up_theme_castomTheme”. On <ui-link
               type="site"
               href="settings"
               title="Settings page"
               :query="query"
-            >"settings page"</ui-link> has a block where you can set input parameters, and a block where you can change CSS variables. This will be the easiest way to style my component. Unfortunately, I have to admit that there are quite a lot of frontend developers who don't know much about layout. I know IT companies that outsource the layout and then integrate the resulting layouts with vue.js. I've met frontend developers who only know how to create in flex. It is for such frontend developers that I have added the possibility of styling through input parameters.     
+            >"settings page"</ui-link> contains a block where you can set input parameters, a block where you can change CSS variables, and a block where you can see the result. This will make styling my component the easiest. Unfortunately, I have to admit that there are quite a few frontend developers who aren’t very experienced in layout. I know IT companies that outsource layout work and then integrate the resulting layouts with vue.js. I’ve come across frontend developers who only know how to layout using “flex”. It’s precisely for such frontend developers that I added the possibility of styling through input parameters.
           </p>
 
           <p>
-            For clarity, I’ll set a default image — let it be “Bender’s passport”. I’ll also define a couple of marked areas — let them be “photo”, “series” and “last name”. I will allow you to mark the image and change the marked areas (stretch, move). Probably, for convenience, it makes sense to allow editing of the marked areas. By clicking the “Reset” button, I will clear the marked areas, but I will not delete the image itself.
+            For clarity, I’ll set a default image — let it be “Bender’s passport”. I’ll also set a couple of marked areas: let them be “photo”, “series” and “last name”. I’ll allow marking the image and changing the marked areas (stretching, moving). Probably, for convenience, it makes sense to allow editing the marked areas. When the “Reset” button is clicked, I’ll clear the marked areas, but I won’t delete the image itself.
           </p>
         </ui-full-page>
       </div>
