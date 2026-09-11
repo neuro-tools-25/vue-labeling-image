@@ -21,6 +21,9 @@
             </template>
           </ui-label>
 
+          <ui-checkbox v-model="isHideBg">
+            {{ watchBgText }}
+          </ui-checkbox>
           <ui-input v-model="bg" />
         </ui-row>
 
@@ -467,7 +470,7 @@
   const shadowRectStroke = defineModel('shadow-rect-stroke');
   const shadowRectStrokeOpacity = defineModel('shadow-rect-stroke-opacity');
   const shadowRectStrokeWidth = defineModel('shadow-rect-stroke-width');
-
+  const isHideBg = defineModel('is-hide-bg');
   const isEng = computed(() => props.isEng);
 
   const {
@@ -476,7 +479,8 @@
     stylesActiveArea,
     commonStyles,
     shadowStyles,
-    stylesForGrid
+    stylesForGrid,
+    watchBgText
   } = useStylesPropsInt(isEng);
 </script>
 

@@ -28,6 +28,8 @@ const usePropsStyles = () => {
   const shadowRectStroke = ref('');
   const shadowRectStrokeOpacity = ref('');
   const shadowRectStrokeWidth = ref('');
+  //Служебные переменные
+  const isHideBg = ref(false);
 
   return {
     bg,
@@ -51,7 +53,8 @@ const usePropsStyles = () => {
     labelingRectStrokeOpacity,
     shadowRectStroke,
     shadowRectStrokeOpacity,
-    shadowRectStrokeWidth
+    shadowRectStrokeWidth,
+    isHideBg
   }
 }
 

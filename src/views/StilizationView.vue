@@ -56,7 +56,10 @@
       </div>
     </animation-lay>
 
-    <card-item :is-eng="isEng">
+    <card-item
+      :is-eng="isEng"
+      :class='{ "stilization-page__noBg": isHideBg }'
+    >
       <template #markup>
         <labeling-image
           :image-src="imageStud"
@@ -181,6 +184,7 @@
           v-model:shadow-rect-stroke="shadowRectStroke"
           v-model:shadow-rect-stroke-opacity="shadowRectStrokeOpacity"
           v-model:shadow-rect-stroke-width="shadowRectStrokeWidth"
+          v-model:is-hide-bg="isHideBg"
           :is-rus="isRus"
           :is-eng="isEng"
         />
@@ -288,12 +292,24 @@
     labelingRectStrokeOpacity,
     shadowRectStroke,
     shadowRectStrokeOpacity,
-    shadowRectStrokeWidth
+    shadowRectStrokeWidth,
+    isHideBg
   } = usePropsStyles();
 </script>
 
 <style lang="scss">
   .stilization-page {
+    .mark-up__img{
+      opacity: 1;
+      transition: opacity var(--mu-transition-property);
+    }
+
+    &__noBg {
+      .mark-up__img {
+        opacity: 0;
+      }
+    }
+
     .card-mark-up-btn {
       .btn {
         margin-left: auto;
