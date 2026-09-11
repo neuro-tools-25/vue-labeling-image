@@ -79,6 +79,36 @@
           :query="query"
         />
 
+        <!-- Стилизация компонента через входные параметры -->
+        <intro-prop-style
+          :is-eng="false"
+          :query="query"
+        />
+        <markup-prop-style
+          :is-eng="false"
+          :query="query"
+        />
+        <labeling-prop-style
+          :is-eng="false"
+          :query="query"
+        />
+        <active-prop-style
+          :is-eng="false"
+          :query="query"
+        />
+        <common-prop-style 
+          :is-eng="false"
+          :query="query"
+        />
+        <shadow-prop-style
+          :is-eng="false"
+          :query="query"
+        />
+        <grid-prop-style
+          :is-eng="false"
+          :query="query"
+        />
+
         <!-- Слоты -->
         <slots-doc
           :is-eng="false"
@@ -164,6 +194,36 @@
           :query="query"
         />
 
+        <!-- Стилизация компонента черезвходные параметры-->
+        <intro-prop-style
+          :is-eng="true"
+          :query="query"
+        />
+        <markup-prop-style
+          :is-eng="true"
+          :query="query"
+        />
+        <labeling-prop-style
+          :is-eng="true"
+          :query="query"
+        />
+        <active-prop-style
+          :is-eng="true"
+          :query="query"
+        />
+        <common-prop-style 
+          :is-eng="true"
+          :query="query"
+        />
+        <shadow-prop-style
+          :is-eng="true"
+          :query="query"
+        />
+        <grid-prop-style
+          :is-eng="true"
+          :query="query"
+        />
+
         <!-- Слоты -->
         <slots-doc
           :is-eng="true"
@@ -201,7 +261,16 @@
   import CommonStyle from '@/components/documentation/stylization/CommonStyle.vue';
   import ShadowStyle from '@/components/documentation/stylization/ShadowStyle.vue';
   import GridStyle from '@/components/documentation/stylization/GridStyle.vue';
- 
+
+  // Стилизация компонента через входные параметры
+  import IntroPropStyle from '@/components/documentation/props-stylization/IntroPropStyle.vue';
+  import MarkupPropStyle from '@/components/documentation/props-stylization/MarkupPropStyle.vue';
+  import LabelingPropStyle from '@/components/documentation/props-stylization/LabelingPropStyle.vue';
+  import ActivePropStyle from '@/components/documentation/props-stylization/ActivePropStyle.vue';
+  import CommonPropStyle from '@/components/documentation/props-stylization/CommonPropStyle.vue';
+  import ShadowPropStyle from '@/components/documentation/props-stylization/ShadowPropStyle.vue';
+  import GridPropStyle from '@/components/documentation/props-stylization/GridPropStyle.vue';
+
   // Слоты
   import SlotsDoc from '@/components/documentation/slots/SlotsDoc.vue';
 
