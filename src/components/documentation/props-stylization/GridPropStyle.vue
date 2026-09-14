@@ -2,29 +2,29 @@
   <div class="style-grid">
     <template v-if="!props.isEng">
       <h3>
-        Стили сетки
+        Входные параметры отвечающие за стилизацию сетки
       </h3>
 
       <p>
-        Здесь можно задать цвет сетки. Чтобы увидеть данные стили, параметр "<strong>enableMarking</strong>" должен находиться в значении true.
+        Здесь представлен входной параметр отвечающий за цвет сетки. Чтобы увидеть за что отвечает данный входной параметр, входной параметр <strong>"enableMarking"</strong> должен находиться в значении true.
       </p>
 
       <p class="small-mar">
-        <strong>--mu-grid-color</strong> - цвет линии сетки.
+        <strong>gridColor</strong> - входной параметр отвечающий за цвет линии сетки.
       </p>
     </template>
 
     <template v-if="props.isEng">
       <h3>
-        Grid Styles
+        Input parameters responsible for grid styling
       </h3>
 
       <p>
-        You can set the grid color here. To see these styles, the "<strong>enableMarking</strong>" parameter must be set to true.
+        Here is the input parameter responsible for the color of the grid. To see what this input parameter is responsible for, the <strong>"enableMarking"</strong> input parameter must be set to true.
       </p>
 
       <p class="small-mar">
-        <strong>--mu-grid-color</strong> is the color of the grid line.
+        <strong>gridColor</strong> - the input parameter responsible for the color of the grid line.
       </p>
     </template>
   </div>

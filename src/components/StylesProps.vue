@@ -172,11 +172,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-marking-rect-active-stroke</b> - входной параметр отвечающий за цвет линии активной маркированной области.
+              <b>activeRectStroke</b> - входной параметр отвечающий за цвет линии активной маркированной области.
             </template>
 
             <template v-if="props.isEng">
-              <b>--mu-marking-rect-active-stroke</b> - the input parameter responsible for the color of the line of the active labeled area.
+              <b>activeRectStroke</b> - the input parameter responsible for the color of the line of the active labeled area.
             </template>
           </ui-label>
 
@@ -200,11 +200,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-marking-rect-active-stroke-opacity</b> - входной параметр отвечающий за прозрачность линии активной маркированной области.
+              <b>activeRectStrokeOpacity</b> - входной параметр отвечающий за прозрачность линии активной маркированной области.
             </template>
 
             <template v-if="props.isEng">
-              <b>--mu-marking-rect-active-stroke-opacity</b> - the input parameter responsible for the transparency of the line of the active labeled area.
+              <b>activeRectStrokeOpacity</b> - the input parameter responsible for the transparency of the line of the active labeled area.
             </template>
           </ui-label>
 

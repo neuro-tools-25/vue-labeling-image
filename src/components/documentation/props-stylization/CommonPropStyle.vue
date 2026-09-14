@@ -2,81 +2,85 @@
   <div class="style-common">
     <template v-if="!props.isEng">
       <h3>
-        Общие стили для маркированных областей
+        Входные параметры отвечающие за общие стили маркированных областей
       </h3>
 
       <p>
-        В данном блоке будут находиться общие стили для маркированных областей. Если маркированная область не активная, и вы её уже создали, то стили для неё можно посмотреть тоже здесь. Из всего того, что я делал, могу сказать, что маркированные области отличаются только цветом заливки, цветом линий (border), и прозрачностью линий и заливки. Такие вещи как закругления, толщина линий, везде были одинаковыми.
+        В данном блоке будут находиться входные параметры отвечающие за общие стили для маркированных областей. Для того, чтобы посмотреть за что отвечают эти входные параметры, достаточно создать 2, 3 маркированные области. Последняя область будет активной (к ней применяются другие входные параметры). Вы можете увидеть, на что влияют данные входные параметры по той области, или по тем областям, которые были созданы ранее активной. Из всего того, что я делал, могу сказать, что маркированные области отличаются только цветом заливки, цветом линий (border), и прозрачностью линий и заливки. Такие вещи как закругления, толщина линий, везде были одинаковыми.
       </p>
 
       <p class="small-mar">
-        <strong>--mu-marking-rect-fill</strong> - заливка маркированных областей, этот параметр переопределяется для активной области, и области в момент маркирования.
+        <strong>rectFill</strong> - входной параметр отвечающий за заливку маркированных областей.
       </p>
 
       <p class="small-mar">
-        <strong>--mu-marking-rect-stroke</strong> - цвет линий маркированной областей, этот параметр переопределяется для активной области, и области в момент маркирования.
+        <strong>rectFill</strong> - входной параметр отвечающий за цвет линий маркированных областей.
       </p>
 
       <p class="small-mar">
-        <strong>--mu-marking-rect-stroke-width</strong> - толщина линий маркированных областей, этот параметр применяется и для автивной области, и для области в момент маркирования. Будет как-то странно, если у активной области толщина линии будет больше, чем у обычных областей.
+        <strong>rectStrokeWidth</strong> - входной параметр отвечающий за толщину линий маркированных областей.
       </p>
 
       <p class="small-mar">
-        <strong>--mu-marking-rect-stroke-opacity</strong> - прозрачность линий маркированных областей, этот параметр переопределяется для активной области, и области в момент маркирования.
+        <strong>rectStrokeOpacity</strong> - входной параметр отвечающий за прозрачность линий маркированных областей.
       </p>
 
       <p class="small-mar">
-        <strong>--mu-marking-rect-fill-opacity</strong> - прозрачность заливки маркированных областей, этот параметр переопределяется для активной области, и области в момент маркирования.
+        <strong>rectFillOpacity</strong> - входной параметр отвечающий за прозрачность заливки маркированных областей.
       </p>
 
       <p class="small-mar">
-        <strong>--mu-marking-rect-rx</strong> - border-radius по оси X или закругление по оси X, этот парамерт применяется и для активной области, и для области в момент маркирования.
+        <strong>rectRx</strong> - входной параметр отвечающий за border-radius по оси X.
       </p>
 
       <p class="small-mar">
-        <strong>--mu-marking-rect-ry</strong> - border-radius по оси Y или закругление по оси Y, этот парамерт применяется и для активной области, и для области в момент маркирования.
+        <strong>rectRy</strong> - входной параметр отвечающий за border-radius по оси Y.
       </p>
 
       <p>
-        В большинстве случаев <strong>--mu-marking-rect-rx</strong> и <strong>--mu-marking-rect-ry</strong> будут одинаковыми, если вам не нужны закругления, то установите значения в 0.
+        В большинстве случаев <strong>rectRy</strong> и <strong>rectRy</strong> будут одинаковыми, если вам не нужны закругления, то установите значения в 0.
       </p>
     </template>
 
     <template v-if="props.isEng">
       <h3>
-        Common styles for labeled areas
+        Input parameters responsible for the general styles of the bulleted areas
       </h3>
 
       <p>
-        This block will contain common styles for the labeled areas. If the marked area is not active and you have already created it, then you can view the styles for it here too. From everything I've done, I can tell that the labeled areas differ only in the fill color, the color of the lines (border), and the transparency of the lines and fill. Things like the curves, the thickness of the lines, were the same everywhere.
+        This block will contain the input parameters responsible for the general styles for the labeled areas. In order to see what these input parameters are responsible for, it is enough to create 2, 3 labeled areas. The last area will be active (other input parameters are applied to it). You can see what these input parameters affect for that area, or for those areas that were created earlier by the active one. From everything I've done, I can tell that the labeled areas differ only in the fill color, the color of the lines (border), and the transparency of the lines and fill. Things like the curves, the thickness of the lines, were the same everywhere.
       </p>
 
       <p class="small-mar">
-        <strong>--mu-marking-rect-fill</strong> - filling of the marked areas, this parameter is redefined for the hotspot and the area at the time of labeling.
+        <strong>rectFill</strong> - the input parameter responsible for filling the marked areas.
       </p>
 
       <p class="small-mar">
-        <strong>--mu-marking-rect-stroke</strong> - the color of the lines of the marked areas, this parameter is redefined for the hotspot and the area at the time of marking.
+        <strong>rectStroke</strong> - the input parameter responsible for the color of the lines of the marked areas.
       </p>
 
       <p class="small-mar">
-        <strong>--mu-marking-rect-stroke-width</strong> is the line thickness of the marked areas. This parameter applies to both the active area and the area at the time of marking. It will be kind of strange if the active area has a line thickness greater than that of normal areas.
+        <strong>rectStrokeWidth</strong> - the input parameter responsible for the line thickness of the marked areas.
       </p>
 
       <p class="small-mar">
-        <strong>--mu-marking-rect-stroke-opacity</strong> - transparency of the lines of the marked areas, this parameter is redefined for the hotspot and the area at the time of marking.
+        <strong>rectStrokeOpacity</strong> - the input parameter responsible for the transparency of the lines of the marked areas.
       </p>
 
       <p class="small-mar">
-        <strong>--mu-marking-rect-rx</strong> - X-axis border-radius or X-axis rounding, this parameter applies to both the hotspot and the area at the time of marking.
+        <strong>rectFillOpacity</strong> - the input parameter responsible for the transparency of the fill of the marked areas.
       </p>
 
       <p class="small-mar">
-        <strong>--mu-marking-rect-ry</strong> - border-radius on the Y axis or rounding on the Y axis, this parameter applies to both the hotspot and the area at the time of marking.
+        <strong>rectRx</strong> - the input parameter responsible for the border is the X-axis radius.
+      </p>
+
+      <p class="small-mar">
+        <strong>rectRy</strong> - the input parameter responsible for the border is the Y-axis radius.
       </p>
 
       <p>
-        In most cases, <strong>--mu-marking-rect-rx</strong> and <strong>--mu-marking-rect-ry</strong> will be the same, if you don't need rounding, then set the values to 0.
+        In most cases, <strong>rectRx</strong> and <strong>rectRy</strong> will be the same, if you don't need rounding, then set the values to 0.
       </p>
     </template>
   </div>

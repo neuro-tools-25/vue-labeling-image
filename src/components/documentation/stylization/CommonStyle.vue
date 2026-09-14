@@ -68,6 +68,10 @@
       </p>
 
       <p class="small-mar">
+        <strong>--mu-marking-rect-fill-opacity</strong> - transparency of the fill of the marked areas, this parameter is redefined for the hotspot and the area at the time of labeling.
+      </p>
+
+      <p class="small-mar">
         <strong>--mu-marking-rect-rx</strong> - X-axis border-radius or X-axis rounding, this parameter applies to both the hotspot and the area at the time of marking.
       </p>
 

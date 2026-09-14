@@ -19,7 +19,7 @@
               href="settings"
               title="Страница настроек"
               :query="query"
-            >"странице настроек"</ui-link> есть блок, в котоом можно задавать входные параметры, блок, в котором можно менять CSS-переменные, и блок в котором можно увидеть результат. Таким образом стилизовать мой компонент будет проще всего. К сожалению я вынужден признать, что есть достаточно много frontend-разработчиков, которые в вёрстке не очень разбираются. Я знаю IT-компании, которые отдают вёрстку на аутсорс, а после интегрируют полученные макеты с vue.js. Я встречал frontend-разработчиков, которые умеют верстать только на "flex". Именно для таких frontend-разработчиков я и добавил возможность стилизации, через входные параметры.
+            >"странице настроек"</ui-link> есть блок, в котором можно задавать входные параметры, блок, в котором можно менять CSS-переменные, и блок в котором можно увидеть результат. Таким образом стилизовать мой компонент будет проще всего. К сожалению я вынужден признать, что есть достаточно много frontend-разработчиков, которые в вёрстке не очень разбираются. Я знаю IT-компании, которые отдают вёрстку на аутсорс, а после интегрируют полученные макеты с vue.js. Я встречал frontend-разработчиков, которые умеют верстать только на "flex". Именно для таких frontend-разработчиков я и добавил возможность стилизации, через входные параметры.
           </p>
 
           <p>
@@ -41,12 +41,12 @@
               href="settings"
               title="Settings page"
               :query="query"
-            >"settings page"</ui-link> I described how, in my opinion, my component should be styled correctly. In short, this is done via the input parameter "theme". This input parameter specifies some value. For example, if we set the value to “castomTheme” (theme="castomTheme"), we will need to change the CSS variables for the class “mark-up_theme_castomTheme”. On <ui-link
+            >"settings page"</ui-link>, I described how, in my opinion, it is worthwhile to style my component correctly. In short, this is done through the input parameter "theme". Some value is specified in this input parameter. For example, if we set the value to "castomTheme" (theme="castomTheme"), then we will need to change the CSS variables for the "mark-up_theme_castomTheme" class. On the <ui-link
               type="site"
               href="settings"
               title="Settings page"
               :query="query"
-            >"settings page"</ui-link> contains a block where you can set input parameters, a block where you can change CSS variables, and a block where you can see the result. This will make styling my component the easiest. Unfortunately, I have to admit that there are quite a few frontend developers who aren’t very experienced in layout. I know IT companies that outsource layout work and then integrate the resulting layouts with vue.js. I’ve come across frontend developers who only know how to layout using “flex”. It’s precisely for such frontend developers that I added the possibility of styling through input parameters.
+            >"settings page"</ui-link> has a block where you can set input parameters, a block where you can change CSS variables, and a block where you can see the result. This will be the easiest way to style my component. Unfortunately, I have to admit that there are quite a lot of frontend developers who don't know much about layout. I know IT companies that outsource the layout and then integrate the resulting layouts with vue.js. I've met frontend developers who only know how to create in flex. It is for such frontend developers that I have added the possibility of styling through input parameters.
           </p>
 
           <p>
