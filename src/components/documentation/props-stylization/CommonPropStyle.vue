@@ -44,7 +44,7 @@
 
     <template v-if="props.isEng">
       <h3>
-        Input parameters responsible for the general styles of the bulleted areas
+        input parameters responsible for the general styles of the labeled areas
       </h3>
 
       <p>
