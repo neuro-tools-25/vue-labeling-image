@@ -14,7 +14,7 @@
       </p>
 
       <p class="small-mar">
-        <strong>rectFill</strong> - входной параметр отвечающий за цвет линий маркированных областей.
+        <strong>rectStroke</strong> - входной параметр отвечающий за цвет линий маркированных областей.
       </p>
 
       <p class="small-mar">
@@ -44,7 +44,7 @@
 
     <template v-if="props.isEng">
       <h3>
-        input parameters responsible for the general styles of the labeled areas
+        Input parameters responsible for the general styles of the labeled areas
       </h3>
 
       <p>

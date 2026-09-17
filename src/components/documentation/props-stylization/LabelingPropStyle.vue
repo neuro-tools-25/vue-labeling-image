@@ -28,7 +28,7 @@
 
     <template v-if="props.isEng">
       <h3>
-        The input parameters responsible for the stylization of the area at the time of labeling the data in the image
+        Input parameters responsible for the stylization of the area at the time of labeling the data in the image
       </h3>
 
       <p>
