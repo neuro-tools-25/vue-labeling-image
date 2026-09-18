@@ -43,13 +43,6 @@ const useStylesPropsInt = (isEng) => {
     return text;
   });
 
-  const watchBgText = computed(() => {
-    let text='Посмотреть background';
-    if (isEng.value) text='View the background';
-
-    return text;
-  });
-
   return {
     headerText,
     stylesMarkUp,
@@ -57,7 +50,6 @@ const useStylesPropsInt = (isEng) => {
     commonStyles,
     shadowStyles,
     stylesForGrid,
-    watchBgText
   }
 }
 

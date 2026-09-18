@@ -87,6 +87,8 @@
           :shadowRectStroke="shadowRectStroke"
           :shadowRectStrokeOpacity="shadowRectStrokeOpacity"
           :shadowRectStrokeWidth="shadowRectStrokeWidth"
+          :is-shadow="isShadow"
+          :enable-grid="isGrid"
         />
 
         <ui-row
@@ -185,6 +187,8 @@
           v-model:shadow-rect-stroke-opacity="shadowRectStrokeOpacity"
           v-model:shadow-rect-stroke-width="shadowRectStrokeWidth"
           v-model:is-hide-bg="isHideBg"
+          v-model:is-shadow="isShadow"
+          v-model:is-grid="isGrid"
           :is-rus="isRus"
           :is-eng="isEng"
         />
@@ -264,10 +268,9 @@
   }
 
   // Интернационализация
-  const prefix = 'vue labeling image';
   const headerText =[
-    `Stylization ${prefix}`,
-    `Стилизация ${prefix}`
+    'Stylization',
+    'Стилизация'
   ];
 
   const {
@@ -293,7 +296,9 @@
     shadowRectStroke,
     shadowRectStrokeOpacity,
     shadowRectStrokeWidth,
-    isHideBg
+    isHideBg,
+    isShadow,
+    isGrid
   } = usePropsStyles();
 </script>
 

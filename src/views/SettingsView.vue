@@ -1,6 +1,6 @@
 <template>
   <SettingsPage :style="slyleMarkup">
-    <h1 class="h1">{{ settingsText }} vue labeling image</h1>
+    <h1 class="h1">{{ settingsText }}</h1>
 
     <card-item :is-eng="isEng">
       <template #markup>

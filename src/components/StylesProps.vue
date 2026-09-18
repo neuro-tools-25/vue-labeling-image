@@ -333,14 +333,14 @@
       </div>
 
       <open-header
-        :is-active="isShadow"
-        @click="isShadow = !isShadow"
+        :is-active="isShadowBlock"
+        @click="isShadowBlock = !isShadowBlock"
       >
         {{ shadowStyles }}
       </open-header>
 
       <div
-        v-if="isShadow"
+        v-if="isShadowBlock"
         class="styles-props-areas__group"
       >
         <p>
@@ -354,6 +354,10 @@
         </p>
 
         <ui-row>
+          <ui-checkbox v-model="isShadow">
+            {{ watchShadowText }}
+          </ui-checkbox>
+
           <ui-label>
             <template v-if="props.isRus">
               <b>shadowRectStroke</b> - входной параметр отвечающий за цвет линий для тени.
@@ -415,6 +419,10 @@
         </p>
 
         <ui-row>
+          <ui-checkbox v-model="isGrid">
+            {{ watchGridText }}
+          </ui-checkbox>
+
           <ui-label>
             <template v-if="props.isRus">
               <b>gridColorr</b> - входной параметр отвечающий за цвет линии сетки.
@@ -446,7 +454,7 @@
   const isActiveArea = ref(false);
   const isMarkupArea = ref(false);
   const isMarking = ref(false);
-  const isShadow = ref(false);
+  const isShadowBlock = ref(false);
 
   const bg = defineModel('bg');
   const border = defineModel('border');
@@ -471,6 +479,8 @@
   const shadowRectStrokeOpacity = defineModel('shadow-rect-stroke-opacity');
   const shadowRectStrokeWidth = defineModel('shadow-rect-stroke-width');
   const isHideBg = defineModel('is-hide-bg');
+  const isShadow = defineModel('is-shadow');
+  const isGrid = defineModel('is-grid');
   const isEng = computed(() => props.isEng);
 
   const {
@@ -480,8 +490,34 @@
     commonStyles,
     shadowStyles,
     stylesForGrid,
-    watchBgText
   } = useStylesPropsInt(isEng);
+
+  const watchBgText = computed(() => {
+    if (isEng.value && isHideBg.value) return 'Show the “Bender passport”'
+    if (isEng.value && !isHideBg.value) return 'Hide “Bender’s passport”'
+
+    if (isHideBg.value) return 'Показать "паспорт Бендера"'
+
+    return 'Скрыть "паспорт Бендера"'
+  });
+
+  const watchGridText = computed(() => {
+    if (isEng.value && !isGrid.value) return 'Show the grid'
+    if (isEng.value && isGrid.value) return 'Hide grid'
+
+    if (!isGrid.value) return 'Показать сетку'
+
+    return 'Скрыть сетку'
+  });
+
+  const watchShadowText = computed(() => {
+    if (isEng.value && !isShadow.value) return 'Show the shadow'
+    if (isEng.value && isShadow.value) return 'Hide shadow'
+
+    if (!isShadow.value) return 'Показать тень'
+
+    return 'Скрыть тень'
+  });
 </script>
 
 <style lang="scss">
