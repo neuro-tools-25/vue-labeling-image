@@ -340,6 +340,82 @@ You can set the grid color here. To see these styles, the "**enableMarking**" pa
 
 **\--mu-grid-color** is the color of the grid line.
 
+## Input parameters (props) responsible for the styling of my component
+
+I have already described above how to style my component, the same section is most likely needed for some emergency cases. When necessary, quickly adjust styles without touching CSS, or highlight something depending on certain conditions. To make things easier for you, I recommend that you open the ["styling page"](https://neuro-tools-25.github.io/vue-labeling-image/stylization "Styling page"), on this page you can change the input parameters and see which input parameter is responsible for what.
+
+If you look below, you'll notice that I first described the "input parameters responsible for the styling of the image labeling block". This is the block itself, which will contain the image for labeling, and the labeled areas. When we start labeling the image, the "input parameters responsible for the stylization of the area at the time of labeling the data in the image" will be applied to the created labeled area. As a rule, these styles are slightly darker than the active labeled area. After you have finished labeling (by releasing the left mouse button), the area will become active, and the "input parameters responsible for the styling of the active labeled area" will be useful for its styling. The area can be made active by simply clicking on it. This is the default behavior, it can be overridden, see the description of the parameters. If you make 4-5 labeled areas, then one area will be active, and "input parameters responsible for the general styles of the labeled areas" will be applied to the rest of the areas. I wrote the documentation based on this.
+
+### Input parameters responsible for the styling of the image labeling block
+
+In this section, we are talking about the input parameters responsible for the styling of the block in which the image for labeling will be located. How to style the labeling areas will be described below.
+
+**bg** - the input parameter responsible for the background of the image labeling block.
+
+**border** - the input parameter responsible for the border for the image labeling block.
+
+**border** - the input parameter responsible for the box-shadow for the image labeling block.
+
+### Input parameters responsible for the stylization of the area at the time of labeling the data in the image
+
+Input parameters responsible for the stylization of the labeled area at the time of its creation (labeling). This is what the labeled area will look like. At the moment when we start labeling the document, as a rule, it will be slightly darker than the active labeled area. In order to see these styles, you first need to select an image, then click the left mouse button and swipe over the image without releasing the left mouse button. The **isMarkup** parameter must be set to true, **IsReadOnly** must be set to false, otherwise you will not be able to label the image.
+
+**labelingRectFill** - the input parameter responsible for the fill color at the time of labeling the image.
+
+**labelingRectStroke** - the input parameter responsible for the color of the line at the time of labeling the image.
+
+**labelingRectFillOpacity** - the input parameter responsible for the transparency of the fill at the time of labeling the image.
+
+**labelingRectStrokeOpacity** - the input parameter responsible for the transparency of the line at the time of labeling the image.
+
+### Input parameters responsible for the styling of the active labeled area
+
+You can see what these input parameters do after the labeling process is completed. The last created area will become active. Also, these styles will be applied to the area when we click on it. The **IsReadOnly** parameter must be set to false, otherwise you will not see the styles for the hotspot, and you will not be able to mark up the areas. Also, the **isMarkup** parameter must be set to true, otherwise you will not be able to label the image.
+
+**activeRectFill** - the input parameter responsible for filling the active labeled area.
+
+**activeRectStroke** - the input parameter responsible for the color of the line of the active labeled area.
+
+**activeRectFillOpacity** - the input parameter responsible for the transparency of the active labeled area.
+
+**activeRectStrokeOpacity** - the input parameter responsible for the transparency of the line of the active labeled area.
+
+### Input parameters responsible for the general styles of the labeled areas
+
+This block will contain the input parameters responsible for the general styles for the labeled areas. In order to see what these input parameters are responsible for, it is enough to create 2, 3 labeled areas. The last area will be active (other input parameters are applied to it). You can see what these input parameters affect for that area, or for those areas that were created earlier by the active one. From everything I've done, I can tell that the labeled areas differ only in the fill color, the color of the lines (border), and the transparency of the lines and fill. Things like the curves, the thickness of the lines, were the same everywhere.
+
+**rectFill** - the input parameter responsible for filling the marked areas.
+
+**rectStroke** - the input parameter responsible for the color of the lines of the marked areas.
+
+**rectStrokeWidth** - the input parameter responsible for the line thickness of the marked areas.
+
+**rectStrokeOpacity** - the input parameter responsible for the transparency of the lines of the marked areas.
+
+**rectFillOpacity** - the input parameter responsible for the transparency of the fill of the marked areas.
+
+**rectRx** - the input parameter responsible for the border is the X-axis radius.
+
+**rectRy** - the input parameter responsible for the border is the Y-axis radius.
+
+In most cases, **rectRx** and **rectRy** will be the same, if you don't need rounding, then set the values to 0.
+
+### Input parameters responsible for styling the shadows of the marked areas
+
+This block contains the input parameters responsible for the color of the line for the shadow, its thickness and transparency. When styling, keep in mind that the color for the shadow should match the color of the line of the marked area. In most cases, the shadow should be turned on only when you don't know exactly which documents the user will upload. For example, if you upload a document with a predominance of red, for example, a passport in Russia, then the active marked area will not be very noticeable. The shadow is needed in order to highlight the marked area on the document, so that it does not merge with it.
+
+**shadowRectStroke** - the input parameter responsible for the color of the lines for the shadow.
+
+**shadowRectStrokeWidth** - the input parameter responsible for the line thickness for the shadow.
+
+**shadowRectStrokeOpacity** - the input parameter responsible for the transparency of the shadow line.
+
+### Input parameters responsible for grid styling
+
+Here is the input parameter responsible for the color of the grid. To see what this input parameter is responsible for, the **"enableMarking"** input parameter must be set to true.
+
+**gridColor** - the input parameter responsible for the color of the grid line.
+
 ## Slots
 
 The slots can be useful for inserting the company's logo into my component, hints to the marked areas during debugging, some pictures, labeling controls in the form of icons, or something similar. To get started, open [the examples page](https://neuro-tools-25.github.io/vue-labeling-image/examples "Examples"), and see the examples with slots. Everything should be quite simple here.
