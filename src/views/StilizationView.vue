@@ -65,6 +65,7 @@
           :image-src="imageStud"
           v-model="areas"
           v-model:active-id="activeId"
+          grid-size="10"
           :bg="bg"
           :border="border"
           :boxShadow="boxShadow"
