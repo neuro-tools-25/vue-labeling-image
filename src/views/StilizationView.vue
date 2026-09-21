@@ -208,8 +208,8 @@
 
   import AnimationLay from '@/layouts/AnimationLay.vue';
   import SettingsPage from '@/layouts/SettingsPage.vue';
-  //import LabelingImage from 'lib/index.es.js';
-  import LabelingImage from '@/components/labeling-image/index.js';
+  import LabelingImage from 'lib/index.es.js';
+  //import LabelingImage from '@/components/labeling-image/index.js';
 
   import CardItem from '@/components/CardItem.vue';
   import FormGroup from '@/components/FormGroup.vue';
