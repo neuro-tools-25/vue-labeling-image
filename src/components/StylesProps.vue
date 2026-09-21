@@ -13,11 +13,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>bg</b> - входной параметр отвечающий за background блока маркирования картинок.
+              <b>bg</b> - входной параметр отвечающий за background блока маркирования картинок. В данный входной параметр можно задать как путь к картинке, так и любое допустимое значение цвета в CSS. Для того, чтобы увидеть на что влияет данный входной параметр вам стоит скрыть "паспорт Бендера", для этого нажмите на чекбокс ниже и задайте нужное вам значение. Для примера я могу вам посоветовать ввести следующие значения: #000, red, green, rgb(0, 255, 0), rgba(0, 255, 255, .4), hsla(240, 100%, 50%, 0.5).
             </template>
 
             <template v-if="props.isEng">
-              <b>bg</b> - the input parameter responsible for the background of the image labeling block.
+              <b>bg</b> - is an input parameter responsible for the background of the image marking block. This input parameter can be set to either a path to an image or any valid CSS color value. To see what this input parameter affects, you need to hide the “Bender’s passport”; to do this, click the checkbox below and set the value you need. For example, I can advise you to enter #000, red, green, rgb(0, 255, 0), rgba(0, 255, 255, .4), hsla(240, 100%, 50%, 0.5).
             </template>
           </ui-label>
 
@@ -30,11 +30,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>border</b> - входной параметр отвечающий за border для блока маркирования картинок.
+              <b>border</b> - входной параметр отвечающий за border для блока маркирования картинок. В него можно задать любое допустимое значение для border-а в CSS. Для примера попробуйте ввести: 1px solid #000, или 5px dotted rgba(255, 100, 255, .8).
             </template>
 
             <template v-if="props.isEng">
-              <b>border</b> - the input parameter responsible for the border for the image labeling block.
+              <b>border</b> is an input parameter responsible for the border of the image marking block. You can set any valid value for border in CSS. For example, try entering: 1px solid #000, or 5px dotted rgba(255, 100, 255, .8).
             </template>
           </ui-label>
 
@@ -44,11 +44,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>boxShadow</b> - входной параметр отвечающий за box-shadow для блока маркирования картинок.
+              <b>boxShadow</b> - входной параметр отвечающий за box-shadow для блока маркирования картинок. Здесь можно задать любое приемлемое значение для тени в CSS. Для примера попробуйте задать следующие значения: 0 0 20px rgba(0, 0, 0, .8), или 5px 5px 20px rgba(50, 50, 50, .8).
             </template>
 
             <template v-if="props.isEng">
-              <b>boxShadow</b> - the input parameter responsible for the box-shadow for the image labeling block.
+              <b>boxShadow</b> — an input parameter responsible for the box-shadow for the image marking block. Here, you can set any valid value for the shadow in CSS. For example, try setting the following values: 0 0 20px rgba(0, 0, 0, .8) or 5px 5px 20px rgba(50, 50, 50, .8).
             </template>
           </ui-label>
 
@@ -69,22 +69,22 @@
       >
         <p>
           <template v-if="props.isRus">
-            Данные входные параметры отвечают за стили в момент маркирования картинки.
+            Данные входные параметры отвечают за стили области которая будет появляться в момент маркирования картинки.
           </template>
 
           <template v-if="props.isEng">
-            These input parameters are responsible for the styles at the time of labeling the image.
+            These input parameters determine the style of the area that will appear when labeling the image.
           </template>
         </p>
 
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>labelingRectFill</b> - входной параметр отвечающий за цвет заливки в момент маркирования картинки.
+              <b>labelingRectFill</b> - входной параметр отвечающий за цвет заливки в момент маркирования картинки. Для него возможно задать любое приемлемое значение для цвета в CSS. Для примера попробуйте задать следующие цвета: orange, rgba(77, 77, 77, .7), rgb(77, 77, 77).
             </template>
 
             <template v-if="props.isEng">
-              <b>labelingRectFill</b> - the input parameter responsible for the fill color at the time of labeling the image.
+              <b>labelingRectFill</b> is an input parameter that determines the fill color at the time of marking the image. You can set any acceptable color value in CSS for it. For example, try setting the following colors: orange, rgba(77, 77, 77, .7), rgb(77, 77, 77).
             </template>
           </ui-label>
 
@@ -94,11 +94,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>labelingRectStroke</b> - входной параметр отвечающий за цвет линии в момент маркирования картинки.
+              <b>labelingRectStroke</b> - входной параметр отвечающий за цвет линии в момент маркирования картинки. Для него также возможно задать любое приемлемое значение для цвета в CSS. Для примера попробуйте задать следующие цвета: orange, rgba(77, 77, 77, .7), rgb(77, 77, 77).
             </template>
 
             <template v-if="props.isEng">
-              <b>labelingRectStroke</b> - the input parameter responsible for the color of the line at the time of labeling the image.
+              <b>labelingRectStroke</b> - is an input parameter responsible for the line color at the time of marking the image. It is also possible to set any acceptable color value in CSS for it. For example, try setting the following colors: orange, rgba(77, 77, 77, .7), rgb(77, 77, 77).
             </template>
           </ui-label>
 
@@ -108,11 +108,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>labelingRectFillOpacityy</b> - входной параметр отвечающий за прозрачность заливки в момент маркирования картинки.
+              <b>labelingRectFillOpacityy</b> - входной параметр отвечающий за прозрачность заливки в момент маркирования картинки. Для него возможно задать любое значение в интервале от 0 до 1. Для примера попробуйте задать: 0, .4, .8, 1.
             </template>
 
             <template v-if="props.isEng">
-              <b>labelingRectFillOpacity</b> - the input parameter responsible for the transparency of the fill at the time of labeling the image.
+              <b>labelingRectFillOpacityy</b> is an input parameter that controls the fill transparency at the time of image marking. You can set any value for it within the range from 0 to 1. For example, try setting: 0, .4, .8, 1.
             </template>
           </ui-label>
 
@@ -122,11 +122,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>labelingRectStrokeOpacity</b> - входной параметр отвечающий за прозрачность линии в момент маркирования картинки.
+              <b>labelingRectStrokeOpacity</b> - входной параметр отвечающий за прозрачность линии в момент маркирования картинки. Для него возможно задать любое значение в интервале от 0 до 1. Для примера попробуйте задать: 0, .4, .8, 1.
             </template>
 
             <template v-if="props.isEng">
-              <b>labelingRectStrokeOpacity</b> - the input parameter responsible for the transparency of the line at the time of labeling the image.
+              <b>labelingRectStrokeOpacity</b> is an input parameter that controls the transparency of the line when marking the image. You can set any value within the range from 0 to 1. For example, try setting: 0, .4, .8, 1.
             </template>
           </ui-label>
 
