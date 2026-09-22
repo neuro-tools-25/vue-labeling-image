@@ -158,11 +158,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>activeRectFilll</b> - входной параметр отвечающий за заливку активной маркированной области.
+              <b>activeRectFilll</b> - входной параметр отвечающий за заливку активной маркированной области. Для него возможно задать любое приемлемое значение для цвета в CSS. Для примера попробуйте задать следующие цвета: orange, rgba(77, 77, 77, .7), rgb(77, 77, 77).
             </template>
 
             <template v-if="props.isEng">
-              <b>activeRectFill</b> - the input parameter responsible for filling the active labeled area.
+              <b>activeRectFilll</b> - is an input parameter responsible for filling the active marked area. You can set any acceptable value for the color in CSS for it. For example, try setting the following colors: orange, rgba(77, 77, 77, .7), rgb(77, 77, 77).
             </template>
           </ui-label>
 
@@ -172,11 +172,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>activeRectStroke</b> - входной параметр отвечающий за цвет линии активной маркированной области.
+              <b>activeRectStroke</b> - входной параметр отвечающий за цвет линии активной маркированной области. Для него возможно задать любое приемлемое значение для цвета в CSS. Для примера попробуйте задать следующие цвета: orange, rgba(77, 77, 77, .7), rgb(77, 77, 77).
             </template>
 
             <template v-if="props.isEng">
-              <b>activeRectStroke</b> - the input parameter responsible for the color of the line of the active labeled area.
+              <b>activeRectStroke</b> is an input parameter that determines the color of the line of the active marked area. You can set any acceptable color value in CSS for it. For example, try setting the following colors: orange, rgba(77, 77, 77, .7), rgb(77, 77, 77).
             </template>
           </ui-label>
 
@@ -186,11 +186,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>activeRectFillOpacity</b> - входной параметр отвечающий за прозрачность активной маркированной области.
+              <b>activeRectFillOpacity</b> - входной параметр отвечающий за прозрачность активной маркированной области. Для него возможно задать любое значение в интервале от 0 до 1. Для примера попробуйте задать: 0, .4, .8, 1.
             </template>
 
             <template v-if="props.isEng">
-              <b>activeRectFillOpacity</b> - the input parameter responsible for the transparency of the active labeled area.
+              <b>activeRectFillOpacity</b> is an input parameter that controls the transparency of the active marked area. You can set any value for it within the range from 0 to 1. For example, try setting: 0, .4, .8, 1.
             </template>
           </ui-label>
 
@@ -200,11 +200,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>activeRectStrokeOpacity</b> - входной параметр отвечающий за прозрачность линии активной маркированной области.
+              <b>activeRectStrokeOpacity</b> - входной параметр отвечающий за прозрачность линии активной маркированной области. Для него возможно задать любое значение в интервале от 0 до 1. Для примера попробуйте задать: 0, .4, .8, 1.
             </template>
 
             <template v-if="props.isEng">
-              <b>activeRectStrokeOpacity</b> - the input parameter responsible for the transparency of the line of the active labeled area.
+              <b>activeRectStrokeOpacity</b> - the input parameter responsible for the transparency of the line of the active labeled area. You can set any value for it within the range from 0 to 1. For example, try setting: 0, .4, .8, 1.
             </template>
           </ui-label>
 
@@ -236,11 +236,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>rectFill</b> - входной параметр отвечающий за заливку маркированных областей.
+              <b>rectFill</b> - входной параметр отвечающий за заливку маркированных областей. Для него возможно задать любое приемлемое значение для цвета в CSS. Для примера попробуйте задать следующие цвета: orange, blue, rgba(77, 77, 77, .7), rgb(77, 77, 77).
             </template>
 
             <template v-if="props.isEng">
-              <b>rectFill</b> - the input parameter responsible for filling the marked areas.
+              <b>rectFill</b> is an input parameter responsible for filling the marked areas. You can set any acceptable value for the color in CSS for it. For example, try setting the following colors: orange, blue, rgba(77, 77, 77, .7), rgb(77, 77, 77).
             </template>
           </ui-label>
 
@@ -250,11 +250,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>rectStroke</b> - входной параметр отвечающий за цвет линий маркированных областей.
+              <b>rectStroke</b> - входной параметр отвечающий за цвет линий маркированных областей. Для него возможно задать любое приемлемое значение для цвета в CSS. Для примера попробуйте задать следующие цвета: orange, blue, rgba(77, 77, 77, .7), rgb(77, 77, 77).
             </template>
 
              <template v-if="props.isEng">
-              <b>rectStroke</b> - the input parameter responsible for the color of the lines of the marked areas.
+              <b>rectStroke</b> - the input parameter responsible for the color of the lines of the marked areas. You can set any acceptable value for the color in CSS for it. For example, try setting the following colors: orange, blue, rgba(77, 77, 77, .7), rgb(77, 77, 77).
             </template>
           </ui-label>
 
@@ -264,11 +264,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>rectStrokeWidth</b> - входной параметр отвечающий за толщину линий маркированных областей.
+              <b>rectStrokeWidth</b> - входной параметр отвечающий за толщину линий маркированных областей. Для него возможно задать любое значение соответствующее толщине линий маркированных областей. Для примера попробуйте задать: 1, 3px, .3em, .4rem, 1%.
             </template>
 
             <template v-if="props.isEng">
-              <b>rectStrokeWidth</b> - the input parameter responsible for the line thickness of the marked areas.
+              <b>rectStrokeWidth</b> — входной параметр, отвечающий за толщину линий выделенных областей. Для него можно задать любое значение, соответствующее толщине линий выделенных областей. Для примера попробуйте задать: 1, 3px, .3em, .4rem, 1%.
             </template>
           </ui-label>
 
@@ -278,11 +278,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>rectStrokeOpacity</b> - входной параметр отвечающий за прозрачность линий маркированных областей.
+              <b>rectStrokeOpacity</b> - входной параметр отвечающий за прозрачность линий маркированных областей. Для него возможно задать любое значение в интервале от 0 до 1. Для примера попробуйте задать: 0, .4, .8, 1.
             </template>
 
             <template v-if="props.isEng">
-              <b>rectStrokeOpacity</b> - the input parameter responsible for the transparency of the lines of the marked areas.
+              <b>rectStrokeOpacity</b> - is an input parameter that controls the transparency of the lines of the marked areas. You can set any value for it within the range from 0 to 1. For example, try setting: 0, .4, .8, 1.
             </template>
           </ui-label>
 
@@ -292,11 +292,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>rectFillOpacity</b> - входной параметр отвечающий за прозрачность заливки маркированных областей.
+              <b>rectFillOpacity</b> - входной параметр отвечающий за прозрачность заливки маркированных областей. Для него возможно задать любое значение в интервале от 0 до 1. Для примера попробуйте задать: 0, .4, .8, 1.
             </template>
 
             <template v-if="props.isEng">
-              <b>rectFillOpacity</b> - the input parameter responsible for the transparency of the fill of the marked areas.
+              <b>rectFillOpacity</b> - the input parameter responsible for the transparency of the fill of the marked areas. You can set any value for it within the range from 0 to 1. For example, try setting: 0, .4, .8, 1.
             </template>
           </ui-label>
 
@@ -306,11 +306,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>rectRx</b> - входной параметр отвечающий за border-radius по оси X.
+              <b>rectRx</b> - входной параметр отвечающий за border-radius по оси X. Для него возможно задать любое значение которое было приемлемо для свойства border-radius в CSS. Для примера попробуйте задать: 3, 5px, 1%, 1em, .5rem.
             </template>
 
             <template v-if="props.isEng">
-              <b>rectRx</b> - the input parameter responsible for the border is the X-axis radius.
+              <b>rectRx</b> — an input parameter responsible for the corner radius along the X‑axis. You can set it to any value that is valid for the border-radius property in CSS. For example, try setting: 3, 5px, 1%, 1em, .5rem.
             </template>
           </ui-label>
 
@@ -320,11 +320,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>rectRy</b> - входной параметр отвечающий за border-radius по оси Y.
+              <b>rectRy</b> - входной параметр отвечающий за border-radius по оси Y. Для него возможно задать любое значение которое было приемлемо для свойства border-radius в CSS. Для примера попробуйте задать: 3, 5px, 1%, 1em, .5rem.
             </template>
 
             <template v-if="props.isEng">
-              <b>rectRy</b> - the input parameter responsible for the border is the Y-axis radius.
+              <b>rectRy</b> - is an input parameter responsible for the border-radius along the Y-axis. You can set any value for it that would be acceptable for the border-radius property in CSS. For example, try setting: 3, 5px, 1%, 1em, .5rem.
             </template>
           </ui-label>
 
@@ -345,11 +345,11 @@
       >
         <p>
           <template v-if="props.isRus">
-            Входные параметры отвечающие за стили тени маркированных областей.
+            Входные параметры отвечающие за стили тени маркированных областей. Для того, чтобы увидеть на что влияет данный параметр, нужно включить тени, для этого выберите чекбокс ниже.
           </template>
 
           <template v-if="props.isEng">
-            Input parameters responsible for the shadow styles of the marked areas.
+            Input parameters responsible for the shadow styles of the marked areas. To see what this parameter affects, you need to enable shadows; to do this, select the checkbox below.
           </template>
         </p>
 
@@ -360,11 +360,11 @@
 
           <ui-label>
             <template v-if="props.isRus">
-              <b>shadowRectStroke</b> - входной параметр отвечающий за цвет линий для тени.
+              <b>shadowRectStroke</b> - входной параметр отвечающий за цвет линий для тени. Для него возможно задать любое приемлемое значение для цвета в CSS. Для примера попробуйте задать следующие цвета: orange, blue, rgba(77, 77, 77, .7), rgb(77, 77, 77).
             </template>
 
             <template v-if="props.isEng">
-              <b>shadowRectStroke</b> - the input parameter responsible for the color of the lines for the shadow.
+              <b>shadowRectStroke</b> is an input parameter that determines the color of the lines for the shadow. You can set any acceptable value for the color in CSS for it. For example, try setting the following colors: orange, blue, rgba(77, 77, 77, .7), rgb(77, 77, 77).
             </template>
           </ui-label>
 
@@ -374,11 +374,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>shadowRectStrokeWidth</b> - входной параметр отвечающий за толщину линии для тени.
+              <b>shadowRectStrokeWidth</b> - входной параметр отвечающий за толщину линии для тени. Для него возможно задать любое значение соответствующее толщине линий для тени. Для примера попробуйте задать: 1, 3px, .3em, .4rem, 1%.
             </template>
 
             <template v-if="props.isEng">
-              <b>shadowRectStrokeWidth</b> - the input parameter responsible for the line thickness for the shadow.
+              <b>shadowRectStrokeWidth</b> - is an input parameter that controls the thickness of the shadow line. You can set any value for it that corresponds to the thickness of the shadow lines. For example, try setting the values to 1, 3px, .3em, .4rem, 1%.
             </template>
           </ui-label>
 
@@ -388,11 +388,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>shadowRectStrokeOpacity</b> - входной параметр отвечающий за прозрачность линии тени.
+              <b>shadowRectStrokeOpacity</b> - входной параметр отвечающий за прозрачность линии тени. Для него возможно задать любое значение в интервале от 0 до 1. Для примера попробуйте задать: 0, .4, .8, 1.
             </template>
 
             <template v-if="props.isEng">
-              <b>shadowRectStrokeOpacity</b> - the input parameter responsible for the transparency of the shadow line.
+              <b>shadowRectStrokeOpacity</b> - is an input parameter responsible for the transparency of the shadow line. You can set any value within the range from 0 to 1. For example, try setting: 0, .4, .8, 1.
             </template>
           </ui-label>
 
@@ -410,11 +410,11 @@
       <template v-if="isMarking">
         <p>
           <template v-if="props.isRus">
-            Входные параметры отвечающие стили для цвета сетки.
+            Входные параметры отвечающие стили для цвета сетки. Для того, чтобы увидеть на что влияет данный параметр нужно включить сетку, для этого выберите чекбокс ниже. Я задам шаг для сетки 10px.
           </template>
 
           <template v-if="props.isEng">
-            Input parameters corresponding styles for the grid color.
+            Input parameters that define the styles for the grid color. To see what this parameter affects, you need to enable the grid; to do this, select the checkbox below. I will set the grid step to 10px.
           </template>
         </p>
 
@@ -425,11 +425,11 @@
 
           <ui-label>
             <template v-if="props.isRus">
-              <b>gridColorr</b> - входной параметр отвечающий за цвет линии сетки.
+              <b>gridColorr</b> - входной параметр отвечающий за цвет линии сетки. Для него возможно задать любое приемлемое значение для цвета в CSS. Для примера попробуйте задать следующие цвета: orange, blue, rgba(77, 77, 77, .7), rgb(77, 77, 77).
             </template>
 
             <template v-if="props.isEng">
-              <b>gridColor</b> - the input parameter responsible for the color of the grid line.
+              <b>gridColorr</b> is an input parameter responsible for the color of the grid line. You can set any acceptable color value in CSS for it. For example, try setting the following colors: orange, blue, rgba(77, 77, 77, .7), rgb(77, 77, 77).
             </template>
           </ui-label>
 
@@ -493,30 +493,30 @@
   } = useStylesPropsInt(isEng);
 
   const watchBgText = computed(() => {
-    if (isEng.value && isHideBg.value) return 'Show the “Bender passport”'
-    if (isEng.value && !isHideBg.value) return 'Hide “Bender’s passport”'
+    if (isEng.value && isHideBg.value) return '“Bender’s passport” is hidden'
+    if (isEng.value && !isHideBg.value) return '“Bender’s Passport” is displayed.'
 
-    if (isHideBg.value) return 'Показать "паспорт Бендера"'
+    if (isHideBg.value) return '"Паспорт Бендера" скрыт'
 
-    return 'Скрыть "паспорт Бендера"'
+    return '"Паспорт Бендера" отображается'
   });
 
   const watchGridText = computed(() => {
-    if (isEng.value && !isGrid.value) return 'Show the grid'
-    if (isEng.value && isGrid.value) return 'Hide grid'
+    if (isEng.value && !isGrid.value) return 'The grid is hidden.'
+    if (isEng.value && isGrid.value) return 'The grid is displayed.'
 
-    if (!isGrid.value) return 'Показать сетку'
+    if (!isGrid.value) return 'Сетка скрыта'
 
-    return 'Скрыть сетку'
+    return 'Сетка отображается'
   });
 
   const watchShadowText = computed(() => {
-    if (isEng.value && !isShadow.value) return 'Show the shadow'
-    if (isEng.value && isShadow.value) return 'Hide shadow'
+    if (isEng.value && !isShadow.value) return 'The shadow is hidden.'
+    if (isEng.value && isShadow.value) return 'The shadow is displayed.'
 
-    if (!isShadow.value) return 'Показать тень'
+    if (!isShadow.value) return 'Тень скрыта'
 
-    return 'Скрыть тень'
+    return 'Тень отображается'
   });
 </script>
 
