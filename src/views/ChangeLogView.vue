@@ -36,7 +36,7 @@
           </p>
           
           <p>
-            In version “0.5.0”, I added input parameters (props) for styling my component. Everything that could previously be styled via CSS variables can now be styled through input parameters. I also implemented a reset of the active area when it is deleted, previously, I only reset it when the image was changed. The previous marked area needs to be made active manually. This is not difficult, but the behavior of the active area when it is deleted may differ across different projects (making the previous marked area active or doing nothing).
+            In version "0.5.0", I added input parameters (props) for styling my component. Everything that could previously be styled via CSS variables can now be styled through input parameters. I also implemented a reset of the active area when it is deleted, previously, I only reset it when the image was changed. The previous marked area needs to be made active manually. This is not difficult, but the behavior of the active area when it is deleted may differ across different projects (making the previous marked area active or doing nothing).
           </p>
 
           <p>

@@ -50,7 +50,7 @@
           </p>
 
           <p>
-            For clarity, I’ll set a default image — let it be “Bender’s passport”. I’ll also set a couple of marked areas: let them be “photo”, “series” and “last name”. I’ll allow marking the image and changing the marked areas (stretching, moving). Probably, for convenience, it makes sense to allow editing the marked areas. When the “Reset” button is clicked, I’ll clear the marked areas, but I won’t delete the image itself.
+            For clarity, I'll set a default image — let it be "Bender’s passport". I'll also set a couple of labeled areas: let them be "photo", "series" and "last name". I'll allow labeling the image and changing the labeled areas (stretching, moving). Probably, for convenience, it makes sense to allow editing the labeled areas. When the "Reset" button is clicked, I'll clear the labeled areas, but I won't delete the image itself.
           </p>
         </ui-full-page>
       </div>

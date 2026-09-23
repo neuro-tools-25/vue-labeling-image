@@ -15,7 +15,7 @@
         </template>
 
         <template v-if="props.isEng">
-          These styles depend on the <b>theme</b> parameter of the settings block. If it changes, some colors in this block will also change. It would be a shame if you set everything up, and then, when you change the <b>theme</b> parameter, everything gets lost. I would recommend that you first mark the image, and then change this parameter, and only then experiment with the styles in this block.
+          These styles depend on the <b>theme</b> parameter of the settings block. If it changes, some colors in this block will also change. It would be a shame if you set everything up, and then, when you change the <b>theme</b> parameter, everything gets lost. I would recommend that you first label the image, and then change this parameter, and only then experiment with the styles in this block.
         </template>
       </p>
 
@@ -23,11 +23,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-bg</b> - background для блока маркирования картинок.
+              <b>--mu-bg</b> — background для блока маркирования картинок.
             </template>
 
             <template v-if="props.isEng">
-              <b>--mu-bg</b> - background for the image labeling block.
+              <b>--mu-bg</b> — background for the image labeling block.
             </template>
           </ui-label>
 
@@ -37,11 +37,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-border</b> - border для блока маркирования картинок.
+              <b>--mu-border</b> — border для блока маркирования картинок.
             </template>
 
             <template v-if="props.isEng">
-              <b>--mu-border</b> - border for the image labeling block.
+              <b>--mu-border</b> — border for the image labeling block.
             </template>
           </ui-label>
 
@@ -51,11 +51,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-box-shadow</b> - box-shadow для блока маркирования картинок.
+              <b>--mu-box-shadow</b> — box-shadow для блока маркирования картинок.
             </template>
 
             <template v-if="props.isEng">
-              <b>--mu-box-shadow</b> - box-shadow for the image labeling block.
+              <b>--mu-box-shadow</b> — box-shadow for the image labeling block.
             </template>
           </ui-label>
 
@@ -87,11 +87,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-marking-rect-dragging-fill</b> - цвет заливки в момент маркирования картинки.
+              <b>--mu-marking-rect-dragging-fill</b> — цвет заливки в момент маркирования картинки.
             </template>
 
             <template v-if="props.isEng">
-              <b>--mu-marking-rect-dragging-fill</b> - the fill color at the time of labeling the image.
+              <b>--mu-marking-rect-dragging-fill</b> — the fill color at the time of labeling the image.
             </template>
           </ui-label>
 
@@ -101,11 +101,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-marking-rect-dragging-stroke</b> - цвет линии в момент маркирования картинки.
+              <b>--mu-marking-rect-dragging-stroke</b> — цвет линии в момент маркирования картинки.
             </template>
 
             <template v-if="props.isEng">
-              <b>--mu-marking-rect-dragging-stroke</b> - the color of the line at the time of labeling the image.
+              <b>--mu-marking-rect-dragging-stroke</b> — the color of the line at the time of labeling the image.
             </template>
           </ui-label>
 
@@ -115,11 +115,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-marking-rect-dragging-fill-opacity</b> - прозрачность заливки в момент маркирования картинки.
+              <b>--mu-marking-rect-dragging-fill-opacity</b> — прозрачность заливки в момент маркирования картинки.
             </template>
 
             <template v-if="props.isEng">
-              <b>--mu-marking-rect-dragging-fill-opacity</b> - transparency of the fill at the time of labeling the image.
+              <b>--mu-marking-rect-dragging-fill-opacity</b> — opacity of the fill at the time of labeling the image.
             </template>
           </ui-label>
 
@@ -129,11 +129,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-marking-rect-dragging-stroke-opacity</b> - прозрачность линии в момент маркирования картинки.
+              <b>--mu-marking-rect-dragging-stroke-opacity</b> — прозрачность линии в момент маркирования картинки.
             </template>
 
             <template v-if="props.isEng">
-              <b>--mu-marking-rect-dragging-stroke-opacity</b> - transparency of the line at the time of labeling the image.
+              <b>--mu-marking-rect-dragging-stroke-opacity</b> — opacity of the line at the time of labeling the image.
             </template>
           </ui-label>
 
@@ -154,22 +154,22 @@
       >
         <p>
           <template v-if="props.isRus">
-            Посмотреть данные стили можно после того, как вы маркировали картинку. Можно их применить по клику на маркированные области. <b>IsReadonly</b> должно находиться в значении <b>false</b>, иначе стили для активной области вы не увидите, да и разметить области вы не сможете.
+            Посмотреть данные стили можно после того, как вы маркировали картинку. Можно их применить по клику на маркированные области. <b>IsReadonly</b> должно находиться в значении <b>false</b>, иначе стили для активной области вы не увидите, да и маркировать области вы не сможете.
           </template>
 
           <template v-if="props.isEng">
-            You can view these styles after you have labeled the image. You can apply them by clicking on the marked areas. <b>IsReadOnly</b> must be set to <b>false</b>, otherwise you won't see the styles for the hotspot, and you won't be able to mark up the areas.
+            You can view these styles after you have labeled the image. You can apply them by clicking on the labeled areas. <b>IsReadOnly</b> must be set to <b>false</b>, otherwise you won't see the styles for the hotspot, and you won't be able to label up the areas.
           </template>
         </p>
 
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-marking-rect-active-fill</b> - заливка активной маркированной области.
+              <b>--mu-marking-rect-active-fill</b> — заливка активной маркированной области.
             </template>
 
             <template v-if="props.isEng">
-              <b>--mu-marking-rect-active-fill</b> - filling the active marked area.
+              <b>--mu-marking-rect-active-fill</b> — filling the active labeled area.
             </template>
           </ui-label>
 
@@ -179,11 +179,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-marking-rect-active-stroke</b> - цвет линии активной маркированной области.
+              <b>--mu-marking-rect-active-stroke</b> — цвет линии активной маркированной области.
             </template>
 
             <template v-if="props.isEng">
-              <b>--mu-marking-rect-active-stroke</b> - line color of the active marked area.
+              <b>--mu-marking-rect-active-stroke</b> — line color of the active labeled area.
             </template>
           </ui-label>
 
@@ -193,11 +193,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-marking-rect-active-fill-opacity</b> - прозрачность активной маркированной области.
+              <b>--mu-marking-rect-active-fill-opacity</b> — прозрачность активной маркированной области.
             </template>
 
             <template v-if="props.isEng">
-              <b>--mu-marking-rect-active-fill-opacity</b> - transparency of the active labeled area.
+              <b>--mu-marking-rect-active-fill-opacity</b> — opacity of the active labeled area.
             </template>
           </ui-label>
 
@@ -207,11 +207,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-marking-rect-active-stroke-opacity</b> - прозрачность линии активной маркированной области.
+              <b>--mu-marking-rect-active-stroke-opacity</b> — прозрачность линии активной маркированной области.
             </template>
 
             <template v-if="props.isEng">
-              <b>--mu-marking-rect-active-stroke-opacity</b> - transparency of the line of the active marked area.
+              <b>--mu-marking-rect-active-stroke-opacity</b> — opacity of the line of the active labeled area.
             </template>
           </ui-label>
 
@@ -236,18 +236,18 @@
           </template>
 
           <template v-if="props.isEng">
-            These are common styles for labeled areas. Some styles will be applied to the hotspot and the area at the time of markup.
+            These are common styles for labeled areas. Some styles will be applied to the hotspot and the area at the time of labeling.
           </template>
         </p>
 
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-marking-rect-fill</b> - заливка маркированных областей.
+              <b>--mu-marking-rect-fill</b> — заливка маркированных областей.
             </template>
 
             <template v-if="props.isEng">
-              <b>--mu-marking-rect-fill</b> - filling the marked areas.
+              <b>--mu-marking-rect-fill</b> — filling the labeled areas.
             </template>
           </ui-label>
 
@@ -257,11 +257,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-marking-rect-stroke</b> - цвет линий маркированной областей.
+              <b>--mu-marking-rect-stroke</b> — цвет линий маркированной областей.
             </template>
 
              <template v-if="props.isEng">
-              <b>--mu-marking-rect-stroke</b> - the color of the lines of the labeled areas.
+              <b>--mu-marking-rect-stroke</b> — the color of the lines of the labeled areas.
             </template>
           </ui-label>
 
@@ -271,11 +271,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-marking-rect-stroke-width</b> - толщина линий маркированных областей.
+              <b>--mu-marking-rect-stroke-width</b> — толщина линий маркированных областей.
             </template>
 
             <template v-if="props.isEng">
-              <b>--mu-marking-rect-stroke-width</b> - line thickness of the marked areas.
+              <b>--mu-marking-rect-stroke-width</b> — line thickness of the labeled areas.
             </template>
           </ui-label>
 
@@ -285,11 +285,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-marking-rect-stroke-opacity</b> - прозрачность линий маркированных областей.
+              <b>--mu-marking-rect-stroke-opacity</b> — прозрачность линий маркированных областей.
             </template>
 
             <template v-if="props.isEng">
-              <b>--mu-marking-rect-stroke-opacity</b> - transparency of the lines of the marked areas.
+              <b>--mu-marking-rect-stroke-opacity</b> — opacity of the lines of the labeled areas.
             </template>
           </ui-label>
 
@@ -299,11 +299,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-marking-rect-fill-opacity</b> - прозрачность заливки маркированных областей.
+              <b>--mu-marking-rect-fill-opacity</b> — прозрачность заливки маркированных областей.
             </template>
 
             <template v-if="props.isEng">
-              <b>--mu-marking-rect-fill-opacity</b> - transparency of the fill of the marked areas.
+              <b>--mu-marking-rect-fill-opacity</b> — opacity of the fill of the labeled areas.
             </template>
           </ui-label>
 
@@ -313,11 +313,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-marking-rect-rx</b> - border-radius по оси X.
+              <b>--mu-marking-rect-rx</b> — border-radius по оси X.
             </template>
 
             <template v-if="props.isEng">
-              <b>--mu-marking-rect-rx</b> - border-radius on the X-axis.
+              <b>--mu-marking-rect-rx</b> — border-radius on the X-axis.
             </template>
           </ui-label>
 
@@ -327,11 +327,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-marking-rect-ry</b> - border-radius по оси Y.
+              <b>--mu-marking-rect-ry</b> — border-radius по оси Y.
             </template>
 
             <template v-if="props.isEng">
-              <b>--mu-marking-rect-ry</b> - border-radius on the Y axis.
+              <b>--mu-marking-rect-ry</b> — border-radius on the Y axis.
             </template>
           </ui-label>
 
@@ -356,18 +356,18 @@
           </template>
 
           <template v-if="props.isEng">
-            Styles for the shadow of a marked area.
+            Styles for the shadow of a labeled area.
           </template>
         </p>
 
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-marking-rect-shadow-stroke</b> - цвет линий для тени.
+              <b>--mu-marking-rect-shadow-stroke</b> — цвет линий для тени.
             </template>
 
             <template v-if="props.isEng">
-              <b>--mu-marking-rect-shadow-stroke</b> - color of lines for shadow.
+              <b>--mu-marking-rect-shadow-stroke</b> — color of lines for shadow.
             </template>
           </ui-label>
 
@@ -377,11 +377,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-marking-rect-shadow-stroke-width</b> - толщина линии для тени.
+              <b>--mu-marking-rect-shadow-stroke-width</b> — толщина линии для тени.
             </template>
 
             <template v-if="props.isEng">
-              <b>--mu-marking-rect-shadow-stroke-width</b> - line width for shadow.
+              <b>--mu-marking-rect-shadow-stroke-width</b> — line width for shadow.
             </template>
           </ui-label>
 
@@ -391,11 +391,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-marking-rect-shadow-stroke-opacity</b> - прозрачность линии для тени.
+              <b>--mu-marking-rect-shadow-stroke-opacity</b> — прозрачность линии для тени.
             </template>
 
             <template v-if="props.isEng">
-              <b>--mu-marking-rect-shadow-stroke-opacity</b> - line opacity for shadow.
+              <b>--mu-marking-rect-shadow-stroke-opacity</b> — line opacity for shadow.
             </template>
           </ui-label>
 
@@ -424,11 +424,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>--mu-grid-color</b> - цвет линии сетки.
+              <b>--mu-grid-color</b> — цвет линии сетки.
             </template>
 
             <template v-if="props.isEng">
-              <b>--mu-grid-color</b> - color of the grid line.
+              <b>--mu-grid-color</b> — color of the grid line.
             </template>
           </ui-label>
 
