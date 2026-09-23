@@ -27,7 +27,8 @@
   @use '@/assets/_services' as services;
 
   .ui-checkbox {
-    margin-left: -30000px;
+    top: -30000px;
+    left: -30000px;
     position: absolute;
 
     &:checked + label {

@@ -17,7 +17,7 @@
             </template>
 
             <template v-if="props.isEng">
-              <b>bg</b> - is an input parameter responsible for the background of the image marking block. This input parameter can be set to either a path to an image or any valid CSS color value. To see what this input parameter affects, you need to hide the “Bender’s passport”; to do this, click the checkbox below and set the value you need. For example, I can advise you to enter #000, red, green, rgb(0, 255, 0), rgba(0, 255, 255, .4), hsla(240, 100%, 50%, 0.5).
+              <b>bg</b> - is an input parameter responsible for the background of the image marking block. This input parameter can be set to either a path to an image or any valid CSS color value. To see what this input parameter affects, you need to hide the “Bender’s passport”, to do this, click the checkbox below and set the value you need. For example, I can advise you to enter #000, red, green, rgb(0, 255, 0), rgba(0, 255, 255, .4), hsla(240, 100%, 50%, 0.5).
             </template>
           </ui-label>
 
@@ -306,11 +306,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>rectRx</b> - входной параметр отвечающий за border-radius по оси X. Для него возможно задать любое значение которое было приемлемо для свойства border-radius в CSS. Для примера попробуйте задать: 3, 5px, 1%, 1em, .5rem.
+              <b>rectRx</b> - входной параметр отвечающий за border-radius по оси X. Для него возможно задать любое значение которое было приемлемо для свойства border-radius в CSS. Для примера попробуйте задать: 5px, 1%, 1em, .5rem.
             </template>
 
             <template v-if="props.isEng">
-              <b>rectRx</b> — an input parameter responsible for the corner radius along the X‑axis. You can set it to any value that is valid for the border-radius property in CSS. For example, try setting: 3, 5px, 1%, 1em, .5rem.
+              <b>rectRx</b> — an input parameter responsible for the corner radius along the X‑axis. You can set it to any value that is valid for the border-radius property in CSS. For example, try setting: 5px, 1%, 1em, .5rem.
             </template>
           </ui-label>
 
@@ -320,11 +320,11 @@
         <ui-row>
           <ui-label>
             <template v-if="props.isRus">
-              <b>rectRy</b> - входной параметр отвечающий за border-radius по оси Y. Для него возможно задать любое значение которое было приемлемо для свойства border-radius в CSS. Для примера попробуйте задать: 3, 5px, 1%, 1em, .5rem.
+              <b>rectRy</b> - входной параметр отвечающий за border-radius по оси Y. Для него возможно задать любое значение которое было приемлемо для свойства border-radius в CSS. Для примера попробуйте задать: 5px, 1%, 1em, .5rem.
             </template>
 
             <template v-if="props.isEng">
-              <b>rectRy</b> - is an input parameter responsible for the border-radius along the Y-axis. You can set any value for it that would be acceptable for the border-radius property in CSS. For example, try setting: 3, 5px, 1%, 1em, .5rem.
+              <b>rectRy</b> - is an input parameter responsible for the border-radius along the Y-axis. You can set any value for it that would be acceptable for the border-radius property in CSS. For example, try setting: 5px, 1%, 1em, .5rem.
             </template>
           </ui-label>
 
@@ -401,13 +401,13 @@
       </div>
 
       <open-header
-        :is-active="isMarking"
-        @click="isMarking = !isMarking"
+        :is-active="isGridBlock"
+        @click="isGridBlock = !isGridBlock"
       >
         {{ stylesForGrid }}
       </open-header>
 
-      <template v-if="isMarking">
+      <template v-if="isGridBlock">
         <p>
           <template v-if="props.isRus">
             Входные параметры отвечающие стили для цвета сетки. Для того, чтобы увидеть на что влияет данный параметр нужно включить сетку, для этого выберите чекбокс ниже. Я задам шаг для сетки 10px.
@@ -453,7 +453,7 @@
   const isDraggingArea = ref(false);
   const isActiveArea = ref(false);
   const isMarkupArea = ref(false);
-  const isMarking = ref(false);
+  const isGridBlock = ref(false);
   const isShadowBlock = ref(false);
 
   const bg = defineModel('bg');
