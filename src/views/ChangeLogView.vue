@@ -10,7 +10,7 @@
           </p>
 
           <p>
-            В версии "0.5.0" я сделал сброс активной области, при её удаление, до этого я делал сброс только при изменении картинки. Предыдущую маркированную область активной нужно делать руками. Это не сложно, а на разных проектах поведение активной области при её удалении может отличаться (сделать предыдущую маркированную облсть активной или ничего не делать).
+            В версии "0.5.0", я добавил входные параметры (props) для стилизации моего компонента. Всё то, что раньше можно было стилизовать через CSS-переменные теперь возможно стилизовать через входные параметры. Также я сделал сброс активной области, при её удаление, до этого я делал сброс только при изменении картинки. Предыдущую маркированную область активной нужно делать руками. Это не сложно, а на разных проектах поведение активной области при её удалении может отличаться (сделать предыдущую маркированную облсть активной или ничего не делать).
           </p>
 
           <p>
@@ -36,7 +36,7 @@
           </p>
           
           <p>
-            In version 0.5.0, I reset the active area when it was deleted, before that I only reset when the image was changed. The previous labeled area should be made active by hand. This is not difficult, and on different projects, the behavior of the hotspot when it is deleted may differ (make the previous labeled area active or do nothing
+            In version “0.5.0”, I added input parameters (props) for styling my component. Everything that could previously be styled via CSS variables can now be styled through input parameters. I also implemented a reset of the active area when it is deleted, previously, I only reset it when the image was changed. The previous marked area needs to be made active manually. This is not difficult, but the behavior of the active area when it is deleted may differ across different projects (making the previous marked area active or doing nothing).
           </p>
 
           <p>
