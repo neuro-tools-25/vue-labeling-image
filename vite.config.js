@@ -42,12 +42,16 @@ export default defineConfig({
           common: [
             'vue',
             'vue-router',
-            'lib/index.es.js'
+            'lib/index.es.js',
+            '@/assets/image-stud.js',
           ]
         },
         chunkFileNames: `${projectPath}/js/[name].js`,
         plugins: [terser()]
       },
     },
+  },
+  esbuild: {
+    legalComments: 'none',
   },
 })
