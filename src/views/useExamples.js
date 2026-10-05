@@ -57,6 +57,13 @@ const useExamples = (isEng) => {
     return text;
   });
 
+  const stilizationClassText = computed(() => {
+    let text='Пример стилизации маркированных областей через CSS классы';
+    if (isEng.value) text='An example of styling labeled areas using CSS classes';
+
+    return text;
+  });
+
   return {
     headExamples,
     typeExample,
@@ -65,7 +72,8 @@ const useExamples = (isEng) => {
     slotsHintText,
     slotsHintMarkedText,
     slotsHintExText,
-    slotsHintHoveredText
+    slotsHintHoveredText,
+    stilizationClassText
   }
 }
 

@@ -113,6 +113,22 @@
         :is-eng="isEng"
       />
     </div>
+
+    <div class="examples-page__group">
+      <open-header
+        type-element="h2"
+        :is-active="isStilizationClass"
+        :is-inline="true"
+        @click="isStilizationClass = !isStilizationClass"
+      >
+        {{ stilizationClassText }}
+      </open-header>
+
+      <stilization-areas-class
+        v-if="isStilizationClass"
+        :is-eng="isEng"
+      />
+    </div>
   </div>
 </template>
 
@@ -129,14 +145,16 @@
   import SlotsHintMarked from '@/components/examples/slots/SlotsHintMarked.vue';
   import SlotsHintEx from '@/components/examples/slots/SlotsHintEx.vue';
   import SlotsHintHovered from '@/components/examples/slots/SlotsHintHovered.vue';
+  import StilizationAreasClass from '@/components/examples/StilizationAreasClass.vue';
 
-  const isTypeExample = ref(true);
+  const isTypeExample = ref(false);
   const isStaticArea = ref(false);
   const isMethods = ref(false);
   const isSlotsHint = ref(false);
   const isSlotsMarked = ref(false);
   const isSlotsHintEx = ref(false);
   const isSlotsHintHovered = ref(false);
+  const isStilizationClass = ref(true);
 
   const { isEng } = inject('lang');
 
@@ -148,7 +166,8 @@
     slotsHintText,
     slotsHintMarkedText,
     slotsHintExText,
-    slotsHintHoveredText
+    slotsHintHoveredText,
+    stilizationClassText
   } = useExamples(isEng);
 </script>
 

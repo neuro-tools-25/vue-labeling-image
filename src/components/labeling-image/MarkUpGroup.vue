@@ -104,7 +104,8 @@
     'isReadonly',
     'title',
     'isTitle',
-    'strokeDasharray'
+    'strokeDasharray',
+    'muClass'
   ]);
 
   const sizeResizeArea = '5px';
@@ -116,7 +117,7 @@
     return true;
   });
 
-  const classGComp = computed(() => (['mark-up__g', {
+  const classGComp = computed(() => (['mark-up__g', props.muClass, {
     'mark-up__g_active': props.isActive,
     'mark-up__g_unvisible': props.isUnvisible,
   }]));

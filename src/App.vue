@@ -1,4 +1,3 @@
-
 <template>
   <header-lay :lang="langAttr" />
 
