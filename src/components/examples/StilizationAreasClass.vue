@@ -40,6 +40,7 @@
         :name="item.name"
         :is-eng="props.isEng"
         read-only
+        :class="item.muClass"
       />
     </template>
   </card-item>
@@ -156,7 +157,6 @@
 
       --mu-marking-rect-fill: var(#{$color});
       --mu-marking-rect-stroke: var(#{$color});
-      
     }
 
     &_warn {
