@@ -124,8 +124,24 @@
         {{ stilizationClassText }}
       </open-header>
 
-      <stilization-areas-class
+      <stil-areas-class
         v-if="isStilizationClass"
+        :is-eng="isEng"
+      />
+    </div>
+
+    <div class="examples-page__group">
+      <open-header
+        type-element="h2"
+        :is-active="isStilizationClassEdited"
+        :is-inline="true"
+        @click="isStilizationClassEdited = !isStilizationClassEdited"
+      >
+        {{ stilizationClassEditedText }}
+      </open-header>
+
+      <stil-areas-class-edited
+        v-if="isStilizationClassEdited"
         :is-eng="isEng"
       />
     </div>
@@ -145,7 +161,8 @@
   import SlotsHintMarked from '@/components/examples/slots/SlotsHintMarked.vue';
   import SlotsHintEx from '@/components/examples/slots/SlotsHintEx.vue';
   import SlotsHintHovered from '@/components/examples/slots/SlotsHintHovered.vue';
-  import StilizationAreasClass from '@/components/examples/StilizationAreasClass.vue';
+  import StilAreasClass from '@/components/examples/stilization-class/AreasClass.vue';
+  import StilAreasClassEdited from '@/components/examples/stilization-class/AreasClassEdited.vue';
 
   const isTypeExample = ref(false);
   const isStaticArea = ref(false);
@@ -154,7 +171,8 @@
   const isSlotsMarked = ref(false);
   const isSlotsHintEx = ref(false);
   const isSlotsHintHovered = ref(false);
-  const isStilizationClass = ref(true);
+  const isStilizationClass = ref(false);
+  const isStilizationClassEdited = ref(true);
 
   const { isEng } = inject('lang');
 
@@ -167,7 +185,8 @@
     slotsHintMarkedText,
     slotsHintExText,
     slotsHintHoveredText,
-    stilizationClassText
+    stilizationClassText,
+    stilizationClassEditedText
   } = useExamples(isEng);
 </script>
 

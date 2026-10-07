@@ -1,6 +1,6 @@
 <template>
   <card-item
-    url="src/components/examples/StilizationAreasClass.vue"
+    url="src/components/examples/stilization-class/AreasClass.vue"
     :is-eng="props.isEng"
   >
     <template #desc>
