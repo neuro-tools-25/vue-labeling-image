@@ -4,13 +4,33 @@
     :is-eng="props.isEng"
   >
     <template #desc>
-      <p v-if="!props.isEng">
-        Данный пример показывает как можно стилизовать маркированные области через CSS классы.
-      </p>
+      <template v-if="!props.isEng">
+        <p>
+          Данный пример показывает как можно стилизовать маркированные области через CSS классы. Где это может пригодиться? Смотрите, давайте предположим, что мы маркировали какую-то картинку, отправили данные на сервер. И нейронка по каким-либо причинам не смогла определить текст, в таком случае имеет смысл сделать нераспознанные маркированны области красными, показав тем самым ошибку. Предположим, что некоторые маркированные области распознаны, но явно не точно (какие-то буквы на картинке не чёткие), нейронка не совсем уверена в результате, такие области имеет смысл сделать жёлтыми. Нормально распознанный текст правильнее всего сделать зелёным, показав тем самым, что всё прошло хорошо.
+        </p>
 
-      <p v-if="props.isEng">
-        This example shows how you can style marked areas using CSS classes.
-      </p>
+        <p>
+          Мы получаем массив объектов, одно из свойств каждого объекта говорит нам о результате распознавания текста. Дальше вам будет нужно преобразовать данное свойство в свойство "muClass" с каким-либо CSS классом. В примере ниже я использую CSS класс "mu_error" для отображения не распознанной маркированной области. CSS класс "mu_warn" для не точно распознанных маркированных областей, в которых нейронка сомневается. И CSS класс "mu_success" для маркированных областей на которых распознавание текста прошло успешно. Вы можете использовать любые классы которые сочтёте нужными, и которые больше подходят для вашей методологии.
+        </p>
+
+        <p>
+          В качестве картинки я буду использовать "паспорт Бендера". Если предположить, что результаты распознавания текста приходят с сервера, то я не буду разрешать маркировать картинку, переносить, или изменять маркированные области.
+        </p>
+      </template>
+
+      <template v-if="props.isEng">
+        <p>
+          This example shows how you can style labeled areas using CSS classes. Where might this be useful? Let's assume we've labeled some image and sent the data to the server. And for some reason, the neural network couldn't identify the text. In this case, it makes sense to make the unrecognized labeled areas red, thereby indicating an error. Let's assume that some labeled areas have been recognized, but clearly not accurately (some letters in the image are unclear), and the neural network isn't entirely confident in the result, it makes sense to make such areas yellow. It's best to make normally recognized text green, thereby indicating that everything went well.
+        </p>
+
+        <p>
+          We receive an array of objects, and one of the properties of each object tells us the result of the text recognition. Next, you will need to convert this property into the "muClass" property with some CSS class. In the example below, I use the CSS class "mu_error" to display an unrecognized labeled area. The CSS class "mu_warn" is used for incompletely recognized labeled areas where the neural network has doubts. And the CSS class "mu_success" is used for labeled areas where the text recognition was successful. You can use any classes that you deem necessary and that are more suitable for your methodology.
+        </p>
+
+        <p>
+          As an image, I will use "Bender's passport". If we assume that the text recognition results come from the server, then I will not allow marking the image, moving it, or modifying the labeled areas.
+        </p>
+      </template>
     </template>
 
     <template #markup>
