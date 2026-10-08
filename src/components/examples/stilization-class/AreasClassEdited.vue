@@ -189,11 +189,8 @@
 
       --mu-marking-rect-fill: #{$color};
       --mu-marking-rect-stroke: #{$color};
-
-      .mark-up__rect_active {
-        --mu-marking-rect-active-fill: #{$color};
-        --mu-marking-rect-active-stroke: #{$color};
-      }
+      --mu-marking-rect-active-fill: #{$color};
+      --mu-marking-rect-active-stroke: #{$color};
     }
 
     &_success {
@@ -201,11 +198,8 @@
 
       --mu-marking-rect-fill: #{$color};
       --mu-marking-rect-stroke: #{$color};
-
-      .mark-up__rect_active {
-        --mu-marking-rect-active-fill: #{$color};
-        --mu-marking-rect-active-stroke: #{$color};
-      }
+      --mu-marking-rect-active-fill: #{$color};
+      --mu-marking-rect-active-stroke: #{$color};
     }
   }
 </style>
