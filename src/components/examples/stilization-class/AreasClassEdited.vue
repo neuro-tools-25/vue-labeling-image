@@ -10,7 +10,7 @@
         </p>
 
         <p>
-          Мы получаем массив объектов, одно из свойств каждого объекта говорит нам о результате распознавания текста. Дальше вам будет нужно преобразовать данное свойство в свойство "muClass" с каким-либо CSS классом. В примере ниже я использую CSS класс "mu_error" для отображения не распознанной маркированной области. CSS класс "mu_warn" для не точно распознанных маркированных областей, в которых нейронка сомневается. И CSS класс "mu_success" для маркированных областей на которых распознавание текста прошло успешно. Вы можете использовать любые классы которые сочтёте нужными, и которые больше подходят для вашей методологии.
+          Мы получаем массив объектов, одно из свойств каждого объекта говорит нам о результате распознавания текста. Дальше нам будет нужно преобразовать данное свойство в свойство "muClass" с каким-либо CSS классом. В примере ниже я использую CSS класс "mu-class_error" для отображения нераспознанной маркированной области. CSS класс "mu-class_warn" для не точно распознанных маркированных областей, в которых нейронка сомневается. И CSS класс "mu-class_success" для маркированных областей на которых распознавание текста прошло успешно. Вы можете использовать любые классы которые сочтёте нужными, и которые больше подходят для вашей методологии.
         </p>
 
         <p>
@@ -24,7 +24,7 @@
         </p>
 
         <p>
-          We receive an array of objects, and one of the properties of each object tells us the result of the text recognition. Next, you will need to convert this property into the "muClass" property with some CSS class. In the example below, I use the CSS class "mu_error" to display an unrecognized labeled area. The CSS class "mu_warn" is used for incompletely recognized labeled areas where the neural network has doubts. And the CSS class "mu_success" is used for labeled areas where the text recognition was successful. You can use any classes that you deem necessary and that are more suitable for your methodology.
+          We receive an array of objects, and one of the properties of each object tells us the result of the text recognition. Next, we will need to convert this property into the “muClass” property with some CSS class. In the example below, I use the CSS class “mu-class_error” to display an unrecognized labeled area. The CSS class “mu-class_warn” is used for incompletely recognized labeled areas where the neural network has doubts. And the CSS class “mu-class_success” is used for labeled areas where the text recognition was successful. You can use any classes that you deem necessary and that are more suitable for your methodology.
         </p>
 
         <p>
