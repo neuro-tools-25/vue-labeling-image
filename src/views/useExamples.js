@@ -71,6 +71,13 @@ const useExamples = (isEng) => {
     return text;
   });
 
+  const stilizationAttrStyleText = computed(() => {
+    let text='Пример стилизации маркированных областей через атрибут "style"';
+    if (isEng.value) text='An example of styling labeled areas using the “style” attribute';
+
+    return text;
+  });
+
   return {
     headExamples,
     typeExample,
@@ -81,7 +88,8 @@ const useExamples = (isEng) => {
     slotsHintExText,
     slotsHintHoveredText,
     stilizationClassText,
-    stilizationClassEditedText
+    stilizationClassEditedText,
+    stilizationAttrStyleText
   }
 }
 

@@ -145,6 +145,22 @@
         :is-eng="isEng"
       />
     </div>
+
+    <div class="examples-page__group">
+      <open-header
+        type-element="h2"
+        :is-active="isStilizationAttrStyle"
+        :is-inline="true"
+        @click="isStilizationAttrStyle = !isStilizationAttrStyle"
+      >
+        {{ stilizationAttrStyleText }}
+      </open-header>
+
+      <stil-areas-attr-style
+        v-if="isStilizationAttrStyle"
+        :is-eng="isEng"
+      />
+    </div>
   </div>
 </template>
 
@@ -163,6 +179,7 @@
   import SlotsHintHovered from '@/components/examples/slots/SlotsHintHovered.vue';
   import StilAreasClass from '@/components/examples/stilization-class/AreasClass.vue';
   import StilAreasClassEdited from '@/components/examples/stilization-class/AreasClassEdited.vue';
+  import StilAreasAttrStyle from '@/components/examples/stilization-style/AreasStyle.vue';
 
   const isTypeExample = ref(false);
   const isStaticArea = ref(false);
@@ -172,7 +189,8 @@
   const isSlotsHintEx = ref(false);
   const isSlotsHintHovered = ref(false);
   const isStilizationClass = ref(false);
-  const isStilizationClassEdited = ref(true);
+  const isStilizationClassEdited = ref(false);
+  const isStilizationAttrStyle = ref(true);
 
   const { isEng } = inject('lang');
 
@@ -186,7 +204,8 @@
     slotsHintExText,
     slotsHintHoveredText,
     stilizationClassText,
-    stilizationClassEditedText
+    stilizationClassEditedText,
+    stilizationAttrStyleText
   } = useExamples(isEng);
 </script>
 
