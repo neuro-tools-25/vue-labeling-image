@@ -6,11 +6,11 @@
     <template #desc>
       <template v-if="!props.isEng">
         <p>
-          Данный пример показывает как можно стилизовать маркированные области через CSS классы. Где это может пригодиться? Смотрите, давайте предположим, что мы маркировали какую-то картинку, отправили данные на сервер. И нейронка по каким-либо причинам не смогла определить текст, в таком случае имеет смысл сделать нераспознанные маркированны области красными, показав тем самым ошибку. Предположим, что некоторые маркированные области распознаны, но явно не точно (какие-то буквы на картинке не чёткие), нейронка не совсем уверена в результате, такие области имеет смысл сделать жёлтыми. Нормально распознанный текст правильнее всего сделать зелёным, показав тем самым, что всё прошло хорошо.
+          Данный пример показывает как можно стилизовать маркированные области через атрибут "style". Где это может пригодиться? Смотрите, давайте предположим, что мы маркировали какую-то картинку, отправили данные на сервер. И нейронка по каким-либо причинам не смогла определить текст, в таком случае имеет смысл сделать нераспознанные маркированны области красными, показав тем самым ошибку. Предположим, что некоторые маркированные области распознаны, но явно не точно (какие-то буквы на картинке не чёткие), нейронка не совсем уверена в результате, такие области имеет смысл сделать жёлтыми. Нормально распознанный текст правильнее всего сделать зелёным, показав тем самым, что всё прошло хорошо.
         </p>
 
         <p>
-          Мы получаем массив объектов, одно из свойств каждого объекта говорит нам о результате распознавания текста. Дальше вам будет нужно преобразовать данное свойство в свойство "muClass" с каким-либо CSS классом. В примере ниже я использую CSS класс "mu_error" для отображения не распознанной маркированной области. CSS класс "mu_warn" для не точно распознанных маркированных областей, в которых нейронка сомневается. И CSS класс "mu_success" для маркированных областей на которых распознавание текста прошло успешно. Вы можете использовать любые классы которые сочтёте нужными, и которые больше подходят для вашей методологии.
+          Мы получаем массив объектов, одно из свойств каждого объекта говорит нам о результате распознавания текста. Дальше вам будет нужно преобразовать данное свойство в свойство "muStyle" и задать для него нужный вам объект состоящих из CSS переменных. В примере ниже я использую следующие стили для отображения не распознанной маркированной области - { "--mu-marking-rect-stroke-width": 3, "--mu-marking-rect-fill": "var(--mu-marking-rect-active-fill)", "--mu-marking-rect-stroke": "var(--mu-marking-rect-active-fill)" }. Для не точно распознанных маркированных областей, в которых нейронка сомневается я использую следующие стили - { "--mu-marking-rect-stroke-width": 3, "--mu-marking-rect-fill": "#fae60a", "--mu-marking-rect-stroke": "#fae60a" }. Для маркированных областей на которых распознавание текста прошло успешно я использую следующие стили - { "--mu-marking-rect-stroke-width": 3, "--mu-marking-rect-fill": "#00CC00", "--mu-marking-rect-stroke": "#00CC00" }. 
         </p>
 
         <p>
@@ -20,15 +20,15 @@
 
       <template v-if="props.isEng">
         <p>
-          This example shows how you can style labeled areas using CSS classes. Where might this be useful? Let's assume we've labeled some image and sent the data to the server. And for some reason, the neural network couldn't identify the text. In this case, it makes sense to make the unrecognized labeled areas red, thereby indicating an error. Let's assume that some labeled areas have been recognized, but clearly not accurately (some letters in the image are unclear), and the neural network isn't entirely confident in the result, it makes sense to make such areas yellow. It's best to make normally recognized text green, thereby indicating that everything went well.
+          This example shows how you can style marked areas using the “style” attribute. Where might this be useful? Let’s assume we’ve marked some image and sent the data to the server. And for some reason, the neural network couldn’t identify the text — in that case, it makes sense to make the unrecognized marked areas red, thereby indicating an error. Let’s assume that some marked areas have been recognized, but not accurately (some letters in the image are unclear), and the neural network isn’t entirely confident in the result; it makes sense to make such areas yellow. It’s best to make normally recognized text green, thereby indicating that everything went well.
         </p>
 
         <p>
-          We receive an array of objects, and one of the properties of each object tells us the result of the text recognition. Next, you will need to convert this property into the "muClass" property with some CSS class. In the example below, I use the CSS class "mu_error" to display an unrecognized labeled area. The CSS class "mu_warn" is used for incompletely recognized labeled areas where the neural network has doubts. And the CSS class "mu_success" is used for labeled areas where the text recognition was successful. You can use any classes that you deem necessary and that are more suitable for your methodology.
+          We receive an array of objects, and one of the properties of each object tells us the result of the text recognition. Next, you will need to convert this property into the “muStyle” property and assign to it the object you need, consisting of CSS variables. In the example below, I use the following styles to display an unrecognized labeled area - { "--mu-marking-rect-stroke-width": 3, "--mu-marking-rect-fill": "var(--mu-marking-rect-active-fill)", "--mu-marking-rect-stroke": "var(--mu-marking-rect-active-fill)" }. For areas that are not accurately recognized and are in doubt, I use the following styles - { "--mu-marking-rect-stroke-width": 3, "--mu-marking-rect-fill": "#fae60a", "--mu-marking-rect-stroke": "#fae60a" }. For the marked areas where text recognition was successful, I use the following styles: { "--mu-marking-rect-stroke-width": 1, "--mu-marking-rect-fill": "#00CC00", "--mu-marking-rect-stroke": "#00CC00" }.
         </p>
 
         <p>
-          As an image, I will use "Bender's passport". If we assume that the text recognition results come from the server, then I will not allow marking the image, moving it, or modifying the labeled areas.
+          As an image, I will use “Bender’s passport”. If we assume that the text recognition results come from the server, then I will not allow marking the image, moving it, or modifying the marked areas.
         </p>
       </template>
     </template>
@@ -179,32 +179,4 @@
 </script>
 
 <style lang="scss">
-  .mu {
-    &_error,
-    &_warn,
-    &_success {
-      --mu-marking-rect-stroke-width: 3;
-    }
-
-    &_error {
-      $color: --mu-marking-rect-active-fill;
-
-      --mu-marking-rect-fill: var(#{$color});
-      --mu-marking-rect-stroke: var(#{$color});
-    }
-
-    &_warn {
-      $color: #fae60a;
-
-      --mu-marking-rect-fill: #{$color};
-      --mu-marking-rect-stroke: #{$color};
-    }
-
-    &_success {
-      $color: #00CC00;
-
-      --mu-marking-rect-fill: #{$color};
-      --mu-marking-rect-stroke: #{$color};
-    }
-  }
 </style>
