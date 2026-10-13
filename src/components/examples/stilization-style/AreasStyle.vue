@@ -60,7 +60,7 @@
         :name="item.name"
         :is-eng="props.isEng"
         read-only
-        :class="item.muClass"
+        :style="item.muStyle"
       />
     </template>
   </card-item>
@@ -78,11 +78,19 @@
 
   const imageSrc = ref(imageStud);
 
-  const errorStyle = {
+  const colorError = 'var(--mu-marking-rect-active-fill)';
+  const colorWarn = '#fae60a';
+  const colorSacces = '#00CC00';
+
+  const bStyle = (color) => ({
     "--mu-marking-rect-stroke-width": 3,
-    "--mu-marking-rect-fill": `var(#{$color})`,
-    "--mu-marking-rect-stroke": `var(#{$color})`,
-  }
+    "--mu-marking-rect-fill": color,
+    "--mu-marking-rect-stroke": color,
+  });
+
+  const errorStyle = bStyle(colorError);
+  const warnStyle = bStyle(colorWarn);
+  const saccessStyle = bStyle(colorSacces);
 
   const areas = ref([
     {
@@ -92,7 +100,7 @@
       height: 59.53757225433526,
       x: 4.227642276422764,
       y: 24.277456647398843,
-      muClass: 'mu_error'
+      muStyle: errorStyle
     },
     {
       id: 1759337204073,
@@ -101,7 +109,7 @@
       height: 8.38150289017341,
       x: 50.40650406504065,
       y: 28.901734104046245,
-      muClass: 'mu_error'
+      muStyle: errorStyle
     },
     {
       id: 1759337222917,
@@ -110,7 +118,7 @@
       height: 7.225433526011561,
       x: 53.98373983739837,
       y: 10.982658959537572,
-      muClass: 'mu_error'
+      muStyle: errorStyle
     },
     {
       id: 1759337232429,
@@ -119,7 +127,7 @@
       height: 6.9364161849710975,
       x: 55.447154471544714,
       y: 39.017341040462426,
-      muClass: 'mu_success'
+      muStyle: saccessStyle
     },
     {
       id: 1759337240377,
@@ -128,7 +136,7 @@
       height: 6.358381502890173,
       x: 39.67479674796748,
       y: 50,
-      muClass: 'mu_warn'
+      muStyle: warnStyle
     },
     {
       id: 1759337248220,
@@ -137,7 +145,7 @@
       height: 6.9364161849710975,
       x: 49.43089430894309,
       y: 58.67052023121387,
-      muClass: 'mu_success'
+      muStyle: saccessStyle
     },
     {
       id: 1759337254262,
@@ -146,7 +154,7 @@
       height: 7.225433526011561,
       x: 57.56097560975609,
       y: 48.554913294797686,
-      muClass: 'mu_success'
+      muStyle: saccessStyle
     },
     {
       id: 1759337260502,
@@ -155,7 +163,7 @@
       height: 59.53757225433526,
       x: 92.84552845528455,
       y: 21.965317919075144,
-      muClass: 'mu_warn'
+      muStyle: warnStyle
     },
   ]);
 

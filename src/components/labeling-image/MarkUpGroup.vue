@@ -2,6 +2,7 @@
   <g
     :id="props.id" 
     :class="classGComp"
+    :style="props.muStyle"
     @mouseover="emits('hovered-id')"
     @mouseout="emits('reset-hovered-id')"
   >
@@ -105,7 +106,8 @@
     'title',
     'isTitle',
     'strokeDasharray',
-    'muClass'
+    'muClass',
+    'muStyle'
   ]);
 
   const sizeResizeArea = '5px';
