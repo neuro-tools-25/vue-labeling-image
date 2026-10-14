@@ -2,6 +2,7 @@
   <card-item
     url="src/components/examples/stilization-style/AreasStyleEdited.vue"
     :is-eng="props.isEng"
+    id="exStilAttrStyle"
   >
     <template #desc>
       <ui-full-page>
@@ -95,11 +96,12 @@
   const colorSacces = '#00CC00';
 
   const bStyle = (color) => ({
-    "--mu-marking-rect-stroke-width": 2,
     "--mu-marking-rect-fill": color,
     "--mu-marking-rect-stroke": color,
     "--mu-marking-rect-active-fill": color,
     "--mu-marking-rect-active-stroke": color,
+    "--mu-marking-rect-stroke-width": 2,
+    "--mu-marking-rect-active-fill-opacity": .5
   });
 
   const errorStyle = bStyle(colorError);
@@ -119,7 +121,7 @@
     {
       id: 1759337204073,
       name: "First name",
-      width: 25.853658536585368,
+      width: 26.945655263262942,
       height: 8.38150289017341,
       x: 50.40650406504065,
       y: 28.901734104046245,
@@ -137,7 +139,7 @@
     {
       id: 1759337232429,
       name: "Surname",
-      width: 13.658536585365855,
+      width: 14.64053331204343,
       height: 6.9364161849710975,
       x: 55.447154471544714,
       y: 39.017341040462426,
@@ -155,7 +157,7 @@
     {
       id: 1759337248220,
       name: "Birthplace",
-      width: 30.081300813008134,
+      width: 30.89963141857279,
       height: 6.9364161849710975,
       x: 49.43089430894309,
       y: 58.67052023121387,
@@ -164,7 +166,7 @@
     {
       id: 1759337254262,
       name: "Date of birth",
-      width: 30.24390243902439,
+      width: 30.8985669234761,
       height: 7.225433526011561,
       x: 57.56097560975609,
       y: 48.554913294797686,

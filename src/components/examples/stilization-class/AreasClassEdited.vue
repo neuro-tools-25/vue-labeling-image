@@ -91,7 +91,7 @@
     {
       id: 1759337204073,
       name: "First name",
-      width: 25.853658536585368,
+      width: 26.945655263262942,
       height: 8.38150289017341,
       x: 50.40650406504065,
       y: 28.901734104046245,
@@ -173,7 +173,7 @@
 
       &.mark-up__g_active {
         --mu-marking-rect-stroke-width: 4;
-        --mu-marking-rect-active-fill-opacity: .4;
+        --mu-marking-rect-active-fill-opacity: .5;
       }
     }
 
