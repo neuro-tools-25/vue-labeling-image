@@ -96,6 +96,7 @@
           :isTitle="props.isTitle"
           :strokeDasharray="props.activeStrokeDasharray"
           :muClass="activeArea.muClass"
+          :muStyle="activeArea.muStyle"
           @touchstart.stop="(event) => cRect(event, activeArea, 'move-rect')"
           @mousedown.stop="(event) => cRect(event, activeArea, 'move-rect')"
           @move-left="(event) => cRect(event, activeArea, 'resize-left')"

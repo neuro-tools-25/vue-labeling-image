@@ -162,6 +162,23 @@
         :query="query"
       />
     </div>
+
+    <div class="examples-page__group">
+      <open-header
+        type-element="h2"
+        :is-active="isStilizationAttrStyleEdited"
+        :is-inline="true"
+        @click="isStilizationAttrStyleEdited = !isStilizationAttrStyleEdited"
+      >
+        {{ stilizationAttrStyleEditedText }}
+      </open-header>
+
+      <stil-areas-attr-style-edited
+        v-if="isStilizationAttrStyleEdited"
+        :is-eng="isEng"
+        :query="query"
+      />
+    </div>
   </div>
 </template>
 
@@ -181,6 +198,7 @@
   import StilAreasClass from '@/components/examples/stilization-class/AreasClass.vue';
   import StilAreasClassEdited from '@/components/examples/stilization-class/AreasClassEdited.vue';
   import StilAreasAttrStyle from '@/components/examples/stilization-style/AreasStyle.vue';
+  import StilAreasAttrStyleEdited from '@/components/examples/stilization-style/AreasStyleEdited.vue';
 
   const isTypeExample = ref(false);
   const isStaticArea = ref(false);
@@ -191,7 +209,8 @@
   const isSlotsHintHovered = ref(false);
   const isStilizationClass = ref(false);
   const isStilizationClassEdited = ref(false);
-  const isStilizationAttrStyle = ref(true);
+  const isStilizationAttrStyle = ref(false);
+  const isStilizationAttrStyleEdited = ref(true);
 
   const { isEng, query } = inject('lang');
 
@@ -206,7 +225,8 @@
     slotsHintHoveredText,
     stilizationClassText,
     stilizationClassEditedText,
-    stilizationAttrStyleText
+    stilizationAttrStyleText,
+    stilizationAttrStyleEditedText
   } = useExamples(isEng);
 </script>
 
