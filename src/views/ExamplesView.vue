@@ -159,6 +159,7 @@
       <stil-areas-attr-style
         v-if="isStilizationAttrStyle"
         :is-eng="isEng"
+        :query="query"
       />
     </div>
   </div>
@@ -192,7 +193,7 @@
   const isStilizationClassEdited = ref(false);
   const isStilizationAttrStyle = ref(true);
 
-  const { isEng } = inject('lang');
+  const { isEng, query } = inject('lang');
 
   const {
     headExamples,
