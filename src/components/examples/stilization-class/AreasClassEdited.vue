@@ -166,6 +166,13 @@
 
 <style lang="scss">
   .mu-class {
+    @mixin addVariable($color) {
+      --mu-marking-rect-fill: #{$color};
+      --mu-marking-rect-stroke: #{$color};
+      --mu-marking-rect-active-fill: #{$color};
+      --mu-marking-rect-active-stroke: #{$color};
+    }
+
     &_error,
     &_warn,
     &_success {
@@ -185,21 +192,11 @@
     }
 
     &_warn {
-      $color: #fae60a;
-
-      --mu-marking-rect-fill: #{$color};
-      --mu-marking-rect-stroke: #{$color};
-      --mu-marking-rect-active-fill: #{$color};
-      --mu-marking-rect-active-stroke: #{$color};
+      @include addVariable(#fae60a);
     }
 
     &_success {
-      $color: #00CC00;
-
-      --mu-marking-rect-fill: #{$color};
-      --mu-marking-rect-stroke: #{$color};
-      --mu-marking-rect-active-fill: #{$color};
-      --mu-marking-rect-active-stroke: #{$color};
+      @include addVariable(#00CC00);
     }
   }
 </style>
