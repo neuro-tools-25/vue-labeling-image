@@ -17,30 +17,66 @@
               href="settings"
               title="Страница настроек"
               :query="props.query"
-            >здесь</ui-link> (Прокрутите до блока "Стили для блока маркировки изображения"). В примере ниже я использую следующий объект стилей для отображения не распознанной маркированной области - { "--mu-marking-rect-stroke-width": 3, "--mu-marking-rect-fill": "var(--mu-marking-rect-active-fill)", "--mu-marking-rect-stroke": "var(--mu-marking-rect-active-fill)" }. Для не точно распознанных маркированных областей, в которых нейронка сомневается, я использую следующий объект стилей - { "--mu-marking-rect-stroke-width": 3, "--mu-marking-rect-fill": "#fae60a", "--mu-marking-rect-stroke": "#fae60a" }. Для маркированных областей на которых распознавание текста прошло успешно я использую следующие стили - { "--mu-marking-rect-stroke-width": 3, "--mu-marking-rect-fill": "#00CC00", "--mu-marking-rect-stroke": "#00CC00" }. Под моим компонентом есть кнопка "Показать маркированные области", кликнув по ней, можно более детально посмотреть код.
+            >здесь</ui-link> (Прокрутите до блока "Стили для блока маркировки изображения"). В примере ниже я использую следующий объект стилей для отображения не распознанной маркированной области - { "--mu-marking-rect-fill": "#ff0050",
+              "--mu-marking-rect-stroke": "#ff0050",
+              "--mu-marking-rect-active-fill": "#ff0050",
+              "--mu-marking-rect-active-stroke": "#ff0050",
+              "--mu-marking-rect-stroke-width": 2,
+              "--mu-marking-rect-active-fill-opacity": 0.5
+            }. Для не точно распознанных маркированных областей, в которых нейронка сомневается, я использую следующий объект стилей - { "--mu-marking-rect-fill": "#fae60a",
+              "--mu-marking-rect-stroke": "#fae60a",
+              "--mu-marking-rect-active-fill": "#fae60a",
+              "--mu-marking-rect-active-stroke": "#fae60a",
+              "--mu-marking-rect-stroke-width": 2,
+              "--mu-marking-rect-active-fill-opacity": 0.5
+            }. Для маркированных областей на которых распознавание текста прошло успешно я использую следующие стили - { "--mu-marking-rect-fill": "#00CC00",
+              "--mu-marking-rect-stroke": "#00CC00",
+              "--mu-marking-rect-active-fill": "#00CC00",
+              "--mu-marking-rect-active-stroke": "#00CC00",
+              "--mu-marking-rect-stroke-width": 2,
+              "--mu-marking-rect-active-fill-opacity": 0.5
+            }. Под моим компонентом есть кнопка "Показать маркированные области", кликнув по ней, можно более детально посмотреть код.
           </p>
 
           <p>
-            В качестве картинки я буду использовать "паспорт Бендера". Если предположить, что результаты распознавания текста приходят с сервера, то я не буду разрешать маркировать картинку, переносить, или изменять маркированные области. В принципе этот пример очень похож на "пример стилизации маркированных областей через CSS классы", но здесь стили можно задавать прямо в JS-коде, некоторым программистам это может показаться более удобным.
+            В качестве картинки я буду использовать "паспорт Бендера". В отличие от предыдущего примера я разрешу растягивать и переносить маркированные области. К примеру, нейронка не смогла распознать текст, так как мы не точно маркировали картинку, вполне естественно, что нам будет нужно растянуть или не много перенести маркированную область. Исключительно для примера, я не много поменяю стили. Я сделаю меньшую прозрачность для активной маркированной области, и сделаю так, чтобы маркированные области не меняли свой цвет когда они становятся активными. Мне вполне хватит меньшей прозрачности для того, чтобы показать, что маркированная область активна. Это учебный пример, цель показать, что так можно. В том, что я реализовывал, просто приходили маркированные области, и если там была ошибка, то приходилось маркировать всё заново, это было не удобно, но таковы были требования.
           </p>
         </template>
 
         <template v-if="props.isEng">
           <p>
-            This example shows how you can style labeled areas using the "style" attribute. Where might this be useful? Let’s assume we've labeled some image and sent the data to the server. And for some reason, the neural network couldn't identify the text, in this case, it makes sense to make the unrecognized labeled areas red, thereby indicating an error. Let’s assume that some labeled areas have been recognized, but not accurately (some letters in the image are unclear), and the neural network isn't entirely confident in the result, it makes sense to make such areas yellow. It’s best to make normally recognized text green, thereby indicating that everything went well.
+            This example shows how you can style labeled areas using the "style" attribute. Where might this be useful? Let's assume we've labeled some image and sent the data to the server. And for some reason, the neural network couldn't identify the text — in that case, it makes sense to make the unrecognized labeled areas red, thereby indicating an error. Let's assume that some labeled areas have been recognized, but not accurately (some letters in the image are unclear), and the neural network isn't entirely confident in the result, it makes sense to make such areas yellow. It's best to make normally recognized text green, thereby indicating that everything went well.
           </p>
 
           <p>
-            We receive an array of objects, and one of the properties of each object tells us the result of the text recognition. Next, you will need to convert this property into the "muStyle" property and assign to it the object you need, which consists of CSS variables. You can see which CSS variables are responsible for what using <ui-link
+            We receive an array of objects, and one of the properties of each object tells us the result of the text recognition. Next, you will need to convert this property into the "muStyle" property and assign to it the object you need, which consists of CSS variables. You can see which CSS variables are responsible for what in <ui-link
               type="site"
               href="settings"
               title="Settings page"
               :query="props.query"
-            >here</ui-link> (Scroll to the "Styles for the image labeling block" section). In the example below, I use the following style object to display an unrecognized labeled area - { "--mu-marking-rect-stroke-width": 3, "--mu-marking-rect-fill": "var(--mu-marking-rect-active-fill)", "--mu-marking-rect-stroke": "var(--mu-marking-rect-active-fill)" }. For non-accurately recognized labeled areas in which the neural network is in doubt, I use the following style object - { "--mu-marking-rect-stroke-width": 3, "--mu-marking-rect-fill": "#fae60a", "--mu-marking-rect-stroke": "#fae60a" }. For the labeled areas where text recognition was successful, I use the following styles: { "--mu-marking-rect-stroke-width": 1, "--mu-marking-rect-fill": "#00CC00", "--mu-marking-rect-stroke": "#00CC00" }. Below my component, there is a button labeled "Show labeling areas", by clicking it, you can view the code in more detail.
+            >here</ui-link> (Scroll to the "Styles for the image labeling block" section). In the example below, I use the following style object to display an unrecognized labeled area - { "--mu-marking-rect-fill": "#ff0050",
+              "--mu-marking-rect-stroke": "#ff0050",
+              "--mu-marking-rect-active-fill": "#ff0050",
+              "--mu-marking-rect-active-stroke": "#ff0050",
+              "--mu-marking-rect-stroke-width": 2,
+              "--mu-marking-rect-active-fill-opacity": 0.5
+              }. For areas that are not accurately recognized and are in doubt, I use the following style object: { "--mu-marking-rect-fill": "#fae60a",
+              "--mu-marking-rect-stroke": "#fae60a",
+              "--mu-marking-rect-active-fill": "#fae60a",
+              "--mu-marking-rect-active-stroke": "#fae60a",
+              "--mu-marking-rect-stroke-width": 2,
+              "--mu-marking-rect-active-fill-opacity": 0.5
+              }. For the labeled areas where text recognition was successful, I use the following styles - { "--mu-marking-rect-fill": "#00CC00",
+              "--mu-marking-rect-stroke": "#00CC00",
+              "--mu-marking-rect-active-fill": "#00CC00",
+              "--mu-marking-rect-active-stroke": "#00CC00",
+              "--mu-marking-rect-stroke-width": 2,
+              "--mu-marking-rect-active-fill-opacity": 0.5
+              }. Under my component there is the "Show styles for labeling areas" button, by clicking on it, you can view the code in more detail.
           </p>
 
           <p>
-            As an image, I will use "Bender's passport". If we assume that the text recognition results come from the server, then I will not allow labeling the image, moving it, or modifying the labeled areas. In principle, this example is very similar to the "example of styling labeled areas through CSS classes", but here the styles can be set directly in the JS code, some programmers may find this more convenient.
+            As an image, I will use "Bender's passport". Unlike the previous example, I will allow stretching and moving of the labeled areas. For example, the neural network couldn't recognize the text because we didn't label the image accurately, it's quite natural that we will need to stretch or slightly move the labeled area. Just for the sake of the example, I will change the styles a little. I will make the active labeled area less transparent and ensure that the labeled areas don't change their color when they become active. A lower level of transparency will be quite sufficient for me to show that the labeled area is active. This is a training example, the goal is to demonstrate that this is possible. In the implementation I was working on, we simply received labeled areas, and if there was an error, we had to mark everything again — it was inconvenient, but those were the requirements.
           </p>
         </template>
       </ui-full-page>
