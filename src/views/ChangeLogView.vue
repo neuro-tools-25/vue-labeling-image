@@ -10,6 +10,15 @@
           </p>
 
           <p>
+            В версии "0.6.0", я добавил возможность стилизовать отдельные маркированные области. Отдельные маркированные области можно стилизовать как через CSS-классы, так и через атрибут "style". Для стилизации через CSS-классы добавьте к маркированной области атрибут "muClass" с нужным вам CSS классом, или классами. Для стилизации через атрибут "style" добавьте атрибут "muStyle", в данный атрибут нужно добавить CSS-переменные. Посмотреть какие CSS-переменные за что отвечают можно <ui-link
+              type="site"
+              href="settings"
+              title="Страница настроек"
+              :query="props.query"
+            >здесь</ui-link> (Прокрутите до блока "Стили для блока маркировки изображения").
+          </p>
+
+          <p>
             В версии "0.5.0", я добавил входные параметры (props) для стилизации моего компонента. Всё то, что раньше можно было стилизовать через CSS-переменные теперь возможно стилизовать через входные параметры. Также я сделал сброс активной области, при её удаление, до этого я делал сброс только при изменении картинки. Предыдущую маркированную область активной нужно делать руками. Это не сложно, а на разных проектах поведение активной области при её удалении может отличаться (сделать предыдущую маркированную облсть активной или ничего не делать).
           </p>
 
@@ -35,6 +44,15 @@
   I         In this log, I will record changes starting from version "0.2.0" and higher.
           </p>
           
+          <p>
+            In version "0.6.0", I added the ability to style individual labeled areas. Individual labeled areas can be styled either through CSS classes or through the "style" attribute. To style using CSS classes, add the "muClass" attribute with the CSS class or classes you need to the labeled area. To style using the "style" attribute, add the "muStyle" attribute. You need to add CSS variables to this attribute. You can see which CSS variables are responsible for what <ui-link
+              type="site"
+              href="settings"
+              title="Settings page"
+              :query="props.query"
+            >here</ui-link> (Scroll to the "Styles for the image marking block" section).
+          </p>
+
           <p>
             In version "0.5.0", I added input parameters (props) for styling my component. Everything that could previously be styled via CSS variables can now be styled through input parameters. I also implemented a reset of the active area when it is deleted, previously, I only reset it when the image was changed. The previous marked area needs to be made active manually. This is not difficult, but the behavior of the active area when it is deleted may differ across different projects (making the previous marked area active or doing nothing).
           </p>
