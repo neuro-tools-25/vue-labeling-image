@@ -297,7 +297,7 @@
       type: String
     },
     rectStrokeWidth: {
-      type: String
+      type: [String, Number]
     },
     rectFillOpacity: {
       type: [String, Number]
@@ -306,10 +306,10 @@
       type: [String, Number]
     },
     rectRx: {
-      type: String
+      type: [String, Number]
     },
     rectRy: {
-      type: String
+      type: [String, Number]
     },
     rectFill: {
       type: String
@@ -348,7 +348,7 @@
       type: [String, Number]
     },
     shadowRectStrokeWidth: {
-      type: String
+      type: [String, Number]
     },
   });
 
