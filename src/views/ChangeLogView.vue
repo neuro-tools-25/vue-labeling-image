@@ -10,11 +10,11 @@
           </p>
 
           <p>
-            В версии "0.6.0", я добавил возможность стилизовать отдельные маркированные области. Отдельные маркированные области можно стилизовать как через CSS-классы, так и через атрибут "style". Для стилизации через CSS-классы добавьте к маркированной области атрибут "muClass" с нужным вам CSS классом, или классами. Для стилизации через атрибут "style" добавьте атрибут "muStyle", в данный атрибут нужно добавить CSS-переменные. Посмотреть какие CSS-переменные за что отвечают можно <ui-link
+            В версии "0.6.0", я добавил возможность стилизовать отдельные маркированные области. Отдельные маркированные области можно стилизовать как через CSS-классы, так и через атрибут "style". Скорее всего вы получите массив объектов, одно из свойств которого будет говорить распозана или нет конкретная маркированная область. Для стилизации через CSS-классы нужно будет преобразовать данное свойство в своство "muClass" с нужным вам CSS классом, или классами. Для стилизации через атрибут "style" нужно будет преобразовать данное свойство в своство "muStyle". В данное свойство нужно добавить CSS-переменные отвечающие за стилизацию маркированных областей. Посмотреть какие CSS-переменные за что отвечают можно <ui-link
               type="site"
               href="settings"
               title="Страница настроек"
-              :query="props.query"
+              :query="query"
             >здесь</ui-link> (Прокрутите до блока "Стили для блока маркировки изображения").
           </p>
 
@@ -43,7 +43,16 @@
           <p>
   I         In this log, I will record changes starting from version "0.2.0" and higher.
           </p>
-          
+
+          <p>
+            In version "0.6.0", I added the ability to style individual labeled areas. Individual labeled areas can be styled either via CSS classes or via the “style” attribute. Most likely, you will receive an array of objects, one of the properties of which will indicate whether a specific labeled area is recognized or not. To style via CSS classes, you will need to convert this property into the “muClass” property with the CSS class or classes you need. To style using the “style” attribute, you will need to convert this property into the “muStyle” property. You need to add CSS variables to this property that are responsible for styling the labeled areas. You can see which CSS variables are responsible for what by clicking <ui-link
+              type="site"
+              href="settings"
+              title="Settings page"
+              :query="query"
+            >here</ui-link> (Scroll to the "Styles for the image labeling block" section).
+          </p>
+
           <p>
             In version "0.6.0", I added the ability to style individual labeled areas. Individual labeled areas can be styled either through CSS classes or through the "style" attribute. To style using CSS classes, add the "muClass" attribute with the CSS class or classes you need to the labeled area. To style using the "style" attribute, add the "muStyle" attribute. You need to add CSS variables to this attribute. You can see which CSS variables are responsible for what <ui-link
               type="site"
@@ -81,6 +90,7 @@
   const {
     isRus,
     isEng,
+    query
   } = useNav();
 </script>
 
