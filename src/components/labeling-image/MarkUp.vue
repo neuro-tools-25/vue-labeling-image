@@ -205,6 +205,9 @@
         ].includes(value)
       }
     },
+    gridColor: {
+      type: String
+    },
     minWidth: {
       type: [Number, String],
       default: 10
@@ -288,12 +291,6 @@
       type: String
     },
     boxShadow: {
-      type: String
-    },
-    gridSize: {
-      type: [String, Number]
-    },
-    gridColor: {
       type: String
     },
     rectStrokeWidth: {
