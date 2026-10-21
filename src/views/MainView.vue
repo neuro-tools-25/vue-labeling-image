@@ -114,6 +114,12 @@
           :is-eng="false"
           :query="query"
         />
+
+        <!-- Стилизация маркированных областей -->
+        <stilization-labeled-areas
+          :is-eng="false"
+          :query="query"
+        />
       </template>
 
       <template v-if="isEng">
@@ -229,6 +235,12 @@
           :is-eng="true"
           :query="query"
         />
+
+        <!-- Стилизация маркированных областей -->
+        <stilization-labeled-areas
+          :is-eng="true"
+          :query="query"
+        />
       </template>
     </animation-lay>
   </div>
@@ -273,6 +285,9 @@
 
   // Слоты
   import SlotsDoc from '@/components/documentation/slots/SlotsDoc.vue';
+
+  // Стилизация маркированных областей
+  import StilizationLabeledAreas from '@/components/documentation/StilizationLabeledAreas.vue';
 
   const {
     isRus,

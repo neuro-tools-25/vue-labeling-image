@@ -291,7 +291,7 @@
       type: String
     },
     gridSize: {
-      type: String
+      type: [String, Number]
     },
     gridColor: {
       type: String
