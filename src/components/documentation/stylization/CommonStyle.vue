@@ -18,7 +18,7 @@
       </p>
 
       <p class="small-mar">
-        <strong>--mu-marking-rect-stroke-width</strong> - толщина линий маркированных областей, этот параметр применяется и для автивной области, и для области в момент маркирования. Будет как-то странно, если у активной области толщина линии будет больше, чем у обычных областей.
+        <strong>--mu-marking-rect-stroke-width</strong> - толщина линий маркированных областей, этот параметр применяется и для активной области, и для области в момент маркирования. Будет как-то странно, если у активной области толщина линии будет больше, чем у обычных областей.
       </p>
 
       <p class="small-mar">
@@ -30,11 +30,11 @@
       </p>
 
       <p class="small-mar">
-        <strong>--mu-marking-rect-rx</strong> - border-radius по оси X или закругление по оси X, этот парамерт применяется и для активной области, и для области в момент маркирования.
+        <strong>--mu-marking-rect-rx</strong> - border-radius по оси X или закругление по оси X, этот параметр применяется и для активной области, и для области в момент маркирования.
       </p>
 
       <p class="small-mar">
-        <strong>--mu-marking-rect-ry</strong> - border-radius по оси Y или закругление по оси Y, этот парамерт применяется и для активной области, и для области в момент маркирования.
+        <strong>--mu-marking-rect-ry</strong> - border-radius по оси Y или закругление по оси Y, этот параметр применяется и для активной области, и для области в момент маркирования.
       </p>
 
       <p>
@@ -48,35 +48,35 @@
       </h3>
 
       <p>
-        This block will contain common styles for the labeled areas. If the marked area is not active and you have already created it, then you can view the styles for it here too. From everything I've done, I can tell that the labeled areas differ only in the fill color, the color of the lines (border), and the transparency of the lines and fill. Things like the curves, the thickness of the lines, were the same everywhere.
+        This block will contain common styles for the labeled areas. If the labeled area is not active and you have already created it, then you can view the styles for it here too. From everything I've done, I can tell that the labeled areas differ only in the fill color, the color of the lines (border), and the transparency of the lines and fill. Things like the curves, the thickness of the lines, were the same everywhere.
       </p>
 
       <p class="small-mar">
-        <strong>--mu-marking-rect-fill</strong> - filling of the marked areas, this parameter is redefined for the hotspot and the area at the time of labeling.
+        <strong>--mu-marking-rect-fill</strong> - filling of the labeled areas, this parameter is redefined for the hotspot and the area at the time of labeling.
       </p>
 
       <p class="small-mar">
-        <strong>--mu-marking-rect-stroke</strong> - the color of the lines of the marked areas, this parameter is redefined for the hotspot and the area at the time of marking.
+        <strong>--mu-marking-rect-stroke</strong> - the color of the lines of the labeled areas, this parameter is redefined for the hotspot and the area at the time of marking.
       </p>
 
       <p class="small-mar">
-        <strong>--mu-marking-rect-stroke-width</strong> is the line thickness of the marked areas. This parameter applies to both the active area and the area at the time of marking. It will be kind of strange if the active area has a line thickness greater than that of normal areas.
+        <strong>--mu-marking-rect-stroke-width</strong> is the line thickness of the labeled areas. This parameter applies to both the active area and the area at the time of marking. It will be kind of strange if the active area has a line thickness greater than that of normal areas.
       </p>
 
       <p class="small-mar">
-        <strong>--mu-marking-rect-stroke-opacity</strong> - transparency of the lines of the marked areas, this parameter is redefined for the hotspot and the area at the time of marking.
+        <strong>--mu-marking-rect-stroke-opacity</strong> - transparency of the lines of the labeled areas, this parameter is redefined for the hotspot and the area at the time of marking.
       </p>
 
       <p class="small-mar">
-        <strong>--mu-marking-rect-fill-opacity</strong> - transparency of the fill of the marked areas, this parameter is redefined for the hotspot and the area at the time of labeling.
+        <strong>--mu-marking-rect-fill-opacity</strong> - transparency of the fill of the labeled areas, this parameter is redefined for the hotspot and the area at the time of labeling.
       </p>
 
       <p class="small-mar">
-        <strong>--mu-marking-rect-rx</strong> - X-axis border-radius or X-axis rounding, this parameter applies to both the hotspot and the area at the time of marking.
+        <strong>--mu-marking-rect-rx</strong> - border-radius along the X-axis or rounding along the X-axis, this parameter applies to both the active area and the area at the time of labeling.
       </p>
 
       <p class="small-mar">
-        <strong>--mu-marking-rect-ry</strong> - border-radius on the Y axis or rounding on the Y axis, this parameter applies to both the hotspot and the area at the time of marking.
+        <strong>--mu-marking-rect-ry</strong> - border-radius along the Y-axis or rounding along the Y-axis, this parameter applies to both the active area and the area at the time of labeling.
       </p>
 
       <p>
