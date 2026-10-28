@@ -69,6 +69,12 @@
           margin-top: 0;
         }
       }
+
+      .full-page {
+        a {
+          text-decoration: none;
+        }
+      }
     }
 
     &__markup,

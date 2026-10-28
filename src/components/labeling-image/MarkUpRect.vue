@@ -67,14 +67,14 @@
     // Стили для активной области разметки
     --mu-marking-rect-active-fill: #ff0050;
     --mu-marking-rect-active-stroke: var(--mu-marking-rect-active-fill);
-    --mu-marking-rect-active-fill-opacity: .2;
-    --mu-marking-rect-active-stroke-opacity: 1;
+    --mu-marking-rect-active-fill-opacity: var(--mu-marking-rect-fill-opacity);
+    --mu-marking-rect-active-stroke-opacity: var(--mu-marking-rect-stroke-opacity);
 
     // Стили для области в момент разметки
     --mu-marking-rect-dragging-fill: #ce0242;
     --mu-marking-rect-dragging-stroke: var(--mu-marking-rect-dragging-fill);
     --mu-marking-rect-dragging-fill-opacity: .3;
-    --mu-marking-rect-dragging-stroke-opacity: 1;
+    --mu-marking-rect-dragging-stroke-opacity: var(--mu-marking-rect-stroke-opacity);
 
     // Тень для области разметки
     --mu-marking-rect-shadow-stroke: #000;

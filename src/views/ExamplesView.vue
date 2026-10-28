@@ -113,6 +113,72 @@
         :is-eng="isEng"
       />
     </div>
+
+    <div class="examples-page__group">
+      <open-header
+        type-element="h2"
+        :is-active="isStilizationClass"
+        :is-inline="true"
+        @click="isStilizationClass = !isStilizationClass"
+      >
+        {{ stilizationClassText }}
+      </open-header>
+
+      <stil-areas-class
+        v-if="isStilizationClass"
+        :is-eng="isEng"
+      />
+    </div>
+
+    <div class="examples-page__group">
+      <open-header
+        type-element="h2"
+        :is-active="isStilizationClassEdited"
+        :is-inline="true"
+        @click="isStilizationClassEdited = !isStilizationClassEdited"
+      >
+        {{ stilizationClassEditedText }}
+      </open-header>
+
+      <stil-areas-class-edited
+        v-if="isStilizationClassEdited"
+        :is-eng="isEng"
+      />
+    </div>
+
+    <div class="examples-page__group">
+      <open-header
+        type-element="h2"
+        :is-active="isStilizationAttrStyle"
+        :is-inline="true"
+        @click="isStilizationAttrStyle = !isStilizationAttrStyle"
+      >
+        {{ stilizationAttrStyleText }}
+      </open-header>
+
+      <stil-areas-attr-style
+        v-if="isStilizationAttrStyle"
+        :is-eng="isEng"
+        :query="query"
+      />
+    </div>
+
+    <div class="examples-page__group">
+      <open-header
+        type-element="h2"
+        :is-active="isStilizationAttrStyleEdited"
+        :is-inline="true"
+        @click="isStilizationAttrStyleEdited = !isStilizationAttrStyleEdited"
+      >
+        {{ stilizationAttrStyleEditedText }}
+      </open-header>
+
+      <stil-areas-attr-style-edited
+        v-if="isStilizationAttrStyleEdited"
+        :is-eng="isEng"
+        :query="query"
+      />
+    </div>
   </div>
 </template>
 
@@ -129,6 +195,10 @@
   import SlotsHintMarked from '@/components/examples/slots/SlotsHintMarked.vue';
   import SlotsHintEx from '@/components/examples/slots/SlotsHintEx.vue';
   import SlotsHintHovered from '@/components/examples/slots/SlotsHintHovered.vue';
+  import StilAreasClass from '@/components/examples/stilization-class/AreasClass.vue';
+  import StilAreasClassEdited from '@/components/examples/stilization-class/AreasClassEdited.vue';
+  import StilAreasAttrStyle from '@/components/examples/stilization-style/AreasStyle.vue';
+  import StilAreasAttrStyleEdited from '@/components/examples/stilization-style/AreasStyleEdited.vue';
 
   const isTypeExample = ref(true);
   const isStaticArea = ref(false);
@@ -137,8 +207,12 @@
   const isSlotsMarked = ref(false);
   const isSlotsHintEx = ref(false);
   const isSlotsHintHovered = ref(false);
+  const isStilizationClass = ref(false);
+  const isStilizationClassEdited = ref(false);
+  const isStilizationAttrStyle = ref(false);
+  const isStilizationAttrStyleEdited = ref(false);
 
-  const { isEng } = inject('lang');
+  const { isEng, query } = inject('lang');
 
   const {
     headExamples,
@@ -148,7 +222,11 @@
     slotsHintText,
     slotsHintMarkedText,
     slotsHintExText,
-    slotsHintHoveredText
+    slotsHintHoveredText,
+    stilizationClassText,
+    stilizationClassEditedText,
+    stilizationAttrStyleText,
+    stilizationAttrStyleEditedText
   } = useExamples(isEng);
 </script>
 

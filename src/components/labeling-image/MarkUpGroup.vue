@@ -2,6 +2,7 @@
   <g
     :id="props.id" 
     :class="classGComp"
+    :style="props.muStyle"
     @mouseover="emits('hovered-id')"
     @mouseout="emits('reset-hovered-id')"
   >
@@ -104,7 +105,9 @@
     'isReadonly',
     'title',
     'isTitle',
-    'strokeDasharray'
+    'strokeDasharray',
+    'muClass',
+    'muStyle'
   ]);
 
   const sizeResizeArea = '5px';
@@ -116,7 +119,7 @@
     return true;
   });
 
-  const classGComp = computed(() => (['mark-up__g', {
+  const classGComp = computed(() => (['mark-up__g', props.muClass, {
     'mark-up__g_active': props.isActive,
     'mark-up__g_unvisible': props.isUnvisible,
   }]));

@@ -57,6 +57,34 @@ const useExamples = (isEng) => {
     return text;
   });
 
+  const stilizationClassText = computed(() => {
+    let text='Пример стилизации маркированных областей через CSS классы';
+    if (isEng.value) text='An example of styling labeled areas using CSS classes';
+
+    return text;
+  });
+
+  const stilizationClassEditedText = computed(() => {
+    let text='Пример стилизации маркированных областей через CSS классы (маркированные области можно изменять)';
+    if (isEng.value) text='Example of styling labeled areas using CSS classes (labeled areas can be modified)';
+
+    return text;
+  });
+
+  const stilizationAttrStyleText = computed(() => {
+    let text='Пример стилизации маркированных областей через атрибут "style"';
+    if (isEng.value) text='An example of styling labeled areas using the “style” attribute';
+
+    return text;
+  });
+
+  const stilizationAttrStyleEditedText = computed(() => {
+    let text='Пример стилизации маркированных областей через атрибут "style" (маркированные области можно изменять)';
+    if (isEng.value) text='An example of styling labeled areas using the “style” attribute (labeled areas can be modified)';
+
+    return text;
+  });
+
   return {
     headExamples,
     typeExample,
@@ -65,7 +93,11 @@ const useExamples = (isEng) => {
     slotsHintText,
     slotsHintMarkedText,
     slotsHintExText,
-    slotsHintHoveredText
+    slotsHintHoveredText,
+    stilizationClassText,
+    stilizationClassEditedText,
+    stilizationAttrStyleText,
+    stilizationAttrStyleEditedText
   }
 }
 

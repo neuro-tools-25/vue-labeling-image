@@ -50,6 +50,8 @@
             :title="item[props.keyTitle]"
             :isTitle="props.isTitle"
             :strokeDasharray="props.strokeDasharray"
+            :muClass="item.muClass"
+            :muStyle="item.muStyle"
             @touchstart.stop="(event) => cRect(event, item, 'move-rect')"
             @mousedown.stop="(event) => cRect(event, item, 'move-rect')"
             @move-left="(event) => cRect(event, item, 'resize-left')"
@@ -93,6 +95,8 @@
           :title="activeArea[props.keyTitle]"
           :isTitle="props.isTitle"
           :strokeDasharray="props.activeStrokeDasharray"
+          :muClass="activeArea.muClass"
+          :muStyle="activeArea.muStyle"
           @touchstart.stop="(event) => cRect(event, activeArea, 'move-rect')"
           @mousedown.stop="(event) => cRect(event, activeArea, 'move-rect')"
           @move-left="(event) => cRect(event, activeArea, 'resize-left')"
@@ -201,6 +205,9 @@
         ].includes(value)
       }
     },
+    gridColor: {
+      type: String
+    },
     minWidth: {
       type: [Number, String],
       default: 10
@@ -286,14 +293,8 @@
     boxShadow: {
       type: String
     },
-    gridSize: {
-      type: String
-    },
-    gridColor: {
-      type: String
-    },
     rectStrokeWidth: {
-      type: String
+      type: [String, Number]
     },
     rectFillOpacity: {
       type: [String, Number]
@@ -302,10 +303,10 @@
       type: [String, Number]
     },
     rectRx: {
-      type: String
+      type: [String, Number]
     },
     rectRy: {
-      type: String
+      type: [String, Number]
     },
     rectFill: {
       type: String
@@ -344,7 +345,7 @@
       type: [String, Number]
     },
     shadowRectStrokeWidth: {
-      type: String
+      type: [String, Number]
     },
   });
 
