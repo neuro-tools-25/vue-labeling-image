@@ -34,6 +34,15 @@
           mu-class="mu-class_error"
         />
         <stilization-class-obj
+          id="1759337222917"
+          name="Last name"
+          width="20.48780487804878"
+          height="20.48780487804878"
+          x="53.98373983739837"
+          y="53.98373983739837"
+          mu-class="mu-class_error"
+        />
+        <stilization-class-obj
           id="1759337232429"
           name="Surname"
           width="13.658536585365855"
@@ -80,7 +89,7 @@
         />
 
         <code-line level-2>
-          <mu-type code="])" />
+          <mu-type code="]);" />
         </code-line>
       </template>
 
@@ -313,6 +322,15 @@
       muClass: "mu-class_error",
     },
     {
+      id: 1759337222917,
+      name: "Last name",
+      x: 53.98373983739837,
+      y: 53.98373983739837,
+      width: 20.48780487804878,
+      height: 20.48780487804878,
+      muClass: "mu-class_error",
+    },
+    {
       id: 1759337232429,
       name: "Surname",
       x: 55.44715447154471,
@@ -356,8 +374,8 @@
       width: 3.577235772357723,
       height: 59.53757225433526,
       muClass: "mu-class_warn",
-  },
-  ])
+    },
+  ]);
 </${'script'}>
 
 <style lang="scss">

@@ -137,7 +137,7 @@
   });
 
   const errorStyle = bStyle('#ff0050');
-  const warnStyle = bStyle('#fae60');
+  const warnStyle = bStyle('#fae60a');
   const saccessStyle = bStyle('#00CC00');
 
   const areas = ref([

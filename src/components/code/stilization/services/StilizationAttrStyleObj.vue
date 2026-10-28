@@ -42,10 +42,10 @@
     level-4
     new
   >
-    <mu-key code="muClass" />
+    <mu-key code="muStyle" />
     <mu-type code=": " />
-    <mu-text 
-      :code='`"${props.muClass}"`'
+    <mu-type 
+      :code="props.muStyle"
       bold
     />
     <mu-type code="," />
@@ -63,6 +63,6 @@
     "height",
     "x",
     "y",
-    "muClass"
+    "muStyle"
   ]);
 </script>
