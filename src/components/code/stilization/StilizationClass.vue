@@ -46,6 +46,18 @@
 
     <code-line level-2>
       <mu-key-words code="const " />
+      <mu-variable code="imageSrc" />
+      <mu-type code=" = " />
+      <mu-key-words code="ref" />
+      <mu-type code="(" />
+      <mu-text code='"The path to your picture"' />
+      <mu-type code=");" />
+    </code-line>
+
+    <code-line />
+
+    <code-line level-2>
+      <mu-key-words code="const " />
       <mu-variable code="areas" />
       <mu-type code=" = " />
       <mu-key-words code="ref" />
@@ -306,7 +318,7 @@
 </template>
 
 <script setup>
-  import StilizationClassObj from './StilizationClassObj.vue';
+  import StilizationClassObj from './services/StilizationClassObj.vue';
   import useLang from '@/components/code/uselang.js';
 
   const props = defineProps({
@@ -326,6 +338,8 @@
 </template>
 
 <${'script'} setup>
+  const imageSrc = ref("The path to your picture.");
+
   const areas = ref([
     {
       id: 1759337197573,

@@ -127,10 +127,6 @@
 
   const imageSrc = ref(imageStud);
 
-  const colorError = '#ff0050';
-  const colorWarn = '#fae60a';
-  const colorSacces = '#00CC00';
-
   const bStyle = (color) => ({
     "--mu-marking-rect-fill": color,
     "--mu-marking-rect-stroke": color,
@@ -140,9 +136,9 @@
     "--mu-marking-rect-active-fill-opacity": .5
   });
 
-  const errorStyle = bStyle(colorError);
-  const warnStyle = bStyle(colorWarn);
-  const saccessStyle = bStyle(colorSacces);
+  const errorStyle = bStyle('#ff0050');
+  const warnStyle = bStyle('#fae60');
+  const saccessStyle = bStyle('#00CC00');
 
   const areas = ref([
     {
