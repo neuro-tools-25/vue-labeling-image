@@ -1,5 +1,5 @@
 <template>
-  <code-line level-2>
+  <code-line level-2 new>
     <mu-key-words code="const " />
     <mu-variable :code="props.name" />
     <mu-type code=" = " />

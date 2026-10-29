@@ -6,7 +6,7 @@
     :line-count="15"
   >
     <stilization-layout>
-      <code-line level-2>
+      <code-line level-2 new>
         <mu-key-words code="const " />
         <mu-function code="bStyle" />
         <mu-type code=" = (color) => ({" />
@@ -17,7 +17,7 @@
       <stilization-attr-style-color name="--mu-marking-rect-active-stroke" />
       <stilization-attr-style-number name="--mu-marking-rect-stroke-width" val="2" />
       <stilization-attr-style-number name="--mu-marking-rect-active-fill-opacity" val=".5" />
-      <code-line level-2>
+      <code-line level-2 new>
         <mu-type code="});" />
       </code-line>
 

@@ -1,5 +1,5 @@
 <template>
-  <code-line level-3>
+  <code-line level-3 new>
     <mu-text :code='`"${props.name}"`' />
     <mu-type code=": " />
     <mu-type code="color," />
