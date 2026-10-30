@@ -1,5 +1,9 @@
 <template>
-  <code-line level-3 new>
+  <code-line
+  level-3
+  new
+  active
+>
     <mu-text :code='`"${props.name}"`' />
     <mu-type code=": " />
     <mu-number :code="props.val" />

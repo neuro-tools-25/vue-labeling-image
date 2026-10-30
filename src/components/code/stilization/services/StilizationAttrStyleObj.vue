@@ -41,6 +41,7 @@
   <code-line
     level-4
     new
+    active
   >
     <mu-key code="muStyle" />
     <mu-type code=": " />
