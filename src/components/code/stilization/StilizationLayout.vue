@@ -100,7 +100,7 @@
   .code-markup_is-visible-edit {
     .code-markup__line {
       &__content {
-        opacity: .4;
+        opacity: .3;
       }
 
       &_new .code-markup__line__content {
