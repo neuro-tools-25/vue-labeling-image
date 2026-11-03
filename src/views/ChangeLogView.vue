@@ -45,21 +45,12 @@
           </p>
 
           <p>
-            In version "0.6.0", I added the ability to style individual labeled areas. Individual labeled areas can be styled either via CSS classes or via the “style” attribute. Most likely, you will receive an array of objects, one of the properties of which will indicate whether a specific labeled area is recognized or not. To style via CSS classes, you will need to convert this property into the “muClass” property with the CSS class or classes you need. To style using the “style” attribute, you will need to convert this property into the “muStyle” property. You need to add CSS variables to this property that are responsible for styling the labeled areas. You can see which CSS variables are responsible for what by clicking <ui-link
+            In version "0.6.0", I added the ability to style individual labeled areas. Individual labeled areas can be styled either via CSS classes or via the "style" attribute. Most likely, you will receive an array of objects, one of the properties of which will indicate whether a specific labeled area is recognized or not. To style via CSS classes, you will need to convert this property into the "muClass" property with the CSS class or classes you need. To style using the "style" attribute, you will need to convert this property into the "muStyle" property. You need to add CSS variables to this property that are responsible for styling the labeled areas. You can see which CSS variables are responsible for what by clicking <ui-link
               type="site"
               href="settings"
               title="Settings page"
               :query="query"
             >here</ui-link> (Scroll to the "Styles for the image labeling block" section).
-          </p>
-
-          <p>
-            In version "0.6.0", I added the ability to style individual labeled areas. Individual labeled areas can be styled either through CSS classes or through the "style" attribute. To style using CSS classes, add the "muClass" attribute with the CSS class or classes you need to the labeled area. To style using the "style" attribute, add the "muStyle" attribute. You need to add CSS variables to this attribute. You can see which CSS variables are responsible for what <ui-link
-              type="site"
-              href="settings"
-              title="Settings page"
-              :query="props.query"
-            >here</ui-link> (Scroll to the "Styles for the image marking block" section).
           </p>
 
           <p>
