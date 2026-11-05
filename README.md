@@ -667,7 +667,7 @@ To be honest, I haven't encountered any tasks where I needed to style an active 
 
 **\--mu-marking-rect-active-stroke-opacity** — the opacity of the line for the active labeled area. If, according to the design, the active labeled area has no visible lines, only a fill, then set the value to 0. As a rule, 1 is usually set. Valid values range from 0 to 1 (0, 1, 0.3, 0.4, 0.8, etc.).
 
-### Styling of marked areas using CSS classes
+### Styling of labeled areas using CSS classes
 
 This is probably the most flexible way to style labeled areas. Look, we receive an array of labeled areas from the server, and one of the properties of each labeled area tells us the result of the labeled area recognition. All we need to do is replace this property with "muClass" using the CSS class or classes we need, and then specify the styles for each CSS class. Below, I'll provide a conditional example of code for styling labeled areas through CSS classes. I would advise you to open the [examples page](https://neuro-tools-25.github.io/vue-labeling-image/examples "Examples page") and look at the real examples.
 
@@ -800,7 +800,7 @@ This is probably the most flexible way to style labeled areas. Look, we receive 
 
 The example above is quite conditional, in it, I don't allow labeling the image (:is-markup="false"). We received a response from the server, and we need to stretch the labeling area somewhere, move it somewhere — but we don’t need to create new labeling areas. I assigned the CSS class "mu-class\_error" to the unrecognized labeling areas. For those labeling areas that were recognized with an error, I assigned the class "mu-class\_warn". For normally recognized areas, I assigned the class "mu-class\_success". In the example above, I don’t change the colors for the active labeling area, but to make it stand out somehow, I make the stroke line thicker and change the fill transparency — this way, it will be clear that the area has become active.
 
-### Styling of marked areas using the "style" attribute
+### Styling of labeled areas using the "style" attribute
 
 Compared to styling labeled areas via CSS classes, this method is less flexible. In principle, if you do styling via CSS classes, you also need to do styling via the "style" attribute — this is only logical. Perhaps someone will like this method more; in that case, we can define the styles directly in the JS code, which can be convenient — after all, it’s faster.
 
