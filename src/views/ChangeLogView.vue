@@ -75,14 +75,15 @@
 </template>
 
 <script setup>
-  import useNav from '@/layouts/useNav';
+  import { inject } from 'vue';
   import AnimationLay from '@/layouts/AnimationLay.vue';
 
   const {
     isRus,
     isEng,
     query
-  } = useNav();
+  } = inject('lang');
+
 </script>
 
 <style lang="scss" scoped>
