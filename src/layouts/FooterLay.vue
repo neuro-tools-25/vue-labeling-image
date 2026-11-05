@@ -30,7 +30,7 @@
   bYear();
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @use './_common.scss' as mixins;
 
   footer {
