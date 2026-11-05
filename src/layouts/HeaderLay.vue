@@ -51,7 +51,7 @@
   const mainLink = computed(() => ({ name: 'main', ...query.value }));
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @use './_common.scss' as mixins;
   @use '@/assets/_services' as services;
 
