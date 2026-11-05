@@ -14,7 +14,7 @@
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
     "@vitejs/plugin-vue": "^6.0.0",
-    "mingcute_icon": "^2.9.6",
+    "mingcute_icon": "2.9.6",
     "sass-embedded": "^1.89.2",
     "vite": "^7.0.0",
     "vite-plugin-vue-devtools": "^7.7.7",
