@@ -626,3 +626,287 @@ The example below is very conditional, if you want to understand in more detail 
 The above example is quite long. I have inserted a piece of code from one example with slots. There is a lot of code, but the "template" sections are important in this example. In the "first" slot, I output text with hints, for this I added an array of "hints" below, it takes up a lot of space. In the "last" slot, I display a picture, in real examples this is the Batman logo, here I do not know which picture to specify. In the "html" slot I'm displaying a link that contains some kind of picture. In the examples, this is the superman logo, here I do not know what to insert. Everything else is not important. In the real examples, I took a passport with a Bender, inserted the labeled areas there, in the example above they also take up a lot of space. I think everything should be clear and understandable.
 
 Keep in mind that in the "first" and "last" slots you can insert only those elements that can be inserted into SVG. SVG elements are styled not much differently than HTML elements. For example, in order to change the color of the text, the "fill" property is used, not "color". The differences are not strong, check out other examples with [slots](https://neuro-tools-25.github.io/vue-labeling-image/examples "Examples"), I think everything will become clearer.
+
+## Stylization of labeled areas
+
+In the course of work, situations arise in which we need to display the labeled areas (some result has arrived from the server), and at the same time, some of the labeled areas must be distinguished. As an example, let’s imagine the following situation. We labeled the image, sent the data to the server, and then the neural network failed to recognize some of the labeled areas, while it recognized others but with an error — for example, the document was scanned poorly, and some letters could not be recognized. The other part of the labeled areas was recognized normally, without errors. We received a response in the form of an array of objects. One of the properties of each object tells us about the recognition result, and we need to somehow display the result to the user so that they can understand which labeled areas could not be recognized, which labeled areas were recognized with an error, and which labeled areas were recognized without errors. Such tasks can be solved either through CSS classes or through the "style" attribute.
+
+The most accurate thing to say is that we can style it. I've already mentioned the CSS variables that are responsible for styling. To make it more convenient and avoid having to jump around the page, I’ll list the CSS variables responsible for styling labeled areas again below. Сonditional, they can be divided into variables responsible for styling regular labeled areas, variables responsible for styling the active labeled area, and general variables that apply to both regular and active labeled areas. If you’re more of a hands-on person, I’d advise you to open the [examples page](https://neuro-tools-25.github.io/vue-labeling-image/examples "Examples page") and look at the examples of styling labeled areas — it will be easier that way. If you want to understand everything in more detail, read on.
+
+### General CSS variables
+
+These are variables whose changes will lead to changes in both the active and regular labeled areas. Usually, the difference between the active and regular labeled area lies in the line color, fill color, and fill transparency. Corners and line thickness usually do not differ, at least in what I've done, that's how it was.
+
+**\--mu-marking-rect-rx** — border-radius along the X-axis, or rounding along the X-axis. This parameter is applied to the active and regular labeled area. It is very unlikely that a situation will arise in which the rounding for the active area will differ from the regular one.
+
+**\--mu-marking-rect-ry** — border-radius along the Y-axis, or rounding along the Y-axis. This parameter is applied to the regular and active labeled area. I can say that, just like for the parameter above, it is very unlikely that a situation will arise in which the rounding for the active area will differ from the regular one.
+
+**\--mu-marking-rect-stroke-width** — the thickness of the lines of the labeled areas. This parameter is also applied to the regular and active labeled area. I haven’t encountered any tasks where the labeled areas differ in line thickness, but lately I’ve been thinking about it, it's quite possible that I'll fix this in future versions.
+
+### CSS variables responsible for styling regular labeled areas
+
+These are the variables that will be applied to the regular labeled areas. At this point, it’s worth mentioning active and regular labeled areas again. When we start labeling the image, the first area created will be active. After that, each last created labeled area will be active; the remaining areas will be regular. We can prohibit labeling the image and simply display the labeled areas (:is-readonly="true" for my component), in which case there will be no active labeled area. The area will become active when we click on it, try to move it, or stretch it (of course, if these actions are allowed). Usually, an active labeled area differs from a regular one in terms of fill color, line color, and possibly transparency.
+
+For regular labeled areas, we can set the line color and the color of its fill. We can also change the fill transparency and the line transparency.
+
+**\--mu-marking-rect-fill** — the fill color for labeled areas. Here you can specify any valid CSS color value (orange, blue, rgba(77, 77, 77, .7), rgb(77, 77, 77), hsl(120, 100%, 50%), etc).
+
+**\--mu-marking-rect-fill-opacity** — fill transparency for labeled areas. If you don't need a fill, as the designer intended, then set 0. Acceptable values are from 0 to 1 (0, 1, 0.3, 0.4, 0.8 and so on).
+
+**\--mu-marking-rect-stroke** — the line color for labeled areas, in other words, you can say “border”; under the hood, I use SVG, so this variable contains “stroke” in its name. Here you can specify any valid CSS color value (orange, blue, rgba(77, 77, 77, .7), rgb(77, 77, 77), hsl(120, 100%, 50%), etc).
+
+### CSS variables responsible for styling the active labeled area
+
+To be honest, I haven't encountered any tasks where I needed to style an active labeled area. Usually, in most of the projects I've worked on, if I received a response from the server, I could only review the result; I disabled editing of labeled areas (:is-readonly="true" for my component). Most likely, you won’t need these variables either, but if you’re making a universal solution, I’ve provided the option to change the styles for the active labeled area. Look, if you allow modifying the labeled areas (allow moving and stretching them), then when you click on a regular labeled area, it will become active, and the styles that are applied to the active labeled area by default will be applied to it. If you have styled this area, then when you click on it, the styles for the active labeled area by default will still be applied. If you don't need this behavior, you will need to redefine the variables you need. Just as with regular labeled areas, we can set the fill color, line color, as well as the fill transparency and line transparency of the active labeled area.
+
+**\--mu-marking-rect-active-fill** — the fill color for the active labeled area. Here you can specify any valid color value in CSS (orange, blue, rgba(77, 77, 77, .7), rgb(77, 77, 77), hsl(120, 100%, 50%), etc).
+
+**\--mu-marking-rect-active-fill-opacity** — transparency of the fill for the active labeled area. If you don't need a fill, as the designer intended, then set 0. Acceptable values are from 0 to 1 (0, 1, 0.3, 0.4, 0.8 and so on).
+
+**\--mu-marking-rect-active-stroke** — the color of the line for the active labeled area, in other words, you can say it’s the border. Under the hood, I use SVG, which is why this variable contains “stroke” in its name. Here you can specify any valid CSS color value (orange, blue, rgba(77, 77, 77, .7), rgb(77, 77, 77), hsl(120, 100%, 50%), etc).
+
+**\--mu-marking-rect-active-stroke-opacity** — the opacity of the line for the active labeled area. If, according to the design, the active labeled area has no visible lines, only a fill, then set the value to 0. As a rule, 1 is usually set. Valid values range from 0 to 1 (0, 1, 0.3, 0.4, 0.8, etc.).
+
+### Styling of marked areas using CSS classes
+
+This is probably the most flexible way to style labeled areas. Look, we receive an array of labeled areas from the server, and one of the properties of each labeled area tells us the result of the labeled area recognition. All we need to do is replace this property with "muClass" using the CSS class or classes we need, and then specify the styles for each CSS class. Below, I'll provide a conditional example of code for styling labeled areas through CSS classes. I would advise you to open the [examples page](https://neuro-tools-25.github.io/vue-labeling-image/examples "Examples page") and look at the real examples.
+
+```vue
+<template>
+  <labeling-image
+    :image-src="imageSrc"
+    v-model="areas"
+    key-title="name"
+    :is-markup="false"
+  />
+</template>
+
+<script setup>
+  const imageSrc = ref("The path to your picture.");
+
+  const areas = ref([
+    {
+      id: 1759337197573,
+      name: "Photo",
+      x: 4.227642276422764,
+      y: 24.277456647398843,
+      width: 27.97947487671597,
+      height: 59.53757225433526,
+      muClass: "mu-class_error",
+    },
+    {
+      id: 1759337204073,
+      name: "First name",
+      x: 50.40650406504065,
+      y: 28.901734104046245,
+      width: 26.945655263262942,
+      height: 8.38150289017341,
+      muClass: "mu-class_error",
+    },
+    {
+      id: 1759337222917,
+      name: "Last name",
+      x: 53.98373983739837,
+      y: 53.98373983739837,
+      width: 20.48780487804878,
+      height: 20.48780487804878,
+      muClass: "mu-class_error",
+    },
+    {
+      id: 1759337232429,
+      name: "Surname",
+      x: 55.44715447154471,
+      y: 239.017341040462426,
+      width: 13.658536585365855,
+      height: 6.9364161849710975,
+      muClass: "mu-class_success",
+    },
+    {
+      id: 1759337240377,
+      name: "Gender",
+      x: 39.67479674796748,
+      y: 50,
+      width: 5.040650406504065,
+      height: 6.358381502890173,
+      muClass: "mu-class_warn",
+    },
+    {
+      id: 1759337248220,
+      name: "Birthplace",
+      x: 49.43089430894309,
+      y: 58.67052023121387,
+      width: 30.081300813008134,
+      height: 6.9364161849710975,
+      muClass: "mu-class_success",
+    },
+    {
+      id: 1759337254262,
+      name: "Date of birth",
+      x: 57.56097560975609,
+      y: 48.554913294797686,
+      width: 30.24390243902439,
+      height: 7.225433526011561,
+      muClass: "mu-class_success",
+    },
+    {
+      id: 1759337260502,
+      name: "Series",
+      x: 92.845528455284559,
+      y: 21.965317919075144,
+      width: 3.577235772357723,
+      height: 59.53757225433526,
+      muClass: "mu-class_warn",
+    },
+  ]);
+</script>
+
+<style lang="scss">
+  .mu-class {
+    @mixin addVariable($color) {
+      --mu-marking-rect-fill: #{$color};
+      --mu-marking-rect-stroke: #{$color};
+      --mu-marking-rect-active-fill: #{$color};
+      --mu-marking-rect-active-stroke: #{$color};
+    }
+
+    &_error,
+    &_warn,
+    &_success{
+      --mu-marking-rect-stroke-width: 2;
+
+      &.mark-up__g_active {
+      --mu-marking-rect-stroke-width: 4;
+      --mu-marking-rect-active-fill-opacity: .5;
+      }
+    }
+
+    &_error {
+      $color: --mu-marking-rect-active-fill;
+
+      --mu-marking-rect-fill: var(#{$color});
+      --mu-marking-rect-stroke: var(#{$color});
+    }
+
+    &_warn {
+      @include addVariable(#fae60a);
+    }
+
+    &_success {
+      @include addVariable(#00CC00);
+    }
+  }
+</style>
+```
+
+The example above is quite conditional, in it, I don't allow labeling the image (:is-markup="false"). We received a response from the server, and we need to stretch the labeling area somewhere, move it somewhere — but we don’t need to create new labeling areas. I assigned the CSS class "mu-class\_error" to the unrecognized labeling areas. For those labeling areas that were recognized with an error, I assigned the class "mu-class\_warn". For normally recognized areas, I assigned the class "mu-class\_success". In the example above, I don’t change the colors for the active labeling area, but to make it stand out somehow, I make the stroke line thicker and change the fill transparency — this way, it will be clear that the area has become active.
+
+### Styling of marked areas using the "style" attribute
+
+Compared to styling labeled areas via CSS classes, this method is less flexible. In principle, if you do styling via CSS classes, you also need to do styling via the "style" attribute — this is only logical. Perhaps someone will like this method more; in that case, we can define the styles directly in the JS code, which can be convenient — after all, it’s faster.
+
+We also receive an array of labeled areas from the server, one of the properties of each labeled area tells us the result of the labeled area recognition. All we need to do is replace this property with "muStyle", and then specify the necessary CSS variables in it. Below, I'll provide a conditional example of styling labeled areas using the "style" attribute. I would advise you to open [examples page](https://neuro-tools-25.github.io/vue-labeling-image/examples "Examples page") and view real examples.
+
+```vue
+<template>
+  <labeling-image
+    :image-src="imageSrc"
+    v-model="areas"
+    key-title="name"
+    :is-markup="false"
+  />
+</template>
+
+<script setup>
+  const imageSrc = ref("The path to your picture.");
+
+  const bStyle = (color) => ({
+    "--mu-marking-rect-fill": color,
+    "--mu-marking-rect-stroke": color,
+    "--mu-marking-rect-active-fill": color,
+    "--mu-marking-rect-active-stroke": color,
+    "--mu-marking-rect-stroke-width": 2,
+    "--mu-marking-rect-active-fill-opacity": .5,
+  });
+
+  const errorStyle = bStyle("#ff0050");
+  const warnStyle = bStyle("#fae60a");
+  const saccessStyle = bStyle("#00CC00");
+
+  const areas = ref([
+    {
+      id: 1759337197573,
+      name: "Photo",
+      x: 4.227642276422764,
+      y: 24.277456647398843,
+      width: 27.97947487671597,
+      height: 59.53757225433526,
+      muStyle: errorStyle,
+    },
+    {
+      id: 1759337204073,
+      name: "First name",
+      x: 50.40650406504065,
+      y: 28.901734104046245,
+      width: 26.945655263262942,
+      height: 8.38150289017341,
+      muStyle: errorStyle,
+    },
+    {
+      id: 1759337222917,
+      name: "Last name",
+      x: 53.98373983739837,
+      y: 10.982658959537572,
+      width: 20.48780487804878,
+      height: 7.225433526011561,
+      muStyle: errorStyle,
+    },
+    {
+      id: 1759337232429,
+      name: "Surname",
+      x: 55.44715447154471,
+      y: 239.017341040462426,
+      width: 13.658536585365855,
+      height: 6.9364161849710975,
+      muStyle: saccessStyle,
+    },
+    {
+      id: 1759337240377,
+      name: "Gender",
+      x: 39.67479674796748,
+      y: 50,
+      width: 5.040650406504065,
+      height: 6.358381502890173,
+      muStyle: warnStyle,
+    },
+    {
+      id: 1759337248220,
+      name: "Birthplace",
+      x: 49.43089430894309,
+      y: 58.67052023121387,
+      width: 30.081300813008134,
+      height: 6.9364161849710975,
+      muStyle: saccessStyle,
+    },
+    {
+      id: 1759337254262,
+      name: "Date of birth",
+      x: 57.56097560975609,
+      y: 48.554913294797686,
+      width: 30.24390243902439,
+      height: 7.225433526011561,
+      muStyle: saccessStyle,
+    },
+    {
+      id: 1759337260502,
+      name: "Series",
+      x: 92.845528455284559,
+      y: 21.965317919075144,
+      width: 3.577235772357723,
+      height: 59.53757225433526,
+      muStyle: warnStyle,
+    },
+  ]);
+</script>
+```
+
+The example above is quite conditional, in it, I don’t allow marking the image (:is-markup="false"). We received a response from the server, and we need to stretch the labeled area somewhere, move it somewhere, but we don’t need to create new labeled areas. Next, I created a constructor function ("bStyle") that returns an object of CSS variables responsible for styling the labeled areas we need. After that, I create JS variables that contain objects responsible for styling the unrecognized labeled area ("errorStyle"), for styling the labeled area that was recognized with an error ("warnStyle"), and for styling the labeled area that was recognized without errors ("saccessStyle"). These variables will differ in fill color and line color. Then I assign these variables to the necessary labeled areas. When the labeled area becomes active, I do not change its fill color or its line color. To indicate which labeled area is active, I change the transparency of its fill, making it less transparent. I think this is quite enough to highlight it.
