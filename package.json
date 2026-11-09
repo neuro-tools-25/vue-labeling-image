@@ -1,6 +1,6 @@
 {
   "name": "vue-labeling-image",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "type": "module",
   "main": "lib/index.es.js",
   "homepage": "https://neuro-tools-25.github.io/vue-labeling-image/",
@@ -56,7 +56,17 @@
     "labeling data in images",
     "vue component for labeling data in images",
     "markup",
-    "labeling"
+    "labeling",
+    "vue image annotation component",
+    "vue document annotation component",
+    "vue image annotation",
+    "vue document annotation",
+    "image annotation",
+    "document annotation",
+    "ocr",
+    "ocr component",
+    "vue ocr component",
+    "frontend ocr component"
   ],
   "repository": {
     "type": "git",
