@@ -4,7 +4,7 @@
   "type": "module",
   "main": "lib/index.es.js",
   "homepage": "https://neuro-tools-25.github.io/vue-labeling-image/",
-  "description": "Vue component for labeling data in images",
+  "description": "Vue 3 component for image labeling, data annotation, and bounding box creation (OCR, Computer Vision)",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -24,6 +24,21 @@
     "work-with-net": "^0.4.0"
   },
   "keywords": [
+    "vue",
+    "vuejs",
+    "vue3",
+    "vue-component",
+    "image-labeling",
+    "image-annotation",
+    "data-labeling",
+    "bounding-boxes",
+    "image-markup",
+    "ocr",
+    "ui-component",
+    "dataset-annotation",
+    "computer-vision",
+    "object-detection",
+    "machine-learning",
     "vue labeling image",
     "vue labeling images",
     "vue component for neural networks",
@@ -66,7 +81,8 @@
     "ocr",
     "ocr component",
     "vue ocr component",
-    "frontend component for ocr"
+    "frontend component for ocr",
+    "ui component for ocr"
   ],
   "repository": {
     "type": "git",

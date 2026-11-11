@@ -221,5 +221,4 @@
   const props = defineProps(['isEng', 'query']);
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>
