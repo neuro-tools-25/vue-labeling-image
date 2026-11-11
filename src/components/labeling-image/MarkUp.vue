@@ -149,6 +149,7 @@
   import useRect from './useRect.js';
   import useClass from './useClass.js';
   import useStyles from './useStyles.js';
+  import useFormat from './useFormat.js';
 
   const areas = defineModel({ default: [] });
   const activeId = defineModel('activeId', { default: null });
@@ -172,6 +173,10 @@
     isMarkup: {
       type: Boolean,
       default: true
+    },
+    format: {
+      type: [String, Function],
+      default: 'COCO'
     },
     enableGrid: {
       type: Boolean,
@@ -355,6 +360,8 @@
   const {
     widthMarkUp,
     heightMarkUp,
+    realWidthImg,
+    realHeightImg,
     convToPercent,
     convToRealWidth,
     convToRealHeight,
@@ -411,11 +418,12 @@
       x,
       y,
       width,
-      height
+      height,
+      ...params
     } = obj;
 
     return {
-      ...obj,
+      ...params,
       x: convToPercent(x, widthMarkUp.value),
       y: convToPercent(y, heightMarkUp.value),
       width: convToPercent(width, widthMarkUp.value),
@@ -423,12 +431,15 @@
     }
   };
 
+  const format = useFormat(props);
+
   const addInAreas = (item, id) => {
     const itemArea = convertParams(item);
 
     areas.value = [
       {
-        ...itemArea
+        ...itemArea,
+        bBox: format(itemArea)
       },
       ...areas.value,
     ];
@@ -481,7 +492,8 @@
         if (typeMove === cMoveRect) params = limitedMoveArea(params);
 
         areas.value[countItem] = {
-          ...params
+          ...params,
+          bBox: format(params)
         }
 
         activeArea.value = { ...params };

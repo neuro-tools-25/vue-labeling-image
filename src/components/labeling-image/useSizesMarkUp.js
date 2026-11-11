@@ -124,6 +124,8 @@ const useSizesMarkUp = (props, {
   return {
     widthMarkUp,
     heightMarkUp,
+    realWidthImg,
+    realHeightImg,
     convToPercent,
     convToRealWidth,
     convToRealHeight,
