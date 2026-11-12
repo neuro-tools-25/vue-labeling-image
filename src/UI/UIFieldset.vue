@@ -22,9 +22,13 @@
 <style lang="scss">
   .ui-fieldset {
     margin: 1.4em -10px .5em;
-    padding: 1px 8px;
+    padding: 1px 8px 8px;
     border-radius: 5px;
     border: 2px solid var(--color-text);
+
+    & + & {
+      margin-top: 2em;
+    }
 
     &__name {
       margin-top: -15px;
