@@ -2,183 +2,99 @@
   <div class="examples-page">
     <h1>{{ headExamples }}</h1>
 
-    <div class="examples-page__group">
-      <open-header
-        type-element="h2"
-        :is-active="isTypeExample"
-        :is-inline="true"
-        @click="isTypeExample = !isTypeExample"
-      >
-        {{ typeExample }}
-      </open-header>
+    <ExampleGroup
+      :header-text="typeExample"
+      :isOpen="isTypeExample"
+      @change-is-open="isTypeExample = !isTypeExample"
+    >
+      <main-example :is-eng="isEng" />
+    </ExampleGroup>
 
-      <main-example 
-        v-if="isTypeExample"
-        :is-eng="isEng"
-      />
-    </div>
+    <ExampleGroup
+      :header-text="staticAreasText"
+      :isOpen="isStaticArea"
+      @change-is-open="isStaticArea = !isStaticArea"
+    >
+      <static-areas :is-eng="isEng" />
+    </ExampleGroup>
 
-    <div class="examples-page__group">
-      <open-header
-        type-element="h2"
-        :is-active="isStaticArea"
-        :is-inline="true"
-        @click="isStaticArea = !isStaticArea"
-      >
-        {{ staticAreasText }}
-      </open-header>
+    <ExampleGroup
+      :header-text="methodsText"
+      :isOpen="isMethods"
+      @change-is-open="isMethods = !isMethods"
+    >
+      <methods-example :is-eng="isEng" />
+    </ExampleGroup>
 
-      <static-areas
-        v-if="isStaticArea"
-        :is-eng="isEng"
-      />
-    </div>
+    <ExampleGroup
+      :header-text="slotsHintText"
+      :isOpen="isSlotsHint"
+      @change-is-open="isSlotsHint = !isSlotsHint"
+    >
+      <slots-hints :is-eng="isEng" />
+    </ExampleGroup>
 
-    <div class="examples-page__group">
-      <open-header
-        type-element="h2"
-        :is-active="isMethods"
-        :is-inline="true"
-        @click="isMethods = !isMethods"
-      >
-        {{ methodsText }}
-      </open-header>
+    <ExampleGroup
+      :header-text="slotsHintMarkedText"
+      :isOpen="isSlotsMarked"
+      @change-is-open="isSlotsMarked = !isSlotsMarked"
+    >
+      <slots-hint-marked :is-eng="isEng" />
+    </ExampleGroup>
 
-      <methods-example
-        v-if="isMethods"
-        :is-eng="isEng"
-      />
-    </div>
+    <ExampleGroup
+      :header-text="slotsHintHoveredText"
+      :isOpen="isSlotsHintHovered"
+      @change-is-open="isSlotsHintHovered = !isSlotsHintHovered"
+    >
+      <slots-hint-hovered :is-eng="isEng" />
+    </ExampleGroup>
 
-    <div class="examples-page__group">
-      <open-header
-        type-element="h2"
-        :is-active="isSlotsHint"
-        :is-inline="true"
-        @click="isSlotsHint = !isSlotsHint"
-      >
-        {{ slotsHintText }}
-      </open-header>
+    <ExampleGroup
+      :header-text="slotsHintExText"
+      :isOpen="isSlotsHintEx"
+      @change-is-open="isSlotsHintEx = !isSlotsHintEx"
+    >
+      <slots-hint-ex :is-eng="isEng" />
+    </ExampleGroup>
 
-      <slots-hints
-        v-if="isSlotsHint"
-        :is-eng="isEng"
-      />
-    </div>
+    <ExampleGroup
+      :header-text="stilizationClassText"
+      :isOpen="isStilizationClass"
+      @change-is-open="isStilizationClass = !isStilizationClass"
+    >
+      <stil-areas-class :is-eng="isEng" />
+    </ExampleGroup>
 
-    <div class="examples-page__group">
-      <open-header
-        type-element="h2"
-        :is-active="isSlotsMarked"
-        :is-inline="true"
-        @click="isSlotsMarked = !isSlotsMarked"
-      >
-        {{ slotsHintMarkedText }}
-      </open-header>
+    <ExampleGroup
+      :header-text="stilizationClassEditedText"
+      :isOpen="isStilizationClassEdited"
+      @change-is-open="isStilizationClassEdited = !isStilizationClassEdited"
+    >
+      <stil-areas-class-edited :is-eng="isEng" />
+    </ExampleGroup>
 
-      <slots-hint-marked
-        v-if="isSlotsMarked"
-        :is-eng="isEng"
-      />
-    </div>
-
-    <div class="examples-page__group">
-      <open-header
-        type-element="h2"
-        :is-active="isSlotsHintHovered"
-        :is-inline="true"
-        @click="isSlotsHintHovered = !isSlotsHintHovered"
-      >
-        {{ slotsHintHoveredText }}
-      </open-header>
-
-      <slots-hint-hovered
-        v-if="isSlotsHintHovered"
-        :is-eng="isEng"
-      />
-    </div>
-
-    <div class="examples-page__group">
-      <open-header
-        type-element="h2"
-        :is-active="isSlotsHintEx"
-        :is-inline="true"
-        @click="isSlotsHintEx = !isSlotsHintEx"
-      >
-        {{ slotsHintExText }}
-      </open-header>
-
-      <slots-hint-ex
-        v-if="isSlotsHintEx"
-        :is-eng="isEng"
-      />
-    </div>
-
-    <div class="examples-page__group">
-      <open-header
-        type-element="h2"
-        :is-active="isStilizationClass"
-        :is-inline="true"
-        @click="isStilizationClass = !isStilizationClass"
-      >
-        {{ stilizationClassText }}
-      </open-header>
-
-      <stil-areas-class
-        v-if="isStilizationClass"
-        :is-eng="isEng"
-      />
-    </div>
-
-    <div class="examples-page__group">
-      <open-header
-        type-element="h2"
-        :is-active="isStilizationClassEdited"
-        :is-inline="true"
-        @click="isStilizationClassEdited = !isStilizationClassEdited"
-      >
-        {{ stilizationClassEditedText }}
-      </open-header>
-
-      <stil-areas-class-edited
-        v-if="isStilizationClassEdited"
-        :is-eng="isEng"
-      />
-    </div>
-
-    <div class="examples-page__group">
-      <open-header
-        type-element="h2"
-        :is-active="isStilizationAttrStyle"
-        :is-inline="true"
-        @click="isStilizationAttrStyle = !isStilizationAttrStyle"
-      >
-        {{ stilizationAttrStyleText }}
-      </open-header>
-
+    <ExampleGroup
+      :header-text="stilizationAttrStyleText"
+      :isOpen="isStilizationAttrStyle"
+      @change-is-open="isStilizationAttrStyle = !isStilizationAttrStyle"
+    >
       <stil-areas-attr-style
-        v-if="isStilizationAttrStyle"
         :is-eng="isEng"
         :query="query"
       />
-    </div>
+    </ExampleGroup>
 
-    <div class="examples-page__group">
-      <open-header
-        type-element="h2"
-        :is-active="isStilizationAttrStyleEdited"
-        :is-inline="true"
-        @click="isStilizationAttrStyleEdited = !isStilizationAttrStyleEdited"
-      >
-        {{ stilizationAttrStyleEditedText }}
-      </open-header>
-
+    <ExampleGroup
+      :header-text="stilizationAttrStyleEditedText"
+      :isOpen="isStilizationAttrStyleEdited"
+      @change-is-open="isStilizationAttrStyleEdited = !isStilizationAttrStyleEdited"
+    >
       <stil-areas-attr-style-edited
-        v-if="isStilizationAttrStyleEdited"
         :is-eng="isEng"
         :query="query"
       />
-    </div>
+    </ExampleGroup>
   </div>
 </template>
 
@@ -186,7 +102,7 @@
   import { ref, inject } from 'vue';
 
   import useExamples from './useExamples';
-  import OpenHeader from '@/UI/OpenHeader.vue';
+  import ExampleGroup from '@/components/examples/ExampleGroup.vue';
 
   import StaticAreas from '@/components/examples/StaticAreas.vue';
   import MainExample from '@/components/examples/MainExample.vue';
@@ -230,11 +146,4 @@
   } = useExamples(isEng);
 </script>
 
-<style lang="scss">
-  .examples-page__group {
-    & > h2,
-    & > .h2 {
-      margin: 4px 0;
-    }
-  }
-</style>
+<style lang="scss"></style>
