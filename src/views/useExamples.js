@@ -74,9 +74,9 @@ const useExamples = (isEng) => {
   });
 
   const FormatText = computed(() => {
-    if (isEng.value) return 'Formats of neural networks';
+    if (isEng.value) return 'Formats for neural networks (standard formats, creating custom formats for various APIs)';
 
-    return 'Форматы нейронок';
+    return 'Форматы для нейросетей (типовые форматы, создание своего формата под разные API)';
   });
 
   const slotsGroupText = computed(() => {
