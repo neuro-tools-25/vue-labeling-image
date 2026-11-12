@@ -1,5 +1,5 @@
 <template>
-  <div class="props-hint">
+  <div class="line-discontinuity">
     <template v-if="!props.isEng">
       <h3>
         Настройки прерывистости линий для маркированных областей

@@ -1,5 +1,5 @@
 <template>
-  <div class="style-shadow">
+  <div class="style-props-shadow">
     <template v-if="!props.isEng">
       <h3>
         Входные параметры отвечающие за стилизацию тени маркированных областей

@@ -1,5 +1,5 @@
 <template>
-  <div class="props-grid">
+  <div class="slots-doc">
     <template v-if="!props.isEng">
       <h2>
         Слоты

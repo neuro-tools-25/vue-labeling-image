@@ -1,5 +1,5 @@
 <template>
-  <div class="intro-install">
+  <div class="component-methods">
     <template v-if="!props.isEng">
       <h2>Методы, более полная настройка</h2>
 

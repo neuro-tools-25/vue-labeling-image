@@ -1,5 +1,5 @@
 <template>
-  <div class="style-grid">
+  <div class="style-props-grid">
     <template v-if="!props.isEng">
       <h3>
         Входные параметры отвечающие за стилизацию сетки

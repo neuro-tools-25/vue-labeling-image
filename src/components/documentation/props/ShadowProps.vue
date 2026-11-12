@@ -1,5 +1,5 @@
 <template>
-  <div class="props-theme">
+  <div class="props-shadow">
     <template v-if="!props.isEng">
       <h3>
         Включение/отключение тени для маркированных областей

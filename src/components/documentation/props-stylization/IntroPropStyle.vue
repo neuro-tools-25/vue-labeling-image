@@ -1,5 +1,5 @@
 <template>
-  <div class="style-intro">
+  <div class="style-props-intro">
     <template v-if="!props.isEng">
       <h2>
         Входные параметры (props) отвечающие за стилизацию моего компонента

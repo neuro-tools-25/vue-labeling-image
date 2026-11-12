@@ -1,5 +1,5 @@
 <template>
-  <div class="style-active">
+  <div class="style-props-active">
     <template v-if="!props.isEng">
       <h3>
         Входные параметры отвечающие за стилизацию активной маркированной области

@@ -73,6 +73,12 @@ const useExamples = (isEng) => {
     return 'Пример стилизации маркированных областей через атрибут "style" (маркированные области можно изменять)';
   });
 
+  const FormatText = computed(() => {
+    if (isEng.value) return 'Formats of neural networks';
+
+    return 'Форматы нейронок';
+  });
+
   const slotsGroupText = computed(() => {
     if (isEng.value) return 'Slots';
 
@@ -99,7 +105,8 @@ const useExamples = (isEng) => {
     stilizationAttrStyleText,
     stilizationAttrStyleEditedText,
     slotsGroupText,
-    StilLabAreasGroupText
+    StilLabAreasGroupText,
+    FormatText
   }
 }
 

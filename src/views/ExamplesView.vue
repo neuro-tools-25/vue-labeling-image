@@ -99,6 +99,14 @@
         />
       </ExampleGroup>
     </ui-fieldset>
+
+    <ExampleGroup
+      :header-text="FormatText"
+      :isOpen="isFormat"
+      @change-is-open="isFormat = !isFormat"
+    >
+      <format-example :is-eng="isEng" />
+    </ExampleGroup>
   </div>
 </template>
 
@@ -112,10 +120,15 @@
   import StaticAreas from '@/components/examples/StaticAreas.vue';
   import MainExample from '@/components/examples/MainExample.vue';
   import MethodsExample from '@/components/examples/MethodsExample.vue';
+  import FormatExample from '@/components/examples/FormatExample.vue';
+
+  // Слоты
   import SlotsHints from '@/components/examples/slots/SlotsHints.vue';
   import SlotsHintMarked from '@/components/examples/slots/SlotsHintMarked.vue';
   import SlotsHintEx from '@/components/examples/slots/SlotsHintEx.vue';
   import SlotsHintHovered from '@/components/examples/slots/SlotsHintHovered.vue';
+
+  // Стилизация маркированных областей
   import StilAreasClass from '@/components/examples/stilization-class/AreasClass.vue';
   import StilAreasClassEdited from '@/components/examples/stilization-class/AreasClassEdited.vue';
   import StilAreasAttrStyle from '@/components/examples/stilization-style/AreasStyle.vue';
@@ -132,6 +145,7 @@
   const isStilizationClassEdited = ref(false);
   const isStilizationAttrStyle = ref(false);
   const isStilizationAttrStyleEdited = ref(false);
+  const isFormat = ref(false);
 
   const { isEng, query } = inject('lang');
 
@@ -149,7 +163,8 @@
     stilizationAttrStyleText,
     stilizationAttrStyleEditedText,
     slotsGroupText,
-    StilLabAreasGroupText
+    StilLabAreasGroupText,
+    FormatText
   } = useExamples(isEng);
 </script>
 
