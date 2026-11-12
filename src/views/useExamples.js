@@ -2,87 +2,87 @@ import { computed } from 'vue';
 
 const useExamples = (isEng) => {
   const headExamples = computed(() => {
-    let text='Примеры';
-    if (isEng.value) text='Examples';
+    if (isEng.value) return 'Examples';
 
-    return text;
+    return 'Примеры';
   });
 
   const typeExample = computed(() => {
-    let text='Типовой пример';
-    if (isEng.value) text='Typical example';
+    if (isEng.value) return 'Typical example';
 
-    return text;
+    return 'Типовой пример';
   });
 
   const staticAreasText = computed(() => {
-    let text='Статичные области';
-    if (isEng.value) text='Static areas';
+    if (isEng.value) return 'Static areas';
 
-    return text;
+    return 'Статичные области';
   });
 
   const methodsText = computed(() => {
-    let text='Методы';
-    if (isEng.value) text='Methods';
+    if (isEng.value) return 'Methods';
 
-    return text;
+    return 'Методы';
   });
 
   const slotsHintText = computed(() => {
-    let text='Слоты (пример с подсказками, маркирование отменено)';
-    if (isEng.value) text='Slots (example with hints, labeling is canceled)';
+    if (isEng.value) return 'Slots (example with hints, labeling is canceled)';
 
-    return text;
+    return 'Слоты (пример с подсказками, маркирование отменено)';
   });
 
   const slotsHintMarkedText = computed(() => {
-    let text='Слоты (пример с подсказками, маркирование разрешено)';
-    if (isEng.value) text='Slots (example with hints, labeling is allowed)';
+    if (isEng.value) return 'Slots (example with hints, labeling is allowed)';
 
-    return text;
+    return 'Слоты (пример с подсказками, маркирование разрешено)';
   });
 
   const slotsHintExText = computed(() => {
-    let text='Слоты (ещё один пример с подсказками)';
-    if (isEng.value) text='Slots (another example with hints)';
+    if (isEng.value) return 'Slots (another example with hints)';
 
-    return text;
+    return 'Слоты (ещё один пример с подсказками)';
   });
 
   const slotsHintHoveredText = computed(() => {
-    let text='Слоты (пример с подсказками при наведении)';
-    if (isEng.value) text='Slots (example with hover hints)';
+    if (isEng.value) return 'Slots (example with hover hints)';
 
-    return text;
+    return 'Слоты (пример с подсказками при наведении)';
   });
 
   const stilizationClassText = computed(() => {
-    let text='Пример стилизации маркированных областей через CSS классы';
-    if (isEng.value) text='An example of styling labeled areas using CSS classes';
+    if (isEng.value) return 'An example of styling labeled areas using CSS classes';
 
-    return text;
+    return 'Пример стилизации маркированных областей через CSS классы';
   });
 
   const stilizationClassEditedText = computed(() => {
-    let text='Пример стилизации маркированных областей через CSS классы (маркированные области можно изменять)';
-    if (isEng.value) text='Example of styling labeled areas using CSS classes (labeled areas can be modified)';
+    if (isEng.value) return 'Example of styling labeled areas using CSS classes (labeled areas can be modified)';
 
-    return text;
+    return 'Пример стилизации маркированных областей через CSS классы (маркированные области можно изменять)';
   });
 
   const stilizationAttrStyleText = computed(() => {
-    let text='Пример стилизации маркированных областей через атрибут "style"';
-    if (isEng.value) text='An example of styling labeled areas using the “style” attribute';
+    if (isEng.value) return 'An example of styling labeled areas using the “style” attribute';
 
-    return text;
+    return 'Пример стилизации маркированных областей через атрибут "style';
   });
 
   const stilizationAttrStyleEditedText = computed(() => {
-    let text='Пример стилизации маркированных областей через атрибут "style" (маркированные области можно изменять)';
-    if (isEng.value) text='An example of styling labeled areas using the “style” attribute (labeled areas can be modified)';
+    if (isEng.value) return 'An example of styling labeled areas using the “style” attribute (labeled areas can be modified)';
 
-    return text;
+    return 'Пример стилизации маркированных областей через атрибут "style" (маркированные области можно изменять)';
+  });
+
+  const slotsGroupText = computed(() => {
+    if (isEng.value) return 'Slots';
+
+    return 'Слоты';
+  });
+
+  const StilLabAreasGroupText = computed(() => {
+    if (isEng.value) return 'Stylization of labeled areas';
+
+    return 'Стилизация маркированных областей';
   });
 
   return {
@@ -97,7 +97,9 @@ const useExamples = (isEng) => {
     stilizationClassText,
     stilizationClassEditedText,
     stilizationAttrStyleText,
-    stilizationAttrStyleEditedText
+    stilizationAttrStyleEditedText,
+    slotsGroupText,
+    StilLabAreasGroupText
   }
 }
 

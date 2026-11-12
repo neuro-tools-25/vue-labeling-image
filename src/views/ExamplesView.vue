@@ -26,75 +26,79 @@
       <methods-example :is-eng="isEng" />
     </ExampleGroup>
 
-    <ExampleGroup
-      :header-text="slotsHintText"
-      :isOpen="isSlotsHint"
-      @change-is-open="isSlotsHint = !isSlotsHint"
-    >
-      <slots-hints :is-eng="isEng" />
-    </ExampleGroup>
+    <ui-fieldset :name="slotsGroupText">
+      <ExampleGroup
+        :header-text="slotsHintText"
+        :isOpen="isSlotsHint"
+        @change-is-open="isSlotsHint = !isSlotsHint"
+      >
+        <slots-hints :is-eng="isEng" />
+      </ExampleGroup>
 
-    <ExampleGroup
-      :header-text="slotsHintMarkedText"
-      :isOpen="isSlotsMarked"
-      @change-is-open="isSlotsMarked = !isSlotsMarked"
-    >
-      <slots-hint-marked :is-eng="isEng" />
-    </ExampleGroup>
+      <ExampleGroup
+        :header-text="slotsHintMarkedText"
+        :isOpen="isSlotsMarked"
+        @change-is-open="isSlotsMarked = !isSlotsMarked"
+      >
+        <slots-hint-marked :is-eng="isEng" />
+      </ExampleGroup>
 
-    <ExampleGroup
-      :header-text="slotsHintHoveredText"
-      :isOpen="isSlotsHintHovered"
-      @change-is-open="isSlotsHintHovered = !isSlotsHintHovered"
-    >
-      <slots-hint-hovered :is-eng="isEng" />
-    </ExampleGroup>
+      <ExampleGroup
+        :header-text="slotsHintHoveredText"
+        :isOpen="isSlotsHintHovered"
+        @change-is-open="isSlotsHintHovered = !isSlotsHintHovered"
+      >
+        <slots-hint-hovered :is-eng="isEng" />
+      </ExampleGroup>
 
-    <ExampleGroup
-      :header-text="slotsHintExText"
-      :isOpen="isSlotsHintEx"
-      @change-is-open="isSlotsHintEx = !isSlotsHintEx"
-    >
-      <slots-hint-ex :is-eng="isEng" />
-    </ExampleGroup>
+      <ExampleGroup
+        :header-text="slotsHintExText"
+        :isOpen="isSlotsHintEx"
+        @change-is-open="isSlotsHintEx = !isSlotsHintEx"
+      >
+        <slots-hint-ex :is-eng="isEng" />
+      </ExampleGroup>
+    </ui-fieldset>
 
-    <ExampleGroup
-      :header-text="stilizationClassText"
-      :isOpen="isStilizationClass"
-      @change-is-open="isStilizationClass = !isStilizationClass"
-    >
-      <stil-areas-class :is-eng="isEng" />
-    </ExampleGroup>
+    <ui-fieldset :name="StilLabAreasGroupText"> 
+      <ExampleGroup
+        :header-text="stilizationClassText"
+        :isOpen="isStilizationClass"
+        @change-is-open="isStilizationClass = !isStilizationClass"
+      >
+        <stil-areas-class :is-eng="isEng" />
+      </ExampleGroup>
 
-    <ExampleGroup
-      :header-text="stilizationClassEditedText"
-      :isOpen="isStilizationClassEdited"
-      @change-is-open="isStilizationClassEdited = !isStilizationClassEdited"
-    >
-      <stil-areas-class-edited :is-eng="isEng" />
-    </ExampleGroup>
+      <ExampleGroup
+        :header-text="stilizationClassEditedText"
+        :isOpen="isStilizationClassEdited"
+        @change-is-open="isStilizationClassEdited = !isStilizationClassEdited"
+      >
+        <stil-areas-class-edited :is-eng="isEng" />
+      </ExampleGroup>
 
-    <ExampleGroup
-      :header-text="stilizationAttrStyleText"
-      :isOpen="isStilizationAttrStyle"
-      @change-is-open="isStilizationAttrStyle = !isStilizationAttrStyle"
-    >
-      <stil-areas-attr-style
-        :is-eng="isEng"
-        :query="query"
-      />
-    </ExampleGroup>
+      <ExampleGroup
+        :header-text="stilizationAttrStyleText"
+        :isOpen="isStilizationAttrStyle"
+        @change-is-open="isStilizationAttrStyle = !isStilizationAttrStyle"
+      >
+        <stil-areas-attr-style
+          :is-eng="isEng"
+          :query="query"
+        />
+      </ExampleGroup>
 
-    <ExampleGroup
-      :header-text="stilizationAttrStyleEditedText"
-      :isOpen="isStilizationAttrStyleEdited"
-      @change-is-open="isStilizationAttrStyleEdited = !isStilizationAttrStyleEdited"
-    >
-      <stil-areas-attr-style-edited
-        :is-eng="isEng"
-        :query="query"
-      />
-    </ExampleGroup>
+      <ExampleGroup
+        :header-text="stilizationAttrStyleEditedText"
+        :isOpen="isStilizationAttrStyleEdited"
+        @change-is-open="isStilizationAttrStyleEdited = !isStilizationAttrStyleEdited"
+      >
+        <stil-areas-attr-style-edited
+          :is-eng="isEng"
+          :query="query"
+        />
+      </ExampleGroup>
+    </ui-fieldset>
   </div>
 </template>
 
@@ -103,6 +107,7 @@
 
   import useExamples from './useExamples';
   import ExampleGroup from '@/components/examples/ExampleGroup.vue';
+  import UiFieldset from '@/UI/UIFieldset.vue';
 
   import StaticAreas from '@/components/examples/StaticAreas.vue';
   import MainExample from '@/components/examples/MainExample.vue';
@@ -142,7 +147,9 @@
     stilizationClassText,
     stilizationClassEditedText,
     stilizationAttrStyleText,
-    stilizationAttrStyleEditedText
+    stilizationAttrStyleEditedText,
+    slotsGroupText,
+    StilLabAreasGroupText
   } = useExamples(isEng);
 </script>
 
