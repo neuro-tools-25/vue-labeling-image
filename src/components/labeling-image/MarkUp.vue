@@ -431,7 +431,7 @@
     }
   };
 
-  const format = useFormat(props);
+  const buildBBox = useFormat(props);
 
   const addInAreas = (item, id) => {
     const itemArea = convertParams(item);
@@ -439,7 +439,7 @@
     areas.value = [
       {
         ...itemArea,
-        bBox: format(itemArea)
+        bBox: buildBBox(itemArea)
       },
       ...areas.value,
     ];
@@ -493,7 +493,7 @@
 
         areas.value[countItem] = {
           ...params,
-          bBox: format(params)
+          bBox: buildBBox(params)
         }
 
         activeArea.value = { ...params };
@@ -611,8 +611,14 @@
   });
 
   const changeActiveArea = (id) => activeArea.value = areas.value.find((el) => el.id === id);
-
   watch(activeId, changeActiveArea, { immediate: true });
+
+  const format = computed(() => props.format);
+  const changeBBox = () => areas.value = areas.value.map((area) => ({
+    ...area,
+    bBox: buildBBox(area)
+  }));
+  watch(format, changeBBox);
 </script>
 
 <style lang="scss">
