@@ -3,10 +3,10 @@
 English | [Русский](./README.rus.md)
 
 <a href="https://github.com/neuro-tools-25/vue-labeling-image">
-  <img src="public/img/github.svg" alt="GitHub repository" width="60px" height="60px">
+  <img src="public/img/github.svg" alt="GitHub repository" width="50px" height="50px">
 </a>
 <a href="https://www.npmjs.com/package/vue-labeling-image?activeTab=readme">
-  <img src="public/img/npm.svg" alt="NPM repository" width="60px" height="60px">
+  <img src="public/img/npm.svg" alt="NPM repository" width="50px" height="50px">
 </a>
 
 Vue labeling image is a component for vue.js that allows you to label data on images. Simply put, it is a UI for neurons. This [project](https://github.com/HumanSignal/labelImg "LabelImg") served as an example for creating this component, now it is no longer relevant. If you are interested in this topic, I recommend you to pay attention to this [repository](https://github.com/HumanSignal/label-studio "label-studio"). For the most part, I developed components for text labeling, so the main purpose of my component is OCR, but it is also suitable for other similar tasks. As an example, I can point to Yandex and Google images. There you can upload your own picture, and then select a specific area of it, my component will cope with this task quite well.
