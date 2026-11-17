@@ -84,7 +84,7 @@
           :key="item.id"
         >
           <form-group
-            v-if="item.isEdit"
+            v-show="item.isEdit"
             v-model:x="item.x"
             v-model:y="item.y"
             v-model:width="item.width"
@@ -99,7 +99,7 @@
           />
 
           <form-area
-            v-else
+            v-show="!item.isEdit"
             v-model:is-edit="item.isEdit"
             :id="item.id"
             :active-id="activeId"
@@ -109,6 +109,7 @@
             :height="item.height"
             :name="item.name"
             :is-eng="isEng"
+            :bBox="item.bBox"
             @click="changeActiveId(item.id)"
             @delete-area="deleteArea(item.id)"
           />

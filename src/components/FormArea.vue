@@ -100,8 +100,13 @@
   const toggleIsBBox = () => isBBox.value = !isBBox.value;
 
   const isBBoxText = computed(() => {
-    if (isBBox.value) return 'Скрыть bBox';
-    return 'Показать bBox'
+    if (props.isEng && isBBox.value) return 'Hide bounding box';
+    if (props.isEng && !isBBox.value) return 'Show bounding box';
+
+    const text = 'bounding box (ограничивающая рамка)'
+    if (isBBox.value) return `Скрыть ${text}`;
+
+    return `Показать ${text}`;
   });
 </script>
 
