@@ -140,6 +140,7 @@
 
     &_is-bbox {
       cursor: pointer;
+      user-select: none;
     }
 
     &__row {
