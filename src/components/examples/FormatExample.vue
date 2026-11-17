@@ -17,35 +17,14 @@
 
     <template #markup>
       <labeling-image
-        :image-src="file"
+        :image-src="imageSrc"
         v-model="areas"
         v-model:active-id="activeId"
-        @is-load-image="changeIsLoadImage"
+        :is-markup="false"
         :format="formatId"
       />
 
-      <ui-row
-        type="items"
-        space-between
-        class="card-mark-up-btn"
-      >
-        <ui-file
-          v-model="file"
-          :is-active="isLoadImg"
-          :is-eng="isEng"
-        />
-
-        <ui-button
-          type-btn="warning"
-          :disabled="file === null"
-          @click="resetFile"
-        >
-          {{ resetText }}
-        </ui-button>
-      </ui-row>
-
       <view-code
-        v-if="areas.length > 0"
         :code="areas"
         :is-eng="isEng"
       />
@@ -61,71 +40,38 @@
         />
       </div>
 
-      <h2 v-if="file === null">
-        {{ notImagesForAreas }}
+      <h2>
+        {{ header }}
       </h2>
 
-      <h2 v-if="areas.length === 0 && file !== null">
-        {{ notAreas }}
-      </h2>
-
-      <template v-if="areas.length > 0">
-        <h2 >
-          {{ notListAreas }}
-        </h2>
-
-        <template
-          v-for="item in areas"
-          :key="item.id"
-        >
-          <form-group
-            v-if="item.isEdit"
-            v-model:x="item.x"
-            v-model:y="item.y"
-            v-model:width="item.width"
-            v-model:height="item.height"
-            v-model:name="item.name"
-            v-model:is-edit="item.isEdit"
-            :id="item.id"
-            :active-id="activeId"
-            :is-eng="isEng"
-            @click="changeActiveId(item.id)"
-            @delete-area="deleteArea(item.id)"
-          />
-
-          <form-area
-            v-else
-            v-model:is-edit="item.isEdit"
-            :id="item.id"
-            :active-id="activeId"
-            :x="item.x"
-            :y="item.y"
-            :width="item.width"
-            :height="item.height"
-            :name="item.name"
-            :is-eng="isEng"
-            @click="changeActiveId(item.id)"
-            @delete-area="deleteArea(item.id)"
-          />
-        </template>
-      </template>
+      <form-area
+        v-for="item in areas"
+        :id="item.id"
+        :key="item.id"
+        :x="item.x"
+        :y="item.y"
+        :width="item.width"
+        :height="item.height"
+        :bBox="item.bBox"
+        :name="item.name"
+        :is-eng="props.isEng"
+        read-only
+      />
     </template>
   </card-item>
 </template>
 
 <script setup>
   import { ref, computed } from 'vue';
-  import useMainExample from './useMainExample.js';
 
   import CardItem from '@/components/CardItem.vue';
   //import LabelingImage from 'lib/index.es.js';
   import LabelingImage from '@/components/labeling-image/index.js';
-  import FormGroup from '@/components/FormGroup.vue';
   import FormArea from '@/components/FormArea.vue';
   import ViewCode from '@/components/ViewCode.vue';
 
-  const isLoadImg = ref(false);
-  const changeIsLoadImage = (e) => isLoadImg.value = e;
+  import { imageStud } from '@/assets/image-stud.js';
+  const imageSrc = ref(imageStud);
 
   const props = defineProps(['isEng']);
 
@@ -153,19 +99,57 @@
     return "Выберите формат нейронной сети";
   });
 
-  const {
-    file,
-    resetFile,
-    areas,
-    activeId,
-    changeActiveId,
-    deleteArea,
-    // Интернациогализация
-    resetText,
-    notImagesForAreas,
-    notAreas,
-    notListAreas
-  } = useMainExample(isEng);
+  const activeId = ref(1794915080222);
+  const areas = ref([
+    {
+      id: 1794915080222,
+      name: 'Photo',
+      x: 3.7704918032786887,
+      y: 25.364431486880466,
+      width: 28.36065573770492,
+      height: 58.309037900874635,
+      bBox: [
+        0.03770491803278689,
+        0.2536443148688047,
+        0.2836065573770492,
+        0.5830903790087464
+      ]
+    },
+    {
+      id: 1794915126318,
+      name: 'Last name',
+      x: 54.26229508196722,
+      y: 11.661807580174926,
+      width: 20,
+      height: 6.1224489795918355,
+      bBox: [
+        0.5426229508196722,
+        0.11661807580174927,
+        0.2,
+        0.06122448979591835
+      ]
+    },
+    {
+      id: 1794915179094,
+      name: 'Series',
+      x: 92.62295081967213,
+      y: 22.740524781341108,
+      width: 4.2622950819672125,
+      height: 58.89212827988338,
+      bBox: [
+        0.9262295081967212,
+        0.2274052478134111,
+        0.04262295081967213,
+        0.5889212827988338
+      ]
+    },
+  ]);
+
+  const header = computed(() => {
+    if (props.isEng) return 'List of labeling areas:';
+
+    return 'Список маркированных областей';
+  });
 </script>
 
 <style lang="scss" scoped>

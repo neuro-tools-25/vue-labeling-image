@@ -20,6 +20,25 @@
       <b>Height</b> - {{ props.height }}%
     </div>
 
+    <div
+      v-if="bBox"
+      class="form-area__row"
+    >
+      <b
+        class="form-area_is-bbox"
+        @click="toggleIsBBox"
+      >{{ isBBoxText }}</b>
+    </div>
+    <div
+      v-if="bBox && isBBox"
+      class="form-area__row"
+    >
+      <b>bBox:</b>
+<pre>
+{{ props.bBox }}
+</pre>
+    </div>
+
     <ui-delete
       v-if="isReadOnly"
       :is-eng="props.isEng"
@@ -36,7 +55,7 @@
 </template>
 
 <script setup>
-  import { computed } from 'vue';
+  import { computed, ref } from 'vue';
 
   const emits = defineEmits({ deleteArea: 'delete-area' });
   const isEdit = defineModel('is-edit');
@@ -51,7 +70,8 @@
     'name',
     'isEdit',
     'readOnly',
-    'isEng'
+    'isEng',
+    'bBox'
   ]);
 
   const isReadOnly = computed(() => props.readOnly === undefined);
@@ -74,6 +94,14 @@
     if (props.isEng) text='The name of the labeled area is not defined';
 
     return text;
+  });
+
+  const isBBox = ref(false);
+  const toggleIsBBox = () => isBBox.value = !isBBox.value;
+
+  const isBBoxText = computed(() => {
+    if (isBBox.value) return 'Скрыть bBox';
+    return 'Показать bBox'
   });
 </script>
 
@@ -103,6 +131,10 @@
 
     &_read-only {
       cursor: default;
+    }
+
+    &_is-bbox {
+      cursor: pointer;
     }
 
     &__row {

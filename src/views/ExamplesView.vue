@@ -134,7 +134,7 @@
   import StilAreasAttrStyle from '@/components/examples/stilization-style/AreasStyle.vue';
   import StilAreasAttrStyleEdited from '@/components/examples/stilization-style/AreasStyleEdited.vue';
 
-  const isTypeExample = ref(true);
+  const isTypeExample = ref(false);
   const isStaticArea = ref(false);
   const isMethods = ref(false);
   const isSlotsHint = ref(false);
@@ -145,7 +145,7 @@
   const isStilizationClassEdited = ref(false);
   const isStilizationAttrStyle = ref(false);
   const isStilizationAttrStyleEdited = ref(false);
-  const isFormat = ref(false);
+  const isFormat = ref(true);
 
   const { isEng, query } = inject('lang');
 
