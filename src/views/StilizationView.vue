@@ -130,7 +130,7 @@
               :key="item.id"
             >
               <form-group
-                v-if="item.isEdit"
+                v-show="item.isEdit"
                 v-model:x="item.x"
                 v-model:y="item.y"
                 v-model:width="item.width"
@@ -145,7 +145,7 @@
               />
 
               <form-area
-                v-else
+                v-show="!item.isEdit"
                 v-model:is-edit="item.isEdit"
                 :id="item.id"
                 :active-id="activeId"
@@ -155,6 +155,7 @@
                 :height="item.height"
                 :name="item.name"
                 :is-eng="isEng"
+                :bBox="item.bBox"
                 @click="changeActiveId(item.id)"
                 @delete-area="deleteArea(item.id)"
               />
@@ -238,7 +239,13 @@
       y: 24.277456647398843,
       width: 27.97947487671597,
       height: 59.53757225433526,
-      name: 'Photo'
+      name: 'Photo',
+      bBox: [
+        0.04227642276422764,
+        0.24277456647398843,
+        0.2797947487671597,
+        0.5953757225433526,
+      ]
     },
     {
       id: 1787759122422,
@@ -246,7 +253,13 @@
       y: 10.98013111107366,
       width: 19.66813274690124,
       height: 7.785773268845109,
-      name: 'Last name'
+      name: 'Last name',
+      bBox: [
+        0.54470211915233904,
+        0.1098013111107366,
+        0.1966813274690124,
+        0.07785773268845109,
+      ]
     },
     {
       id: 1787759135510,
@@ -254,9 +267,16 @@
       y: 21.865889212827994,
       width: 4.426229508196721,
       height: 59.7667638483965,
-      name: 'Series'
+      name: 'Series',
+      bBox: [
+        0.9262295081967213,
+        0.21865889212827994,
+        0.04426229508196721,
+        0.597667638483965,
+      ]
     },
   ]);
+
   const activeId = ref(1787759117974);
 
   const changeActiveId = (id) => activeId.value = id;

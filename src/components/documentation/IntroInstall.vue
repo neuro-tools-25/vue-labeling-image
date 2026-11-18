@@ -63,8 +63,9 @@
         >стилизованный input выбора файла</ui-link>.
       </p>
 
+      <!-- Данный абзац отличается от английского, "по русски это можно назвать", тут явно не нужно -->
       <p>
-        <strong>Areas</strong> - это массив объектов. Он содержит параметры маркированных областей и обязательно должен содержать следующие поля:
+        <strong>Areas</strong> - это массив объектов, который содержит параметры маркированных областей. Каждая маркированная область это объект, который должен содержать следующие обязательные поля: "id", "x", "y", "width", "height". Без этих полей маркированная область не будет отображена, или отобразится с ошибкой. Помимо этих полей, при маркировании изображения будет создан массив "bBox", это сокращение от "Bounding Box", по русски это можно назвать "ограничивающая рамка". Данное поле не является обязательным, и зависит от входного параметра "format". Забегая вперёд скажу, что по умолчанию у меня задан формат разметки изображения "COCO", таким образом по умолчанию поле "bBox" будет массивом в котором представлены координаты в следующем порядке: "x", "y", "width", "height" в относительных величинах. Ниже я всё детально опишу, а пока давайте я хотя бы приблизительно покажу, как это может выглядеть. Не обязательное поле "bBox" я подсвечу синей линией где номера строк.
       </p>
 
       <required-fields />
@@ -170,7 +171,7 @@
       </p>
 
       <p>
-        <strong>Areas</strong> is an array of objects. It contains the parameters of the marked areas and must contain the following fields:
+        <strong>Areas</strong> is an array of objects that contains the parameters of the lebeled areas. Each labeled area is an object that must contain the following required fields: "id", "x", "y", "width", "height". Without these fields, the labeled area will not be displayed or will be displayed with an error. In addition to these fields, when labeling an image, an array called "bBox" will be created, this is an abbreviation for "Bounding Box". This field is not required and depends on the input parameter "format". Looking ahead, I'll say that by default, I have the image markup format set to "COCO", so by default, the "bBox" field will be an array containing coordinates in the following order: "x", "y", "width", "height" in relative values. I'll describe everything in detail below, but for now, let me at least show you roughly what it might look like. I will highlight the optional "bBox" field with a blue line next to the line numbers.
       </p>
 
       <required-fields is-eng />

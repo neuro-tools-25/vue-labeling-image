@@ -52,7 +52,7 @@ As you can see, 2 lines are important, **image-src="file"** and **v-model="areas
 
 **Image-src** - input parameter to which you need to pass the image to be marked. In the vast majority of cases, this will be a binary file, but it is possible to pass both the path to the image and the image itself in the base64 format. It is quite natural that without this parameter you will not be able to mark anything. You will most likely send the image itself to the server via **FormData**. I would recommend you to look at [example code](https://github.com/neuro-tools-25/vue-labeling-image/blob/main/src/components/examples/MainExample.vue "Example"). If you are a beginner frontend developer, I would recommend you to look at the code of how [styled file input](https://github.com/neuro-tools-25/vue-labeling-image/blob/main/src/UI/UIFile.vue "Example") works.
 
-**Areas** is an array of objects. It contains the parameters of the marked areas and must contain the following fields:
+**Areas** is an array of objects that contains the parameters of the lebeled areas. Each labeled area is an object that must contain the following required fields: "id", "x", "y", "width", "height". Without these fields, the labeled area will not be displayed or will be displayed with an error. In addition to these fields, when labeling an image, an array called "bBox" will be created, this is an abbreviation for "Bounding Box". This field is not required and depends on the input parameter "format". Looking ahead, I'll say that by default, I have the image markup format set to "COCO", so by default, the "bBox" field will be an array containing coordinates in the following order: "x", "y", "width", "height" in relative values. I'll describe everything in detail below, but for now, let me at least show you roughly what it might look like.
 
 ```javascript
 const areas = [
@@ -62,6 +62,12 @@ const areas = [
     y: 15,
     width: 30,
     height: 30,
+    bBox: [
+      0.15,
+      0.15,
+      0.3,
+      0.3,
+    ]
   }
 ];
 ```
@@ -699,6 +705,12 @@ This is probably the most flexible way to style labeled areas. Look, we receive 
       y: 24.277456647398843,
       width: 27.97947487671597,
       height: 59.53757225433526,
+      bBox: [
+        0.04227642276422764,
+        0.24277456647398843,
+        0.2797947487671597,
+        0.5953757225433526,
+      ],
       muClass: "mu-class_error",
     },
     {
@@ -708,6 +720,12 @@ This is probably the most flexible way to style labeled areas. Look, we receive 
       y: 28.901734104046245,
       width: 26.945655263262942,
       height: 8.38150289017341,
+      bBox: [
+        0.5040650406504065,
+        0.28901734104046245,
+        0.2694565526326294,
+        0.0838150289017341,
+      ],
       muClass: "mu-class_error",
     },
     {
@@ -717,6 +735,12 @@ This is probably the most flexible way to style labeled areas. Look, we receive 
       y: 53.98373983739837,
       width: 20.48780487804878,
       height: 20.48780487804878,
+      bBox: [
+        0.5398373983739837,
+        0.5398373983739837,
+        0.20487804878048782,
+        0.20487804878048782,
+      ],
       muClass: "mu-class_error",
     },
     {
@@ -726,6 +750,12 @@ This is probably the most flexible way to style labeled areas. Look, we receive 
       y: 239.017341040462426,
       width: 13.658536585365855,
       height: 6.9364161849710975,
+      bBox: [
+        0.554471544715447,
+        2.390173410404624,
+        0.13658536585365855,
+        0.06936416184971098,
+      ],
       muClass: "mu-class_success",
     },
     {
@@ -735,6 +765,12 @@ This is probably the most flexible way to style labeled areas. Look, we receive 
       y: 50,
       width: 5.040650406504065,
       height: 6.358381502890173,
+      bBox: [
+        0.3967479674796748,
+        0.5,
+        0.05040650406504065,
+        0.06358381502890173,
+      ],
       muClass: "mu-class_warn",
     },
     {
@@ -744,6 +780,12 @@ This is probably the most flexible way to style labeled areas. Look, we receive 
       y: 58.67052023121387,
       width: 30.081300813008134,
       height: 6.9364161849710975,
+      bBox: [
+        0.4943089430894309,
+        0.5867052023121387,
+        0.3008130081300813,
+        0.06936416184971098,
+      ],
       muClass: "mu-class_success",
     },
     {
@@ -753,6 +795,12 @@ This is probably the most flexible way to style labeled areas. Look, we receive 
       y: 48.554913294797686,
       width: 30.24390243902439,
       height: 7.225433526011561,
+      bBox: [
+        0.5756097560975609,
+        0.48554913294797686,
+        0.3024390243902439,
+        0.07225433526011561,
+      ],
       muClass: "mu-class_success",
     },
     {
@@ -762,6 +810,12 @@ This is probably the most flexible way to style labeled areas. Look, we receive 
       y: 21.965317919075144,
       width: 3.577235772357723,
       height: 59.53757225433526,
+      bBox: [
+        0.9284552845528456,
+        0.21965317919075145,
+        0.03577235772357723,
+        0.5953757225433526,
+      ],
       muClass: "mu-class_warn",
     },
   ]);
@@ -847,6 +901,12 @@ We also receive an array of labeled areas from the server, one of the properties
       y: 24.277456647398843,
       width: 27.97947487671597,
       height: 59.53757225433526,
+      bBox: [
+        0.04227642276422764,
+        0.24277456647398843,
+        0.2797947487671597,
+        0.5953757225433526,
+      ],
       muStyle: errorStyle,
     },
     {
@@ -856,6 +916,12 @@ We also receive an array of labeled areas from the server, one of the properties
       y: 28.901734104046245,
       width: 26.945655263262942,
       height: 8.38150289017341,
+      bBox: [
+        0.5040650406504065,
+        0.28901734104046245,
+        0.2694565526326294,
+        0.0838150289017341,
+      ],
       muStyle: errorStyle,
     },
     {
@@ -865,6 +931,12 @@ We also receive an array of labeled areas from the server, one of the properties
       y: 10.982658959537572,
       width: 20.48780487804878,
       height: 7.225433526011561,
+      bBox: [
+        0.5398373983739837,
+        0.10982658959537572,
+        0.20487804878048782,
+        0.07225433526011561,
+      ],
       muStyle: errorStyle,
     },
     {
@@ -874,6 +946,12 @@ We also receive an array of labeled areas from the server, one of the properties
       y: 239.017341040462426,
       width: 13.658536585365855,
       height: 6.9364161849710975,
+      bBox: [
+        0.554471544715447,
+        2.390173410404624,
+        0.13658536585365855,
+        0.06936416184971098,
+      ],
       muStyle: saccessStyle,
     },
     {
@@ -883,6 +961,12 @@ We also receive an array of labeled areas from the server, one of the properties
       y: 50,
       width: 5.040650406504065,
       height: 6.358381502890173,
+      bBox: [
+        0.3967479674796748,
+        0.5,
+        0.05040650406504065,
+        0.06358381502890173,
+      ],
       muStyle: warnStyle,
     },
     {
@@ -892,6 +976,12 @@ We also receive an array of labeled areas from the server, one of the properties
       y: 58.67052023121387,
       width: 30.081300813008134,
       height: 6.9364161849710975,
+      bBox: [
+        0.4943089430894309,
+        0.5867052023121387,
+        0.3008130081300813,
+        0.06936416184971098,
+      ],
       muStyle: saccessStyle,
     },
     {
@@ -901,6 +991,12 @@ We also receive an array of labeled areas from the server, one of the properties
       y: 48.554913294797686,
       width: 30.24390243902439,
       height: 7.225433526011561,
+      bBox: [
+        0.5756097560975609,
+        0.48554913294797686,
+        0.3024390243902439,
+        0.07225433526011561,
+      ],
       muStyle: saccessStyle,
     },
     {
@@ -910,6 +1006,12 @@ We also receive an array of labeled areas from the server, one of the properties
       y: 21.965317919075144,
       width: 3.577235772357723,
       height: 59.53757225433526,
+      bBox: [
+        0.9284552845528456,
+        0.21965317919075145,
+        0.03577235772357723,
+        0.5953757225433526,
+      ],
       muStyle: warnStyle,
     },
   ]);

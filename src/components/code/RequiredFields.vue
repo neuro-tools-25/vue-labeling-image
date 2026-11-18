@@ -43,6 +43,48 @@
       <mu-number code="30" />
       <mu-type code="," />
     </code-line>
+    <code-line
+      level-3
+      changed
+    >
+      <mu-key code="bBox" />
+      <mu-type code=": " />
+      <mu-type code="[" />
+    </code-line>
+    <code-line
+      level-4
+      changed
+    >
+      <mu-number code="0.15" />
+      <mu-type code="," />
+    </code-line>
+    <code-line
+      level-4
+      changed
+    >
+      <mu-number code="0.15" />
+      <mu-type code="," />
+    </code-line>
+    <code-line
+      level-4
+      changed
+    >
+      <mu-number code="0.3" />
+      <mu-type code="," />
+    </code-line>
+    <code-line
+      level-4
+      changed
+    >
+      <mu-number code="0.3" />
+      <mu-type code="," />
+    </code-line>
+    <code-line
+      level-3
+      changed
+    >
+      <mu-type code="]" />
+    </code-line>
 
     <code-line level-2>
       <mu-type code="}" />
@@ -70,6 +112,12 @@
     y: 15,
     width: 30,
     height: 30,
+    bBox: [
+      0.15,
+      0.15,
+      0.3,
+      0.3,
+    ]
   }
 ];`;
 

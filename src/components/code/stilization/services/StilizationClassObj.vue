@@ -38,6 +38,29 @@
     <mu-number :code="props.height" />
     <mu-type code="," />
   </code-line>
+  <code-line level-4>
+    <mu-key code="bBox" />
+    <mu-type code=": [" />
+  </code-line>
+  <code-line level-5>
+    <mu-number :code="x" />
+    <mu-type code="," />
+  </code-line>
+  <code-line level-5>
+    <mu-number :code="y" />
+    <mu-type code="," />
+  </code-line>
+  <code-line level-5>
+    <mu-number :code="width" />
+    <mu-type code="," />
+  </code-line>
+  <code-line level-5>
+    <mu-number :code="height" />
+    <mu-type code="," />
+  </code-line>
+  <code-line level-4>
+    <mu-type code="]," />
+  </code-line>
   <code-line
     level-4
     new
@@ -57,6 +80,8 @@
 </template>
 
 <script setup>
+  import { computed } from 'vue';
+
   const props = defineProps([
     "id",
     "name",
@@ -66,4 +91,11 @@
     "y",
     "muClass"
   ]);
+
+  const calcFormat = (x) => Number(x) / 100 + '';
+
+  const x = computed(() => calcFormat(props.x));
+  const y = computed(() => calcFormat(props.y));
+  const width = computed(() => calcFormat(props.width));
+  const height= computed(() => calcFormat(props.height));
 </script>
