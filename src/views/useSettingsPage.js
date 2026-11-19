@@ -1,4 +1,5 @@
 import { ref } from 'vue';
+import { formatOpt } from '@/components/examples/format.js';
 
 import {
   defaultTheme,
@@ -76,6 +77,10 @@ const useSettingsPage = () => {
   const draggingStrokeDasharray = ref();
   const activeStrokeDasharray = ref();
   const strokeDasharray = ref();
+  const format = ref('COCO');
+  const formatOptions = ref([
+    ...formatOpt
+  ]);
 
   return {
     isMarkup,
@@ -97,7 +102,9 @@ const useSettingsPage = () => {
     keyTitle,
     draggingStrokeDasharray,
     activeStrokeDasharray,
-    strokeDasharray
+    strokeDasharray,
+    format,
+    formatOptions
   }
 }
 

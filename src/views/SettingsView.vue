@@ -141,6 +141,7 @@
           v-model:dragging-stroke-dasharray="draggingStrokeDasharray"
           v-model:active-stroke-dasharray="activeStrokeDasharray"
           v-model:stroke-dasharray="strokeDasharray"
+          v-model:format="format"
           :is-rus="isRus"
           :is-eng="isEng"
         />
@@ -238,6 +239,7 @@
     draggingStrokeDasharray,
     activeStrokeDasharray,
     strokeDasharray,
+    format,
   } = useSettingsPage();
 
   const {

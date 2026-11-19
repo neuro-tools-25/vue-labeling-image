@@ -63,6 +63,7 @@
 
 <script setup>
   import { ref, computed } from 'vue';
+  import { formatOpt } from '@/components/examples/format.js';
 
   import CardItem from '@/components/CardItem.vue';
   //import LabelingImage from 'lib/index.es.js';
@@ -79,18 +80,7 @@
 
   const formatId = ref('COCO');
   const formatOptions = ref([
-    {
-      id: 'pascalvoc',
-      title: 'Pascal Voc'
-    },
-    {
-      id: 'yolo',
-      title: 'Yolo'
-    },
-    {
-      id: 'COCO',
-      title: 'COCO'
-    }
+    ...formatOpt
   ]);
 
   const headerText = computed(() => {

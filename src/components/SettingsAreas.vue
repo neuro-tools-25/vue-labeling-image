@@ -43,6 +43,8 @@
         </ui-checkbox>
       </ui-row>
 
+      {{ format }}
+      {{ formatOptions }}
       <open-header
         :is-active="isTheme"
         @click="isTheme = !isTheme"
@@ -414,11 +416,13 @@
   const draggingStrokeDasharray = defineModel('dragging-stroke-dasharray');
   const activeStrokeDasharray = defineModel('active-stroke-dasharray');
   const strokeDasharray = defineModel('stroke-dasharray');
+  const format = defineModel('format');
 
   const {
     gridSizeOptions,
     resolutionOptions,
-    themeOptions
+    themeOptions,
+    formatOptions
   } = useSettingsPage();
 
   const isEng = computed(() => props.isEng);
