@@ -8,7 +8,7 @@ export const formatOpt = [
     title: 'Yolo'
   },
   {
-    id: 'COCO',
+    id: 'coco',
     title: 'COCO'
   }
 ];

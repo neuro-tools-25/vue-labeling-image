@@ -25,6 +25,9 @@
   .ui-select {
     padding: 5px;
     border-radius: 5px;
+    max-width: 100%;
+    display: block;
+    box-sizing: border-box;
     border: 2px solid services.$secondColor;
   }
 </style>

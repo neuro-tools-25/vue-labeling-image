@@ -1,4 +1,4 @@
-const convСoord = (x) => Number(x) / 100;
+export const convСoord = (x) => Number(x) / 100;
 
 export const bCoco = ({ x, y, width, height }) => [
   convСoord(x),

@@ -8,6 +8,8 @@ import {
 
 const useFormat = (props) => {
   const idFormat = computed(() => {
+    if (typeof props.format === 'function') return 'isFunction';
+
     const format = props.format.toLowerCase();
 
     const pascalVocArr = ['xyxy', 'pascalvoc', 'pascal voc'];
@@ -20,6 +22,8 @@ const useFormat = (props) => {
   });
 
   const buildBBox = (area) => {
+    if (idFormat.value === 'isFunction') return props.format(area);
+
     if (idFormat.value === 'pascal voc') return bPascalVOC(area);
     if (idFormat.value === 'yolo') return bYOLO(area);
 

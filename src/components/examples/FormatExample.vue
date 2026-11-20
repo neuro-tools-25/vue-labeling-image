@@ -21,7 +21,7 @@
         v-model="areas"
         v-model:active-id="activeId"
         :is-markup="false"
-        :format="formatId"
+        :format="formatIdComp"
       />
 
       <view-code
@@ -63,25 +63,65 @@
 
 <script setup>
   import { ref, computed } from 'vue';
-  import { formatOpt } from '@/components/examples/format.js';
 
-  import CardItem from '@/components/CardItem.vue';
   //import LabelingImage from 'lib/index.es.js';
   import LabelingImage from '@/components/labeling-image/index.js';
+
+  import CardItem from '@/components/CardItem.vue';
   import FormArea from '@/components/FormArea.vue';
   import ViewCode from '@/components/ViewCode.vue';
 
+  import { formatOpt } from '@/components/examples/format.js';
   import { imageStud } from '@/assets/image-stud.js';
+  import { convСoord } from '@/components/labeling-image/formats.js';
   const imageSrc = ref(imageStud);
 
   const props = defineProps(['isEng']);
 
   const isEng = computed(() => props.isEng);
 
-  const formatId = ref('COCO');
-  const formatOptions = ref([
-    ...formatOpt
-  ]);
+  const bCircularBBox = ({ x, y, width, height}) => {
+    const xConv = convСoord(x);
+    const yConv = convСoord(y);
+    const yBottomPoint = yConv + convСoord(height);
+    const xRightPoint = xConv + convСoord(width);
+    console.log(xConv, width);
+    
+    return [
+      {
+        x: xConv,
+        y: yConv
+      },
+      {
+        x: xConv,
+        y: yBottomPoint
+      },
+      {
+        x: xRightPoint,
+        y: yBottomPoint
+      },
+      {
+        x: xRightPoint,
+        y: yConv
+      },
+    ]
+  };
+
+  const formatId = ref('coco');
+  const formatOptions = computed(() => {
+    return [
+      ...formatOpt,
+      {
+        id: "circularBBox",
+        title: "Bounding box состоит из 4 точек (XY), построение идёт против часовой стрелке он верхней левой точке к правой верхней точке"
+      }
+    ]
+  });
+  const formatIdComp = computed(() => {
+    if (formatId.value === 'circularBBox') return bCircularBBox;
+
+    return formatId.value;
+  });
 
   const headerText = computed(() => {
     if (props.isEng) return "Select the neural network format."
