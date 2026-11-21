@@ -34,6 +34,7 @@
       class="form-area__row"
     >
       <b>bBox:</b>
+
 <pre>
 {{ props.bBox }}
 </pre>
@@ -145,6 +146,11 @@
 
     &__row {
       margin: 10px 0;
+
+      pre {
+        white-space: pre-wrap;
+        overflow-wrap: break-word; 
+      }
     }
   }
 </style>
