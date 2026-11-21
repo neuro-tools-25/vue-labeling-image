@@ -1,7 +1,7 @@
 <template>
   <card-item
     url="src/components/examples/MainExample.vue"
-    :is-eng="isEng"
+    :is-eng="props.isEng"
   >
     <template #desc>
       <template v-if="!props.isEng">
@@ -26,7 +26,7 @@
 
       <view-code
         :code="areas"
-        :is-eng="isEng"
+        :is-eng="props.isEng"
       />
     </template>
 
@@ -84,7 +84,7 @@
     formatId,
     formatOptions,
     formatIdComp
-  } = useFormat();
+  } = useFormat(isEng);
 
   const headerText = computed(() => {
     if (props.isEng) return "Select the neural network format."
