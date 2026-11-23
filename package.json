@@ -1,8 +1,13 @@
 {
   "name": "vue-labeling-image",
   "version": "0.7.0",
+  "author": "neuro-tools-25",
+  "license": "MIT",
   "type": "module",
   "main": "lib/index.es.js",
+  "files": [
+    "lib"
+  ],
   "homepage": "https://neuro-tools-25.github.io/vue-labeling-image/",
   "description": "Vue 3 component for image labeling, data annotation, and bounding box creation (OCR, Computer Vision)",
   "scripts": {
@@ -10,6 +15,10 @@
     "build": "vite build",
     "preview": "vite preview",
     "lib": "vite build -c vite.lib.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neuro-tools-25/vue-labeling-image"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
@@ -25,71 +34,19 @@
   },
   "keywords": [
     "vue",
-    "vuejs",
     "vue3",
     "vue-component",
-    "image-labeling",
     "image-annotation",
     "data-labeling",
     "bounding-boxes",
-    "image-markup",
-    "ocr",
+    "markup",
     "ui-component",
     "dataset-annotation",
-    "computer-vision",
-    "object-detection",
-    "machine-learning",
-    "vue labeling image",
-    "vue labeling images",
-    "vue component for neural networks",
-    "vue component for markup document",
-    "vue component for markup image",
-    "vue component for markup images",
-    "vue component for labeling document",
-    "vue component for labeling image",
-    "vue component for labeling images",
-    "vue labeling document",
-    "vue mark up document",
-    "vue mark up image",
-    "vue mark up images",
-    "component for neural networks",
-    "vue markup document",
-    "vue labeling",
-    "markup image",
-    "markup images",
-    "markup document",
-    "mark up document",
-    "markup for document",
-    "markup for images",
-    "markup for image",
-    "labeling document",
-    "labeling image",
-    "labeling images",
-    "labeling for document",
-    "labeling for images",
-    "labeling for image",
-    "labeling data in images",
-    "vue component for labeling data in images",
-    "markup",
-    "labeling",
-    "vue image annotation component",
-    "vue document annotation component",
-    "vue image annotation",
-    "vue document annotation",
-    "image annotation",
-    "document annotation",
-    "ocr",
-    "ocr component",
-    "vue ocr component",
-    "frontend component for ocr",
-    "ui component for ocr"
+    "ocr"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/neuro-tools-25/vue-labeling-image"
+  "peerDependencies": {
+    "vue": "^3.5.17"
   },
-  "author": "neuro-tools-25",
-  "license": "MIT",
   "volta": {
     "node": "22.20.0",
     "npm": "11.6.1"
