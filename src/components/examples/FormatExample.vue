@@ -55,6 +55,7 @@
         :bBox="item.bBox"
         :name="item.name"
         :is-eng="props.isEng"
+        is-b-box
         read-only
       />
     </template>

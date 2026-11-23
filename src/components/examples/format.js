@@ -2,6 +2,10 @@ import { convСoord } from '@/components/labeling-image/formats.js';
 
 export const formatOpt = [
   {
+    id: 'coco',
+    title: 'COCO'
+  },
+  {
     id: 'pascalvoc',
     title: 'Pascal Voc'
   },
@@ -9,10 +13,6 @@ export const formatOpt = [
     id: 'yolo',
     title: 'Yolo'
   },
-  {
-    id: 'coco',
-    title: 'COCO'
-  }
 ];
 
 const calcFirstPoints = (x, y) => [convСoord(x), convСoord(y)];

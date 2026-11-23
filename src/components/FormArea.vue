@@ -61,19 +61,45 @@
   const emits = defineEmits({ deleteArea: 'delete-area' });
   const isEdit = defineModel('is-edit');
 
-  const props = defineProps([
-    'id',
-    'activeId',
-    'x',
-    'y',
-    'width',
-    'height',
-    'name',
-    'isEdit',
-    'readOnly',
-    'isEng',
-    'bBox'
-  ]);
+  const props = defineProps({
+    id: {
+      type: [Number, String]
+    },
+    activeId: {
+      type: [Number, String]
+    },
+    x: {
+      type: [Number, String]
+    },
+    y: {
+      type: [Number, String]
+    },
+    width: {
+      type: [Number, String]
+    },
+    height: {
+      type: [Number, String]
+    },
+    name: {
+      type: [Number, String]
+    },
+    isEdit: {
+      type: Boolean
+    },
+    readOnly: {
+      type: Boolean
+    },
+    isEng: {
+      type: Boolean
+    },
+    bBox: {
+      default: undefined 
+    },
+    isBBox: {
+      type: Boolean,
+      default: false
+    }
+  });
 
   const isReadOnly = computed(() => props.readOnly === undefined);
 
@@ -97,7 +123,7 @@
     return text;
   });
 
-  const isBBox = ref(false);
+  const isBBox = ref(props.isBBox);
   const toggleIsBBox = () => isBBox.value = !isBBox.value;
 
   const isBBoxText = computed(() => {
