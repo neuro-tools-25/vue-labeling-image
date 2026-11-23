@@ -1,6 +1,6 @@
 <template>
   <card-item
-    url="src/components/examples/MainExample.vue"
+    url="src/components/examples/FormatExample.vue"
     :is-eng="props.isEng"
   >
     <template #desc>

@@ -15,19 +15,26 @@ export const formatOpt = [
   }
 ];
 
-export const bCircularBBox = ({ x, y, width, height}) => {
-  const xConv = convСoord(x);
-  const yConv = convСoord(y);
-  const yBottomPoint = yConv + convСoord(height);
-  const xRightPoint = xConv + convСoord(width);
+const calcFirstPoints = (x, y) => [convСoord(x), convСoord(y)];
+
+const calcPoints = (x, y, width, height) => {
+  const [x1, y1] = calcFirstPoints(x, y);
+  const x2 = x1 + convСoord(width);
+  const y2 = y1 + convСoord(height);
+
+  return [x2, y2, x1, y1];
+}
+
+export const bCircularBBox = ({ x, y, width, height }) => {
+  const [xRightPoint, yBottomPoint, x1, y1] = calcPoints(x, y, width, height);
 
   return [
     {
-      x: xConv,
-      y: yConv
+      x: x1,
+      y: y1
     },
     {
-      x: xConv,
+      x: x1,
       y: yBottomPoint
     },
     {
@@ -36,21 +43,29 @@ export const bCircularBBox = ({ x, y, width, height}) => {
     },
     {
       x: xRightPoint,
-      y: yConv
+      y: y1
     },
   ]
 };
 
-export const pointsInArrayBBox = ({ x, y, width, height}) => {
-  const xConv = convСoord(x);
-  const yConv = convСoord(y);
-  const y2 = yConv + convСoord(height);
-  const x2 = xConv + convСoord(width);
+export const pointsInObject = ({ x, y, width, height }) => {
+  const [x2, y2, x1, y1] = calcPoints(x, y, width, height);
+
+  return {
+    x1,
+    y1,
+    x2,
+    y2,
+  }
+};
+
+export const pointsInArrayBBox = ({ x, y, width, height }) => {
+  const [x2, y2, x1, y1] = calcPoints(x, y, width, height);
 
   return [
     [
-      xConv,
-      yConv
+      x1,
+      y1
     ],
     [
       x2,
