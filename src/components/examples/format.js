@@ -75,6 +75,11 @@ export const pointsInArrayBBox = ({ x, y, width, height }) => {
 };
 
 export const stringBBox = ({ x, y, width, height}) => {
-  return `The starting point has coordinates X: ${x}%, Y: ${y}.
-The width of the labeled area is ${width}%, and the height of the labeled area is ${height}%.`
+  return `The starting point has coordinates:
+X: ${x}%
+Y: ${y}%
+
+The labeled areas have the following dimensions:
+width:  ${width}%,
+height: ${height}%`
 };

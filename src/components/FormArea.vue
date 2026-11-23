@@ -41,13 +41,13 @@
     </div>
 
     <ui-delete
-      v-if="isReadOnly"
+      v-if="!props.readOnly"
       :is-eng="props.isEng"
       @click.stop="emits('deleteArea')"
     />
 
     <ui-checkbox
-      v-if="isReadOnly" 
+      v-if="!props.readOnly" 
       v-model="isEdit"
     >
       {{ editText }}
@@ -87,7 +87,8 @@
       type: Boolean
     },
     readOnly: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     isEng: {
       type: Boolean
@@ -101,26 +102,22 @@
     }
   });
 
-  const isReadOnly = computed(() => props.readOnly === undefined);
-
   const classComp = computed(() => ({
-    'form-area_active': props.id === props.activeId && isReadOnly.value,
-    'form-area_read-only': !isReadOnly.value,
+    'form-area_active': props.id === props.activeId && props.readOnly,
+    'form-area_read-only': !props.readOnly,
   }));
 
   // Интернационализация
   const editText = computed(() => {
-    let text='Редактировать';
-    if (props.isEng) text='Edit';
+    if (props.isEng) return 'Edit';
 
-    return text;
+    return 'Редактировать';
   });
 
   const nameNotDefined = computed(() => {
-    let text='Имя маркированной области не определено';
-    if (props.isEng) text='The name of the labeled area is not defined';
+    if (props.isEng) return 'The name of the labeled area is not defined';
 
-    return text;
+    return 'Имя маркированной области не определено';
   });
 
   const isBBox = ref(props.isBBox);
