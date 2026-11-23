@@ -35,24 +35,46 @@ const useFormat = (isEng) => {
     return "Bounding box будет представлять из себя строку";
   });
 
+  const defaultParamTitle = computed(() => {
+    if (isEng.value) return "String parameters supported by default";
+
+    return "Строковые параметры, поддерживаемые по умолчанию";
+  });
+
+  const myParamTitle = computed(() => {
+    if (isEng.value) return "Examples of functions for constructing various Bounding Box";
+
+    return "Примеры функций для построения различных ограничивающих рамок (Bounding Box)";
+  });
+
   const formatOptions = computed(() => {
     return [
-      ...formatOpt,
       {
-        id: "circularBBox",
-        title: circularTitle
+        type: "group",
+        label: defaultParamTitle.value,
+        elenents: formatOpt
       },
       {
-        id: "pointsInArrayBBox",
-        title: pointsInArrayTitle
-      },
-      {
-        id: "pointsInObjectBBox",
-        title: pointsInObjectTitle
-      },
-      {
-        id: "stringBBox",
-        title: stringTitle
+        type: "group",
+        label: myParamTitle.value,
+        elenents: [
+          {
+            id: "circularBBox",
+            title: circularTitle
+          },
+          {
+            id: "pointsInArrayBBox",
+            title: pointsInArrayTitle
+          },
+          {
+            id: "pointsInObjectBBox",
+            title: pointsInObjectTitle
+          },
+          {
+            id: "stringBBox",
+            title: stringTitle
+          }
+        ]
       }
     ]
   });

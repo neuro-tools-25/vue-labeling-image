@@ -3,13 +3,30 @@
     v-model="val"
     class="ui-select"
   >
-    <option
+    <template
       v-for="item in props.options"
       :key="item.id"
-      :value="item.id"
     >
-      {{ item.title }}
-    </option>
+      <optgroup
+        v-if="item.type === 'group'"
+        :label="item.label"
+      >
+        <option
+          v-for="itm in item.elenents"
+          :value="itm.id"
+          :key="itm.is"
+        >
+          {{ itm.title }}
+        </option>
+      </optgroup>
+
+      <option
+        v-else
+        :value="item.id"
+      >
+        {{ item.title }}
+      </option>
+    </template>
   </select>
 </template>
 
@@ -23,6 +40,7 @@
   @use '@/assets/_services' as services;
 
   .ui-select {
+    appearance: none;
     padding: 5px;
     border-radius: 5px;
     max-width: 100%;
