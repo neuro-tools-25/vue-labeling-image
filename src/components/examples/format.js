@@ -49,13 +49,13 @@ export const bCircularBBox = ({ x, y, width, height }) => {
 };
 
 export const pointsInObject = ({ x, y, width, height }) => {
-  const [x2, y2, x1, y1] = calcPoints(x, y, width, height);
+  const [X2, Y2, X1, Y1] = calcPoints(x, y, width, height);
 
   return {
-    x1,
-    y1,
-    x2,
-    y2,
+    X1,
+    Y1,
+    X2,
+    Y2,
   }
 };
 

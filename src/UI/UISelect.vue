@@ -14,7 +14,7 @@
         <option
           v-for="itm in item.elenents"
           :value="itm.id"
-          :key="itm.is"
+          :key="itm.id"
         >
           {{ itm.title }}
         </option>
