@@ -3,10 +3,10 @@
 [English](./README.md) | Русский
 
 <a href="https://github.com/neuro-tools-25/vue-labeling-image">
-  <img src="public/img/github.svg" alt="GitHub репозиторий" width="40px" height="40px">
+  <img src="https://github.com/neuro-tools-25/vue-labeling-image/blob/new-release/public/img/github.svg" alt="GitHub репозиторий" width="40px" height="40px">
 </a>
 <a href="https://www.npmjs.com/package/vue-labeling-image?activeTab=readme">
-  <img src="public/img/npm.svg" alt="NPM репозиторий" width="40px" height="40px">
+  <img src="https://github.com/neuro-tools-25/vue-labeling-image/blob/new-release/public/img/npm.svg" alt="NPM репозиторий" width="40px" height="40px">
 </a>
 
 Vue labeling image - это компонент для vue.js, позволяющий маркировать данные на картинках. Проще говоря, это UI для нейронок. Примером для создания данного компонента послужил данный [проект](https://github.com/HumanSignal/labelImg "LabelImg"), сейчас он уже не актуален. Eсли вам интересна данная тема, я рекомендую вам обратить внимание вот на этот [репозиторий](https://github.com/HumanSignal/label-studio "label-studio"). По большей части я разрабатывал компоненты для маркирования текста, поэтому основное предназначение моего компонента это OCR, но он подойдет и для других похожих задач. Как пример, я могу указать на yandex и google картинки. Там можно загрузить свою картирку, а после выделить какую-то определенную её область, мой компонент вполне с этой задачей справится.
