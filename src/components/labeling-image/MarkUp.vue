@@ -431,7 +431,12 @@
     }
   };
 
-  const buildBBox = useFormat(props);
+  const buildBBox = useFormat(props, {
+    widthCanvas: widthMarkUp,
+    heightCanvas: heightMarkUp,
+    realWidthImage: realWidthImg,
+    realHeightImage: realHeightImg,
+  });
 
   const addInAreas = (item, id) => {
     const itemArea = convertParams(item);

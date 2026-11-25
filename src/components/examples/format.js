@@ -74,7 +74,7 @@ export const pointsInArrayBBox = ({ x, y, width, height }) => {
   ]
 };
 
-export const stringBBox = ({ x, y, width, height}) => {
+export const stringBBox = ({ x, y, width, height }) => {
   return `The starting point has coordinates:
 X: ${x}%
 Y: ${y}%
@@ -83,3 +83,22 @@ The labeled areas have the following dimensions:
 width:  ${width}%,
 height: ${height}%`
 };
+
+export const realCoco = ({
+  x,
+  y,
+  width,
+  height
+}, {
+  widthCanvas,
+  heightCanvas,
+  realWidthImage,
+  realHeightImage,
+}) => {
+  return [
+    (x / 100) * realWidthImage.value + 'px',
+    (y / 100) * realHeightImage.value + 'px',
+    (width / 100) * realWidthImage.value + 'px',
+    (height / 100) * realHeightImage.value + 'px'
+  ]
+}

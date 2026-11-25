@@ -6,7 +6,7 @@ import {
   bYOLO
 } from './formats.js';
 
-const useFormat = (props) => {
+const useFormat = (props, sizes) => {
   const idFormat = computed(() => {
     if (typeof props.format === 'function') return 'isFunction';
 
@@ -22,7 +22,7 @@ const useFormat = (props) => {
   });
 
   const buildBBox = (area) => {
-    if (idFormat.value === 'isFunction') return props.format(area);
+    if (idFormat.value === 'isFunction') return props.format(area, sizes);
 
     if (idFormat.value === 'pascal voc') return bPascalVOC(area);
     if (idFormat.value === 'yolo') return bYOLO(area);

@@ -5,7 +5,8 @@ import {
   bCircularBBox,
   pointsInArrayBBox,
   stringBBox,
-  pointsInObject
+  pointsInObject,
+  realCoco
 } from '@/components/examples/format.js';
 
 const useFormat = (isEng) => {
@@ -33,6 +34,12 @@ const useFormat = (isEng) => {
     if (isEng.value) return "The bounding box will be a string";
 
     return "Bounding box будет представлять из себя строку";
+  });
+
+  const realCocoTitle = computed(() => {
+    if (isEng.value) return "Examples of the real COCO image annotation format (points are calculated in pixels)";
+
+    return "Примеры реального формата разметки изображений COCO (точки вычисляются в пикселях)";
   });
 
   const defaultParamTitle = computed(() => {
@@ -73,6 +80,10 @@ const useFormat = (isEng) => {
           {
             id: "stringBBox",
             title: stringTitle
+          },
+          {
+            id: "realCocoFormat",
+            title: realCocoTitle
           }
         ]
       }
@@ -84,6 +95,7 @@ const useFormat = (isEng) => {
     if (formatId.value === 'pointsInArrayBBox') return pointsInArrayBBox;
     if (formatId.value === 'pointsInObjectBBox') return pointsInObject;
     if (formatId.value === 'stringBBox') return stringBBox;
+    if (formatId.value === 'realCocoFormat') return realCoco;
 
     return formatId.value;
   });
