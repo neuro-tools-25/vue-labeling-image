@@ -6,7 +6,10 @@ import {
   pointsInArrayBBox,
   stringBBox,
   pointsInObject,
-  realCoco
+  realCoco,
+  canvasCoco,
+  realPascalVoc,
+  canvasPascalVoc
 } from '@/components/examples/format.js';
 
 const useFormat = (isEng) => {
@@ -37,9 +40,27 @@ const useFormat = (isEng) => {
   });
 
   const realCocoTitle = computed(() => {
-    if (isEng.value) return "Examples of the real COCO image annotation format (points are calculated in pixels)";
+    if (isEng.value) return "The bounding box contains the actual dimensions of the image (width, height) and coordinates in COCO format (the coordinates are represented in pixels, and the calculation is based on the actual size of the image)";
 
-    return "Примеры реального формата разметки изображений COCO (точки вычисляются в пикселях)";
+    return "Bounding box содержит реальные размеры картинки (width, height) и координаты в формате COCO (координаты представлены в пикселях, расчёт идёт от реального размера картики)";
+  });
+
+  const canvasCocoTitle = computed(() => {
+    if (isEng.value) return "The bounding box contains the dimensions of the block in which the image is located (width, height) and the coordinates in COCO format (the coordinates are represented in pixels, the calculation is based on the block in which the image is located)";
+
+    return "Bounding box содержит размеры блока в котором лежит картинка (width, height) и координаты в формате COCO (координаты представлены в пикселях, расчёт идёт от блока в котором лежит картинка)";
+  });
+
+  const realPascalVocTitle = computed(() => {
+    if (isEng.value) return "The bounding box contains the actual dimensions of the image (width, height) and coordinates in Pascal VOC format (the coordinates are represented in pixels, and the calculation is based on the actual size of the image)";
+
+    return "Bounding box содержит реальные размеры картинки (width, height) и координаты в формате Pascal VOC (координаты представлены в пикселях, расчёт идёт от реального размера картики)";
+  });
+
+  const canvasPascalVocTitle = computed(() => {
+    if (isEng.value) return "The bounding box contains the dimensions of the block in which the image is located (width, height) and the coordinates in Pascal VOC format (the coordinates are represented in pixels, the calculation is based on the block in which the image is located)";
+
+    return "Bounding box содержит размеры блока в котором лежит картинка (width, height) и координаты в формате Pascal VOC (координаты представлены в пикселях, расчёт идёт от блока в котором лежит картинка)";
   });
 
   const defaultParamTitle = computed(() => {
@@ -84,6 +105,18 @@ const useFormat = (isEng) => {
           {
             id: "realCocoFormat",
             title: realCocoTitle
+          },
+          {
+            id: "canvasCocoFormat",
+            title: canvasCocoTitle
+          },
+          {
+            id: "realPascalVocFormat",
+            title: realPascalVocTitle
+          },
+          {
+            id: "canvasPascalVocFormat",
+            title: canvasPascalVocTitle
           }
         ]
       }
@@ -94,8 +127,13 @@ const useFormat = (isEng) => {
     if (formatId.value === 'circularBBox') return bCircularBBox;
     if (formatId.value === 'pointsInArrayBBox') return pointsInArrayBBox;
     if (formatId.value === 'pointsInObjectBBox') return pointsInObject;
-    if (formatId.value === 'stringBBox') return stringBBox;
+    // Размеры в пикселях для разных форматов маркирования изображения
     if (formatId.value === 'realCocoFormat') return realCoco;
+    if (formatId.value === 'canvasCocoFormat') return canvasCoco;
+    if (formatId.value === 'realPascalVocFormat') return realPascalVoc;
+    if (formatId.value === 'canvasPascalVocFormat') return canvasPascalVoc;
+    // Тут я возвращаю строку вместо масива, или объекта
+    if (formatId.value === 'stringBBox') return stringBBox;
 
     return formatId.value;
   });

@@ -84,21 +84,65 @@ width:  ${width}%,
 height: ${height}%`
 };
 
-export const realCoco = ({
+// Размеры в пикселях для разных форматов нейронок
+
+const bSizeCocoBBox = ({
   x,
   y,
   width,
   height
-}, {
-  widthCanvas,
-  heightCanvas,
+}, curWidth, curHeight) => {
+  return {
+    coordinates: [
+      (x / 100) * curWidth.value + 'px',
+      (y / 100) * curHeight.value + 'px',
+      (width / 100) * curWidth.value + 'px',
+      (height / 100) * curHeight.value + 'px'
+    ],
+    width: curWidth.value + 'px',
+    height: curHeight.value + 'px'
+  }
+}
+
+const bSizePascalVocBBox = ({
+  x,
+  y,
+  width,
+  height
+}, curWidth, curHeight) => {
+  const X1 = (x / 100) * curWidth.value;
+  const Y1 = (y / 100) * curHeight.value;
+  const X2 = X1 + (width / 100) * curWidth.value;
+  const Y2 = Y1 + (height / 100) * curHeight.value;
+
+  return {
+    coordinates: [
+      X1 + 'px',
+      Y1 + 'px',
+      X2 + 'px',
+      Y2 + 'px'
+    ],
+    width: curWidth.value + 'px',
+    height: curHeight.value + 'px'
+  }
+}
+
+export const realCoco = (area, {
   realWidthImage,
   realHeightImage,
-}) => {
-  return [
-    (x / 100) * realWidthImage.value + 'px',
-    (y / 100) * realHeightImage.value + 'px',
-    (width / 100) * realWidthImage.value + 'px',
-    (height / 100) * realHeightImage.value + 'px'
-  ]
-}
+}) =>  bSizeCocoBBox(area, realWidthImage, realHeightImage);
+
+export const canvasCoco = (area, {
+  widthCanvas,
+  heightCanvas,
+}) =>  bSizeCocoBBox(area, widthCanvas, heightCanvas);
+
+export const realPascalVoc = (area, {
+  realWidthImage,
+  realHeightImage,
+}) =>  bSizePascalVocBBox(area, realWidthImage, realHeightImage);
+
+export const canvasPascalVoc = (area, {
+  widthCanvas,
+  heightCanvas,
+}) =>  bSizePascalVocBBox(area, widthCanvas, heightCanvas);
